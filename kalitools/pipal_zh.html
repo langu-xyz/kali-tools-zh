@@ -1,0 +1,67 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2>菩提树包装说明</h2><p style="text-align: justify;">所有这些工具确实是给你的统计数据和信息，以帮助您分析密码。真正的工作是由你解释的结果进行。 </p><p> <a href="http://www.digininja.org/projects/pipal.php" variation="deepblue" target="blank">菩提树首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/pipal.git;a=summary" variation="deepblue" target="blank">卡利菩提树回购</a> </p><ul><li>作者：罗宾·伍德</li><li>许可：知识共享署名 - 相同方式分享2.0 </li></ul><h3>包含在菩提树包工具</h3><h5>菩提树 - 密码转储统计分析</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0e7c61617a4e656f6267">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pipal -h<br>
+pipal 2.0 Robin Wood (<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="95e7faf7fcfbd5f1fcf2fcfbfcfbfff4bbfae7f2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>) (www.digininja.org)<br>
+<br>
+Usage: pipal [OPTION] ... FILENAME<br>
+    --help, -h: show help<br>
+    --top, -t X: show the top X results (default 10)<br>
+    --output, -o &lt;filename&gt;: output to file<br>
+    --external, -e &lt;filename&gt;: external file to compare words against<br>
+    --gkey &lt;Google Maps API key&gt;: to allow zip code lookups (optional)<br>
+<br>
+    FILENAME: The file to count</code><h3>菩提树用法示例</h3><p>分析并显示前5个密码<b><i>（-t 5），</i></b>使用给定文件作为输入<b><i>（/usr/share/wordlists/nmap.lst）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9eecf1f1eadef5fff2f7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pipal -t 5 /usr/share/wordlists/nmap.lst<br>
+Generating stats, hit CTRL-C to finish early and dump stats on words already processed.<br>
+Please wait...<br>
+Processing:    100% |ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo| Time: 00:00:04<br>
+<br>
+<br>
+Total entries = 5085<br>
+Total unique entries = 5076<br>
+<br>
+Top 5 passwords<br>
+#!comment:  *                                                                         * = 10 (0.2%)<br>
+cabrera = 1 (0.02%)<br>
+#!comment:  * The Nmap Security Scanner is (C) 1996-2010 Insecure.Com LLC. Nmap is    * = 1 (0.02%)<br>
+#!comment:  * also a registered trademark of Insecure.Com LLC.  This program is free  * = 1 (0.02%)<br>
+#!comment:  * software; you may redistribute and/or modify it under the terms of the  * = 1 (0.02%)<br>
+<br>
+Top 5 base words<br>
+love = 26 (0.51%)<br>
+angel = 22 (0.43%)<br>
+password = 18 (0.35%)<br>
+soccer = 18 (0.35%)<br>
+princess = 13 (0.26%)<br>
+<br>
+Password length (length ordered)<br>
+3 = 1 (0.02%)<br>
+4 = 11 (0.22%)<br>
+5 = 434 (8.53%)<br>
+6 = 1863 (36.64%)<br>
+7 = 1219 (23.97%)<br>
+8 = 865 (17.01%)<br>
+9 = 387 (7.61%)<br>
+10 = 156 (3.07%)<br>
+11 = 41 (0.81%)<br>
+12 = 13 (0.26%)<br>
+13 = 7 (0.14%)<br>
+14 = 1 (0.02%)<br>
+15 = 1 (0.02%)<br>
+16 = 1 (0.02%)<br>
+17 = 1 (0.02%)<br>
+87 = 83 (1.63%)<br>
+88 = 1 (0.02%)</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

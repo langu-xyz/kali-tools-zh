@@ -1,0 +1,67 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Webshag包装说明</h2><p style="text-align: justify;"> Webshag是一个多线程，多平台Web服务器审计工具。用Python编写的，它收集像网站的抓取，URL扫描或文件模糊测试Web服务器的审计中很常用的功能。 </p><p> Webshag可以用来扫描在HTTP或HTTPS web服务器，通过代理，并使用HTTP认证（基本和摘要）。此外，它提出了创新的IDS躲避功能旨在使要求更复杂的相关性（例如，使用每个请求的HTTP代理服务器不同的随机）。 </p><p>资料来源：http://www.scrt.ch/en/attack/downloads/webshag <br> <a href="http://www.scrt.ch/en/attack/downloads/webshag" variation="deepblue" target="blank">Webshag首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/webshag.git;a=summary" variation="deepblue" target="blank">卡利Webshag回购</a> </p><ul><li>作者：〜伤心〜，SCRT - 信息安全</li><li>许可：GPLv3的</li></ul><h3>包含在webshag包工具</h3><h5> webshag-CLI - 多线程Web服务器审计工具（CLI） </h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="097b66667d4962686560">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# webshag-cli -h<br>
+Usage: webshag-cli [-U | [options] target(s)]<br>
+<br>
+Options:<br>
+  --version       show program's version number and exit<br>
+  -h, --help      show this help message and exit<br>
+  -U              Update the URL scanner databases and exit<br>
+  -m MODULE       Use MODULE [pscan|info|spider|uscan|fuzz]. (default: uscan)<br>
+  -p PORT         Set target port to PORT. For modules uscan and fuzz PORT can<br>
+                  be a list of ports [port1,port2,...]. (default: 80)<br>
+  -r ROOT         Set root directory to ROOT. For modules uscan and fuzz ROOT<br>
+                  can be a list of directories [/root1/,/root2/,...].<br>
+                  (default: /)<br>
+  -k SKIP         *uscan only* Set a false positive detection string<br>
+  -s SERVER       *uscan only* Bypass server detection and force server as<br>
+                  SERVER<br>
+  -i SPIDER_INIT  *spider) only* Set spider initial crawling page (default: /)<br>
+  -n FUZZ_MODE    *fuzz only* Choose the fuzzing mode [list|gen]. (default:<br>
+                  list)<br>
+  -e FUZZ_CFG     *fuzz / list only* Set the fuzzing parameters for list mode.<br>
+                  11 = fuzz directories and files; 01 = fuzz files only; 10 =<br>
+                  fuzz directories only; 00 = fuzz nothing. (default: 11)<br>
+  -g FUZZ_GEN     *fuzz / gen only* Set the filename generator expression.<br>
+                  Refer to documentation for syntax reference. (default: )<br>
+  -x              Export a report summarizing results.<br>
+  -o OUTPUT       Set the format of the exported report. [xml|html|txt].<br>
+                  (default: html)<br>
+  -f OUTPUT_FILE  Write report to FILE. (default: webshag_report.html)</code><h3> webshag贵 - 多线程Web服务器审计工具（GUI） </h3><p>一个多线程，多平台的Web服务器审计工具。图形用户界面版本。 </p><h3> webshag-CLI用法示例</h3><p>运行在远程IP地址<b><i>（192.168.1.202）</i></b>端口扫描<b><i>（-m PSCAN）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7d0f1212093d161c1114">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# webshag-cli -m pscan 192.168.1.202<br>
+~~~~~~~~~~~~~~~~~~~~~~~~~~ ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+% webshag 1.10<br>
+% Module: pscan<br>
+% Host: 192.168.1.202<br>
+~~~~~~~~~~~~~~~~~~~~~~~~~~ ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+<br>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+192.168.1.202<br>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>
+% PORT %    22 (tcp)<br>
+% SRVC %    ssh<br>
+% PROD %    OpenSSH<br>
+% SYST %    Linux<br>
+<br>
+% PORT %    80 (tcp)<br>
+% SRVC %    http<br>
+% PROD %    Apache httpd<br>
+<br>
+% PORT %    9876 (tcp)<br>
+% SRVC %    http<br>
+% PROD %    Apache httpd<br>
+<br>
+~~~~~~~~~~~~~~~~~~~~~~~~~~ ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</code><h3> webshag贵用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a8dac7c7dce8c3c9c4c1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# webshag-gui</code><p> <a href='full/929a81307266f5d229871ee57b92f3617e7eea60.jpg'><img src='full/929a81307266f5d229871ee57b92f3617e7eea60.jpg' alt="webshag" width="920" class="aligncenter size-full wp-image-3674"></a> </p><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,70 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> phrasendrescher包装说明</h2><p style="text-align: justify;"> phrasen | Drescher的（对| d）是模块化的和多处理通行短语开裂的工具。它配备了大量的插件，但一个简单的插件API允许新的插件容易发展。的对主要特点| d为： </p><ul><li>模块化与使用插件</li><li>多处理</li><li>带或不带排列（大写，小写的l33t等）字典攻击</li><li>增量蛮力攻击与自定义字符映射</li><li>在FreeBSD，NetBSD的，OpenBSD的，MacOS和Linux上运行</li></ul><p>资料来源：http://www.leidecker.info/projects/phrasendrescher/index.shtml <br> <a href="http://www.leidecker.info/projects/phrasendrescher/index.shtml" variation="deepblue" target="blank">phrasendrescher首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/phrasendrescher.git;a=summary" variation="deepblue" target="blank">卡利phrasendrescher回购</a> </p><ul><li>作者：尼科Leidecker </li><li>许可：3条款BSD </li></ul><h3>Tools included in the phrasendrescher package
+<h5>pd – Passphrase cracking tool</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ec9e838398ac878d8085">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pd -h<br>
+phrasen|drescher 1.2.2 - the passphrase cracker<br>
+Copyright (C) 2008 Nico Leidecker; http://www.leidecker.info<br>
+<br>
+Usage: pd plugin [options]<br>
+<br>
+ Available plugins:<br>
+   enc-file  mssql  pkey  http-raw  ssh<br>
+<br>
+ General Options:<br>
+   h           : print this message<br>
+   v           : verbose mode<br>
+   i from[:to] : incremental mode beginning with word length `from'<br>
+                 and going to `to'<br>
+   d file      : run dictionary based with words from `file'<br>
+   w number    : number of worker threads (default is one)<br>
+   r rules     : specify rewriting rules for the dictionary mode:<br>
+                   A = all characters upper case<br>
+                   F = first character upper case<br>
+                   L = last character upper case<br>
+                   W = first letter of each word to upper case<br>
+                   a = all characters lower case<br>
+                   f = first character lower case<br>
+                   l = last character lower case<br>
+                   w = first letter of each word to lower case<br>
+                   D = prepend digit<br>
+                   d = append digit<br>
+                   e = 1337 characters<br>
+                   x = all rules<br>
+<br>
+ Environment Variables:<br>
+   PD_PLUGINS : the directory containing plugins<br>
+                (current is /usr/lib/phrasendrescher)<br>
+   PD_CHARMAP : the characters for the incremental mode are<br>
+                taken from a character list. A customized list<br>
+                can be specified in the environment variable</code>
+<h3>pd Usage Example</h3>
+</h3><p>使用SSH强力插件<b><i>（SSH），并在</i></b>词库<b><i>（-d passes.txt）</i></b>密码对目标服务器<b><i>（-t 192.168.1.202），</i></b>显示详细输出<b><i>（-v）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d8aab7b7ac98b3b9b4b1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pd ssh -d passes.txt -t 192.168.1.202 -v<br>
+phrasen|drescher 1.2.2 - the passphrase cracker<br>
+Copyright (C) 2008 Nico Leidecker; http://www.leidecker.info<br>
+<br>
+[ssh] Trying host 192.168.1.202:22...<br>
+[ssh]   Fingerprint: C1 D3 4E 15 1F C0 EE 45 1A EC 7E EC D6 6A 02 7C <br>
+[ssh]   Authentication mechanisms: publickey,password (using: password)<br>
+[ssh] Complete List of targets:<br>
+[ssh]   192.168.1.202:22<br>
+[ssh] Users:<br>
+[ssh]   root<br>
+<br>
+plugin ssh loaded. Running now (1 workers)...<br>
+--------------------------------------------------<br>
+mode: dictionary (passes.txt)</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

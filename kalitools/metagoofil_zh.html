@@ -1,0 +1,63 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Metagoofil包装说明</h2><p style="text-align: justify;"> Metagoofil是一个信息收集工具，提取公共文件（PDF，DOC，XLS，PPT，DOCX，PPTX，XLSX）属于目标公司的元数据。 </p><p> Metagoofil将在谷歌进行搜索，以确定并下载文件到本地硬盘，然后将提取不同的库，比如Hachoir，PdfMiner元数据？和别的。有了结果会生成带有用户名，软件版本和服务器或计算机名，这将有助于渗透测试者在信息收集阶段的报告。 </p><p>资料来源：http://www.edge-security.com/metagoofil.php <br> <a href="http://www.edge-security.com/metagoofil.php" variation="deepblue" target="blank">Metagoofil首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/metagoofil.git;a=summary" variation="deepblue" target="blank">卡利Metagoofil回购</a> </p><ul><li>作者：基督教Martorella </li><li>许可：GPL第二版</li></ul><h3>包含在metagoofil包工具</h3><h5> metagoofil - 工具设计用于提取公共文件的元数据</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a6d4c9c9d2e6cdc7cacf">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# metagoofil<br>
+<br>
+******************************************************<br>
+*     /\/\   ___| |_ __ _  __ _  ___   ___  / _(_) | *<br>
+*    /    \ / _ \ __/ _` |/ _` |/ _ \ / _ \| |_| | | *<br>
+*   / /\/\ \  __/ || (_| | (_| | (_) | (_) |  _| | | *<br>
+*   \/    \/\___|\__\__,_|\__, |\___/ \___/|_| |_|_| *<br>
+*                         |___/                      *<br>
+* Metagoofil Ver 2.2                                 *<br>
+* Christian Martorella                               *<br>
+* Edge-Security.com                                  *<br>
+* cmartorella_at_edge-security.com                   *<br>
+******************************************************<br>
+<br>
+ Usage: metagoofil options<br>
+<br>
+         -d: domain to search<br>
+         -t: filetype to download (pdf,doc,xls,ppt,odp,ods,docx,xlsx,pptx)<br>
+         -l: limit of results to search (default 200)<br>
+         -h: work with documents in directory (use "yes" for local analysis)<br>
+         -n: limit of files to download<br>
+         -o: working directory (location to save downloaded files)<br>
+         -f: output file<br>
+<br>
+ Examples:<br>
+  metagoofil.py -d apple.com -t doc,pdf -l 200 -n 50 -o applefiles -f results.html<br>
+  metagoofil.py -h yes -o applefiles -f results.html (local dir analysis)</code><h3> metagoofil用法示例</h3><p>扫描从域文档<b><i>（-d kali.org）</i></b>是PDF文件<b><i>（-t PDF），</i></b>搜索结果<b><i>100（-L 100），</i></b>下载25个文件<b><i>（-n 25），</i></b>保存下载到一个目录<b><i>（-o kalipdf），</i></b>并且将输出保存<b><i>到</i></b>文件中<b><i>（-f kalipdf.html）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2e5c41415a6e454f4247">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# metagoofil -d kali.org -t pdf -l 100 -n 25 -o kalipdf -f kalipdf.html<br>
+<br>
+******************************************************<br>
+*     /\/\   ___| |_ __ _  __ _  ___   ___  / _(_) | *<br>
+*    /    \ / _ \ __/ _` |/ _` |/ _ \ / _ \| |_| | | *<br>
+*   / /\/\ \  __/ || (_| | (_| | (_) | (_) |  _| | | *<br>
+*   \/    \/\___|\__\__,_|\__, |\___/ \___/|_| |_|_| *<br>
+*                         |___/                      *<br>
+* Metagoofil Ver 2.2                                 *<br>
+* Christian Martorella                               *<br>
+* Edge-Security.com                                  *<br>
+* cmartorella_at_edge-security.com                   *<br>
+******************************************************<br>
+['pdf']<br>
+<br>
+[-] Starting online search...<br>
+<br>
+[-] Searching for pdf files, with a limit of 100<br>
+        Searching 100 results...<br>
+Results: 21 files found<br>
+Starting to download 25 of them:</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

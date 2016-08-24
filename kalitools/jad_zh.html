@@ -1,0 +1,84 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> JAD包装说明</h2><p style="text-align: justify;">的Java反编译器</p><p> <a href="http://www.varaneckas.com/jad/" variation="deepblue" target="blank">JAD首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/jad.git;a=summary" variation="deepblue" target="blank">卡利的jad回购</a> </p><ul><li>作者：帕维尔KOUZNETSOV </li><li>许可：其它</li></ul><h3>包含在JAD包工具</h3><h5> JAD - 一个Java反编译</h5><code>jad -h<br>
+Jad v1.5.8e. Copyright 2001 Pavel Kouznetsov (<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="610a11051412211800090e0e4f020e0c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>).<br>
+Usage:    jad [option(s)] &lt;filename(s)&gt;<br>
+Options: -a       - generate JVM instructions as comments (annotate)<br>
+         -af      - output fully qualified names when annotating<br>
+         -b       - generate redundant braces (braces)<br>
+         -clear   - clear all prefixes, including the default ones<br>
+         -d &lt;dir&gt; - directory for output files<br>
+         -dead    - try to decompile dead parts of code (if there are any)<br>
+         -dis     - disassembler only (disassembler)<br>
+         -f       - generate fully qualified names (fullnames)<br>
+         -ff      - output fields before methods (fieldsfirst)<br>
+         -i       - print default initializers for fields (definits)<br>
+         -l&lt;num&gt;  - split strings into pieces of max &lt;num&gt; chars (splitstr)<br>
+         -lnc     - output original line numbers as comments (lnc)<br>
+         -lradix&lt;num&gt;- display long integers using the specified radix<br>
+         -nl      - split strings on newline characters (splitstr)<br>
+         -noconv  - don't convert Java identifiers into valid ones (noconv)<br>
+         -nocast  - don't generate auxiliary casts<br>
+         -noclass - don't convert .class operators<br>
+         -nocode  - don't generate the source code for methods<br>
+         -noctor  - suppress the empty constructors<br>
+         -nodos   - turn off check for class files written in DOS mode<br>
+         -nofd    - don't disambiguate fields with the same names (nofldis)<br>
+         -noinner - turn off the support of inner classes<br>
+         -nolvt   - ignore Local Variable Table entries (nolvt)<br>
+         -nonlb   - don't insert a newline before opening brace (nonlb)<br>
+         -o       - overwrite output files without confirmation<br>
+         -p       - send all output to STDOUT (for piping)<br>
+         -pa &lt;pfx&gt;- prefix for all packages in generated source files<br>
+         -pc &lt;pfx&gt;- prefix for classes with numerical names (default: _cls)<br>
+         -pe &lt;pfx&gt;- prefix for unused exception names (default: _ex)<br>
+         -pf &lt;pfx&gt;- prefix for fields with numerical names (default: _fld)<br>
+         -pi&lt;num&gt; - pack imports into one line using .* (packimports)<br>
+         -pl &lt;pfx&gt;- prefix for locals with numerical names (default: _lcl)<br>
+         -pm &lt;pfx&gt;- prefix for methods with numerical names (default: _mth)<br>
+         -pp &lt;pfx&gt;- prefix for method parms with numerical names (default:_prm)<br>
+         -pv&lt;num&gt; - pack fields with the same types into one line (packfields)<br>
+         -r       - restore package directory structure<br>
+         -radix&lt;num&gt;- display integers using the specified radix (8, 10, or 16)<br>
+         -s &lt;ext&gt; - output file extension (default: .jad)<br>
+         -safe    - generate additional casts to disambiguate methods/fields<br>
+         -space   - output space between keyword (if, while, etc) and expression<br>
+         -stat    - show the total number of processed classes/methods/fields<br>
+         -t&lt;num&gt;  - use &lt;num&gt; spaces for indentation (default: 4)<br>
+         -t       - use tabs instead of spaces for indentation<br>
+         -v       - show method names while decompiling</code><h3> JAD用法示例</h3><p>编译给定的Java类文件<b><i>（javaversion.class）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c5b7aaaab185aea4a9ac">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# jad javaversion.class <br>
+Parsing javaversion.class... Generating javaversion.jad<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2654494952664d474a4f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cat javaversion.jad <br>
+// Decompiled by Jad v1.5.8e. Copyright 2001 Pavel Kouznetsov.<br>
+// Jad home page: http://www.geocities.com/kpdus/jad.html<br>
+// Decompiler options: packimports(3) <br>
+// Source File Name:   javaversion.java<br>
+<br>
+import java.io.PrintStream;<br>
+<br>
+public class javaversion<br>
+{<br>
+<br>
+    public javaversion()<br>
+    {<br>
+    }<br>
+<br>
+    public static void main(String args[])<br>
+    {<br>
+        System.out.println(System.getProperty("java.specification.version"));<br>
+    }<br>
+}</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

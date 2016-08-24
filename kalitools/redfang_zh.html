@@ -1,0 +1,53 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> redfang包装说明</h2><p style="text-align: justify;"> RedFang是概念验证的一个小应用程序，以发现不发现的蓝牙设备。这是通过暴力破解完成强制设备的蓝牙地址的最后六（6）个字节，并做了read_remote_name（）。 </p><p> <a href="http://www.atstake.com" variation="deepblue" target="blank">redfang首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/redfang.git;a=summary" variation="deepblue" target="blank">卡利redfang回购</a> </p><ul><li>作者：@stake公司，奥利白宫，西蒙Halsall，斯蒂芬·卡普</li><li>许可：GPL第二版</li></ul><h3>包含在redfang软件包工具</h3><h5>芳 - 蓝牙猎人</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b7c5d8d8c3f7dcd6dbde">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fang -h<br>
+redfang - the bluetooth hunter ver 2.5<br>
+(c)2003 @stake Inc<br>
+author:   Ollie Whitehouse &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6c03000005092c0d181f180d0709420f0301">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+enhanced: threads by Simon Halsall &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="14673a7c7578677578785471667d673a657d7a71607d653a777b79">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+enhanced: device info discovery by Stephen Kapp &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e7948c869797a786939493868c82c984888a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+usage:<br>
+   fang [options]<br>
+<br>
+options:<br>
+   -r   range      i.e. 00803789EE76-00803789EEff<br>
+   -o   filename   Output Scan to Text Logfile<br>
+                   An address can also be manf+nnnnnn, where manf<br>
+                   is listed with the -l option and nnnnnn is the<br>
+                   tail of the address. All addresses must be 12<br>
+                   characters long<br>
+   -t   timeout    The connect timeout, this is 10000 by default<br>
+                   Which is quick and yields results, increase for<br>
+                   reliability<br>
+   -n   num        The number of dongles<br>
+   -d              Show debug information<br>
+   -s              Perform Bluetooth Discovery<br>
+   -l              Show device manufacturer codes<br>
+<br>
+   -h              Display help<br>
+<br>
+The devices are assumed to be hci0 to hci(n) where (n) is the number<br>
+of threads -1, this is currently not configurable but maybe at a<br>
+later date</code><h3> redfang用法示例</h3><p>扫描给定的范围<b><i>（-r 00803789EE76-00803789EEff），并发现</i></b>蓝牙设备<b><i>（-s）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f4869b9b80b49f95989d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fang -r 00803789EE76-00803789EEff -s<br>
+redfang - the bluetooth hunter ver 2.5<br>
+(c)2003 @stake Inc<br>
+author:   Ollie Whitehouse &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cca3a0a0a5a98cadb8bfb8ada7a9e2afa3a1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+enhanced: threads by Simon Halsall &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="bccf92d4ddd0cfddd0d0fcd9ced5cf92cdd5d2d9c8d5cd92dfd3d1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+enhanced: device info discovery by Stephen Kapp &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="31425a5041417150454245505a541f525e5c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+Scanning 138 address(es)<br>
+Address range 00:80:37:89:ee:76 -&gt; 00:80:37:89:ee:ff<br>
+Performing Bluetooth Discovery...</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

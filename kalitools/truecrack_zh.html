@@ -1,0 +1,49 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> TrueCrack包装说明</h2><p style="text-align: justify;"> TrueCrack是蛮力密码破解的TrueCrypt加密卷。它适用于Linux和它的NVIDIA CUDA技术进行了优化。它支持： </p><ul><li> PBKDF2（在PKCS5 V2.0定义），基于密钥导出函数：RIPEMD160，SHA512和惠而浦。 </li><li> XTS块的基础上加密​​算法的硬盘加密密码方式：AES，蛇，TWOFISH。 </li><li>文件托管（容器）和分区/设备托管​​。 </li><li>隐藏卷和备份头。 </li></ul><p> TrueCrack能够根据执行蛮力攻击： </p><ul><li>词典：从字的文件中读取密码。 </li><li>字母：生成给定长度从给定的字母表中的所有密码。 </li></ul><p> TrueCrack工作在GPU和CPU </p><p>资料来源：https://code.google.com/p/truecrack/ <br> <a href="http://code.google.com/p/truecrack/" variation="deepblue" target="blank">TrueCrack首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/truecrack.git;a=summary" variation="deepblue" target="blank">卡利TrueCrack回购</a> </p><ul><li>作者：卢卡·瓦卡罗</li><li>许可：GPLv3的</li></ul><h2>包含在truecrack包工具</h2><h5> truecrack - 猜解密码破解的TrueCrypt的卷</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ee9c81819aae858f8287">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# truecrack --help<br>
+TrueCrack v3.0<br>
+Website: http://code.google.com/p/truecrack<br>
+Contact us: <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d2bbbcb4bda6a0a7b7b1a0b3b1b992b5bfb3bbbefcb1bdbf">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+Bruteforce password cracker for Truecrypt volume. Optimazed with Nvidia Cuda technology.<br>
+Based on TrueCrypt, freely available at http://www.truecrypt.org/<br>
+Copyright (c) 2011 by Luca Vaccaro.<br>
+<br>
+Usage:<br>
+ truecrack -t &lt;truecrypt_file&gt; -k &lt;ripemd160|sha512|whirlpool&gt; -w &lt;wordlist_file&gt; [-b &lt;parallel_block&gt;]<br>
+ truecrack -t &lt;truecrypt_file&gt; -k &lt;ripemd160|sha512|whirlpool&gt; -c &lt;charset&gt; [-s &lt;minlength&gt;] -m &lt;maxlength&gt; [-b &lt;parallel_block&gt;]<br>
+<br>
+Options:<br>
+ -h --help                      Display this information.<br>
+ -t --truecrypt &lt;truecrypt_file&gt;    Truecrypt volume file.<br>
+ -k --key &lt;ripemd160 | sha512 | whirlpool&gt;      Key derivation function (default ripemd160).<br>
+ -b --blocksize &lt;parallel_blocks&gt;       Number of parallel computations (board dependent).<br>
+ -w --wordlist &lt;wordlist_file&gt;      File of words, for Dictionary attack.<br>
+ -c --charset &lt;alphabet&gt;        Alphabet generator, for Alphabet attack.<br>
+ -s --startlength &lt;minlength&gt;       Starting length of passwords, for Alphabet attack (default 1).<br>
+ -m --maxlength &lt;maxlength&gt;     Maximum length of passwords, for Alphabet attack.<br>
+ -r --restore &lt;number&gt;          Restore the computation.<br>
+ -v --verbose                   Show computation messages.<br>
+<br>
+Sample:<br>
+ Dictionary mode: truecrack --truecrypt ./volume --wordlist ./dictionary.txt<br>
+ Charset mode: truecrack --truecrypt ./volume --charset ./dictionary.txt --maxlength 10</code><h3> truecrack用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3a4855554e7a515b5653">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# truecrack -t truecrypt_vol -k ripemd160 -w passes.txt <br>
+TrueCrack v3.0<br>
+Website: http://code.google.com/p/truecrack<br>
+Contact us: <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c9a0a7afa6bdbbbcacaabba8aaa289aea4a8a0a5e7aaa6a4">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+Found password:     "s3cr3t"<br>
+Password length:    "7"<br>
+Total computations: "78"</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

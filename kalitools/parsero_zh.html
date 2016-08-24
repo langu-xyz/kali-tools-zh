@@ -1,0 +1,54 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<p><script id="asciicast-31995" src="https://asciinema.org/a/31995.js" async="" type="text/javascript"></script></p><h2> Parsero包装说明</h2><p style="text-align: justify;"> Parsero是一个免费的脚本，用Python编写的读取Web服务器的robots.txt文件，着眼于不允许的条目。在不允许条目告诉什么托管在Web服务器上的目录或文件不能被索引的搜索引擎。例如，“不允许：/门/登录”意味着，在www.example.com/portal/login~~V它的内容是不允许被像谷歌，必应爬虫索引，雅虎......这就是这样，管理员必须不共享敏感或私人信息的搜索引擎。 </p><p>但有时这些路径输入了不允许项是由用户不使用的搜索引擎，只需访问URL和路径，有时候他们不向任何人可以访问直接访问......因为真的是常见的管理员写大量不允许的，其中一些是可用的，其中有些是没有，你可以使用Parsero以检查每个不允许进入的HTTP状态代码，以便自动检查这些目录都可用。 </p><p>而且，事实上，管理员写一个robots.txt，它并不意味着键入的Dissallow条目的文件或目录不会被冰，谷歌，雅虎...被索引出于这个原因，Parsero能够在冰搜索到的找到没有网络管理员授权收录的内容。 Parsero将检查的HTTP状态代码以相同的方式为每个秉结果。 </p><p>资料来源：https://github.com/behindthefirewalls/Parsero <br> <a href="https://github.com/behindthefirewalls/Parsero" target="blank">Parsero首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/parsero.git;a=tree" target="blank">卡利parsero回购</a> </p><ul><li>作者：哈维尔·涅托</li><li>许可：GPL第二版</li></ul><h3>包含在parsero包工具</h3><h5> parsero - robots.txt的审计工具</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="63110c0c172308020f0a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# parsero -h<br>
+<br>
+____<br>
+| _ \ __ _ _ __ ___ ___ _ __ ___<br>
+| |_) / _` | '__/ __|/ _ \ '__/ _ \<br>
+| __/ (_| | | \__ \ __/ | | (_) |<br>
+|_| \__,_|_| |___/\___|_| \___/<br>
+<br>
+usage: parsero [-h] [-u URL] [-o] [-sb]<br>
+<br>
+optional arguments:<br>
+-h, --help show this help message and exit<br>
+-u URL Type the URL which will be analyzed<br>
+-o Show only the "HTTP 200" status code<br>
+-sb Search in Bing indexed Disallows</code><h3> parsero用法示例</h3><p>搜索结果从一个网站<b><i>（-u www.bing.com）</i></b>使用必应收录不允许<b><i>（-sb）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="790b16160d3912181510">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# parsero -u www.bing.com -sb<br>
+<br>
+____<br>
+| _ \ __ _ _ __ ___ ___ _ __ ___<br>
+| |_) / _` | '__/ __|/ _ \ '__/ _ \<br>
+| __/ (_| | | \__ \ __/ | | (_) |<br>
+|_| \__,_|_| |___/\___|_| \___/<br>
+<br>
+Starting Parsero v0.75 (https://github.com/behindthefirewalls/Parsero) at 06/09/14 12:48:25<br>
+Parsero scan report for www.bing.com<br>
+http://www.bing.com/travel/secure 301 Moved Permanently<br>
+http://www.bing.com/travel/flight/flightSearchAction 301 Moved Permanently<br>
+http://www.bing.com/travel/css 301 Moved Permanently<br>
+http://www.bing.com/results 404 Not Found<br>
+http://www.bing.com/spbasic 404 Not Found<br>
+http://www.bing.com/entities/search 302 Found<br>
+http://www.bing.com/translator/? 200 OK<br>
+http://www.bing.com/Proxy.ashx 404 Not Found<br>
+http://www.bing.com/images/search? 200 OK<br>
+http://www.bing.com/travel/hotel/hotelSearch 301 Moved Permanently<br>
+http://www.bing.com/static/ 404 Not Found<br>
+http://www.bing.com/offers/proxy/dealsserver/api/log 405 Method Not Allowed<br>
+http://www.bing.com/shenghuo 301 Moved Permanently<br>
+http://www.bing.com/widget/render 200 OK</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

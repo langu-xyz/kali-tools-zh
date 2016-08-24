@@ -1,0 +1,54 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Asleap包装说明</h2><p style="text-align: justify;">演示专有思科LEAP网络的一个严重缺陷。由于LEAP使用MS-CHAPv2的一个变体的身份验证交换，很容易加速离线字典攻击。 Asleap也可以攻击点点对点隧道协议（PPTP），以及任何MS-CHAPv2的交流，你可以在命令行上指定的挑战和响应值。 </p><p>资料来源：http://www.willhackforsushi.com/?page_id=41 <br> <a href="http://www.willhackforsushi.com/" variation="deepblue" target="blank">Asleap首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/asleap.git;a=summary" variation="deepblue" target="blank">卡利Asleap回购</a> </p><ul><li>作者：约书亚·赖特</li><li>许可：GPL第二版</li></ul><h3>包含在asleap包工具</h3><h5> asleap - 积极恢复LEAP / PPTP密码</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4f3d20203b0f242e2326">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# asleap -h<br>
+asleap 2.2 - actively recover LEAP/PPTP passwords. &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c5afb2b7aca2adb185ada4b6a7aab7a2eba6aaa8">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+Usage: asleap [options]<br>
+<br>
+    -r  Read from a libpcap file<br>
+    -i  Interface to capture on<br>
+    -f  Dictionary file with NT hashes<br>
+    -n  Index file for NT hashes<br>
+    -s  Skip the check to make sure authentication was successful<br>
+    -h  Output this help information and exit<br>
+    -v  Print verbose information (more -v for more verbosity)<br>
+    -V  Print program version and exit<br>
+    -C  Challenge value in colon-delimited bytes<br>
+    -R  Response value in colon-delimited bytes<br>
+    -W  ASCII dictionary file (special purpose)</code><h3> genkeys - 生成asleap查找文件</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0c7e6363784c676d6065">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# genkeys<br>
+genkeys 2.2 - generates lookup file for asleap. &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d0baa7a2b9b7b8a490b8b1a3b2bfa2b7feb3bfbd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+genkeys: Must supply -r -f and -n<br>
+Usage: genkeys [options]<br>
+<br>
+    -r  Input dictionary file, one word per line<br>
+    -f  Output pass+hash filename<br>
+    -n  Output index filename<br>
+    -h  Last 2 hash bytes to filter with (optional)</code><h3> genkeys用法示例</h3><p>读在一个词典文件<b><i>（-r /usr/share/wordlists/nmap.lst），</i></b>提供输出<b><i>文件</i></b>名<b><i>​​（-f asleap.dat），</i></b>和一个输出索引<b><i>文件</i></b>名<b><i>​​（-n asleap.idx）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b5c7dadac1f5ded4d9dc">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# genkeys -r /usr/share/wordlists/nmap.lst -f asleap.dat -n asleap.idx<br>
+genkeys 2.2 - generates lookup file for asleap. &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6c061b1e050b04182c040d1f0e031e0b420f0301">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+Generating hashes for passwords (this may take some time) ...Done.<br>
+5085 hashes written in 0.29 seconds:  17463.18 hashes/second<br>
+Starting sort (be patient) ...Done.<br>
+Completed sort in 16254 compares.<br>
+Creating index file (almost finished) ...Done.</code><h3> asleap用法示例</h3><p>读捕获文件<b><i>（-r leap.dump），</i></b>提供hashfile文件名<b><i>​​（-f asleap.dat），</i></b>该hashfile <b><i>指数（-n asleap.idx），</i></b>并跳过认证检查<b><i>（-s）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="13617c7c675378727f7a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# asleap -r leap.dump -f asleap.dat -n asleap.idx -s<br>
+asleap 2.2 - actively recover LEAP/PPTP passwords. &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a7cdd0d5cec0cfd3e7cfc6d4c5c8d5c089c4c8ca">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+<br>
+Captured LEAP exchange information:<br>
+    username:          qa_leap<br>
+    challenge:         0786aea0215bc30a<br>
+    response:          7f6a14f11eeb980fda11bf83a142a8744f00683ad5bc5cb6<br>
+    hash bytes:        4a39<br>
+    NT hash:           a1fc198bdbf5833a56fb40cdd1a64a39<br>
+    password:          qaleap</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

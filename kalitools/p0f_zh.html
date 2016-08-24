@@ -1,0 +1,82 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> p0f的包装说明</h2><p style="text-align: justify;"> p0f的是利用复杂的，纯粹被动流量指纹机制的阵列，以确定后面任何附带的TCP / IP通信的播放器（经​​常低至单个正常SYN）不会干扰以任何方式的工具。第3版是原代码库的一个完全重写，结合了显著一些改进网络级的指纹，并推出推理应用级负载（如HTTP）的能力。 <br>一些p0f的的功能包括： </p><ul>
+<li>Highly scalable and extremely fast identification of the operating system and software on both endpoints of a vanilla TCP connection – especially in settings where NMap probes are blocked, too slow, unreliable, or would simply set off alarms.</li>
+<li>Measurement of system uptime and network hookup, distance (including topology behind NAT or packet filters), user language preferences, and so on.</li>
+<li>Automated detection of connection sharing / NAT, load balancing, and application-level proxying setups.</li>
+<li>Detection of clients and servers that forge declarative statements such as X-Mailer or User-Agent.</li>
+<p>The tool can be operated in the foreground or as a daemon, and offers a simple real-time API for third-party components that wish to obtain additional information about the actors they are talking to.</p>
+<p>Common uses for p0f include reconnaissance during penetration tests; routine network monitoring; detection of unauthorized network interconnects in corporate environments; providing signals for abuse-prevention tools; and miscellanous forensics.</p>
+<p>Source: http://lcamtuf.coredump.cx/p0f3/<br>
+<a href="http://lcamtuf.coredump.cx/p0f3/" variation="deepblue" target="blank">p0f Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/p0f.git;a=summary" variation="deepblue" target="blank">Kali p0f Repo</a></p>
+<ul>
+<li>Author: Michal Zalewski</li>
+<li>License: LGPL-2</li>
+</ul>
+<h3>Tools included in the p0f package</h3>
+<h5>p0f – Passive OS fingerprinting tool</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4e3c21213a0e252f2227">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# p0f -h<br>
+--- p0f 3.06b by Michal Zalewski &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="97fbf4f6fae3e2f1d7f4f8e5f2f3e2fae7b9f4ef">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; ---<br>
+<br>
+./p0f: invalid option -- 'h'<br>
+Usage: p0f [ ...options... ] [ 'filter rule' ]<br>
+<br>
+Network interface options:<br>
+<br>
+  -i iface  - listen on the specified network interface<br>
+  -r file   - read offline pcap data from a given file<br>
+  -p        - put the listening interface in promiscuous mode<br>
+  -L        - list all available interfaces<br>
+<br>
+Operating mode and output settings:<br>
+<br>
+  -f file   - read fingerprint database from 'file' (p0f.fp)<br>
+  -o file   - write information to the specified log file<br>
+  -s name   - answer to API queries at a named unix socket<br>
+  -u user   - switch to the specified unprivileged account and chroot<br>
+  -d        - fork into background (requires -o or -s)<br>
+<br>
+Performance-related options:<br>
+<br>
+  -S limit  - limit number of parallel API connections (20)<br>
+  -t c,h    - set connection / host cache age limits (30s,120m)<br>
+  -m c,h    - cap the number of active connections / hosts (1000,10000)<br>
+<br>
+Optional filter expressions (man tcpdump) can be specified in the command<br>
+line to prevent p0f from looking at incidental network traffic.<br>
+<br>
+Problems? You can reach the author at &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c5a9a6a4a8b1b0a385a6aab7a0a1b0a8b5eba6bd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;.</code>
+<h3>p0f Usage Example</h3>
+<p>Use interface eth0 <b><i>(-i eth0)</i></b> in promiscuous mode <b><i>(-p)</i></b>, saving the results to a file <b><i>(-o /tmp/p0f.log)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="50223f3f24103b313c39">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# p0f -i eth0 -p -o /tmp/p0f.log<br>
+--- p0f 3.07b by Michal Zalewski &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="91fdf2f0fce5e4f7d1f2fee3f4f5e4fce1bff2e9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; ---<br>
+<br>
+[+] Closed 1 file descriptor.<br>
+[+] Loaded 320 signatures from 'p0f.fp'.<br>
+[+] Intercepting traffic on interface 'eth0'.<br>
+[+] Default packet filtering configured [+VLAN].<br>
+[+] Log file '/tmp/p0f.log' opened for writing.<br>
+[+] Entered main event loop.<br>
+<br>
+.-[ 192.168.1.15/35834 -&gt; 173.246.39.185/873 (syn) ]-<br>
+|<br>
+| client   = 192.168.1.15/35834<br>
+| os       = Linux 2.2.x-3.x<br>
+| dist     = 0<br>
+| params   = generic<br>
+| raw_sig  = 4:64+0:0:1460:mss*20,10:mss,sok,ts,nop,ws:df,id+:0</code>
+</ul><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

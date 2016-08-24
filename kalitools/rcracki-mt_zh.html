@@ -1,0 +1,56 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> rcracki-MT包装说明</h2><p style="text-align: justify;"> rcracki_mt是rcrack的修改版本，支持混合和索引表。除此之外，还增加了多核心的支持。 </p><p>资料来源：https://www.freerainbowtables.com/en/download/ <br> <a href="http://freerainbowtables.com/" variation="deepblue" target="blank">rcracki-MT首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/rcracki-mt.git;a=summary" variation="deepblue" target="blank">卡利rcracki-MT回购</a> </p><ul><li>作者：马丁Westergaard，詹姆斯·诺比斯，原代码朱Shuanglei </li><li>许可：GPL第二版</li></ul><h3>列入rcracki-MT包工具</h3><h5> rcracki_mt - RainbowCrack（改进，多线程） </h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a1d3ceced5e1cac0cdc8">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rcracki_mt<br>
+RainbowCrack (improved, multi-threaded) - Making a Faster Cryptanalytic Time-Memory Trade-Off<br>
+by Martin Westergaard &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b0ddd1c2c4d9dec7da82808085f0d7ddd1d9dc9ed3dfdd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+multi-threaded and enhanced by neinbrucke<br>
+*nix/64-bit compatibility and co-maintainer - James Nobis &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6f1e1a0a032f1e1a0a031d000b41010a1b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+http://www.freerainbowtables.com/<br>
+All code/binaries are under GPL2 Copyright at a minimum<br>
+original code by Zhu Shuanglei &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="40332835212e272c252900282f342d21292c6e232f2d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+<br>
+usage: rcracki_mt -h hash rainbow_table_pathname<br>
+       rcracki_mt -l hash_list_file rainbow_table_pathname<br>
+       rcracki_mt -f pwdump_file rainbow_table_pathname<br>
+       rcracki_mt -c lst_file rainbow_table_pathname<br>
+<br>
+-h hash:                use raw hash as input<br>
+-l hash_list_file:      use hash list file as input, each hash in a line<br>
+-f pwdump_file:         use pwdump file as input, handles lanmanager hash only<br>
+-c lst_file:            use .lst (cain format) file as input<br>
+-r [-s session_name]:   resume from previous session, optional session name<br>
+rainbow_table_pathname: pathname(s) of the rainbow table(s)<br>
+<br>
+Extra options:    -t [nr] use this amount of threads/cores, default is 1<br>
+                  -o [output_file] write (temporary) results to this file<br>
+                  -s [session_name] write session data with this name<br>
+                  -k keep precalculation on disk<br>
+                  -d run sha1 hashes against mysqlsha1 tables<br>
+                  -m [megabytes] limit memory usage<br>
+                  -v show debug information<br>
+<br>
+example: rcracki_mt -h 5d41402abc4b2a76b9719d911017c592 -t 2 [path]/MD5<br>
+         rcracki_mt -l hash.txt [path_to_specific_table]/*<br>
+         rcracki_mt -f hash.txt -t 4 -o results.txt *.rti</code><h3> rcracki_mt用法示例</h3><p>破解使用4个CPU核心<b><i>（-t 4）</i></b>和指定的彩虹表<b><i>（tables2 / MD5 /）</i></b>密码哈希<b><i>（-h 5d41402abc4b2a76b9719d911017c592）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="41332e2e35012a202d28">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rcracki_mt -h 5d41402abc4b2a76b9719d911017c592 -t 4 tables2/md5/<br>
+Using 4 threads for pre-calculation and false alarm checking...<br>
+Found 440 rainbowtable files...<br>
+<br>
+md5_mixalpha-numeric-space#1-8_0_60000x27443102_distrrtgen[p][i]_109.rti2:<br>
+Chain Position is now 27443102<br>
+192101714 bytes read, disk access time: 1.19 s<br>
+searching for 1 hash...<br>
+cryptanalysis time: 0.26 s</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

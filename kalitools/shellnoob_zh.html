@@ -1,0 +1,50 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> shellnoob包装说明</h2><p style="text-align: justify;">写作的shellcodes一直是超级好玩的，但是有一些部分是非常枯燥而且容易出错。只注重有趣的部分，并使用ShellNoob！ </p><p>产品特点： </p><ul><li>转换不同的格式和信号源之间的shellcode。目前支持的格式：ASM，斌，六角，OBJ，EXE，C，Python和Ruby，漂亮，safeasm，completec，shellstorm。 （以下简称“格式描述”部分中的所有细节。） </li><li>交互式汇编到操作码的转换（反之亦然）模式。这时候，你不能在shellcode的使用特定字节，你要搞清楚，如果一个特定的汇编指令会产生问题是非常有用的。 </li><li>为AT＆T与英特尔的语法支持。检查-Intel开关。 </li><li>对于32位和64位（x86_64的机器上玩的时候）的支持。检查-64开关。 </li><li>解决系统调用号，常量和错误号（现在已经实现了真正的！:-)）。 </li><li>便携且易于配置（只/依赖于gcc作为/ objdump的和Python）。这仅仅是一个自包含的Python脚本，它同时支持Python2.7 +和Python3 +。 </li><li>就地开发：你直接在目标体系结构上运行ShellNoob！ </li><li>内置用于Linux / x86上，Linux的/ x86_64的，Linux的/ ARM，FreeBSD的/ 86，FreeBSD的/ x86_64的支持。 </li><li> “前面加上断点”选项。检查-c开关。 </li><li>从标准输入读取/写入stdout支持（用“ - ”作为文件名） </li><li>超级便宜的调试：检查-to-strace的和-to-GDB的选择！ </li><li>使用ShellNoob作为脚本的Python模块！选中“ShellNoob作为一个库”部分。 </li><li>详细模式显示了低级别步骤的转换：有用的调试/理解/学习！ </li><li>额外的插件：二进制补丁轻松使用-file补丁，-vm补丁，-fork-nopper选择！ （下面的所有详情） </li></ul><p>资料来源：https://github.com/reyammer/shellnoob <br> <a href="https://github.com/reyammer/shellnoob" variation="deepblue" target="blank">ShellNoob首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/shellnoob.git;a=summary" variation="deepblue" target="blank">卡利ShellNoob回购</a> </p><ul><li>作者：Yanick Fratantonio </li><li>许可：MIT </li></ul><h3>包含在shellnoob包工具</h3><h5> shellnoob - shellcode的写作工具包</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2e5c41415a6e454f4247">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# shellnoob -h<br>
+shellnoob.py [--from-INPUT] (input_file_path | - ) [--to-OUTPUT] [output_file_path | - ]<br>
+shellnoob.py -c (prepend a breakpoint (Warning: only few platforms/OS are supported!)<br>
+shellnoob.py --64 (64 bits mode, default: 32 bits)<br>
+shellnoob.py --intel (intel syntax mode, default: att)<br>
+shellnoob.py -q (quite mode)<br>
+shellnoob.py -v (or -vv, -vvv)<br>
+shellnoob.py --to-strace (compiles it &amp; run strace)<br>
+shellnoob.py --to-gdb (compiles it &amp; run gdb &amp; set breakpoint on entrypoint)<br>
+<br>
+Standalone "plugins"<br>
+shellnoob.py -i [--to-asm | --to-opcode ] (for interactive mode)<br>
+shellnoob.py --get-const &lt;const&gt;<br>
+shellnoob.py --get-sysnum &lt;sysnum&gt;<br>
+shellnoob.py --get-strerror &lt;errno&gt;<br>
+shellnoob.py --file-patch &lt;exe_fp&gt; &lt;file_offset&gt; &lt;data&gt; (in hex). (Warning: tested only on x86/x86_64)<br>
+shellnoob.py --vm-patch &lt;exe_fp&gt; &lt;vm_address&gt; &lt;data&gt; (in hex). (Warning: tested only on x86/x86_64)<br>
+shellnoob.py --fork-nopper &lt;exe_fp&gt; (this nops out the calls to fork(). Warning: tested only on x86/x86_64)<br>
+<br>
+"Installation"<br>
+shellnoob.py --install [--force] (this just copies the script in a convinient position)<br>
+shellnoob.py --uninstall [--force]<br>
+<br>
+Supported INPUT format: asm, obj, bin, hex, c, shellstorm<br>
+Supported OUTPUT format: asm, obj, exe, bin, hex, c, completec, python, bash, ruby, pretty, safeasm<br>
+All combinations from INPUT to OUTPUT are supported!<br>
+<br>
+Check out the README file for more info.</code><h3> shellnoob用法示例</h3><p>开始在ASM操作码模式<b><i>（-to-操作码）</i></b>交互模式<b><i>（-i）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="80f2efeff4c0ebe1ece9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# shellnoob -i --to-opcode<br>
+asm_to_opcode selected (type "quit" or ^C to end)<br>
+&gt;&gt; xchg %eax, %esp<br>
+xchg %eax, %esp ~&gt; 94<br>
+&gt;&gt; ret<br>
+ret ~&gt; c3<br>
+&gt;&gt;</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

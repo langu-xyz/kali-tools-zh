@@ -1,0 +1,91 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Binwalk包装说明</h2><p style="text-align: justify;"> Binwalk是用于搜索给定二进制图像的嵌入式文件和可执行代码的工具。具体地说，它被设计用于识别文件和嵌入固件映像的内部码。 Binwalk使用libmagic库，所以它与Unix文件实用程序创建的魔法签名兼容。 Binwalk也包括其中包含改进的签名文件，这些文件中固件映像常见的如压缩/归档文件，固件头，Linux内核，引导程序，文件系统等定制神奇的签名档</p><p> <a href="http://binwalk.org/" variation="deepblue" target="blank">Binwalk首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/binwalk.git;a=summary" variation="deepblue" target="blank">卡利Binwalk回购</a> </p><ul><li>作者：克雷格·Heffner </li><li>许可：MIT </li></ul><h3>包含在binwalk包工具</h3><h5> binwalk - 固件分析工具</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="abd9c4c4dfebc0cac7c2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# binwalk -h<br>
+<br>
+Binwalk v1.2.2-1<br>
+Craig Heffner, http://www.devttys0.com<br>
+<br>
+Usage: binwalk [OPTIONS] [FILE1] [FILE2] [FILE3] ...<br>
+<br>
+Signature Analysis:<br>
+    -B, --binwalk                 Perform a file signature scan (default)<br>
+    -R, --raw-bytes=&lt;string&gt;      Search for a custom signature<br>
+    -A, --opcodes                 Scan for executable code signatures<br>
+    -C, --cast                    Cast file contents as various data types<br>
+    -m, --magic=&lt;file&gt;            Specify an alternate magic file to use<br>
+    -x, --exclude=&lt;filter&gt;        Exclude matches that have &lt;filter&gt; in their description<br>
+    -y, --include=&lt;filter&gt;        Only search for matches that have &lt;filter&gt; in their description<br>
+    -I, --show-invalid            Show results marked as invalid<br>
+    -T, --ignore-time-skew        Do not show results that have timestamps more than 1 year in the future<br>
+    -k, --keep-going              Show all matching results at a given offset, not just the first one<br>
+    -b, --dumb                    Disable smart signature keywords<br>
+<br>
+Strings Analysis:<br>
+    -S, --strings                 Scan for ASCII strings (may be combined with -B, -R, -A, or -E)<br>
+    -s, --strlen=&lt;n&gt;              Set the minimum string length to search for (default: 3)<br>
+<br>
+Entropy Analysis:<br>
+    -E, --entropy                 Plot file entropy (may be combined with -B, -R, -A, or -S)<br>
+    -H, --heuristic               Identify unknown compression/encryption based on entropy heuristics (implies -E)<br>
+    -K, --block=&lt;int&gt;             Set the block size for entropy analysis (default: 1024)<br>
+    -a, --gzip                    Use gzip compression ratios to measure entropy<br>
+    -N, --no-plot                 Do not generate an entropy plot graph<br>
+    -F, --marker=&lt;offset:name&gt;    Add a marker to the entropy plot graph<br>
+    -Q, --no-legend               Omit the legend from the entropy plot graph<br>
+    -J, --save-plot               Save plot as an SVG (implied if multiple files are specified)<br>
+<br>
+Binary Diffing:<br>
+    -W, --diff                    Hexdump / diff the specified files<br>
+    -K, --block=&lt;int&gt;             Number of bytes to display per line (default: 16)<br>
+    -G, --green                   Only show hex dump lines that contain bytes which were the same in all files<br>
+    -i, --red                     Only show hex dump lines that contain bytes which were different in all files<br>
+    -U, --blue                    Only show hex dump lines that contain bytes which were different in some files<br>
+    -w, --terse                   Diff all files, but only display a hex dump of the first file<br>
+<br>
+Extraction Options:<br>
+    -D, --dd=&lt;type:ext[:cmd]&gt;     Extract &lt;type&gt; signatures, give the files an extension of &lt;ext&gt;, and execute &lt;cmd&gt;<br>
+    -e, --extract=[file]          Automatically extract known file types; load rules from file, if specified<br>
+    -M, --matryoshka              Recursively scan extracted files, up to 8 levels deep<br>
+    -r, --rm                      Cleanup extracted files and zero-size files<br>
+    -d, --delay                   Delay file extraction for files with known footers<br>
+<br>
+Plugin Options:<br>
+    -X, --disable-plugin=&lt;name&gt;   Disable a plugin by name<br>
+    -Y, --enable-plugin=&lt;name&gt;    Enable a plugin by name<br>
+    -p, --disable-plugins         Do not load any binwalk plugins<br>
+    -L, --list-plugins            List all user and system plugins by name<br>
+<br>
+General Options:<br>
+    -o, --offset=&lt;int&gt;            Start scan at this file offset<br>
+    -l, --length=&lt;int&gt;            Number of bytes to scan<br>
+    -g, --grep=&lt;text&gt;             Grep results for the specified text<br>
+    -f, --file=&lt;file&gt;             Log results to file<br>
+    -c, --csv                     Log results to file in csv format<br>
+    -O, --skip-unopened           Ignore file open errors and process only the files that can be opened<br>
+    -t, --term                    Format output to fit the terminal window<br>
+    -q, --quiet                   Supress output to stdout<br>
+    -v, --verbose                 Be verbose (specify twice for very verbose)<br>
+    -u, --update                  Update magic signature files<br>
+    -?, --examples                Show example usage<br>
+    -h, --help                    Show help output</code><h3> binwalk用法示例</h3><p>运行文件签名<b><i>扫描（-B）</i></b>在给定的固件文件<b><i>（DD-wrt.v24-13064_VINT_mini.bin）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e2908d8d96a289838e8b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# binwalk -B dd-wrt.v24-13064_VINT_mini.bin <br>
+<br>
+DECIMAL     HEX         DESCRIPTION<br>
+-------------------------------------------------------------------------------------------------------------------<br>
+0           0x0         TRX firmware header, little endian, header size: 28 bytes, image size: 2945024 bytes, CRC32: 0x4D27FDC4 flags: 0x0, version: 1<br>
+28          0x1C        gzip compressed data, from Unix, NULL date: Wed Dec 31 19:00:00 1969, max compression<br>
+2472        0x9A8       LZMA compressed data, properties: 0x6E, dictionary size: 2097152 bytes, uncompressed size: 2084864 bytes<br>
+622592      0x98000     Squashfs filesystem, little endian, DD-WRT signature, version 3.0, size: 2320835 bytes,  547 inodes, blocksize: 131072 bytes, created: Mon Nov  2 07:24:06 2009</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

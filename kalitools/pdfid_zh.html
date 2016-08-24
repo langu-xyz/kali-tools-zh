@@ -1,0 +1,50 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> pdfid包装说明</h2><p style="text-align: justify;">这个工具是不是一个PDF解析器，但它会扫描文件，以寻找某些PDF的关键词，让你打开时，以识别包含（例如）PDF文档的JavaScript或执行一个动作。 PDFiD也将处理名称混淆。 </p><p>我们的想法是先使用该工具来分流PDF文档，然后分析可疑的与我的PDF解析器。 </p><p>一个重要的设计严格的标准对这一计划是简单。解析PDF文档完全需要一个非常复杂的程序，因此它必然包含许多（安全）漏洞。为了避免被剥削的风险，我决定保留这个节目很简单（它比pdf-parser.py更简单）。 </p><p>资料来源：http://blog.didierstevens.com/programs/pdf-tools/ <br> <a href="http://blog.didierstevens.com/programs/pdf-tools/" variation="deepblue" target="blank">pdfid首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/pdfid.git;a=summary" variation="deepblue" target="blank">卡利pdfid回购</a> </p><ul><li>作者：迪迪埃·史蒂文斯</li><li>许可：无</li></ul><h3>包含在pdfid包工具</h3><h5> pdfid - 扫描的PDF文件的某些PDF的关键词</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="42302d2d360229232e2b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pdfid -h<br>
+Usage: pdfid [options] [pdf-file]<br>
+Tool to test a PDF file<br>
+<br>
+Options:<br>
+  --version     show program's version number and exit<br>
+  -h, --help    show this help message and exit<br>
+  -s, --scan    scan the given directory<br>
+  -a, --all     display all the names<br>
+  -e, --extra   display extra data, like dates<br>
+  -f, --force   force the scan of the file, even without proper %PDF header<br>
+  -d, --disarm  disable JavaScript and auto launch</code><h3> pdfid用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="43312c2c370328222f2a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pdfid /usr/share/doc/texmf/fonts/lm/lm-info.pdf<br>
+PDFiD 0.0.12 /usr/share/doc/texmf/fonts/lm/lm-info.pdf<br>
+ PDF Header: %PDF-1.4<br>
+ obj                  526<br>
+ endobj               526<br>
+ stream               151<br>
+ endstream            151<br>
+ xref                   1<br>
+ trailer                1<br>
+ startxref              1<br>
+ /Page                 26<br>
+ /Encrypt               0<br>
+ /ObjStm                0<br>
+ /JS                    0<br>
+ /JavaScript            0<br>
+ /AA                    0<br>
+ /OpenAction            0<br>
+ /AcroForm              0<br>
+ /JBIG2Decode           0<br>
+ /RichMedia             0<br>
+ /Launch                0<br>
+ /EmbeddedFile          0<br>
+ /Colors &gt; 2^24         0</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

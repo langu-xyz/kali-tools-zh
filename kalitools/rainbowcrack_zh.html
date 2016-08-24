@@ -1,0 +1,87 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> RainbowCrack包装说明</h2><p style="text-align: justify;"> RainbowCrack为菲利普·欧克林更快的时间内存权衡技术的一般建议的实施。它破解哈希的彩虹表。 </p><p> RainbowCrack运用时间内存权衡算法破解哈希值。它不同于暴力破解哈希饼干。 </p><p>蛮力破解哈希生成所有可能的明文，并计算相应的散列在飞行中，然后用哈希比较散列被破解。一旦发现匹配，明文被找到。如果所有可能的明文进行测试，并没有发现匹配，找不到明文。对于这种类型的哈希龟裂，所有的中间计算结果被丢弃。 </p><p>的时间 - 存储器权衡散列裂解需要一个预先计算的阶段，当时的选择哈希算法，字符集，明文长度之内的所有的明文/散列对被计算和结果存储在称为彩虹表文件。这是耗费时间做这样的计算。但一旦一次预先计算完成后，存储在表哈希可以裂化以比蛮力裂化更好的性能。 </p><p>资料来源：http://project-rainbowcrack.com/index.htm <br> <a href="http://project-rainbowcrack.com/index.htm" variation="deepblue" target="blank">RainbowCrack首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/rainbowcrack.git;a=summary" variation="deepblue" target="blank">卡利RainbowCrack回购</a> </p><ul><li>作者：RainbowCrack项目</li><li>授权方式：免费</li></ul><h3>包含在rainbowcrack软件包工具</h3><h5> rcrack - 彩虹表的密码破解</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="71031e1e05311a101d18">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rcrack<br>
+RainbowCrack 1.5<br>
+Copyright 2003-2010 RainbowCrack Project. All rights reserved.<br>
+Official Website: http://project-rainbowcrack.com/<br>
+<br>
+usage: rcrack rt_files [rt_files ...] -h hash<br>
+       rcrack rt_files [rt_files ...] -l hash_list_file<br>
+       rcrack rt_files [rt_files ...] -f pwdump_file<br>
+       rcrack rt_files [rt_files ...] -n pwdump_file<br>
+rt_files:               path to the rainbow table(s), wildchar(*, ?) supported<br>
+-h hash:                load single hash<br>
+-l hash_list_file:      load hashes from a file, each hash in a line<br>
+-f pwdump_file:         load lanmanager hashes from pwdump file<br>
+-n pwdump_file:         load ntlm hashes from pwdump file<br>
+<br>
+hash algorithms implemented in alglib0.so:<br>
+    lm, plaintext_len limit: 0 - 7<br>
+    ntlm, plaintext_len limit: 0 - 15<br>
+    md5, plaintext_len limit: 0 - 15<br>
+    sha1, plaintext_len limit: 0 - 20<br>
+    mysqlsha1, plaintext_len limit: 0 - 20<br>
+    halflmchall, plaintext_len limit: 0 - 7<br>
+    ntlmchall, plaintext_len limit: 0 - 15<br>
+    oracle-SYSTEM, plaintext_len limit: 0 - 10<br>
+    md5-half, plaintext_len limit: 0 - 15<br>
+<br>
+example: rcrack *.rt -h 5d41402abc4b2a76b9719d911017c592<br>
+         rcrack *.rt -l hash.txt</code><h3> rt2rtc - 转换彩虹表的。RT到.rtc </h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ee9c81819aae858f8287">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rt2rtc<br>
+RainbowCrack 1.5<br>
+Copyright 2003-2010 RainbowCrack Project. All rights reserved.<br>
+Official Website: http://project-rainbowcrack.com/<br>
+<br>
+usage: rt2rtc rt_files [rt_files ...] start_point_bits end_point_bits [-m chunk_size_in_mb] [-p]<br>
+<br>
+Input rainbow tables must be sorted.<br>
+1 &lt;= start_point_bits &lt;= 64<br>
+1 &lt;= end_point_bits   &lt;= 64<br>
+1 &lt;= chunk_size_in_mb</code><h3> rtc2rt - 从.rtc转换的彩虹表。RT </h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="41332e2e35012a202d28">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtc2rt<br>
+RainbowCrack 1.5<br>
+Copyright 2003-2010 RainbowCrack Project. All rights reserved.<br>
+Official Website: http://project-rainbowcrack.com/<br>
+<br>
+usage: rtc2rt rtc_files [rtc_files ...]</code><h3> rtgen - 生成彩虹表</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="87f5e8e8f3c7ece6ebee">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtgen<br>
+RainbowCrack 1.5<br>
+Copyright 2003-2010 RainbowCrack Project. All rights reserved.<br>
+Official Website: http://project-rainbowcrack.com/<br>
+<br>
+usage: rtgen hash_algorithm charset plaintext_len_min plaintext_len_max table_index chain_len chain_num part_index<br>
+       rtgen hash_algorithm charset plaintext_len_min plaintext_len_max table_index -bench<br>
+<br>
+hash algorithms implemented in alglib0.so:<br>
+    lm, plaintext_len limit: 0 - 7<br>
+    ntlm, plaintext_len limit: 0 - 15<br>
+    md5, plaintext_len limit: 0 - 15<br>
+    sha1, plaintext_len limit: 0 - 20<br>
+    mysqlsha1, plaintext_len limit: 0 - 20<br>
+    halflmchall, plaintext_len limit: 0 - 7<br>
+    ntlmchall, plaintext_len limit: 0 - 15<br>
+    oracle-SYSTEM, plaintext_len limit: 0 - 10<br>
+    md5-half, plaintext_len limit: 0 - 15<br>
+<br>
+example: rtgen md5 loweralpha 1 7 0 1000 1000 0<br>
+         rtgen md5 loweralpha 1 7 0 -bench</code><h3> rtsort - 排序彩虹表</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="99ebf6f6edd9f2f8f5f0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtsort<br>
+RainbowCrack 1.5<br>
+Copyright 2003-2010 RainbowCrack Project. All rights reserved.<br>
+Official Website: http://project-rainbowcrack.com/<br>
+<br>
+usage: rtsort rt_files [rt_files ...]<br>
+       rtsort rt_files [rt_files ...] -s<br>
+<br>
+Use -s switch to sort rainbow tables by start point, otherwise rainbow tables are sorted by end point.</code><h3> rcrack用法示例</h3><h100>五</h100><h3> rt2rtc用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7b0914140f3b101a1712">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code><h3> rtc2rt用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b8cad7d7ccf8d3d9d4d1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code><h3> rtgen用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="394b56564d7952585550">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code><h3> rtsort用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a2d0cdcdd6e2c9c3cecb">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

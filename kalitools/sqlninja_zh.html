@@ -1,0 +1,50 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Sqlninja包装说明</h2><p style="text-align: justify;">从SQL注入在Microsoft SQL Server花式将在DB一个完整的GUI访问？采取了一些新的SQL注入的技巧，增加一些远程射击的注册表来禁用数据执行保护，一点点的Perl自动生成一个调试脚本混合，把所有这一切在摇床与Metasploit的包装，摇匀你有sqlninja的攻击模块只有一个！ </p><p> Sqlninja是有针对性的利用SQL注入漏洞上使用Microsoft SQL Server作为其后端的Web应用程序的工具。 </p><p>它的主要目标是为弱势群体数据库服务器上的远程访问，即使在非常恶劣的环境。它应该被用来通过渗透测试，以帮助和自动化接管数据库服务器时，SQL注入漏洞被发现的过程。 </p><p>资料来源：http://sqlninja.sourceforge.net/ <br> <a href="http://sqlninja.sourceforge.net/" variation="deepblue" target="blank">Sqlninja首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/sqlninja.git;a=summary" variation="deepblue" target="blank">卡利Sqlninja回购</a> </p><ul><li>作者：icesurfer </li><li>许可：GPLv3的</li></ul><h3>包含在sqlninja包工具</h3><h5> sqlninja - SQL服务器注入和收购工具</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="51233e3e25113a303d38">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sqlninja -h<br>
+Unknown option: h<br>
+Usage: /usr/bin/sqlninja<br>
+    -m &lt;mode&gt; : Required. Available modes are:<br>
+        t/test - test whether the injection is working<br>
+        f/fingerprint - fingerprint user, xp_cmdshell and more<br>
+        b/bruteforce - bruteforce sa account<br>
+        e/escalation - add user to sysadmin server role<br>
+        x/resurrectxp - try to recreate xp_cmdshell<br>
+        u/upload - upload a .scr file<br>
+        s/dirshell - start a direct shell<br>
+        k/backscan - look for an open outbound port<br>
+        r/revshell - start a reverse shell<br>
+        d/dnstunnel - attempt a dns tunneled shell<br>
+        i/icmpshell - start a reverse ICMP shell<br>
+        c/sqlcmd - issue a 'blind' OS command<br>
+        m/metasploit - wrapper to Metasploit stagers<br>
+    -f &lt;file&gt; : configuration file (default: sqlninja.conf)<br>
+    -p &lt;password&gt; : sa password<br>
+    -w &lt;wordlist&gt; : wordlist to use in bruteforce mode (dictionary method<br>
+                    only)<br>
+    -g : generate debug script and exit (only valid in upload mode)<br>
+    -v : verbose output<br>
+    -d &lt;mode&gt; : activate debug<br>
+        1 - print each injected command<br>
+        2 - print each raw HTTP request<br>
+        3 - print each raw HTTP response<br>
+        all - all of the above<br>
+    ...see sqlninja-howto.html for details</code><h3> sqlninja用法示例</h3><p>连接到测试模式<b><i>（-mt）</i></b>的指定配置文件<b><i>（-f /root/sqlninja.conf）</i></b>目标： </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="aedcc1c1daeec5cfc2c7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sqlninja -m t -f /root/sqlninja.conf <br>
+Sqlninja rel. 0.2.6-r1<br>
+Copyright (C) 2006-2011 icesurfer &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0270323276426c6d70766a67706c646d7076706771712c6c6776">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+[+] Parsing /root/sqlninja.conf...<br>
+[+] Target is: 192.168.1.51:80<br>
+[+] Trying to inject a 'waitfor delay'....</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

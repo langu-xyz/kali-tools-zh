@@ -1,0 +1,53 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Xplico包装说明</h2><p style="text-align: justify;"> Xplico的目标是从应用程序的数据包含了一个互联网流量采集提取物。例如，从PCAP文件Xplico提取每个电子邮件（POP，IMAP和SMTP协议），所有的HTTP内容，每个VoIP呼叫（SIP，MGCP，H323），FTP，TFTP，等等。 Xplico不是网络协议分析仪。 </p><p> <a href="http://www.xplico.org" variation="deepblue" target="blank">Xplico首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/xplico.git;a=summary" variation="deepblue" target="blank">卡利Xplico回购</a> </p><ul><li>作者：赞布罗塔哥斯达黎加，安德烈·德切斯基</li><li>许可：GPL第二版</li></ul><h3>包含在xplico包工具</h3><h5> xplico - 网络取证分析工具（NFAT） </h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="25574a4a51654e44494c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# xplico -h<br>
+xplico v1.0.1<br>
+Internet Traffic Decoder (NFAT).<br>
+See http://www.xplico.org for more information.<br>
+<br>
+Copyright 2007-2012 Gianluca Costa &amp; Andrea de Franceschi and contributors.<br>
+This is free software; see the source for copying conditions. There is NO<br>
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br>
+<br>
+This product includes GeoLite data created by MaxMind, available from http://www.maxmind.com/.<br>
+<br>
+usage: xplico [-v] [-c &lt;config_file&gt;] [-h] [-g] [-l] [-i &lt;prot&gt;] -m &lt;capute_module&gt;<br>
+    -v version<br>
+    -c config file<br>
+    -h this help<br>
+    -i info of protocol 'prot'<br>
+    -g display graph-tree of protocols<br>
+    -l print all log in the screen<br>
+    -m capture type module<br>
+    NOTE: parameters MUST respect this order!</code><h3> xplico用法示例</h3><p>使用rltm模块<b><i>（-m rltm）</i></b>和分析eth0接口<b><i>（-i eth0的）</i></b>交通： </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0e7c61617a4e656f6267">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# xplico -m rltm -i eth0<br>
+xplico v1.0.1<br>
+Internet Traffic Decoder (NFAT).<br>
+See http://www.xplico.org for more information.<br>
+<br>
+Copyright 2007-2012 Gianluca Costa &amp; Andrea de Franceschi and contributors.<br>
+This is free software; see the source for copying conditions. There is NO<br>
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br>
+<br>
+This product includes GeoLite data created by MaxMind, available from http://www.maxmind.com/.<br>
+Configuration file (/opt/xplico/cfg/xplico_cli.cfg) found!<br>
+GeoLiteCity.dat found!<br>
+pcapf: running: 0/0, subflow:0/0, tot pkt:1<br>
+pol: running: 0/0, subflow:0/0, tot pkt:0<br>
+eth: running: 0/0, subflow:0/0, tot pkt:1<br>
+pppoe: running: 0/0, subflow:0/0, tot pkt:0<br>
+ppp: running: 0/0, subflow:0/0, tot pkt:0<br>
+ip: running: 0/0, subflow:0/0, tot pkt:0</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

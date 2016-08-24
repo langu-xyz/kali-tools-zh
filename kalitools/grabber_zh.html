@@ -1,0 +1,42 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2>抓取包装说明</h2><p style="text-align: justify;">采集卡是一个Web应用程序扫描仪。基本上，它检测到你的网站一些漏洞。采集卡是简单的，不是快，但移植，真正适应。该软件是专门为扫描小网站，如交友，论坛等，绝对不是大的应用程序：它会花很长的时间，充斥网络。 </p><p>产品特点： </p><ul><li>跨站脚本</li><li> SQL注入（也有一个特殊的盲SQL注入模块） </li><li>文件包含</li><li>备份文件检查</li><li>简单的Ajax检查（每解析JavaScript和获取URL，并尝试获得参数） </li><li>使用PHP-SAT混合分析/水晶球测试PHP应用程序</li><li> JavaScript源代码分析：评估的JavaScript使用JavaScript皮棉的质量/正确性</li><li>生成一个文件[SESSION_ID，时间（t）]为下统计分析。 </li></ul><p>资料来源：http://rgaucher.info/beta/grabber/ <br> <a href="http://rgaucher.info/beta/grabber/" variation="deepblue" target="blank">抓取首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/grabber.git;a=summary" variation="deepblue" target="blank">卡利抓取回购</a> </p><ul><li>作者：罗曼·戈谢</li><li>许可：BSD </li></ul><h3>包含在采集包工具</h3><h5>采集卡 - Web应用程序漏洞扫描器</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="33415c5c477358525f5a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# grabber -h<br>
+Usage: grabber [options]<br>
+<br>
+Options:<br>
+  -h, --help            show this help message and exit<br>
+  -u ARCHIVES_URL, --url=ARCHIVES_URL<br>
+                        Adress to investigate<br>
+  -s, --sql             Look for the SQL Injection<br>
+  -x, --xss             Perform XSS attacks<br>
+  -b, --bsql            Look for blind SQL Injection<br>
+  -z, --backup          Look for backup files<br>
+  -d SPIDER, --spider=SPIDER<br>
+                        Look for every files<br>
+  -i, --include         Perform File Insertion attacks<br>
+  -j, --javascript      Test the javascript code ?<br>
+  -c, --crystal         Simple crystal ball test.<br>
+  -e, --session         Session evaluations</code><h3>采集用法示例</h3><p>蜘蛛Web应用程序为<b><i>1（-spider 1）</i></b>的深度，并尝试<b><i>SQL（-sql）</i></b>和跨站脚本<b><i>（-Xss）</i></b>在给定的URL <b><i>攻击（-url http://192.168.1.224）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6e1c01011a2e050f0207">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# grabber --spider 1 --sql --xss --url http://192.168.1.224<br>
+Start scanning... http://192.168.1.224<br>
+runSpiderScan @  http://192.168.1.224  |   # 1<br>
+Start investigation...<br>
+Method = GET  http://192.168.1.224<br>
+[Cookie]    0   :   &lt;Cookie PHPSESSID=2742cljd8u6aclfktf1sh284u7 for 192.168.1.224/&gt;<br>
+[Cookie]    1   :   &lt;Cookie security=high for 192.168.1.224/&gt;<br>
+Method = GET  http://192.168.1.224<br>
+[Cookie]    0   :   &lt;Cookie PHPSESSID=2742cljd8u6aclfktf1sh284u7 for 192.168.1.224/&gt;<br>
+[Cookie]    1   :   &lt;Cookie security=high for 192.168.1.224/&gt;</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,75 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Wfuzz包装说明</h2><p style="text-align: justify;"> Wfuzz是专为穷举Web应用程序的工具，它可用于查找未连接的（目录，小服务程序，脚本等）的资源，暴力破解GET和用于检查不同类型的注射剂（SQL，XSS，LDAP等）POST参数，暴力破解表单参数（用户/密码），模糊测试等。 </p><p>一些特点： </p><ul><li>多点喷射点有多个词典功能</li><li>递归（在做目录暴力破解） </li><li>邮政，页眉和验证数据暴力破解</li><li>输出到HTML </li><li>彩色输出</li><li>通过隐藏返回代码，字编号，行号，正则表达式的结果</li><li>饼干模糊</li><li>多线程</li><li>代理支持</li><li>袜子支持</li><li>请求之间的时间延迟</li><li>身份验证支持（NTLM，基本） </li><li>所有参数暴力破解（POST和GET） </li><li>每个有效负载多个编码器</li><li>有效载荷组合迭代器</li><li>基线要求（过滤对结果） </li><li>蛮力HTTP方法</li><li>多重代理支持（通过不同的代理每个请求） </li><li>头颅平扫（更快的资源发现） </li><li>专为已知的应用程序（的Weblogic，IPLANET，Tomcat的，多米诺，是Oracle 9i，晕影，ColdFusion和字典更多</li></ul><p>资料来源：http://www.edge-security.com/wfuzz.php <br> <a href="http://www.edge-security.com/wfuzz.php" variation="deepblue" target="blank">Wfuzz首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/wfuzz.git;a=summary" variation="deepblue" target="blank">卡利Wfuzz回购</a> </p><ul><li>作者：基督教Martorella，卡洛斯·德尔大椎，泽维尔·门德斯又名哈维</li><li>许可：GPL第二版</li></ul><h3>包含在wfuzz包工具</h3><h5> wfuzz - Web应用程序bruteforcer的</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a1d3ceced5e1cac0cdc8">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wfuzz<br>
+<br>
+********************************************************<br>
+* Wfuzz  2.0 - The Web Bruteforcer                     *<br>
+********************************************************<br>
+<br>
+Usage: /usr/bin/wfuzz [options] &lt;url&gt;<br>
+<br>
+Options:<br>
+-c              : Output with colors<br>
+-v              : Verbose information<br>
+-o printer          : Output format by stderr<br>
+<br>
+-p addr             : use Proxy (ip:port or ip:port-ip:port-ip:port)<br>
+-x type             : use SOCK proxy (SOCKS4,SOCKS5)<br>
+-t N                : Specify the number of threads (20 default)<br>
+-s N                : Specify time delay between requests (0 default)<br>
+<br>
+-e &lt;type&gt;           : List of available encodings/payloads/iterators/printers<br>
+-R depth            : Recursive path discovery<br>
+-I              : Use HTTP HEAD instead of GET method (No HTML body responses).<br>
+--follow            : Follow redirections<br>
+<br>
+-m iterator         : Specify iterator (product by default)<br>
+-z payload          : Specify payload (type,parameters,encoding)<br>
+-V alltype          : All parameters bruteforcing (allvars and allpost). No need for FUZZ keyword.<br>
+<br>
+-X              : Payload within HTTP methods (ex: "FUZZ HTTP/1.0"). No need for FUZZ keyword.<br>
+-b cookie           : Specify a cookie for the requests<br>
+-d postdata             : Use post data (ex: "id=FUZZ&amp;catalogue=1")<br>
+-H headers              : Use headers (ex:"Host:www.mysite.com,Cookie:id=1312321&amp;user=FUZZ")<br>
+<br>
+--basic/ntlm/digest auth    : in format "user:pass" or "FUZZ:FUZZ" or "domain\FUZ2Z:FUZZ"<br>
+<br>
+--hc/hl/hw/hh N[,N]+        : Hide resposnes with the specified[s] code/lines/words/chars (Use BBB for taking values from baseline)<br>
+--hs regex          : Hide responses with the specified regex within the response<br>
+<br>
+Keyword: FUZZ,FUZ2Z  wherever you put these words wfuzz will replace them by the payload selected.<br>
+<br>
+Example: - wfuzz.py -c -z file,commons.txt --hc 404 -o html http://www.site.com/FUZZ 2&gt; res.html<br>
+     - wfuzz.py -c -z file,users.txt -z file,pass.txt --hc 404 http://www.site.com/log.asp?user=FUZZ&amp;pass=FUZ2Z<br>
+     - wfuzz.py -c -z range,1-10 --hc=BBB http://www.site.com/FUZZ{something}<br>
+<br>
+       More examples in the README.</code><h3> wfuzz用法示例</h3><p>使用彩色输出<b><i>（-c），</i></b>一个词表作为有效载荷<b><i>（-z文件是/ usr /共享/ wfuzz /单词表/一般/ common.txt），</i></b>并隐藏404消息<b><i>（-HC 404），以</i></b>模糊测试给定的<b><i>URL（HTTP ：//192.168.1.202/FUZZ）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="13617c7c675378727f7a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/common.txt --hc 404 http://192.168.1.202/FUZZ<br>
+<br>
+********************************************************<br>
+* Wfuzz  2.0 - The Web Bruteforcer                     *<br>
+********************************************************<br>
+<br>
+Target: http://192.168.1.202/FUZZ<br>
+Payload type: file,/usr/share/wfuzz/wordlist/general/common.txt<br>
+<br>
+Total requests: 950<br>
+==================================================================<br>
+ID  Response   Lines      Word         Chars          Request    <br>
+==================================================================<br>
+<br>
+00429:  C=200      4 L        25 W      177 Ch    " - index"<br>
+00466:  C=301      9 L        28 W      319 Ch    " - javascript"</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

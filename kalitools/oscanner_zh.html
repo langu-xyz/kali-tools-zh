@@ -1,0 +1,29 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Oscanner包装说明</h2><p style="text-align: justify;"> Oscanner是用Java开发的Oracle评估框架。它有一个基于插件的架构，并配备了一对夫妇的插件，目前做的： </p><ul><li>希德枚举</li><li>密码测试（普通和字典） </li><li>枚举的Oracle版本</li><li>枚举账号角色</li><li>枚举帐号权限</li><li>枚举账号哈希</li><li>枚举审计信息</li><li>枚举密码策略</li><li>枚举数据库链接</li></ul><p>结果列在一个图形的java树。 </p><p>资料来源：http://www.cqure.net/wp/tool​​s/database/oscanner/ <br> <a href="http://www.cqure.net/wp/tools/database/oscanner/" variation="deepblue" target="blank">Oscanner首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/oscanner.git;a=summary" variation="deepblue" target="blank">卡利Oscanner回购</a> </p><ul><li>作者：帕特里克·卡尔松</li><li>许可：GPL第二版</li></ul><h3>包含在oscanner包工具</h3><h5> oscanner - 甲骨文评估框架</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a1d3ceced5e1cac0cdc8">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# oscanner<br>
+    Oracle Scanner 1.0.6 by <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f5859481879c9eb59684808790db9b9081">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+    --------------------------------------<br>
+    OracleScanner -s &lt;ip&gt; -r &lt;repfile&gt; [options]<br>
+        -s  &lt;servername&gt;<br>
+        -f  &lt;serverlist&gt;<br>
+        -P  &lt;portnr&gt;<br>
+        -v  be verbose</code><h3> oscanner用法示例</h3><p>扫描目标服务器<b><i>（-s 192.168.1.15）</i></b>上的端口<b><i>1040（-P 1040）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c4b6ababb084afa5a8ad">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# oscanner -s 192.168.1.15 -P 1040<br>
+Oracle Scanner 1.0.6 by <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="85f5e4f1f7eceec5e6f4f0f7e0abebe0f1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+--------------------------------------------------<br>
+[-] Checking host 192.168.1.15<br>
+[x] Failed to enumerate sids from host<br>
+[-] Loading services/sids from service file</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

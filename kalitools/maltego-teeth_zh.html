@@ -1,0 +1,53 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Maltego牙包装说明</h2><p style="text-align: justify;"> Maltego是开发提供一个明确的威胁，图片，一个组织拥有和经营环境的独特平台。 Maltego的独特优势是展示存在目前基础结构的范围内的复杂性和单点故障的严重程度以及信任关系。 </p><p>独特的角度出发，Maltego提供了网络和基于资源实体是信息的聚集张贴在互联网上 - 无论是准备在你的网络边缘或副校长对他的国际目前下落路由器的当前配置访问，Maltego可以定位，汇总和可视化信息。 </p><p> Maltego提供了前所未有的信息的用户。信息就是杠杆。信息就是力量。信息是Maltego。 </p><p>这是什么Maltego办？ </p><p> Maltego是可以用于确定之间的关系和真实世界的链接的程序： </p><ul><li>人</li><li>人组（社交网络） </li><li>公司</li><li>机构</li><li>网站</li><li>互联网基础设施，如： </li><li>域</li><li> DNS名称</li><li> Netblocks </li><li> IP地址</li><li>短语</li><li>所属机构</li><li>文档和文件</li><li>这些实体使用开源智能链接。 </li><li> Maltego是方便，快捷的安装 - 它使用Java，所以它可以运行在Windows，Mac和Linux。 </li><li> Maltego为您提供了一个图形化的界面，让看到这些关系快速，准确地 - 从而可以查看隐藏的连接。 </li><li>使用图形用户界面（GUI），你可以很容易地看到关系 - 即使是三，四分离度了。 </li><li> Maltego是独一无二的，因为它采用了功能强大的，灵活的框架，使定制成为可能。因此，Maltego可以适应你自己的，独特的要求。 </li></ul><h3>有什么可以Maltego为我做？ </h3><ul><li> Maltego可用于所有安全有关的工作信息收集阶段。这将节省您的时间，可以让你的工作更准确，更聪明。 </li><li> Maltego通过视觉展示搜索过的项目之间的相互关联的链接有助于你在你的思维过程。 </li><li> Maltego为您提供了更强大的搜索，让你更聪明的结果。 </li><li>如果获得“隐藏”的信息，决定了你的成功，Maltego可以帮助您发现它。 </li></ul><p>资料来源：http://paterva.com/web6/products/maltego.php <br> <a href="http://paterva.com" variation="deepblue" target="blank">Maltego首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/maltego-teeth.git;a=summary" variation="deepblue" target="blank">卡利Maltego牙齿回购</a> </p><ul><li>作者：Paterva </li><li>许可：商业</li></ul><h3> Maltego牙齿自述</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="53213c3c271338323f3a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cat /opt/Teeth/README.txt <br>
+NB NB: This runs on Kali Linux<br>
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-<br>
+#Make directory /opt/Teeth/<br>
+#Copy tgz to /opt/Teeth/<br>
+#Untar<br>
+<br>
+Load the config file called /opt/Teeth/etc/Maltego_config.mtz file into Maltego. <br>
+This is painless:<br>
+1) Open Maltego Tungsten (or Radium)<br>
+2) Click top left globe/sphere (Application button) <br>
+3) Import -&gt; Import configuration, choose /opt/Teeth/etc/Maltego_config.mtz<br>
+<br>
+Notes<br>
+-----<br>
+Config file is in /opt/Teeth/etc/TeethConfig.txt<br>
+Everything can be set in the config file.<br>
+<br>
+Log file is /var/log/Teeth.log, tail -f it while you running transforms for<br>
+real time logs of what's happening.<br>
+<br>
+You can set DEBUG/INFO. DEBUG is useful for seeing progress - set in<br>
+/opt/Teeth/units/TeethLib.py line 26<br>
+<br>
+Look in cache/ directory. Here you find caches of:<br>
+1) Nmap results<br>
+2) Mirrors<br>
+3) SQLMAP results<br>
+<br>
+You need to remove cache files by hand if you no longer want them.<br>
+You can run housekeep/clear_cache.sh but it removes EVERYTHING.<br>
+<br>
+The WP brute transform uses Metasploit.Start Metasploit server so:<br>
+    msfconsole -r /opt/Teeth/static/Teeth-MSF.rc <br>
+It takes a while to start, so be patient.<br>
+<br>
+In /housekeep is killswitch.sh - it's the same as killall python.</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

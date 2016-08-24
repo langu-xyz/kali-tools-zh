@@ -1,0 +1,58 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> sfuzz包装说明</h2><p style="text-align: justify;">简单的模糊正是这听起来像 - 一个简单的模糊器。不要误以为简单，缺乏绒毛能力。这种模糊器有两种操作模式的网络，输出模式开发的命令行脚本起毛，以及采取模糊串的文字和建设的字符串从序列。 </p><p>简单的模糊是建立能够满足这种需要 - 需要一个快速配置的黑盒测试工具，它不要求C的内部运作了如指掌，或者需要专门的软件钻机。这样做的目的是只提供了一个简单的界面，清晰的输入/输出，和可重用性。 </p><p>产品特点： </p><ul><li>简单的脚本语言，用于创建测试用例</li><li>对于重复字符串以及固定字符串（“序列”与“文字”）的支持</li><li>在测试用例变量（例如：串用不同的字符串替换） </li><li> TCP和UDP有效载荷运输（ICMP支持TBD） </li><li>二进制替代的支持（参见basic.a11了解更多信息） </li><li>插件的支持（新！）看到plugin.txt以获取更多信息。 </li><li>前一个数据包的内容纳入</li></ul><p>资料来源：https://github.com/orgcandman/Simple-Fuzzer <br> <a href="http://aconole.brad-x.com/programs/sfuzz.html" variation="deepblue" target="blank">sfuzz首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/sfuzz.git;a=summary" variation="deepblue" target="blank">卡利sfuzz回购</a> </p><ul><li>作者：亚伦Conole </li><li>许可：其它</li></ul><h3>包含在sfuzz包工具</h3><h5> sfuzz - 黑盒测试公用事业</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="72001d1d063219131e1b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sfuzz -h<br>
+        Simple Fuzzer<br>
+By:  Aaron Conole<br>
+version: 0.7.0<br>
+url:     http://aconole.brad-x.com/programs/sfuzz.html<br>
+EMAIL:  <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d81a78b9a8bbb7b6b7b4bd98a1b9b0b7b7f6bbb7b5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+Build-prefix: /usr<br>
+    -h   This message.<br>
+    -V   Version information.<br>
+<br>
+networking / output:<br>
+    -v   Verbose output<br>
+    -q   Silent output mode (generally for CLI fuzzing)<br>
+    -X   prints the output in hex<br>
+<br>
+    -b   Begin fuzzing at the test specified.<br>
+    -e   End testing on failure.<br>
+    -t   Wait time for reading the socket<br>
+    -S   Remote host<br>
+    -p   Port<br>
+    -T|-U|-O TCP|UDP|Output mode<br>
+    -R   Refrain from closing connections (ie: "leak" them)<br>
+<br>
+    -f   Config File<br>
+    -L   Log file<br>
+    -n   Create a new logfile after each fuzz<br>
+    -r   Trim the tailing newline<br>
+    -D   Define a symbol and value (X=y).<br>
+    -l   Only perform literal fuzzing<br>
+    -s   Only perform sequence fuzzing</code><h3> sfuzz用法示例</h3><p>模糊测试端口<b><i>10443（-p 10443）</i></b>带有TCP输出模式<b><i>（-T）</i></b>目标服务器<b><i>（-S 192.168.1.1），使用</i></b>基本的HTTP配置<b><i>（-f /usr/share/sfuzz/sfuzz-sample/basic.http ）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="aedcc1c1daeec5cfc2c7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sfuzz -S 192.168.1.1 -p 10443 -T -f /usr/share/sfuzz/sfuzz-sample/basic.http<br>
+[12:53:47] dumping options:<br>
+    filename: &lt;/usr/share/sfuzz/sfuzz-sample/basic.http&gt;<br>
+    state:    &lt;8&gt;<br>
+    lineno:   &lt;56&gt;<br>
+    literals:  [74]<br>
+    sequences: [34]<br>
+    symbols: [0]<br>
+    req_del:  &lt;200&gt;<br>
+    mseq_len: &lt;10024&gt;<br>
+    plugin: &lt;none&gt;<br>
+    s_syms: &lt;0&gt;<br>
+    literal[1] = [AREALLYBADSTRING]</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

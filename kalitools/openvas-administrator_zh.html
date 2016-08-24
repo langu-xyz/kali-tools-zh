@@ -1,0 +1,45 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> openvas管理员包装说明</h2><p style="text-align: justify;">这是开放式漏洞评估系统（OpenVAS）管理员模块。它的目的是简化都在本地安装，以及一个远程系统上的OpenVAS服务器的配置和管理。 </p><p> <a href="http://www.openvas.org/" variation="deepblue" target="blank">openvas管理员首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/openvas-administrator.git;a=summary" variation="deepblue" target="blank">卡利openvas管理员回购</a> </p><ul><li>作者：OpenVAS </li><li>许可：GPL第二版</li></ul><h3>列入openvas管理员包工具</h3><h5> openvasad - 管理的开放式漏洞评估系统</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cdbfa2a2b98da6aca1a4">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvasad -h<br>
+Usage:<br>
+  openvasad [OPTION...] - Administrator of the Open Vulnerability Assessment System<br>
+<br>
+Help Options:<br>
+  -h, --help                              Show help options<br>
+<br>
+Application Options:<br>
+  -V, --version                           Print version.<br>
+  -v, --verbose                           Verbose messages.<br>
+  -f, --foreground                        Run in foreground.<br>
+  -a, --listen=&lt;address&gt;                  Listen on &lt;address&gt;.<br>
+  -p, --port=&lt;number&gt;                     Use port number &lt;number&gt;.<br>
+  -c, --command=&lt;command&gt;                 OAP command (e.g. add_user, remove_user, list_users)<br>
+  -u, --username=&lt;name&gt;                   Username when creating, editing or removing a user<br>
+  -w, --password=&lt;password&gt;               Password for the new user<br>
+  -r, --role=&lt;role&gt;                       Role when creating or modifying a user (User, Admin or Observer)<br>
+  -t, --account=&lt;username:password&gt;       Username and password for new user (overrides -u and -w)<br>
+  --rules-file=&lt;rules-file&gt;               File containing the rules for the user<br>
+  --users-dir=&lt;users-dir&gt;                 Directory containing the OpenVAS user data (default: /var/lib/openvas/users/)<br>
+  --scanner-config-file=&lt;config-file&gt;     File containing the OpenVAS-Scanner configuration (default: /etc/openvas/openvassd.conf)<br>
+  -s, --sync-script=&lt;sync-script&gt;         Script to use for NVT feed synchronization<br>
+  -A, --scap-script=&lt;scap-script&gt;         Script to use for SCAP feed synchronization<br>
+  -C, --cert-script=&lt;cert-script&gt;         Script to use for CERT feed synchronization<br>
+  -F, --feed-version                      Print version of the installed NVT feed.<br>
+  -S, --sync-feed                         Synchronize the installed NVT feed.<br>
+  -T, --print-sync-status                 Print the synchronization status of the installed NVT feed.<br>
+  --enable-modify-settings                Enable the OAP MODIFY_SETTINGS command.<br>
+  --disable-password-policy               Do not restrict passwords to the policy.</code><h3> openvas管理员用法示例</h3><p>监听端口9393 <b><i>本地</i></b>主机<b><i>（-listen = <i><b>127.0.0.1）（-port</b></i></i></b> <b><i>= 9393）使用指定的</i></b>扫描<b><i>配置</i></b>文件<b><i>（-scanner-配置文件=的/ etc / openvas / openvassd.conf：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3f4d50504b7f545e5356">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvasad --listen=127.0.0.1 --port=9393 --scanner-config-file=/etc/openvas/openvassd.conf</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

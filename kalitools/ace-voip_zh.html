@@ -1,0 +1,52 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> ACE-VoIP的包装说明</h2><p style="text-align: justify;"> ACE（自动企业枚举器）是一个简单而强大的VoIP公司目录枚举工具，它模仿为了下载一个给定的电话可以显示它的屏幕界面名和扩展名项的IP电话的行为。以同样的方式的VoIP硬电话的“公司目录”功能，用户可以通过名称，通过他们的VoIP手机轻松拨打，ACE是发展成为由“网络电话霍珀”天生一个研究思路自动化，可以在有针对性的对名字的VoIP攻击企业目录。其概念是，在未来，攻击将进行对基于它们的名称的用户的，而不是针对VoIP流量对随机RTP音频流或IP地址。 ACE的工作原理是使用DHCP，TFTP和HTTP以下载VoIP的企业目录。然后将其输出的目录的文本文件，它可以用作输入到其他VoIP评估工具。 </p><p>资料来源：http://ucsniff.sourceforge.net/ace.html <br> <a href="http://ucsniff.sourceforge.net/ace.html" target="blank">ACE-VoIP的首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/ace-voip.git;a=summary" target="blank">卡利ACE-VoIP的回购</a> </p><ul><li>作者：Sipera VIPER实验室</li><li>许可：GPLv3的</li></ul><h3>列入王牌VoIP的封装工具</h3><h5>王牌 - 一个简单的网络电话公司目录枚举工具</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0674696972466d676a6f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ace<br>
+ACE v1.10: Automated Corporate (Data) Enumerator<br>
+Usage: ace [-i interface] [ -m mac address ] [ -t tftp server ip address | -c cdp mode | -v voice vlan id | -r vlan interface | -d verbose mode ]<br>
+<br>
+-i (Mandatory) Interface for sniffing/sending packets<br>
+-m (Mandatory) MAC address of the victim IP phone<br>
+-t (Optional) tftp server ip address<br>
+-c (Optional) 0 CDP sniff mode, 1 CDP spoof mode<br>
+-v (Optional) Enter the voice vlan ID<br>
+-r (Optional) Removes the VLAN interface<br>
+-d (Optional) Verbose | debug mode<br>
+<br>
+Example Usages:<br>
+Usage requires MAC Address of IP Phone supplied with -m option<br>
+Usage: ace -t -m<br>
+<br>
+Mode to automatically discover TFTP Server IP via DHCP Option 150 (-m)<br>
+Example: ace -i eth0 -m 00:1E:F7:28:9C:8e<br>
+<br>
+Mode to specify IP Address of TFTP Server<br>
+Example: ace -i eth0 -t 192.168.10.150 -m 00:1E:F7:28:9C:8e<br>
+<br>
+Mode to specify the Voice VLAN ID<br>
+Example: ace -i eth0 -v 96 -m 00:1E:F7:28:9C:8E<br>
+<br>
+Verbose mode<br>
+Example: ace -i eth0 -v 96 -m 00:1E:F7:28:9C:8E -d<br>
+<br>
+Mode to remove vlan interface<br>
+Example: ace -r eth0.96<br>
+<br>
+Mode to auto-discover voice vlan ID in the listening mode for CDP<br>
+Example: ace -i eth0 -c 0 -m 00:1E:F7:28:9C:8E<br>
+<br>
+Mode to auto-discover voice vlan ID in the spoofing mode for CDP<br>
+Example: ace -i eth0 -c 1 -m 00:1E:F7:28:9C:8E</code><h3>王牌用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1765787863577c767b7e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

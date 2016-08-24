@@ -1,0 +1,53 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> PROTOS-SIP封装说明</h2><p style="text-align: justify;">此测试套件的目的是评估实施水平的安全性和会话发起协议（SIP）实现的鲁棒性。 </p><p>资料来源：https://www.ee.oulu.fi/research/ouspg/PROTOS_Test-Suite_c07-sip <br> <a href="https://www.ee.oulu.fi/research/ouspg/PROTOS_Test-Suite_c07-sip" variation="deepblue" target="blank">PROTOS-SIP首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/protos-sip.git;a=summary" variation="deepblue" target="blank">卡利PROTOS-SIP回购</a> </p><ul><li>作者：奥卢大学</li><li>许可：GPL第二版</li></ul><h3>包括在PROTOS-SIP封装工具</h3><h5> PROTOS-SIP - SIP测试套件</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fe8c91918abe959f9297">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# protos-sip -h<br>
+Usage java -jar &lt;jarfile&gt;.jar [ [OPTIONS] | -touri &lt;SIP-URI&gt; ]<br>
+<br>
+  -touri  &lt;addr&gt;        Recipient of the request<br>
+                        Example: &lt;addr&gt; : <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c3baacb683b7aba6b1a6eda0acae">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+  -fromuri &lt;addr&gt;       Initiator of the request<br>
+                        Default: <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fb8e889e89bb909a9792">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+  -sendto &lt;domain&gt;      Send packets to &lt;domain&gt; instead of<br>
+                        domainname of -touri<br>
+  -callid &lt;callid&gt;      Call id to start test-case call ids from<br>
+                        Default: 0<br>
+  -dport &lt;port&gt;         Portnumber to send packets on host.<br>
+                        Default: 5060<br>
+  -lport &lt;port&gt;         Local portnumber to send packets from<br>
+                        Default: 5060<br>
+  -delay &lt;ms&gt;           Time to wait before sending new test-case<br>
+                        Defaults to 100 ms (milliseconds)<br>
+  -replywait &lt;ms&gt;       Maximum time to wait for host to reply<br>
+                        Defaults to 100 ms (milliseconds)<br>
+  -file &lt;file&gt;          Send file &lt;file&gt; instead of test-case(s)<br>
+  -help                 Display this help<br>
+  -jarfile &lt;file&gt;       Get data from an alternate bugcat<br>
+                        JAR-file &lt;file&gt;<br>
+  -showreply            Show received packets<br>
+  -showsent             Show sent packets<br>
+  -teardown             Send CANCEL/ACK<br>
+  -single &lt;index&gt;       Inject a single test-case &lt;index&gt;<br>
+  -start &lt;index&gt;        Inject test-cases starting from &lt;index&gt;<br>
+  -stop &lt;index&gt;         Stop test-case injection to &lt;index&gt;<br>
+  -maxpdusize &lt;int&gt;     Maximum PDU size<br>
+                        Default to 65507 bytes<br>
+  -validcase            Send valid case (case #0) after each<br>
+                        test-case and wait for a response. May<br>
+                        be used to check if the target is still<br>
+                        responding. Default: off</code><h3>protos-sip Usage Example
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d1a3bebea591bab0bdb8">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code>
+</h3><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

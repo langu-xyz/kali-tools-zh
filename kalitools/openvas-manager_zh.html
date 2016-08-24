@@ -1,0 +1,121 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> openvas经理包装说明</h2><p style="text-align: justify;">所述OpenVAS-Manager是OpenVAS-扫描仪和各种客户端应用程序，如OpenVAS-Client或Greenbone安全助手之间的层。在其他功能，它增加了扫描结果的服务器端存储，它使得不需要扫描的客户端保持连接，直到扫描完成。 </p><p> <a href="http://www.openvas.org/index.html" variation="deepblue" target="blank">openvas经理首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/openvas-manager.git;a=summary" variation="deepblue" target="blank">卡利openvas经理回购</a> </p><ul><li>作者：OpenVAS </li><li>许可：GPL第二版</li></ul><h3>列入openvas-manager软件包工具</h3><h5> greenbone-certdata同步 - 同步CERT数据</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="25574a4a51654e44494c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# greenbone-certdata-sync --help<br>
+/usr/sbin/greenbone-certdata-sync: Sync CERT data<br>
+ --describe display current feed info<br>
+ --feedversion  display version of this feed<br>
+ --help     display this help<br>
+ --identify display information<br>
+ --refresh  update database without downloading new state<br>
+ --selftest perform self-test<br>
+ --version  display version</code><h3> greenbone-scapdata同步 - 同步SCAP数据</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f88a97978cb893999491">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# greenbone-scapdata-sync --help<br>
+/usr/sbin/greenbone-scapdata-sync: Sync SCAP data<br>
+ --describe        display current feed info<br>
+ --feedversion     display version of this feed<br>
+ --help            display this help<br>
+ --identify        display information<br>
+ --refresh         update database without downloading new state<br>
+ --refresh-private update database using only user data<br>
+ --selftest        perform self-test<br>
+ --version         display version<br>
+ --verbose         enable verbose log messages</code><h3> openvasmd - 开放式漏洞评估系统经理</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3f4d50504b7f545e5356">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvasmd --help<br>
+Usage:<br>
+  openvasmd [OPTION...] - Manager of the Open Vulnerability Assessment System<br>
+<br>
+Help Options:<br>
+  -h, --help                              Show help options<br>
+<br>
+Application Options:<br>
+  --backup                                Backup the database.<br>
+  -d, --database=&lt;file&gt;                   Use &lt;file&gt; as database.<br>
+  --disable-cmds=&lt;commands&gt;               Disable comma-separated &lt;commands&gt;.<br>
+  --disable-encrypted-credentials         Do not encrypt or decrypt credentials.<br>
+  --disable-password-policy               Do not restrict passwords to the policy.<br>
+  -f, --foreground                        Run in foreground.<br>
+  -a, --listen=&lt;address&gt;                  Listen on &lt;address&gt;.<br>
+  --listen2=&lt;address&gt;                     Listen also on &lt;address&gt;.<br>
+  -m, --migrate                           Migrate the database and exit.<br>
+  --create-credentials-encryption-key     Create a key to encrypt credentials.<br>
+  --encrypt-all-credentials               (Re-)Encrypt all credentials.<br>
+  --otp                                   Serve OTP too.<br>
+  -p, --port=&lt;number&gt;                     Use port number &lt;number&gt;.<br>
+  --port2=&lt;number&gt;                        Use port number &lt;number&gt; for address 2.<br>
+  --rebuild                               Rebuild the NVT cache and exit.<br>
+  -l, --slisten=&lt;address&gt;                 Scanner (openvassd) address.<br>
+  -s, --sport=&lt;number&gt;                    Scanner (openvassd) port number.<br>
+  -u, --update                            Update the NVT cache and exit.<br>
+  -v, --verbose                           Print progress messages.<br>
+  --version                               Print version and exit.</code><h3> openvas-certdata同步 - 同步CERT咨询数据</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cfbda0a0bb8fa4aea3a6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvas-certdata-sync --help<br>
+/usr/sbin/openvas-certdata-sync: Sync CERT advisory data<br>
+OpenVAS administrator functions:<br>
+ --refresh      refresh database without downloading feed data<br>
+ --selftest     perform self-test<br>
+ --identify     display information<br>
+ --version      display version<br>
+ --describe     display current CERT feed info<br>
+ --feedversion   display current CERT feed version<br>
+<br>
+Environment variables:<br>
+CERT_DIR             where to place CERT advisories<br>
+OV_CERT_RSYNC_FEED   URL of rsync feed<br>
+TMPDIR               temporary directory used to download the files<br>
+PRIVATE_SUBDIR       subdirectory to exclude from deletion by rsync</code><h3> openvas-scapdata同步 - 使用不同的协议同步SCAP数据</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4c3e2323380c272d2025">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvas-scapdata-sync --help<br>
+/usr/sbin/openvas-scapdata-sync: Sync SCAP data using different protocols<br>
+ --rsync        sync with rsync (default)<br>
+ --refresh      update database without downloading feed data<br>
+ --refresh-private  update database only using private data<br>
+ --check        just checksum check<br>
+OpenVAS administrator functions:<br>
+ --selftest perform self-test<br>
+ --identify display information<br>
+ --version  display version<br>
+ --describe display current scap feed info<br>
+ --feedversion   display current scap feed version<br>
+ --dst-dir &lt;dir&gt;    SCAP destination directory<br>
+Options:<br>
+ --verbose       enable verbose log messages<br>
+<br>
+Environment variables:<br>
+SCAP_DIR        where to extract plugins (absolute path)<br>
+OV_RSYNC_FEED   URL of rsync feed<br>
+OV_HTTP_FEED    URL of http feed<br>
+TMPDIR      temporary directory used to download the files<br>
+PRIVATE_SUBDIR  subdirectory to exclude from deletion by rsync<br>
+Note that you can use standard ones as well (e.g. http_proxy) for wget/curl</code><h3> openvasmd用法示例</h3><p>开始在本地主机上的守护进程<b><i>（-a 127.0.0.1），</i></b>端口<b><i>9390（-p 9390），并</i></b>连接到扫描仪守护程序在本地主机上<b><i>（-l 127.0.0.1），</i></b>端口<b><i>9391（-s 9391）：</i></b> </p><h100>五</h100><h3> openvas-certdata同步用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4b3924243f0b202a2722">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvas-certdata-sync<br>
+[i] This script synchronizes a CERT advisory directory with the OpenVAS one.<br>
+[i] CERT dir: /var/lib/openvas/cert-data<br>
+[i] Will use rsync<br>
+[i] Using rsync: /usr/bin/rsync<br>
+[i] Configured CERT data rsync feed: rsync://feed.openvas.org:/cert-data<br>
+<br>
+OpenVAS feed server - http://openvas.org/<br>
+This service is hosted by Intevation GmbH - http://intevation.de/<br>
+All transactions are logged.<br>
+Please report problems to <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3a5b5e5753547a53544e5f4c5b4e535554145e5f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+<br>
+receiving incremental file list</code><h3> openvas-scapdata同步用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cbb9a4a4bf8ba0aaa7a2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvas-scapdata-sync<br>
+[i] This script synchronizes a SCAP data directory with the OpenVAS one.<br>
+[i] SCAP dir: /var/lib/openvas/scap-data<br>
+[i] Will use rsync<br>
+[i] Using rsync: /usr/bin/rsync<br>
+[i] Configured SCAP data rsync feed: rsync://feed.openvas.org:/scap-data<br>
+OpenVAS feed server - http://openvas.org/<br>
+This service is hosted by Intevation GmbH - http://intevation.de/<br>
+All transactions are logged.<br>
+Please report problems to <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5637323b3f38163f3822332037223f3938783233">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+<br>
+receiving incremental file list</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

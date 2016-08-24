@@ -1,0 +1,54 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Firewalk包装说明</h2><p style="text-align: justify;"> Firewalk是一个积极的侦察网络安全工具，它试图确定第4层协议指定的IP转发设备将成为过去。 Firewalk通过发送出来的TCP或UDP数据包与TTL大一比目标网关。如果网关允许流量，将数据包转发到下一跳，他们将过期引起的ICMP_TIME_EXCEEDED消息。如果网关hostdoes不允许流量，它可能会在地板上丢弃的数据包，我们可以看到没有任何反应。 </p><p>为了得到正确的IP TTL，这将导致过期包一举超越我们需要坡道跳数的网关。我们这样做是在作品路由跟踪以同样的方式。一旦我们有了网关跳数（在该点扫描据说是`bound`）我们可以开始我们的扫描。 </p><p>它是显著注意到一个事实，即最终目的地主机没有达成。它只是需要在某处的下游，在网关的另一侧，从扫描主机。 </p><p>资料来源：http://packetfactory.openwall.net/projects/firewalk/ <br> <a href="http://packetfactory.openwall.net/projects/firewalk/" variation="deepblue" target="blank">Firewalk首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/firewalk.git;a=summary" variation="deepblue" target="blank">卡利Firewalk回购</a> </p><ul><li>作者：麦克D.希夫曼，大卫·戈德史密斯</li><li>许可：BSD </li></ul><h3>包含在firewalk包工具</h3><h5> firewalk - 一个活跃的侦察网络安全工具。 </h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d7a5b8b8a397bcb6bbbe">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# firewalk -h<br>
+Firewalk 5.0 [gateway ACL scanner]<br>
+Usage : firewalk [options] target_gateway metric<br>
+           [-d 0 - 65535] destination port to use (ramping phase)<br>
+           [-h] program help<br>
+           [-i device] interface<br>
+           [-n] do not resolve IP addresses into hostnames<br>
+           [-p TCP | UDP] firewalk protocol<br>
+           [-r] strict RFC adherence<br>
+           [-S x - y, z] port range to scan<br>
+           [-s 0 - 65535] source port<br>
+           [-T 1 - 1000] packet read timeout in ms<br>
+           [-t 1 - 25] IP time to live<br>
+           [-v] program version<br>
+           [-x 1 - 8] expire vector</code><h3> firewalk用法示例</h3><p>扫描端口<b><i>8079-8081（-S8079-8081）</i></b>通过eth0接口<b><i>（-i eth0的），</i></b>不解析主机名<b><i>（-n），</i></b>经由网关<b><i>（192.168.1.1）</i></b>针对目标IP使用<b><i><b><i>TCP（-pTCP）（192.168</i></b> .0.1）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3b4954544f7b505a5752">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# firewalk -S8079-8081  -i eth0 -n -pTCP 192.168.1.1 192.168.0.1<br>
+Firewalk 5.0 [gateway ACL scanner]<br>
+Firewalk state initialization completed successfully.<br>
+TCP-based scan.<br>
+Ramping phase source port: 53, destination port: 33434<br>
+Hotfoot through 192.168.1.1 using 192.168.0.1 as a metric.<br>
+Ramping Phase:<br>
+ 1 (TTL  1): expired [192.168.1.1]<br>
+Binding host reached.<br>
+Scan bound at 2 hops.<br>
+Scanning Phase:<br>
+port 8079: *no response*<br>
+port 8080: A! open (port not listen) [192.168.0.1]<br>
+port 8081: *no response*<br>
+<br>
+Scan completed successfully.<br>
+<br>
+Total packets sent:                4<br>
+Total packet errors:               0<br>
+Total packets caught               2<br>
+Total packets caught of interest   2<br>
+Total ports scanned                3<br>
+Total ports open:                  1<br>
+Total ports unknown:               0</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

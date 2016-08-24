@@ -1,0 +1,98 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> findmyhash包装说明</h2><p style="text-align: justify;">接受的算法是： </p><ul><li> MD4 - RFC 1320 </li><li> MD5 - RFC 1321 </li><li> SHA1 - RFC 3174（FIPS 180-3） </li><li> SHA224 - RFC 3874（FIPS 180-3） </li><li> SHA256 - FIPS 180-3 </li><li> SHA3​​84 - FIPS 180-3 </li><li> SHA512 - FIPS 180-3 </li><li> RMD160 - RFC 2857 </li><li> GOST - RFC 583 </li><li>惠而浦 - ISO / IEC 10118-3：2004 </li><li> LM - 的Microsoft Windows散列NTLM - 的Microsoft Windows哈希</li><li> MYSQL - MySQL的3，4，5散列</li><li> CISCO7 - 思科IOS型7加密密码</li><li> JUNIPER - 瞻博网络$ $ 9加密密码</li><li> LDAP_MD5 - MD5 Base64编码</li><li> LDAP_SHA1 - SHA1 Base64编码</li></ul><p>资料来源：https://code.google.com/p/findmyhash/ <br> <a href="http://code.google.com/p/findmyhash/" variation="deepblue" target="blank">findmyhash首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/findmyhash.git;a=summary" variation="deepblue" target="blank">卡利findmyhash回购</a> </p><ul><li>作者：JulGor </li><li>许可：GPLv3的</li></ul><h3>包含在findmyhash包工具</h3><h5> findmyhash - 破解哈希在线服务</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="31435e5e45715a505d58">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# findmyhash<br>
+/usr/bin/findmyhash 1.1.2 ( http://code.google.com/p/findmyhash/ )<br>
+<br>
+Usage:<br>
+------<br>
+<br>
+  python /usr/bin/findmyhash &lt;algorithm&gt; OPTIONS<br>
+<br>
+<br>
+Accepted algorithms are:<br>
+------------------------<br>
+<br>
+  MD4       - RFC 1320<br>
+  MD5       - RFC 1321<br>
+  SHA1      - RFC 3174 (FIPS 180-3)<br>
+  SHA224    - RFC 3874 (FIPS 180-3)<br>
+  SHA256    - FIPS 180-3<br>
+  SHA384    - FIPS 180-3<br>
+  SHA512    - FIPS 180-3<br>
+  RMD160    - RFC 2857<br>
+  GOST      - RFC 5831<br>
+  WHIRLPOOL - ISO/IEC 10118-3:2004<br>
+  LM        - Microsoft Windows hash<br>
+  NTLM      - Microsoft Windows hash<br>
+  MYSQL     - MySQL 3, 4, 5 hash<br>
+  CISCO7    - Cisco IOS type 7 encrypted passwords<br>
+  JUNIPER   - Juniper Networks $9$ encrypted passwords<br>
+  LDAP_MD5  - MD5 Base64 encoded<br>
+  LDAP_SHA1 - SHA1 Base64 encoded<br>
+<br>
+  NOTE: for LM / NTLM it is recommended to introduce both values with this format:<br>
+         python /usr/bin/findmyhash LM   -h 9a5760252b7455deaad3b435b51404ee:0d7f1f2bdeac6e574d6e18ca85fb58a7<br>
+         python /usr/bin/findmyhash NTLM -h 9a5760252b7455deaad3b435b51404ee:0d7f1f2bdeac6e574d6e18ca85fb58a7<br>
+<br>
+<br>
+Valid OPTIONS are:<br>
+------------------<br>
+<br>
+  -h &lt;hash_value&gt;  If you only want to crack one hash, specify its value with this option.<br>
+<br>
+  -f &lt;file&gt;        If you have several hashes, you can specify a file with one hash per line.<br>
+                   NOTE: All of them have to be the same type.<br>
+<br>
+  -g               If your hash cannot be cracked, search it in Google and show all the results.<br>
+                   NOTE: This option ONLY works with -h (one hash input) option.<br>
+<br>
+<br>
+Examples:<br>
+---------<br>
+<br>
+  -&gt; Try to crack only one hash.<br>
+     python /usr/bin/findmyhash MD5 -h 098f6bcd4621d373cade4e832627b4f6<br>
+<br>
+  -&gt; Try to crack a JUNIPER encrypted password escaping special characters.<br>
+     python /usr/bin/findmyhash JUNIPER -h "\$9\$LbHX-wg4Z"<br>
+<br>
+  -&gt; If the hash cannot be cracked, it will be searched in Google.<br>
+     python /usr/bin/findmyhash LDAP_SHA1 -h "{SHA}cRDtpNCeBiql5KOQsKVyrA0sAiA=" -g<br>
+<br>
+  -&gt; Try to crack multiple hashes using a file (one hash per line).<br>
+     python /usr/bin/findmyhash MYSQL -f mysqlhashesfile.txt<br>
+<br>
+<br>
+Contact:<br>
+--------<br>
+<br>
+[Web]           http://laxmarcaellugar.blogspot.com/<br>
+[Mail/Google+] <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5496f436383b3338352c393526373531383821333526143339353d387a373b39">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+[twitter]       @laXmarcaellugar</code><h3> findmyhash用法示例</h3><p>指定的哈希算法<b><i>（MD5），</i></b>试图破解给出<b><i>的hash（-h 098f6bcd4621d373cade4e832627b4f6）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="86f4e9e9f2c6ede7eaef">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# findmyhash MD5 -h 098f6bcd4621d373cade4e832627b4f6<br>
+<br>
+Cracking hash: 098f6bcd4621d373cade4e832627b4f6<br>
+<br>
+Analyzing with md5online (http://md5online.net)...<br>
+<br>
+***** HASH CRACKED!! *****<br>
+The original string is: test<br>
+<br>
+<br>
+The following hashes were cracked:<br>
+----------------------------------<br>
+<br>
+098f6bcd4621d373cade4e832627b4f6 -&gt; test</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

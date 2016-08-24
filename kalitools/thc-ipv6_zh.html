@@ -1,0 +1,603 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> THC-IPV6包装说明</h2><p style="text-align: justify;">一个完整的工具集来攻击IPv6和ICMP6的固有的协议的弱点，并包括一个易于使用的数据包厂库。 </p><p>资料来源：https://www.thc.org/thc-ipv6/ <br> <a href="https://www.thc.org/thc-ipv6/" variation="deepblue" target="blank">THC-IPV6首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/thc-ipv6.git;a=summary" variation="deepblue" target="blank">卡利THC-IPV6回购</a> </p><ul><li>作者：黑客的选择</li><li>许可：AGPLv3 </li></ul><h3>包含在THC-IPv6的封装工具</h3><h5> 6to4test.sh - 测试IPv4的目标具有动态6to4隧道活跃</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2b5944445f6b404a4742">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# 6to4test.sh<br>
+Syntax: /usr/bin/6to4test.sh interface ipv4address<br>
+This little script tests if the IPv4 target has a dynamic 6to4 tunnel active<br>
+Requires address6 and thcping6 from thc-ipv6</code><h3> address6 - Mac或IPv4地址到IPv6地址转换</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1765787863577c767b7e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# address6<br>
+address6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="780e10380c101b56170a1f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax:<br>
+    address6 mac-address [ipv6-prefix]<br>
+    address6 ipv4-address [ipv6-prefix]<br>
+    address6 ipv6-address<br>
+<br>
+Converts a mac or ipv4 address to an ipv6 address (link local if no prefix is<br>
+given as 2nd option) or, when given an ipv6 address, prints the mac or ipv4<br>
+address. Prints all possible variations. Returns -1 on errors or the number of<br>
+variations found</code><h3> alive6 - 显示在该段中的地址活</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="54263b3b20143f35383d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# alive6<br>
+alive6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d4a2bc94a0bcb7fabba6b3">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: alive6 [-I srcip6] [-i file] [-o file] [-DM] [-p] [-F] [-e opt] [-s port,..] [-a port,..] [-u port,..] [-W TIME] [-dlrvS] interface [unicast-or-multicast-address [remote-router]]<br>
+<br>
+Shows alive addresses in the segment. If you specify a remote router, the<br>
+packets are sent with a routing header prefixed by fragmentation<br>
+Options:<br>
+  -i file    check systems from input file<br>
+  -o file    write results to output file<br>
+  -M         enumerate hardware addresses (MAC) from input addresses (slow!)<br>
+  -D         enumerate DHCP address space from input addresses<br>
+  -p         send a ping packet for alive check (default)<br>
+  -e dst,hop send an errornous packets: destination (default), hop-by-hop<br>
+  -s port,port,..  TCP-SYN packet to ports for alive check<br>
+  -a port,port,..  TCP-ACK packet to ports for alive check<br>
+  -u port,port,..  UDP packet to ports for alive check<br>
+  -d         DNS resolve alive ipv6 addresses<br>
+  -n number  how often to send each packet (default: local 1, remote 2)<br>
+  -W time    time in ms to wait after sending a packet (default: 1)<br>
+  -S         slow mode, get best router for each remote target or when proxy-NA<br>
+  -I srcip6  use the specified IPv6 address as source<br>
+  -l         use link-local address instead of global address<br>
+  -v         verbose (twice: detailed information, thrice: dumping all packets)<br>
+Target address on command line or in input file can include ranges in the form<br>
+of 2001:db8::1-fff or 2001:db8::1-2:0-ffff:0:0-ffff, etc.<br>
+Returns -1 on errors, 0 if a system was found alive or 1 if nothing was found.</code><h3> covert_send6 - 发送文件的内容隐蔽目标</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="582a37372c1833393431">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# covert_send6<br>
+covert_send6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f3859bb3879b90dd9c8194">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: covert_send6 [-m mtu] [-k key] [-s resend] interface target file [port]<br>
+<br>
+Options:<br>
+  -m mtu     specifies the maximum MTU (default: interface MTU, min: 1000)<br>
+  -k key     encrypt the content with Blowfish-160<br>
+  -s resend  send each packet RESEND number of times, default: 1<br>
+<br>
+Sends the content of FILE covertly to the target, And its POC - dont except<br>
+too much sophistication - its just put into the destination header.</code><h3> covert_send6d - 写暗里接收的内容以文件</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9fedf0f0ebdff4fef3f6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# covert_send6d<br>
+covert_send6d v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b7c1dff7c3dfd499d8c5d0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: covert_send6d [-k key] interface file<br>
+<br>
+Options:<br>
+  -k key     decrypt the content with Blowfish-160<br>
+<br>
+Writes covertly received content to FILE.</code><h3> denial6 - 执行各种拒绝服务攻击的目标</h3><h100>五</h100><h3>检测-新IP6 - 该工具检测到新的IPv6地址加入局域网</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f2809d9d86b299939e9b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# detect-new-ip6<br>
+detect-new-ip6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="95e3fdd5e1fdf6bbfae7f2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: detect-new-ip6 interface [script]<br>
+<br>
+This tools detects new ipv6 addresses joining the local network.<br>
+If script is supplied, it is executed with the detected IPv6 address as first<br>
+and the interface as second command line option.</code><h3> detect_sniffer6 - 测试本地局域网上的系统嗅探</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d9abb6b6ad99b2b8b5b0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# detect_sniffer6<br>
+detect_sniffer6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="80f6e8c0f4e8e3aeeff2e7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: detect_sniffer6 interface [target6]<br>
+<br>
+Tests if systems on the local LAN are sniffing.<br>
+Works against Windows, Linux, OS/X and *BSD<br>
+If no target is given, the link-local-all-nodes address is used, which<br>
+however rarely works.</code><h3> dnsdict6 - 枚举DNS条目域</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0a7865657e4a616b6663">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnsdict6<br>
+dnsdict6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1e68765e6a767d30716c79">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: dnsdict6 [-d46] [-s|-m|-l|-x] [-t THREADS] [-D] domain [dictionary-file]<br>
+<br>
+Enumerates a domain for DNS entries, it uses a dictionary file if supplied<br>
+or a built-in list otherwise. This tool is based on dnsmap by gnucitizen.org.<br>
+<br>
+Options:<br>
+ -4      also dump IPv4 addresses<br>
+ -t NO   specify the number of threads to use (default: 8, max: 32).<br>
+ -D      dump the selected built-in wordlist, no scanning.<br>
+ -d      display IPv6 information on NS and MX DNS domain information.<br>
+ -S      perform SRV service name guessing<br>
+ -[smlx] choose the dictionary size by -s(mall=50), -m(edium=796) (DEFAULT)<br>
+           -l(arge=1416), or -x(treme=3211)</code><h3> dnsrevenum6 - 执行快速反向DNS枚举，并能应付较慢的服务器</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f684999982b69d979a9f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnsrevenum6<br>
+dnsrevenum6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3b4d537b4f53581554495c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: dnsrevenum6 dns-server ipv6address<br>
+<br>
+Performs a fast reverse DNS enumeration and is able to cope with slow servers.<br>
+Examples:<br>
+  dnsrevenum6 dns.test.com 2001:db8:42a8::/48<br>
+  dnsrevenum6 dns.test.com 8.a.2.4.8.b.d.0.1.0.0.2.ip6.arpa</code><h3> dnssecwalk - 执行DNSSEC NSEC行走</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="05776a6a71456e64696c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnssecwalk<br>
+dnssecwalk v1.2 (c) 2013 by Marc Heuse &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="315c59715c591c4254521f5554">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; http://www.mh-sec.de<br>
+<br>
+Syntax: dnssecwalk [-e46] dns-server domain<br>
+<br>
+Options:<br>
+ -e  ensure that the domain is present in found addresses, quit otherwise<br>
+ -4  resolve found entries to IPv4 addresses<br>
+ -6  resolve found entries to IPv6 addresses<br>
+<br>
+Perform DNSSEC NSEC walking.<br>
+<br>
+Example: dnssecwalk dns.test.com test.com</code><h3> dos_mld.sh - 如果指定目标的多播地址将首先被丢弃</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b7c5d8d8c3f7dcd6dbde">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dos_mld.sh<br>
+Syntax: /usr/bin/dos_mld.sh [-2] interface [target-link-local-address multicast-address]<br>
+If specified, the multicast address of the target will be dropped first.<br>
+All multicast traffic will cease after a while.<br>
+Specify -2 to use MLDv2.</code><h3> DOS的新IP6 - 这个工具可以防止新的IPv6接口上来</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e3918c8c97a388828f8a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dos-new-ip6<br>
+dos-new-ip6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f2849ab2869a91dc9d8095">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: dos-new-ip6 interface<br>
+<br>
+This tools prevents new ipv6 interfaces to come up, by sending answers to<br>
+duplicate ip6 checks (DAD). This results in a DOS for new ipv6 devices.</code><h3> dump_router6 - 转储所有本地路由器和他们的信息</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="25574a4a51654e44494c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dump_router6<br>
+dump_router6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fa8c92ba8e9299d495889d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: dump_router6 interface<br>
+<br>
+Dumps all local routers and their information</code><h3> exploit6 - 执行各种CVE Ipv6的漏洞的攻击的目标</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0d7f6262794d666c6164">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# exploit6<br>
+exploit6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="74021c34001c175a1b0613">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: exploit6 interface destination [test-case-number]<br>
+<br>
+Performs exploits of various CVE known IPv6 vulnerabilities on the destination<br>
+Note that for exploitable overflows only 'AAA...' strings are used.<br>
+If a system is vulnerable, it will crash, so be careful!</code><h3> extract_hosts6.sh - 打印IPv6地址的主机部分的文件</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9ceef3f3e8dcf7fdf0f5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# extract_hosts6.sh<br>
+/usr/bin/extract_hosts6.sh FILE<br>
+prints the host parts of IPv6 addresses in FILE</code><h3> extract_networks6.sh - 打印在文件中找到的网络</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7c0e1313083c171d1015">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# extract_networks6.sh<br>
+/usr/bin/extract_networks6.sh FILE<br>
+prints the networks found in FILE</code><h3> fake_advertise6 - 广告网络上的IPv6地址</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0775686873476c666b6e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_advertise6<br>
+fake_advertise6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0d7b654d79656e23627f6a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fake_advertise6 [-DHF] [-Ors] [-n count] [-w seconds] interface ip-address-advertised [target-address [mac-address-advertised [source-ip-address]]]<br>
+<br>
+Advertise ipv6 address on the network (with own mac if not specified),<br>
+sending it to the all-nodes multicast address if no target address is set.<br>
+Source ip addresss is the address advertised if not set.<br>
+<br>
+Sending options:<br>
+  -n count    send how many packets (default: forever)<br>
+  -w seconds  wait time between the packets sent (default: 5)<br>
+Flag options:<br>
+  -O  do NOT set the override flag (default: on)<br>
+  -r  DO set the router flag (default: off)<br>
+  -s  DO set the solicitate flag (default: off)<br>
+ND Security evasion options (can be combined):<br>
+  -H  add a hop-by-hop header<br>
+  -F  add a one shot fragment header (can be specified multiple times)<br>
+  -D  add a large destination header which fragments the packet.</code><h3> fake_dhcps6 - 伪造DHCPv6服务器</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a3d1ccccd7e3c8c2cfca">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_dhcps6<br>
+fake_dhcps6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="32445a72465a511c5d4055">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fake_dhcps6 interface network-address/prefix-length dns-server [dhcp-server-ip-address [mac-address]]<br>
+<br>
+Fake DHCPv6 server. Use to configure an address and set a DNS server</code><h3> fake_dns6d - 服务于同一IPv6地址的任何查找请求伪造DNS服务器</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="24564b4b50644f45484d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_dns6d<br>
+fake_dns6d v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1b6d735b6f73783574697c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fake_dns6d interface ipv6-address [fake-ipv6-address [fake-mac]]<br>
+Fake DNS server that serves the same ipv6 address to any lookup request<br>
+You can use this together with parasite6 if clients have a fixed DNS server<br>
+Note: very simple server. Does not honor multiple queries in a packet, norNS, MX, etc. lookups.</code><h3> fake_dnsupdate6 - 假的DNS更新</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="86f4e9e9f2c6ede7eaef">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_dnsupdate6<br>
+fake_dnsupdate6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f88e90b88c909bd6978a9f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fake_dnsupdate6 dns-server full-qualified-host-dns-name ipv6address<br>
+<br>
+Example: fake_dnsupdate6 dns.test.com myhost.sub.test.com ::1</code><h3> fake_mipv6 - 将重定向所有数据包的家庭地址，转交地址， </h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="73011c1c073318121f1a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_mipv6<br>
+fake_mipv6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7a0c123a0e12195415081d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fake_mipv6 interface home-address home-agent-address care-of-address<br>
+<br>
+If the mobile IPv6 home-agent is mis-configured to accept MIPV6 updates without<br>
+IPSEC, this will redirect all packets for home-address to care-of-address</code><h3> fake_mld26 </h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="97e5f8f8e3d7fcf6fbfe">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_mld26<br>
+fake_mld26 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2b5d436b5f43480544594c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fake_mld26 [-l] interface add|delete|query [multicast-address [target-address [ttl [own-ip [own-mac-address [destination-mac-address]]]]]]<br>
+<br>
+This uses the MLDv2 protocol. Only a subset of what the protocol is able to<br>
+do is possible to implement via a command line. Code it if you need something.<br>
+Ad(d)vertise or delete yourself - or anyone you want - in a multicast group of your choice<br>
+Query ask on the network who is listening to multicast addresses<br>
+Use -l to loop and send (in 5s intervals) until Control-C is pressed.</code><h3> fake_mld6 - 广告（D）vertise或删除自己 - 或者任何你想</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6c1e0303182c070d0005">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_mld6<br>
+fake_mld6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2c5a446c58444f02435e4b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fake_mld6 [-l] interface add|delete|query [multicast-address [target-address [ttl [own-ip [own-mac-address [destination-mac-address]]]]]]<br>
+<br>
+Ad(d)vertise or delete yourself - or anyone you want - in a multicast group of your choice<br>
+Query ask on the network who is listening to multicast addresses<br>
+Use -l to loop and send (in 5s intervals) until Control-C is pressed.</code><h3> fake_mldrouter6 - 宣布，删除或soliciated MLD路由器</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="04766b6b70446f65686d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_mldrouter6<br>
+fake_mldrouter6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ec9a84ac98848fc2839e8b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fake_mldrouter6 [-l] interface advertise|solicitate|terminate [own-ip [own-mac-address]]<br>
+<br>
+Announce, delete or soliciated MLD router - yourself or others.<br>
+Use -l to loop and send (in 5s intervals) until Control-C is pressed.</code><h3> fake_pim6 </h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3745585843775c565b5e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_pim6<br>
+fake_pim6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="22544a62564a410c4d5045">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax:<br>
+  fake_pim6 [-t ttl] [-s src6] [-d dst6] interface hello [dr_priority]<br>
+  fake_pim6 [-t ttl] [-s src6] [-d dst6] interface join|prune neighbor6 multicast6 target6<br>
+<br>
+The hello command takes optionally the DR priority (default: 0).<br>
+The join and prune commands need the multicast group to modify, the target<br>
+address that joins or leavs and the neighbor PIM router<br>
+Use -s to spoof the source ip6, -d to send to another address than ff02::d,<br>
+and -t to set a different TTL (default: 1)</code><h3> fake_router26 - 宣布自己作为一个路由器，并尝试成为默认路由器</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e2908d8d96a289838e8b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_router26<br>
+fake_router26 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="72041a32061a115c1d0015">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fake_router26 [-E type] [-A network/prefix] [-R network/prefix] [-D dns-server] [-s sourceip] [-S sourcemac] [-ardl seconds] [-Tt ms] [-n no] [-i interval] interface<br>
+<br>
+Options:<br>
+ -A network/prefix  add autoconfiguration network (up to 16 times)<br>
+ -a seconds         valid lifetime of prefix -A (defaults to 99999)<br>
+ -R network/prefix  add a route entry (up to 16 times)<br>
+ -r seconds         route entry lifetime of -R (defaults to 4096)<br>
+ -D dns-server      specify a DNS server (up to 16 times)<br>
+ -L searchlist      specify the DNS domain search list, seperate entries with ,<br>
+ -d seconds         dns entry lifetime of -D (defaults to 4096<br>
+ -M mtu             the MTU to send, defaults to the interface setting<br>
+ -s sourceip        the source ip of the router, defaults to your link local<br>
+ -S sourcemac       the source mac of the router, defaults to your interface<br>
+ -l seconds         router lifetime (defaults to 2048)<br>
+ -T ms              reachable timer (defaults to 0)<br>
+ -t ms              retrans timer (defaults to 0)<br>
+ -p priority        priority "low", "medium", "high" (default), "reserved"<br>
+ -F flags           Set one or more of the following flags: managed, other,<br>
+                   homeagent, proxy, reserved; seperate by comma<br>
+ -E type            Router Advertisement Guard Evasion option. Types:<br>
+     H             simple hop-by-hop header<br>
+     1             simple one-shot fragmentation header (can add multiple)<br>
+     D             insert a large destination header so that it fragments<br>
+     O             overlapping fragments for keep-first targets (Win, BSD, Mac)<br>
+     o             overlapping fragments for keep-last targets (Linux, Solaris)<br>
+                    Examples: -E H111, -E D<br>
+ -m mac-address    if only one machine should receive the RAs (not with -E DoO)<br>
+ -i interval       time between RA packets (default: 5)<br>
+ -n number         number of RAs to send (default: unlimited)<br>
+<br>
+Announce yourself as a router and try to become the default router.<br>
+If a non-existing link-local or mac address is supplied, this results in a DOS.</code><h3> fake_router6 - 宣布自己作为一个路由器，并尝试成为缺省路由器。 </h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2755484853674c464b4e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_router6<br>
+fake_router6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="14627c54607c773a7b6673">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fake_router6 [-HFD] interface network-address/prefix-length [dns-server [router-ip-link-local [mtu [mac-address]]]]<br>
+<br>
+Announce yourself as a router and try to become the default router.<br>
+If a non-existing link-local or mac address is supplied, this results in a DOS.<br>
+Option -H adds hop-by-hop, -F fragmentation header and -D dst header.</code><h3> fake_solicitate6 - 在网络上Solicate IPv6地址</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="295b46465d6942484540">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fake_solicitate6<br>
+fake_solicitate6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0a7c624a7e62692465786d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fake_solicitate6 [-DHF] interface ip-address-solicitated [target-address [mac-address-solicitated [source-ip-address]]]<br>
+<br>
+Solicate ipv6 address on the network, sending it to the all-nodes multicast address</code><h3> firewall6 - 执行各种ACL旁路尝试检查实施</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0674696972466d676a6f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# firewall6<br>
+firewall6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4e38260e3a262d60213c29">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: firewall6 [-u] interface destination port [test-case-no]<br>
+<br>
+Performs various ACL bypass attempts to check implementations.<br>
+Defaults to TCP ports, option -u switches to UDP.<br>
+For all test cases to work, ICMPv6 ping to thhe destination must be allowed.</code><h3> flood_advertise6 - 洪水本地网络与相邻节点通告</h3><h100>三十</h100><h3> flood_dhcpc6 - DHCP客户端泛洪</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="04766b6b70446f65686d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# flood_dhcpc6<br>
+flood_dhcpc6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="13657b53677b703d7c6174">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: flood_dhcpc6 [-n|-N] [-1] [-d] interface [domain-name]<br>
+<br>
+DHCP client flooder. Use to deplete the IP address pool a DHCP6 server is<br>
+offering. Note: if the pool is very large, this is rather senseless. :-)<br>
+<br>
+By default the link-local IP MAC address is random, however this won't work<br>
+in some circumstances. -n will use the real MAC, -N the real MAC and<br>
+link-local address. -1 will only solicate an address but not request it.<br>
+If -N is not used, you should run parasite6 in parallel.<br>
+Use -d to force DNS updates, you can specify a domain name on the commandline.</code><h3> flood_mld26 - 洪水本地网络与MLDv2的报告</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c3b1acacb783a8a2afaa">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# flood_mld26<br>
+flood_mld26 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a1d7c9e1d5c9c28fced3c6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: flood_mld26 interface<br>
+<br>
+Flood the local network with MLDv2 reports.</code><h3> flood_mld6 - 洪水本地网络与MLD报告</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="8ffde0e0fbcfe4eee3e6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# flood_mld6<br>
+flood_mld6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cabca28abea2a9e4a5b8ad">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: flood_mld6 interface<br>
+<br>
+Flood the local network with MLD reports.</code><h3> flood_mldrouter6 - 洪水本地网络与MLD路由器公告</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="aedcc1c1daeec5cfc2c7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# flood_mldrouter6<br>
+flood_mldrouter6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="32445a72465a511c5d4055">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: flood_mldrouter6 interface<br>
+<br>
+Flood the local network with MLD router advertisements.</code><h3> flood_router26 - 洪水本地网络与路由器公告</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fc8e939388bc979d9095">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# flood_router26<br>
+flood_router26 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d3a5bb93a7bbb0fdbca1b4">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: flood_router26 [-HFD] [-s] [-RPA] interface<br>
+<br>
+Flood the local network with router advertisements.<br>
+Each packet contains 17 prefix and route enries<br>
+-F/-D/-H add fragment/destination/hopbyhop header to bypass RA guard security.<br>
+-R does only send routing entries, no prefix information.<br>
+-P does only send prefix information, no routing entries.<br>
+-A is like -P but implements an attack by George Kargiotakis to disable privacy extensions<br>
+The option -s uses small lifetimes, resulting in a more devasting impact</code><h3> flood_router6 - 洪水本地网络与路由器公告</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4e3c21213a0e252f2227">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# flood_router6<br>
+flood_router6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="82f4eac2f6eae1acedf0e5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: flood_router6 [-HFD] interface<br>
+<br>
+Flood the local network with router advertisements.<br>
+-F/-D/-H add fragment/destination/hopbyhop header to bypass RA guard security.</code><h3> flood_solicitate6 - 洪水的网络邻居请求</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cbb9a4a4bf8ba0aaa7a2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# flood_solicitate6<br>
+flood_solicitate6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c1b7a981b5a9a2efaeb3a6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: flood_solicitate6 interface [target]<br>
+<br>
+Flood the network with neighbor solicitations.</code><h3> fragmentation6 - 执行片段防火墙和实施检查</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fc8e939388bc979d9095">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fragmentation6<br>
+fragmentation6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="63150b23170b004d0c1104">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fragmentation6 [-fp] [-n number] interface destination [test-case-no]<br>
+<br>
+-f activates flooding mode, no pauses between sends; -p disables first and<br>
+final pings, -n number specifies how often each test is performed<br>
+<br>
+Performs fragment firewall and implementation checks, incl. denial-of-service.</code><h3> fuzz_ip6 - Fuzzes的ICMP6包</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ec9e838398ac878d8085">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fuzz_ip6<br>
+fuzz_ip6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="681e00281c000b46071a0f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: fuzz_ip6 [-x] [-t number | -T number] [-p number] [-IFSDHRJ] [-X|-1|-2|-3|-4|-5|-6|-7|-8|-9|-0 port] interface unicast-or-multicast-address [address-in-data-pkt]<br>
+<br>
+Fuzzes an icmp6 packet<br>
+Options:<br>
+ -X         do not add any ICMP/TCP header (tranport laye)<br>
+ -1         fuzz ICMP6 echo request (default)<br>
+ -2         fuzz ICMP6 neighbor solicitation<br>
+ -3         fuzz ICMP6 neighbor advertisement<br>
+ -4         fuzz ICMP6 router advertisement<br>
+ -5         fuzz multicast listener report packet<br>
+ -6         fuzz multicast listener done packet<br>
+ -7         fuzz multicast listener query packet<br>
+ -8         fuzz multicast listener v2 report packet<br>
+ -9         fuzz multicast listener v2 query packet<br>
+ -0         fuzz node query packet<br>
+ -s port    fuzz TCP-SYN packet against port<br>
+ -x         tries all 256 values for flag and byte types<br>
+ -t number  continue from test no. number<br>
+ -T number  only performs test no. number<br>
+ -p number  perform an alive check every number of tests (default: none)<br>
+ -a         do not perform initial and final alive test<br>
+ -n number  how many times to send each packet (default: 1)<br>
+ -I         fuzz the IP header too<br>
+ -F         add one-shot fragmentation, and fuzz it too (for 1)<br>
+ -S         add source-routing, and fuzz it too (for 1)<br>
+ -D         add destination header, and fuzz it too (for 1)<br>
+ -H         add hop-by-hop header, and fuzz it too (for 1 and 5-9)<br>
+ -R         add router alert header, and fuzz it too (for 5-9 and all)<br>
+ -J         add jumbo packet header, and fuzz it too (for 1)<br>
+You can only define one of -0 ... -9 and -s, defaults to -1.<br>
+Returns -1 on error, 0 on tests done and targt alive or 1 on target crash.</code><h3> implementation6 - 执行一些IPv6实现检查</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="8ffde0e0fbcfe4eee3e6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# implementation6<br>
+implementation6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f18799b1859992df9e8396">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: implementation6 [-p] [-s sourceip6] interface destination [test-case-number]<br>
+<br>
+Options:<br>
+  -s sourceip6  use the specified source IPv6 address<br>
+  -p            do not perform an alive check at the beginning and end<br>
+Performs some ipv6 implementation checks, can be used to test some<br>
+firewall features too. Takes approx. 2 minutes to complete.</code><h3> implementation6d - 由implementation6工具识别的测试包</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="55273a3a21153e34393c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# implementation6d<br>
+implementation6d v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c6b0ae86b2aea5e8a9b4a1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: implementation6d interface<br>
+<br>
+Identifies test packets by the implementation6 tool, useful to check what<br>
+packets passed a firewall</code><h3> inject_alive6 - 此工具答案，保活的PPPoE和6in4隧道技术隧道请求</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="13617c7c675378727f7a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# inject_alive6<br>
+inject_alive6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="37415f77435f5419584550">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: inject_alive6 [-ap] interface<br>
+<br>
+This tool answers to keep-alive requests on PPPoE and 6in4 tunnels; for PPPoE<br>
+it also sends keep-alive requests.<br>
+Note that the appropriate environment variable THC_IPV6_{PPPOE|6IN4} must be set<br>
+Option -a will actively send alive requests every 15 seconds.<br>
+Option -p will not send replies to alive requests.</code><h3> inverse_lookup6 - 执行一个反向地址查询</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="384a57574c7853595451">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# inverse_lookup6<br>
+inverse_lookup6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3b4d537b4f53581554495c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: inverse_lookup6 interface mac-address<br>
+<br>
+Performs an inverse address query, to get the IPv6 addresses that are assigned<br>
+to a MAC address. Note that only few systems support this yet.</code><h3> kill_router6 - 宣布，路由器下降的目标，从路由表中删除</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4b3924243f0b202a2722">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kill_router6<br>
+kill_router6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="62140a22160a014c0d1005">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: kill_router6 [-HFD] interface router-address [srcmac [dstmac]]<br>
+<br>
+Announce that a target a router going down to delete it from the routing tables.<br>
+If you supply a '*' as router-address, this tool will sniff the network for any<br>
+RA packet and immediately send the kill packet.<br>
+Option -H adds hop-by-hop, -F fragmentation header and -D dst header.</code><h3> ndpexhaust26 - 洪水目标/ 64网络的ICMPv6 TooBig错误信息</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="45372a2a31052e24292c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ndpexhaust26<br>
+ndpexhaust26 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="512739112539327f3e2336">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: ndpexhaust26 [-acpPTUrR] [-s sourceip6] interface target-network<br>
+<br>
+Options:<br>
+ -a      add a hop-by-hop header with router alert<br>
+ -c      do not calculate the checksum to save time<br>
+ -p      send ICMPv6 Echo Requests<br>
+ -P      send ICMPv6 Echo Reply<br>
+ -T      send ICMPv6 Time-to-live-exeeded<br>
+ -U      send ICMPv6 Unreachable (no route)<br>
+ -r      randomize the source from your /64 prefix<br>
+ -R      randomize the source fully<br>
+ -s sourceip6  use this as source ipv6 address<br>
+<br>
+Flood the target /64 network with ICMPv6 TooBig error messages.<br>
+This tool version is manyfold more effective than ndpexhaust6.</code><h3> ndpexhaust6 - 洪水目标/ 64网络的ICMPv6 TooBig错误信息</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b0c2dfdfc4f0dbd1dcd9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ndpexhaust26<br>
+ndpexhaust26 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4a3c220a3e22296425382d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: ndpexhaust26 [-acpPTUrR] [-s sourceip6] interface target-network<br>
+<br>
+Options:<br>
+ -a      add a hop-by-hop header with router alert<br>
+ -c      do not calculate the checksum to save time<br>
+ -p      send ICMPv6 Echo Requests<br>
+ -P      send ICMPv6 Echo Reply<br>
+ -T      send ICMPv6 Time-to-live-exeeded<br>
+ -U      send ICMPv6 Unreachable (no route)<br>
+ -r      randomize the source from your /64 prefix<br>
+ -R      randomize the source fully<br>
+ -s sourceip6  use this as source ipv6 address<br>
+<br>
+Flood the target /64 network with ICMPv6 TooBig error messages.<br>
+This tool version is manyfold more effective than ndpexhaust6.<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="65170a0a11250e04090c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ndpexhaust6<br>
+ndpexhaust6 by mario fleischmann &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="731e12011a1c5d151f161a00101b1e121d1d3342061d17425d1716">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+<br>
+Syntax: ndpexhaust6 interface destination-network [sourceip]<br>
+<br>
+Randomly pings IPs in target network</code><h3> node_query6 - 发送的ICMPv6节点查询请求到目标</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="eb9984849fab808a8782">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# node_query6<br>
+node_query6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f4829cb4809c97da9b8693">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: node_query6 interface target<br>
+<br>
+Sends an ICMPv6 node query request to the target and dumps the replies.</code><h3> parasite6 - 这是一种“ARP欺骗者”对IPv6 </h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3d4f5252497d565c5154">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# parasite6<br>
+parasite6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="99eff1d9edf1fab7f6ebfe">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: parasite6 [-lRFHD] interface [fake-mac]<br>
+<br>
+This is an "ARP spoofer" for IPv6, redirecting all local traffic to your own<br>
+system (or nirvana if fake-mac does not exist) by answering falsely to<br>
+Neighbor Solitication requests<br>
+Option -l loops and resends the packets per target every 5 seconds.<br>
+Option -R will also try to inject the destination of the solicitation<br>
+NS security bypass: -F fragment, -H hop-by-hop and -D large destination header</code><h3> passive_discovery6 - 被动嗅探网络和转储所有客户端的IPv6地址</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2755484853674c464b4e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# passive_discovery6<br>
+passive_discovery6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="394f51794d515a17564b5e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: passive_discovery6 [-Ds] [-m maxhop] [-R prefix] interface [script]<br>
+<br>
+Options:<br>
+ -D          do also dump destination addresses (does not work with -m)<br>
+ -s          do only print the addresses, no other output<br>
+ -m maxhop   the maximum number of hops a target which is dumped may be away.<br>
+             0 means local only, the maximum amount to make sense is usually 5<br>
+ -R prefix   exchange the defined prefix with the link local prefix<br>
+<br>
+Passively sniffs the network and dump all client's IPv6 addresses detected.<br>
+Note that in a switched environment you get better results when additionally<br>
+starting parasite6, however this will impact the network.<br>
+If a script name is specified after the interface, it is called with the<br>
+detected ipv6 address as first and the interface as second option.</code><h3> randicmp6 - 发送的所有ICMPv6的类型和代码组合到目的地</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6c1e0303182c070d0005">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# randicmp6<br>
+Syntax: randicmp6 [-s sourceip] interface destination [type [code]]<br>
+<br>
+Sends all ICMPv6 type and code combinations to destination.<br>
+Option -s  sets the source ipv6 address.</code><h3> redir6 - 种植体路由到受害者的IP，它重定向所有到目标IP </h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="75071a1a01351e14191c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# redir6<br>
+redir6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="bccad4fcc8d4df92d3cedb">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: redir6 interface victim-ip target-ip original-router new-router [new-router-mac] [hop-limit]<br>
+<br>
+Implant a route into victim-ip, which redirects all traffic to target-ip to<br>
+new-ip. You must know the router which would handle the route.<br>
+If the new-router-mac does not exist, this results in a DOS.<br>
+If the TTL of the target is not 64, then specify this is the last option.</code><h3> redirsniff6 - 种植体路由到受害者的IP，它的所有流量重定向到目的地IP </h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="384a57574c7853595451">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# redirsniff6<br>
+redirsniff6 v2.3 (c) 2013 by van Hauser / THC &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="36405e76425e5518594451">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; www.thc.org<br>
+<br>
+Syntax: redirsniff6 interface victim-ip destination-ip original-router [new-router [new-router-mac]]<br>
+<br>
+Implant a route into victim-ip, which redirects all traffic to destination-ip to<br>
+new-router. This is done on all traffic that flows by that matches<br>
+victim-&gt;target. You must know the router which would handle the route.<br>
+If the new-router/-mac does not exist, this results in a DOS.<br>
+You can supply a wildcard ('*') for victim-ip and/or destination-ip.</code><h3> rsmurf6 - 蓝精灵受害者的本地网络</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b8cad7d7ccf8d3d9d4d1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rsmurf6<br>
+rsmurf6 v2.3 (c) 2013 by van Hauser / THC &lt;vh@thc.org&gt; www.thc.org<br>
+<br>
+Syntax: rsmurf6 interface victim-ip<br>
+<br>
+Smurfs the local network of the victim. Note: this depends on an<br>
+implementation error, currently only verified on Linux.<br>
+Evil: "ff02::1" as victim will DOS your local LAN completely</code><h3> sendpees6 - 发送发送邻居请求消息</h3><code>root@kali:~# sendpees6<br>
+sendpees6 by willdamn &lt;willdamn@gmail.com&gt;<br>
+<br>
+usage: sendpees6 &lt;inf&gt; &lt;key_length&gt; &lt;prefix&gt; &lt;victim&gt;<br>
+<br>
+Send SEND neighbor solicitation messages and make target to verify a lota CGA and RSA signatures</code><h3> sendpeesmp6 - 发送发送邻居请求消息</h3><code>root@kali:~# sendpeesmp6<br>
+original sendpees by willdamn &lt;willdamn@gmail.com&gt;<br>
+modified sendpeesMP by Marcin Pohl &lt;marcinpohl@gmail.com&gt;<br>
+Code based on thc-ipv6<br>
+<br>
+usage: sendpeesmp6 &lt;inferface&gt; &lt;key_length&gt; &lt;prefix&gt; &lt;victim&gt;<br>
+<br>
+Send SEND neighbor solicitation messages and make target to verify a lota CGA and RSA signatures<br>
+Example: sendpeesmp6 eth0 2048 fe80:: fe80::1</code><h3> smurf6 - 蓝精灵的与ICMP回显应答目标</h3><code>root@kali:~# smurf6<br>
+smurf6 v2.3 (c) 2013 by van Hauser / THC &lt;vh@thc.org&gt; www.thc.org<br>
+<br>
+Syntax: smurf6 interface victim-ip [multicast-network-address]<br>
+<br>
+Smurf the target with icmp echo replies. Target of echo request is the<br>
+local all-nodes multicast address if not specified</code><h3> thcping6 - 工艺的特殊ICMPv6回显请求报文</h3><code>root@kali:~# thcping6<br>
+thcping6 v2.3 (c) 2013 by van Hauser / THC &lt;vh@thc.org&gt; www.thc.org<br>
+<br>
+Syntax: thcping6 [-af] [-H o:s:v] [-D o:s:v] [-F dst] [-t ttl] [-c class] [-l label] [-d size] [-S port|-U port] interface src6 dst6 [srcmac [dstmac [data]]]<br>
+<br>
+Craft your special icmpv6 echo request packet.<br>
+You can put an "x" into src6, srcmac and dstmac for an automatic value.<br>
+Options:<br>
+  -a              add a hop-by-hop header with router alert option.<br>
+  -q              add a hop-by-hop header with quickstart option.<br>
+  -E              send as ethertype IPv4<br>
+  -H o:s:v        add a hop-by-hop header with special content<br>
+  -D o:s:v        add a destination header with special content<br>
+  -D "xxx"        add a large destination header which fragments the packet<br>
+  -f              add a one-shot fragementation header<br>
+  -F ipv6address  use source routing to this final destination<br>
+  -t ttl          specify TTL (default: 64)<br>
+  -c class        specify a class (0-4095)<br>
+  -l label        specify a label (0-1048575)<br>
+  -d data_size    define the size of the ping data buffer<br>
+  -S port         use a TCP SYN packet on the defined port instead of ping<br>
+  -U port         use a UDP packet on the defined port instead of ping<br>
+o:s:v syntax: option-no:size:value, value is in hex, e.g. 1:2:feab<br>
+Returns -1 on error or no reply, 0 on normal reply or 1 on error reply.</code><h3> thcsyn6 - 洪水与TCP-SYN数据包的目标端口</h3><code>root@kali:~# thcsyn6<br>
+thcsyn6 v2.3 (c) 2013 by van Hauser / THC &lt;vh@thc.org&gt; www.thc.org<br>
+<br>
+Syntax: thcsyn6 [-AcDrRS] [-p port] [-s sourceip6] interface target port<br>
+<br>
+Options:<br>
+ -A      send TCP-ACK packets<br>
+ -S      send TCP-SYN-ACK packets<br>
+ -r      randomize the source from your /64 prefix<br>
+ -R      randomize the source fully<br>
+ -s sourceip6  use this as source ipv6 address<br>
+ -D      randomize the destination (treat as /64)<br>
+ -p port       use fixed source port<br>
+<br>
+Flood the target port with TCP-SYN packets. If you supply "x" as port, it<br>
+is randomized.</code><h3> toobig6 - 植入体指定的MTU目标</h3><code>root@kali:~# toobig6<br>
+toobig6 v2.3 (c) 2013 by van Hauser / THC &lt;vh@thc.org&gt; www.thc.org<br>
+<br>
+Syntax: toobig6 [-u] interface target-ip existing-ip mtu [hop-limit]<br>
+<br>
+Implants the specified mtu on the target.<br>
+If the TTL of the target is not 64, then specify this as the last option.<br>
+Option -u will send the TooBig without the spoofed ping6 from existing-ip.</code><h3> trace6 - 一个基本的，但非常快traceroute6的程序</h3><code>root@kali:~# trace6<br>
+trace6 v2.3 (c) 2013 by van Hauser / THC &lt;vh@thc.org&gt; www.thc.org<br>
+<br>
+Syntax: trace6 [-abdt] [-s src6] interface targetaddress [port]<br>
+<br>
+Options:<br>
+  -a       insert a hop-by-hop header with router alert option.<br>
+  -D       insert a destination extension header<br>
+  -E       insert a destination extension header with an invalid option<br>
+  -F       insert a one-shot fragmentation header<br>
+  -b       instead of an ICMP6 Ping, use TooBig (you will not see the target)<br>
+  -B       instead of an ICMP6 Ping, use PingReply (you will not see the target)<br>
+  -d       resolves the IPv6 addresses to DNS.<br>
+  -t       enables tunnel detection<br>
+  -s src6  specifies the source IPv6 address<br>
+Maximum hop reach: 31<br>
+<br>
+A basic but very fast traceroute6 program.<br>
+If no port is specified, ICMP6 Ping requests are used, otherwise TCP SYN<br>
+packets to the specified port. Options D, E and F can be use multiple times.</code><h3> address6用法示例</h3><p> IPv6地址转换为MAC地址，反之亦然： </p><code>root@kali:~# address6 fe80::76d4:35ff:fe4e:39c8<br>
+74:d4:35:4e:39:c8<br>
+root@kali:~# address6 74:d4:35:4e:39:c8<br>
+fe80::76d4:35ff:fe4e:39c8</code><h3> alive6用法示例</h3><code>root@kali:~# alive6 eth0<br>
+Alive: fd77:7c68:420a:1:426c:8fff:fe1b:cb90 [ICMP parameter problem]<br>
+Alive: fd77:7c68:420a:1:20c:29ff:fee5:5bf4 [ICMP echo-reply]<br>
+Alive: fd77:7c68:420a:1:75d9:4f39:a46a:6f83 [ICMP echo-reply]<br>
+Alive: fd77:7c68:420a:1:6912:8e80:e02f:1969 [ICMP echo-reply]<br>
+Alive: fd77:7c68:420a:1:201:6cff:fe6f:ddd1 [ICMP echo-reply]</code><h3>检测-新IP6用法示例</h3><code>root@kali:~# detect-new-ip6 eth0<br>
+Started ICMP6 DAD detection (Press Control-C to end) ...<br>
+Detected new ip6 address: fe80::85d:9879:9251:853a</code><h3> dnsdict6用法示例</h3><code>root@kali:~# dnsdict6 example.com<br>
+Starting DNS enumeration work on example.com. ...<br>
+Starting enumerating example.com. - creating 8 threads for 798 words...<br>
+Estimated time to completion: 1 to 2 minutes<br>
+www.example.com. =&gt; 2606:2800:220:6d:26bf:1447:1097:aa7</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

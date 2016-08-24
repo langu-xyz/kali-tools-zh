@@ -1,0 +1,59 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> WOL-E包装说明</h2><p style="text-align: justify;"> WOL-E是一套用于对网络连接的计算机局域网唤醒功能的工具，这一点现在默认启用在​​许多苹果电脑。这些工具包括： </p><ul><li>暴力破解的MAC地址来唤醒客户</li><li>嗅探WOL尝试在网络上，并将它们保存到磁盘</li><li>嗅探WOL密码在网络上，并将它们保存到磁盘</li><li>醒来单一客户（后嗅探攻击） </li><li>扫描苹果设备的网络WOL使上</li><li>发送大量的WOL请求所有检测到的苹果客户端</li></ul><p>资料来源：https://code.google.com/p/wol-e/ <br> <a href="http://code.google.com/p/wol-e/" variation="deepblue" target="blank">WOL-E首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/wol-e.git;a=summary" variation="deepblue" target="blank">卡利WOL-E回购</a> </p><ul><li>作者：纳撒尼尔·卡鲁</li><li>许可：GPLv3的</li></ul><h3>包括在WOL-E封装工具</h3><h5> WOL-E - 网络唤醒浏览器</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e89a87879ca883898481">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wol-e -h<br>
+<br>
+[*] WOL-E 1.0<br>
+[*] Wake on LAN Explorer - A collection a WOL tools.<br>
+[*] by Nathaniel Carew<br>
+<br>
+    -m<br>
+        Waking up single computers.<br>
+        If a password is required use the -k 00:12:34:56:78:90 at the end of the above command.<br>
+        wol-e -m 00:12:34:56:78:90 -b 192.168.1.255 -p &lt;port&gt; -k &lt;pass&gt;<br>
+        Defaults:<br>
+        Port: 9<br>
+        Broadcast: 255.255.255.255<br>
+        Pass: empty<br>
+<br>
+    -s<br>
+        Sniffing the network for WOL requests and passwords.<br>
+        All captured WOL requests will be displayed on screen and written to /usr/share/wol-e/WOLClients.txt.<br>
+        wol-e -s -i eth0<br>
+<br>
+    -a<br>
+        Bruteforce powering on WOL clients.<br>
+        wol-e -a -p &lt;port&gt;<br>
+        Place the address ranges into the bfmac.lst that you wish to bruteforce.<br>
+        They should be in the following format:<br>
+        00:12:34:56<br>
+        Default port: 9<br>
+<br>
+    -f<br>
+        Detecting Apple devices on the network for WOL enabling.<br>
+        This will output to the screen and write to /usr/share/wol-e/AppleTargets.txt for detected Apple MAC's.<br>
+        wol-e -f<br>
+<br>
+    -fa<br>
+        Attempt to wake all detected Apple targets in /usr/share/wol-e/AppleTargets.txt.<br>
+        This will send a single WOL packet to each client in the list and tell you how many clients were attempted.<br>
+        wol-e -fa</code><h3> WOL-E用法示例</h3><p>检测苹果设备网络<b><i>（-f）</i></b>上： </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="23514c4c576348424f4a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wol-e -f<br>
+<br>
+    [*] WOL-E 1.0 [*]<br>
+    [*] Wake on LAN Explorer - Scan for Apple devices.<br>
+<br>
+    [*] arping 192.168.1.0/24 on eth0<br>
+    [*] Apple device detected: de:ad:be:ef:46:32 192.168.1.12. saving to AppleTargets.txt</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

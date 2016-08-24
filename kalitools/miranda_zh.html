@@ -1,0 +1,39 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2>米兰达包装说明</h2><p style="text-align: justify;">米兰达是旨在发现，查询和UPnP设备，特别是Internet网关设备（即路由器）交互的基于Python的通用即插即用-N-播放客户端应用程序。它可以用于对可能的漏洞在网络上审核UPnP使能的设备。它的一些特性包括： </p><ul><li>互动外壳，标签完成和命令历史记录</li><li> UPnP设备的被动和主动发现</li><li>可定制的MSEARCH查询（查询特定设备/服务） </li><li>完全的控制权，如IP地址，端口和头应用程序设置</li><li>的UPnP设备，服务，操作和变量的简单枚举</li><li>输入的相关性/输出状态变量的服务行动</li><li>能够发送到UPNP服务/设备的操作</li><li>能够保存数据到文件供以后分析和协作</li><li>命令日志记录</li></ul><p>米兰达是建立在和Linux系统，并已经过测试，在Linux 2.6内核与Python 2.5。然而，因为它是用Python编写的，大部分功能应该可用于任何的Python支持的平台。米兰达已经过测试，对来自不同厂商，包括Linksys公司，D-LINK，Belkin和Actiontec的IGDS。所有的Python模块来了默认安装在Linux Mint的5（Ubuntu的8.04）测试系统。 </p><p>资料来源：https://code.google.com/p/mirandaupnptool/ <br> <a href="http://code.google.com/p/mirandaupnptool/" variation="deepblue" target="blank">米兰达首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/miranda.git;a=summary" variation="deepblue" target="blank">卡利米兰达回购</a> </p><ul><li>作者：克雷格·Heffner </li><li>许可：MIT </li></ul><h3>包含在米兰达包工具</h3><h5>米兰达 - UPNP管理工具</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="25574a4a51654e44494c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# miranda -h<br>
+<br>
+Command line usage: /usr/bin/miranda [OPTIONS]<br>
+<br>
+    -s &lt;struct file&gt;    Load previous host data from struct file<br>
+    -l &lt;log file&gt;       Log user-supplied commands to log file<br>
+    -i &lt;interface&gt;      Specify the name of the interface to use (Linux only, requires root)<br>
+    -u          Disable show-uniq-hosts-only option<br>
+    -d          Enable debug mode<br>
+    -v          Enable verbose mode<br>
+    -h          Show help</code><h3>米兰达用法示例</h3><p>开始在eth0接口<b><i>（-i eth0的）</i></b>在详细模式<b><i>（-v），</i></b>然后开始发现模式<b><i>（msearch）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fc8e939388bc979d9095">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# miranda -i eth0 -v<br>
+<br>
+Binding to interface eth0 ...<br>
+<br>
+Verbose mode enabled!<br>
+upnp&gt; msearch<br>
+<br>
+Entering discovery mode for 'upnp:rootdevice', Ctl+C to stop...<br>
+<br>
+****************************************************************<br>
+SSDP notification message from 192.168.1.230:80<br>
+XML file is located at http://192.168.1.230:80/description.xml<br>
+Device is running FreeRTOS/6.0.5, UPnP/1.0, IpBridge/0.1</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,68 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> dns2tcp包装说明</h2><p style="text-align: justify;"> Dns2tcp是一种网络工具，通过DNS流量中继的TCP连接。封装完成在TCP层，因此没有特定的驱动程序是必要的（即：TUN / TAP）。 Dns2tcp客户端并不需要与特定权限运行。 </p><p> Dns2tcp是由两部分组成：一服务器端工具和一个客户端的工具。服务器具有在配置文件中指定的资源的列表。每个资源是本地或远程服务监听TCP连接。客户端侦听一个预定义的TCP端口和继电器通过DNS到最终服务的每个入站连接。 </p><p>资料来源：http://www.hsc.fr/ressources/outils/dns2tcp/ <br> <a href="http://www.hsc.fr/ressources/outils/dns2tcp/" variation="deepblue" target="blank">dns2tcp首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/dns2tcp.git;a=summary" variation="deepblue" target="blank">卡利dns2tcp回购</a> </p><ul><li>作者：奥利维尔Dembour </li><li>许可：GPL第二版</li></ul><h3>包含在dns2tcp包工具</h3><h5> dns2tcpd - dns2tcp服务器组件</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="24564b4b50644f45484d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dns2tcpd<br>
+Usage : dns2tcpd [ -i IP ] [ -F ] [ -d debug_level ] [ -f config-file ] [ -p pidfile ]<br>
+     -F : dns2tcpd will run in foreground</code><h3> dns2tcpc - dns2tcp客户端组件</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f684999982b69d979a9f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dns2tcpc<br>
+No DNS given, using 192.168.1.1 (first entry found in resolv.conf)<br>
+Missing parameter : need a dns zone<br>
+dns2tcp v0.5.2 ( http://www.hsc.fr/ )<br>
+Usage : dns2tcpc [options] [server]<br>
+    -c          : enable compression<br>
+    -z &lt;domain&gt; : domain to use (mandatory)<br>
+    -d &lt;1|2|3&gt;  : debug_level (1, 2 or 3)<br>
+    -r &lt;resource&gt;   : resource to access<br>
+    -k &lt;key&gt;    : pre-shared key<br>
+    -f &lt;filename&gt;   : configuration file<br>
+    -l &lt;port|-&gt; : local port to bind, '-' is for stdin (mandatory if resource defined without program )<br>
+    -e &lt;program&gt;    : program to execute<br>
+    -t &lt;delay&gt;  : max DNS server's answer delay in seconds (default is 3)<br>
+    -T &lt;TXT|KEY&gt;    : DNS request type (default is TXT)<br>
+    server  : DNS server to use<br>
+    If no resources are specified, available resources will be printed</code><h3> dns2tcpd用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="98eaf7f7ecd8f3f9f4f1b5ebfdeaeefdea">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cat &gt;&gt;.dns2tcpdrc &lt;&lt;END<br>
+listen = 0.0.0.0<br>
+port = 53<br>
+user=nobody<br>
+chroot = /root/dns2tcp<br>
+pid_file = /var/run/dns2tcp.pid<br>
+domain = dns2tcp.kali.org<br>
+key = secretkey<br>
+resources = ssh:127.0.0.1:22<br>
+END<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c9bba6a6bd89a2a8a5a0e4baacbbbfacbb">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dns2tcpd -f .dns2tcpdrc<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f2809d9d86b299939e9bdf819780849780">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~#</code><h3> dns2tcpc用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d0a2bfbfa490bbb1bcb9fdb3bcb9b5bea4">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cat &gt;&gt;.dns2tcprc &lt;&lt;END<br>
+domain = dns2tcp.kali.org<br>
+resource = ssh<br>
+local_port = 2139<br>
+key = secretkey<br>
+END<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="84f6ebebf0c4efe5e8eda9e7e8ede1eaf0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dns2tcpc -f .dns2tcprc<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9ae8f5f5eedaf1fbf6f3b7f9f6f3fff4ee">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ssh <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6a1805051e2a0605090b060205191e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> -p 2139 -D 8090<br>
+The authenticity of host '[localhost]:2139 ([127.0.0.1]:2139)' can't be established.<br>
+ECDSA key fingerprint is aa:bb:1f:cc:f1:ab:7c:71:9b:62:37:8c:f1:60:2e:98.<br>
+Are you sure you want to continue connecting (yes/no)? yes<br>
+Warning: Permanently added '[localhost]:2139' (ECDSA) to the list of known hosts.<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="691b06061d2905060a080501061a1d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>'s password:<br>
+Linux flw 3.12-kali1-amd64 #1 SMP Debian 3.12.6-2kali1 (2014-01-06) x86_64<br>
+<br>
+The programs included with the Kali GNU/Linux system are free software;<br>
+the exact distribution terms for each program are described in the<br>
+individual files in /usr/share/doc/*/copyright.<br>
+<br>
+Kali GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>
+permitted by applicable law.<br>
+Last login: Tue May  6 22:54:15 2014 from beast.fritz.box<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="74061b1b00341f15181d59071106021106">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~#</code><h3> dns2tcpc实例详细信息</h3><p>在这种情况下，我们将隧道的一些交通来自客户端的外围防火墙，以我们自己的服务器后面。由于dns2tcp使用DNS（请求TXT记录（子）域内）存档的目标，我们需要创建一个NS记录为一个新的子域名指向我们的服务器的地址。 </p><code>dns2tcp.kali.org. IN NS lab.kali.org.</code><p>没有必要为一个DNS服务器安装。但请记住，你可能添加了一个新的NS到一个真正的DNS区域。它可能需要一段时间，直到新的子域名为“主动”。 </p><p>在接下来的步骤（dns2tcpd用法示例），我们建立我们的服务器上的配置文件（lab.kali.org），然后启动守护进程。为了确保一切工作正常，你会考虑使用选项“-F”（在前台运行）和“-d 1”（调试）在第一次启动。 </p><p>现在，您可以配置主机（dns2tcpc用法示例），并运行该工具的客户端部分。现在的隧道建立，并可以使用ssh（<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="80d3d3c8662039c0661c2c651c30adf0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> 2139 -D 8090）连接到远程框。请记住使用遥控盒（lab.kali.org）的用户名，因为连接进入端口2139（-p 2139）。交通到此端口获取通过DNS隧道（因为dns2tcp客户端侦听此端口）连接到远程服务器（如您的dns2tcp服务器等待端口53上的入站连接）。虽然通过ssh连接到远程机器，你还创建了一个额外的侦听器，您的ssh命令（-D 8090）。该端口可以作为SOCKS代理，交通也将tunneld到远程框。 </p><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

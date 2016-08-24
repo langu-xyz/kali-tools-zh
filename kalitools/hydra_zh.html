@@ -1,0 +1,90 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2>水润包装说明</h2><p style="text-align: justify;"> Hydra是一个并行登录破解，支持多种协议的攻击。这是非常快速和灵活，新的模块很容易添加。这个工具可以使研究人员和安全顾问，以显示这将是多么容易远程获得未经授权的访问系统。 </p><p>它支持：思科AAA，思科权威性，思科实现，CVS，FTP，HTTP（S）构型-GET，HTTP（S）构型-POST，HTTP（S）-GET，HTTP（S）-head，基于HTTP代理，ICQ，IMAP，IRC，LDAP，MS-SQL，MySQL和NNTP，Oracle侦听，甲骨文SID，PC-Anywhere中，PC-NFS，POP3和PostgreSQL，RDP，REXEC，Rlogin的，硫醇，SIP，SMB（NT） ，SMTP，SMTP枚举，SNMP V1 + V2 + V3，SOCKS5，SSH（v1和v2），SSHKEY，颠覆，Teamspeak（TS2），远程登录，VMware的验证，VNC和XMPP。 </p><p>资料来源：https://www.thc.org/thc-hydra/ <br> <a href="http://freeworld.thc.org/thc-hydra/" variation="deepblue" target="blank">THC-水润首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/hydra.git;a=summary" variation="deepblue" target="blank">卡利THC-水润回购</a> </p><ul><li>作者：范·豪瑟，罗兰·凯斯勒</li><li>许可：AGPL-3.0 </li></ul><h3>包含在九头蛇包工具</h3><h5>九头蛇 - 非常快速网络登录破解</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="94e6fbfbe0d4fff5f8fd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# hydra -h<br>
+Hydra v7.6 (c)2013 by van Hauser/THC &amp; David Maciejak - for legal purposes only<br>
+<br>
+Syntax: hydra [[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e nsr] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-W TIME] [-f] [-s PORT] [-x MIN:MAX:CHARSET] [-SuvV46] [service://server[:PORT][/OPT]]<br>
+<br>
+Options:<br>
+  -R        restore a previous aborted/crashed session<br>
+  -S        perform an SSL connect<br>
+  -s PORT   if the service is on a different default port, define it here<br>
+  -l LOGIN or -L FILE  login with LOGIN name, or load several logins from FILE<br>
+  -p PASS  or -P FILE  try password PASS, or load several passwords from FILE<br>
+  -x MIN:MAX:CHARSET  password bruteforce generation, type "-x -h" to get help<br>
+  -e nsr    try "n" null password, "s" login as pass and/or "r" reversed login<br>
+  -u        loop around users, not passwords (effective! implied with -x)<br>
+  -C FILE   colon separated "login:pass" format, instead of -L/-P options<br>
+  -M FILE   list of servers to be attacked in parallel, one entry per line<br>
+  -o FILE   write found login/password pairs to FILE instead of stdout<br>
+  -f / -F   exit when a login/pass pair is found (-M: -f per host, -F global)<br>
+  -t TASKS  run TASKS number of connects in parallel (per host, default: 16)<br>
+  -w / -W TIME  waittime for responses (32s) / between connects per thread<br>
+  -4 / -6   prefer IPv4 (default) or IPv6 addresses<br>
+  -v / -V / -d  verbose mode / show login+pass for each attempt / debug mode<br>
+  -U        service module usage details<br>
+  server    the target server (use either this OR the -M option)<br>
+  service   the service to crack (see below for supported protocols)<br>
+  OPT       some service modules support additional input (-U for module help)<br>
+<br>
+Supported services: asterisk afp cisco cisco-enable cvs firebird ftp ftps http[s]-{head|get} http[s]-{get|post}-form http-proxy http-proxy-urlenum icq imap[s] irc ldap2[s] ldap3[-{cram|digest}md5][s] mssql mysql ncp nntp oracle-listener oracle-sid pcanywhere pcnfs pop3[s] postgres rdp rexec rlogin rsh s7-300 sip smb smtp[s] smtp-enum snmp socks5 ssh sshkey svn teamspeak telnet[s] vmauthd vnc xmpp<br>
+<br>
+Hydra is a tool to guess/crack valid login/password pairs - usage only allowed<br>
+for legal purposes. This tool is licensed under AGPL v3.0.<br>
+The newest version is always available at http://www.thc.org/thc-hydra<br>
+These services were not compiled in: sapr3 oracle.<br>
+<br>
+Use HYDRA_PROXY_HTTP or HYDRA_PROXY - and if needed HYDRA_PROXY_AUTH - environment for a proxy setup.<br>
+E.g.:  % export HYDRA_PROXY=socks5://127.0.0.1:9150 (or socks4:// or connect://)<br>
+       % export HYDRA_PROXY_HTTP=http://proxy:8080<br>
+       % export HYDRA_PROXY_AUTH=user:pass<br>
+<br>
+Examples:<br>
+  hydra -l user -P passlist.txt ftp://192.168.0.1<br>
+  hydra -L userlist.txt -p defaultpw imap://192.168.0.1/PLAIN<br>
+  hydra -C defaults.txt -6 pop3s://[fe80::2c:31ff:fe12:ac11]:143/TLS:DIGEST-MD5</code><h3> PW-检查 - 读取密码和打印那些符合要求</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7a0815150e3a111b1613">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pw-inspector<br>
+PW-Inspector v0.2 (c) 2005 by van Hauser / THC <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="186e70586c707b36776a7f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> [http://www.thc.org]<br>
+<br>
+Syntax: pw-inspector [-i FILE] [-o FILE] [-m MINLEN] [-M MAXLEN] [-c MINSETS] -l -u -n -p -s<br>
+<br>
+Options:<br>
+  -i FILE    file to read passwords from (default: stdin)<br>
+  -o FILE    file to write valid passwords to (default: stdout)<br>
+  -m MINLEN  minimum length of a valid password<br>
+  -M MAXLEN  maximum length of a valid password<br>
+  -c MINSETS the minimum number of sets required (default: all given)<br>
+Sets:<br>
+  -l         lowcase characters (a,b,c,d, etc.)<br>
+  -u         upcase characters (A,B,C,D, etc.)<br>
+  -n         numbers (1,2,3,4, etc.)<br>
+  -p         printable characters (which are not -l/-n/-p, e.g. $,!,/,(,*, etc.)<br>
+  -s         special characters - all others not withint the sets above<br>
+<br>
+PW-Inspector reads passwords in and prints those which meet the requirements.<br>
+The return code is the number of valid passwords found, 0 if none was found.<br>
+Use for security: check passwords, if 0 is returned, reject password choice.<br>
+Use for hacking: trim your dictionary file to the pw requirements of the target.<br>
+Usage only allowed for legal purposes.</code><h3>九头蛇用法示例</h3><p>尝试使用密码列表<b><i>（-P /usr/share/wordlists/metasploit/unix_passwords.txt）</i></b>有6个线程<b><i>（-t 6）</i></b>给定的SSH服务器上<b><i>（ssh来</i></b>登录为root用户<b><i>（-l root用户<i><b>）：//</b></i></i></b> <b><i>192.168.1.123）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="15677a7a61557e74797c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# hydra -l root -P /usr/share/wordlists/metasploit/unix_passwords.txt -t 6 ssh://192.168.1.123<br>
+Hydra v7.6 (c)2013 by van Hauser/THC &amp; David Maciejak - for legal purposes only<br>
+<br>
+Hydra (http://www.thc.org/thc-hydra) starting at 2014-05-19 07:53:33<br>
+[DATA] 6 tasks, 1 server, 1003 login tries (l:1/p:1003), ~167 tries per task<br>
+[DATA] attacking service ssh on port 22</code><h3> PW-检查用法示例</h3><p>读入的<b><i>口令（-i /usr/share/wordlists/nmap.lst）</i></b>的列表，并保存到文件<b><i>（-o /root/passes.txt），</i></b>选择的一个最小长度的密码<b><i>6（-m 6）和</i></b>为10的最大长度<b><i>（-M 10）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7c0e1313083c171d1015">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pw-inspector -i /usr/share/wordlists/nmap.lst -o /root/passes.txt -m 6 -M 10<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f684999982b69d979a9f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wc -l /usr/share/wordlists/nmap.lst <br>
+5086 /usr/share/wordlists/nmap.lst<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6f1d00001b2f040e0306">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wc -l /root/passes.txt <br>
+4490 /root/passes.txt</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,104 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> openvas扫描仪包装说明</h2><p style="text-align: justify;">开放式漏洞评估系统是一个模块化的安全审计工具，用于测试远程系统中，应该是固定的漏洞。它是由两部分组成：一个扫描服务器和客户端。扫描仪/守护程序，openvassd，负责的攻击，而客户端，OpenVAS客户端，提供了一个X11 / GTK +的用户界面。该软件包提供了扫描仪。 </p><p> <a href="http://www.openvas.org/" variation="deepblue" target="blank">openvas扫描仪首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/openvas-scanner.git;a=summary" variation="deepblue" target="blank">卡利openvas扫描器回购</a> </p><ul><li>作者：OpenVAS </li><li>许可：GPL第二版</li></ul><h3>列入openvas，扫描仪的包装工具</h3><h5> greenbone-NVT同步 - 更新OpenVAS安全检查</h5><p>更新从Greenbone安全饲料的OpenVAS安全检查。 </p><h5> openvas-的adduser - 添加OpenVAS用户</h5><p>添加一个用户在openvassd用户群。 </p><h5> openvas-mkcert - 创建一个扫描仪证书</h5><p>创建一个扫描器证书。 </p><h5> openvas-mkcert客户端 - 创建SSL客户端证书OpenVAS </h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="186a77776c5873797471">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvas-mkcert-client -h<br>
+Usage:<br>
+  openvas-mkcert-client [OPTION...] - Create SSL client certificates for OpenVAS.<br>
+<br>
+Options:<br>
+  -h           Display help<br>
+  -n &lt;name&gt;    Run non-interactively, create certificates for user &lt;name&gt;<br>
+               and register user &lt;name&gt; with the OpenVAS scanner<br>
+  -i           Install client certificates for use with OpenVAS manager</code><h3> openvas-NVT同步 - 同步的网络漏洞测试使用不同的协议</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="88fae7e7fcc8e3e9e4e1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvas-nvt-sync --help<br>
+/usr/sbin/openvas-nvt-sync: Sync NVTs using different protocols<br>
+ --rsync    sync with rsync (default)<br>
+ --wget     sync with wget<br>
+ --curl     sync with curl<br>
+ --check    just checksum check<br>
+OpenVAS administrator functions:<br>
+ --selftest  perform self-test<br>
+ --identify  display information<br>
+ --version   display version<br>
+ --describe  display current feed info<br>
+ --feedversion   display current feed version info<br>
+ --nvt-dir &lt;dir&gt; set directory of the NVT collection for this run<br>
+ --migrate-to-private   migrate unsigned files to private directory<br>
+<br>
+Environment variables:<br>
+NVT_DIR     where to extract plugins (absolute path)<br>
+PRIVATE_SUBDIR  subdirectory of $NVT_DIR to migrate unsigned files to<br>
+OV_RSYNC_FEED   URL of rsync feed<br>
+OV_HTTP_FEED    URL of http feed<br>
+TMPDIR      temporary directory used to download the files<br>
+Note that you can use standard ones as well (e.g. http_proxy) for wget/curl</code><h3> openvas-rmuser - 删除一个OpenVAS用户</h3><p>移除该openvassd用户群的用户。 </p><h3> openvassd - 在OpenVAS扫描仪</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e1938e8e95a18a808d88">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvassd --help<br>
+Usage:<br>
+  openvassd [OPTION...] - Scanner of the Open Vulnerability Assessment System<br>
+<br>
+Help Options:<br>
+  -h, --help                      Show help options<br>
+<br>
+Application Options:<br>
+  -V, --version                   Display version information<br>
+  -f, --foreground                Do not run in daemon mode but stay in foreground<br>
+  -a, --listen=&lt;address&gt;          Listen on &lt;address&gt;<br>
+  -S, --src-ip=&lt;ip[,ip...]&gt;       Send packets with a source IP of &lt;ip[,ip...]&gt;<br>
+  -p, --port=&lt;number&gt;             Use port number &lt;number&gt;<br>
+  -c, --config-file=&lt;.rcfile&gt;     Configuration file<br>
+  -q, --quiet                     Quiet (do not issue any messages to stdout)<br>
+  -s, --cfg-specs                 Print configuration settings<br>
+  -y, --sysconfdir                Print system configuration directory (set at compile time)<br>
+  -C, --only-cache                Exit once the NVT cache has been initialized or updated</code><h3> openvas-的adduser用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c8baa7a7bc88a3a9a4a1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvas-adduser<br>
+Using /var/tmp as a temporary file holder.<br>
+<br>
+Add a new openvassd user<br>
+---------------------------------<br>
+<br>
+<br>
+Login : dookie<br>
+Authentication (pass/cert) [pass] : <br>
+Login password : <br>
+Login password (again) : <br>
+<br>
+User rules<br>
+---------------<br>
+openvassd has a rules system which allows you to restrict the hosts that dookie has the right to test.<br>
+For instance, you may want him to be able to scan his own host only.<br>
+<br>
+Please see the openvas-adduser(8) man page for the rules syntax.<br>
+<br>
+Enter the rules for this user, and hit ctrl-D once you are done:<br>
+(the user can have an empty rules set)<br>
+<br>
+<br>
+Login             : dookie<br>
+Password          : ***********<br>
+<br>
+Rules             : <br>
+<br>
+<br>
+Is that ok? (y/n) [y] y<br>
+user added.</code><h3> openvas-NVT同步用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="bbc9d4d4cffbd0dad7d2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvas-nvt-sync<br>
+[i] This script synchronizes an NVT collection with the 'OpenVAS NVT Feed'.<br>
+[i] The 'OpenVAS NVT Feed' is provided by 'The OpenVAS Project'.<br>
+[i] Online information about this feed: 'http://www.openvas.org/openvas-nvt-feed.html'.<br>
+[i] NVT dir: /var/lib/openvas/plugins<br>
+[i] Will use rsync<br>
+[i] Using rsync: /usr/bin/rsync<br>
+[i] Configured NVT rsync feed: rsync://feed.openvas.org:/nvt-feed<br>
+[w] Private directory '/var/lib/openvas/plugins/private' not found.<br>
+[w] Non-feed NVTs not migrated there will be deleted by rsync.<br>
+Run migration now ([y/n], any other input aborts)? y</code><h3> openvas-rmuser用法示例</h3><h100>五</h100><h3> openvassd用法示例</h3><p>启动OpenVAS扫描仪守护在<b><i>192.168.1.202（-a 192.168.1.202），</i></b>前台<b><i>（-f）8888</i></b>端口<b><i>（-p 8888）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7705181803371c161b1e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# openvassd -f -a 192.168.1.202 -p 8888<br>
+All plugins loaded</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

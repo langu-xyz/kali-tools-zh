@@ -1,0 +1,62 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> SSLsplit包装说明</h2><p style="text-align: justify;"> SSLsplit是人在这方面的中间人攻击SSL的工具/ TLS加密的网络连接。连接是通过一个网络地址转换引擎透明拦截并重定向到SSLsplit。 SSLsplit终止SSL / TLS和启动一个新的SSL / TLS连接到原来的目的地址，同时记录传输的所有数据。 SSLsplit旨在成为网络取证和渗透测试非常有用。 </p><p> SSLsplit支持普通TCP，普通SSL，HTTP和通过IPv4和IPv6的HTTPS连接。对于SSL和HTTPS连接，SSLsplit生成和体征伪造采用X509v3证书上的即时，在原有基础上的服务器证书主题DN和subjectAltName扩展。 SSLsplit完全支持服务器名称指示（SNI），并能够与RSA，DSA和ECDSA密钥和DHE和ECDHE密码套件的工作。 SSLsplit还可以使用现有证书其中的私钥，而不是生成伪造的人可用，。 SSLsplit支持NULL前缀CN证书，并可以拒绝在一个通用的方法OCSP请求。 SSLsplit删除HPKP响应头，以防止公共密钥钉扎。 </p><p>资料来源：http://www.roe.ch/SSLsplit <br> <a href="http://www.roe.ch/SSLsplit" variation="deepblue" target="blank">SSLsplit首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/sslsplit.git;a=summary" variation="deepblue" target="blank">卡利SSLsplit回购</a> </p><ul><li>作者：丹尼尔·罗特利斯伯格</li><li>许可：BSD </li></ul><h3>包含在sslsplit包工具</h3><h5> sslsplit - 透明和可扩展的SSL / TLS的拦截</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b5c7dadac1f5ded4d9dc">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sslsplit -h<br>
+Usage: sslsplit [options...] [proxyspecs...]<br>
+  -c pemfile  use CA cert (and key) from pemfile to sign forged certs<br>
+  -k pemfile  use CA key (and cert) from pemfile to sign forged certs<br>
+  -C pemfile  use CA chain from pemfile (intermediate and root CA certs)<br>
+  -K pemfile  use key from pemfile for leaf certs (default: generate)<br>
+  -t certdir  use cert+chain+key PEM files from certdir to target all sites<br>
+              matching the common names (non-matching: generate if CA)<br>
+  -O          deny all OCSP requests on all proxyspecs<br>
+  -P          passthrough SSL connections if they cannot be split because of<br>
+              client cert auth or no matching cert and no CA (default: drop)<br>
+  -g pemfile  use DH group params from pemfile (default: keyfiles or auto)<br>
+  -G curve    use ECDH named curve (default: secp160r2 for non-RSA leafkey)<br>
+  -Z          disable SSL/TLS compression on all connections<br>
+  -s ciphers  use the given OpenSSL cipher suite spec (default: ALL:-aNULL)<br>
+  -e engine   specify default NAT engine to use (default: netfilter)<br>
+  -E          list available NAT engines and exit<br>
+  -u user     drop privileges to user (default if run as root: nobody)<br>
+  -j jaildir  chroot() to jaildir (default if run as root: /var/empty)<br>
+  -p pidfile  write pid to pidfile (default: no pid file)<br>
+  -l logfile  connect log: log one line summary per connection to logfile<br>
+  -L logfile  content log: full data to file or named pipe (excludes -S)<br>
+  -S logdir   content log: full data to separate files in dir (excludes -L)<br>
+  -d          daemon mode: run in background, log error messages to syslog<br>
+  -D          debug mode: run in foreground, log debug messages on stderr<br>
+  -V          print version information and exit<br>
+  -h          print usage information and exit<br>
+  proxyspec = type listenaddr+port [natengine|targetaddr+port|"sni"+port]<br>
+  e.g.        http 0.0.0.0 8080 www.roe.ch 80  # http/4; static hostname dst<br>
+              https ::1 8443 2001:db8::1 443   # https/6; static address dst<br>
+              https 127.0.0.1 9443 sni 443     # https/4; SNI DNS lookups<br>
+              tcp 127.0.0.1 10025              # tcp/4; default NAT engine<br>
+              ssl 2001:db8::2 9999 pf          # ssl/6; NAT engine 'pf'<br>
+Example:<br>
+  sslsplit -k ca.key -c ca.pem -P  https 127.0.0.1 8443  https ::1 8443</code><h3> sslsplit用法示例</h3><p>在调试模式<b><i>（-D）运行</i></b> ，记录的连接<b><i>（-l connections.log），</i></b>设置chroot监牢<b><i>（-j的/ tmp / sslsplit /），</i></b>将文件保存到磁盘<b><i>（-S / tmp目录/），</i></b>指定密钥<b><i>（ -k的ca.key），</i></b>指定证书<b><i>（-C ca.crt），</i></b>指定<b><i>SSL（SSL），</i></b>并配置代理服务器<b><i>（0.0.0.0 8443 TCP 0.0.0.0 8080）</i> <b></b> ：</b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0e7c61617a4e656f6267">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sslsplit -D -l connections.log -j /tmp/sslsplit/ -S /tmp/ -k ca.key -c ca.crt ssl 0.0.0.0 8443 tcp 0.0.0.0 8080<br>
+Generated RSA key for leaf certs.<br>
+SSLsplit 0.4.6 (built 2013-06-06)<br>
+Copyright (c) 2009-2013, Daniel Roethlisberger &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6206030c0b070e22100d074c010a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+http://www.roe.ch/SSLsplit<br>
+Features: -DDISABLE_SSLV2_SESSION_CACHE -DHAVE_NETFILTER<br>
+NAT engines: netfilter* tproxy<br>
+netfilter:  IP_TRANSPARENT SOL_IPV6 !IPV6_ORIGINAL_DST<br>
+compiled against OpenSSL 1.0.1e 11 Feb 2013 (1000105f)<br>
+rtlinked against OpenSSL 1.0.1e 11 Feb 2013 (1000105f)<br>
+TLS Server Name Indication (SNI) supported<br>
+OpenSSL is thread-safe with THREADID</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

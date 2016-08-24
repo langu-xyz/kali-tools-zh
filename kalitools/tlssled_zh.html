@@ -1,0 +1,52 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> TLSSLed包装说明</h2><p style="text-align: justify;"> TLSSLed是Linux外壳脚本，其目的是评价目标SSL / TLS（HTTPS）web服务器执行的安全性。它是基于sslscan，彻底SSL / TLS的扫描器，它基于OpenSSL库，并在“OpenSSL的s_client”的命令行工具。当前测试包括检查所述目标支持的SSLv2协议，空密码中，弱密码基于其密钥长度（40或56位），强密码（如AES）的可用性，如果数字证书的MD5签名，和当前的SSL / TLS的重新协商能力。 </p><p>资料来源：http://www.taddong.com/en/lab.html <br> <a href="http://www.taddong.com/en/lab.html" variation="deepblue" target="blank">TLSSLed首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/tlssled.git;a=summary" variation="deepblue" target="blank">卡利TLSSLed回购</a> </p><ul><li>作者：劳尔·西莱斯，Taddong SL </li><li>许可：GPLv3的</li></ul><h3>包含在tlssled包工具</h3><h3> tlssled - 计算一个目标SSL / TLS（HTTPS）服务器的安全</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="60120f0f14200b010c09">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# tlssled<br>
+------------------------------------------------------<br>
+ TLSSLed - (1.3) based on sslscan and openssl<br>
+                 by Raul Siles (www.taddong.com)<br>
+------------------------------------------------------<br>
+    openssl version: OpenSSL 1.0.1e 11 Feb 2013<br>
+    sslscan version 1.8.2<br>
+------------------------------------------------------<br>
+    Date: 20140520-110731<br>
+------------------------------------------------------<br>
+<br>
+[!] Usage: /usr/bin/tlssled &lt;hostname or IP_address&gt; &lt;port&gt;</code><h3> TLSSLed用法示例</h3><p>检查SSL / TLS的<b><i>主机（192.168.1.1）</i></b>和端口<b><i>（443）</i></b>上： </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="186a77776c5873797471">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# tlssled 192.168.1.1 443<br>
+------------------------------------------------------<br>
+ TLSSLed - (1.3) based on sslscan and openssl<br>
+                 by Raul Siles (www.taddong.com)<br>
+------------------------------------------------------<br>
+    openssl version: OpenSSL 1.0.1e 11 Feb 2013<br>
+    sslscan version 1.8.2<br>
+------------------------------------------------------<br>
+    Date: 20140513-165131<br>
+------------------------------------------------------<br>
+<br>
+[*] Analyzing SSL/TLS on 192.168.1.1:443 ...<br>
+    [.] Output directory: TLSSLed_1.3_192.168.1.1_443_20140513-165131 ...<br>
+<br>
+[*] Checking if the target service speaks SSL/TLS...<br>
+    [.] The target service 192.168.1.1:443 seems to speak SSL/TLS...<br>
+<br>
+    [.] Using SSL/TLS protocol version:<br>
+        (empty means I'm using the default openssl protocol version(s))<br>
+<br>
+[*] Running sslscan on 192.168.1.1:443 ...<br>
+<br>
+    [-] Testing for SSLv2 ...<br>
+<br>
+    [-] Testing for the NULL cipher ...</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

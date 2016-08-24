@@ -1,0 +1,87 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> apktool包装说明</h2><p style="text-align: justify;">这是逆向工程的第三方，封闭的，二进制Android应用的工具。它可以解码的资源到近原来的形式，使一些修改后，重建他们。它使得可以调试smali代码一步一步来。同时它与应用程序的工作，因为项目类文件结构就像盖APK等一些重复的任务和自动化更容易</p><p>它的目的不是盗版和其他非合法用途。它可以用来本地化，增加了一些功能或支持自定义平台等有良好的目的。只是尽量公平与应用程序的作者，您使用，可能喜欢。 </p><p>产品特点： </p><ul><li>解码资源近原始形式（包括resources.arsc，XML，并9.png文件），并重建其</li><li> smali调试：SmaliDebugging </li><li>帮助一些重复性任务</li></ul><p>资料来源：https://code.google.com/p/android-apktool/ <br> <a href="http://code.google.com/p/android-apktool/" variation="deepblue" target="blank">apktool首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/apktool.git;a=summary" variation="deepblue" target="blank">卡利apktool回购</a> </p><ul><li>作者：Brut.alll </li><li>许可：Apache的2.0 </li></ul><h3>包含在apktool包工具</h3><h5> apktool - 重新规划的Andr​​oid APK文件的工具</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6d1f0202192d060c0104">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# apktool<br>
+Apktool v1.5.2 - a tool for reengineering Android apk files<br>
+Copyright 2010 Ryszard Wiśniewski &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9bf9e9eeefb5faf7f7f7dbfcf6faf2f7b5f8f4f6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+with smali v1.4.1, and baksmali v1.4.1<br>
+Updated by @iBotPeaches &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2a494544444558045e5f4748464f5945446a4d474b434604494547">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)<br>
+<br>
+Usage: apktool [-q|--quiet OR -v|--verbose] COMMAND [...]<br>
+<br>
+COMMANDs are:<br>
+<br>
+    d[ecode] [OPTS] &lt;file.apk&gt; [&lt;dir&gt;]<br>
+        Decode &lt;file.apk&gt; to &lt;dir&gt;.<br>
+<br>
+        OPTS:<br>
+<br>
+        -s, --no-src<br>
+            Do not decode sources.<br>
+        -r, --no-res<br>
+            Do not decode resources.<br>
+        -d, --debug<br>
+            Decode in debug mode. Check project page for more info.<br>
+        -b, --no-debug-info<br>
+            Baksmali -- don't write out debug info (.local, .param, .line, etc.)<br>
+        -f, --force<br>
+            Force delete destination directory.<br>
+        -t &lt;tag&gt;, --frame-tag &lt;tag&gt;<br>
+            Try to use framework files tagged by &lt;tag&gt;.<br>
+        --frame-path &lt;dir&gt;<br>
+            Use the specified directory for framework files<br>
+        --keep-broken-res<br>
+            Use if there was an error and some resources were dropped, e.g.:<br>
+            "Invalid config flags detected. Dropping resources", but you<br>
+            want to decode them anyway, even with errors. You will have to<br>
+            fix them manually before building.<br>
+<br>
+    b[uild] [OPTS] [&lt;app_path&gt;] [&lt;out_file&gt;]<br>
+        Build an apk from already decoded application located in &lt;app_path&gt;.<br>
+<br>
+        It will automatically detect, whether files was changed and perform<br>
+        needed steps only.<br>
+<br>
+        If you omit &lt;app_path&gt; then current directory will be used.<br>
+        If you omit &lt;out_file&gt; then &lt;app_path&gt;/dist/&lt;name_of_original.apk&gt;<br>
+        will be used.<br>
+<br>
+        OPTS:<br>
+<br>
+        -f, --force-all<br>
+            Skip changes detection and build all files.<br>
+        -d, --debug<br>
+            Build in debug mode. Check project page for more info.<br>
+        -a, --aapt<br>
+            Loads aapt from specified location.<br>
+<br>
+    if|install-framework &lt;framework.apk&gt; [&lt;tag&gt;] --frame-path [&lt;location&gt;]<br>
+        Install framework file to your system.<br>
+<br>
+For additional info, see: http://code.google.com/p/android-apktool/<br>
+For smali/baksmali info, see: http://code.google.com/p/smali/</code><h3> apktool用法示例</h3><p>使用调试模式<b><i>（D）</i></b>给定的apk文件<b><i>（/root/SdkControllerApp.apk）</i></b>解码： </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f98b96968db992989590">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# apktool d /root/SdkControllerApp.apk <br>
+I: Baksmaling...<br>
+I: Loading resource table...<br>
+I: Loaded.<br>
+I: Decoding AndroidManifest.xml with resources...<br>
+I: Loading resource table from file: /root/apktool/framework/1.apk<br>
+I: Loaded.<br>
+I: Regular manifest package...<br>
+I: Decoding file-resources...<br>
+I: Decoding values */* XMLs...<br>
+I: Done.<br>
+I: Copying assets and libs...</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

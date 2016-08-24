@@ -1,0 +1,97 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> DIRB包装说明</h2><p style="text-align: justify;"> DIRB是一个Web内容扫描。它看起来对现有（和/或隐藏）的Web对象。它主要的工作原理是发动了对Web服务器的基于字典的攻击和分析的响应。 </p><p> DIRB带有易于使用的一组预配置的攻击生词，但你可以用你自定义的词表。此外DIRB有时可以作为一个典型的CGI扫描器，但要记住是一个内容扫描仪没有漏洞扫描器。 </p><p> DIRB主要目的是在专业的Web应用程序的审核帮助。特别是在与安全相关的测试。它没有涵盖的经典网页漏洞扫描器一些漏洞。 DIRB寻找其他通用CGI扫描器无法查找特定的Web对象。它不搜索的漏洞，也没有寻找网页内容，可以vulnerables。 </p><p>资料来源：http://dirb.sourceforge.net/about.html <br> <a href="http://dirb.sourceforge.net/" variation="deepblue" target="blank">DIRB首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/dirb.git;a=summary" variation="deepblue" target="blank">卡利DIRB回购</a> </p><ul><li>作者：黑暗王之王</li><li>许可：GPL第二版</li></ul><h3>包含在DIRB软件包工具</h3><h5> DIRB - 一个网页内容扫描仪</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c3b1acacb783a8a2afaa">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dirb<br>
+<br>
+-----------------<br>
+DIRB v2.21<br>
+By The Dark Raver<br>
+-----------------<br>
+<br>
+./dirb &lt;url_base&gt; [&lt;wordlist_file(s)&gt;] [options]<br>
+<br>
+========================= NOTES =========================<br>
+ &lt;url_base&gt; : Base URL to scan. (Use -resume for session resuming)<br>
+ &lt;wordlist_file(s)&gt; : List of wordfiles. (wordfile1,wordfile2,wordfile3...)<br>
+<br>
+======================== HOTKEYS ========================<br>
+ 'n' -&gt; Go to next directory.<br>
+ 'q' -&gt; Stop scan. (Saving state for resume)<br>
+ 'r' -&gt; Remaining scan stats.<br>
+<br>
+======================== OPTIONS ========================<br>
+ -a &lt;agent_string&gt; : Specify your custom USER_AGENT.<br>
+ -c &lt;cookie_string&gt; : Set a cookie for the HTTP request.<br>
+ -f : Fine tunning of NOT_FOUND (404) detection.<br>
+ -H &lt;header_string&gt; : Add a custom header to the HTTP request.<br>
+ -i : Use case-insensitive search.<br>
+ -l : Print "Location" header when found.<br>
+ -N &lt;nf_code&gt;: Ignore responses with this HTTP code.<br>
+ -o &lt;output_file&gt; : Save output to disk.<br>
+ -p &lt;proxy[:port]&gt; : Use this proxy. (Default port is 1080)<br>
+ -P &lt;proxy_username:proxy_password&gt; : Proxy Authentication.<br>
+ -r : Don't search recursively.<br>
+ -R : Interactive recursion. (Asks for each directory)<br>
+ -S : Silent Mode. Don't show tested words. (For dumb terminals)<br>
+ -t : Don't force an ending '/' on URLs.<br>
+ -u &lt;username:password&gt; : HTTP Authentication.<br>
+ -v : Show also NOT_FOUND pages.<br>
+ -w : Don't stop on WARNING messages.<br>
+ -X &lt;extensions&gt; / -x &lt;exts_file&gt; : Append each word with this extensions.<br>
+ -z &lt;milisecs&gt; : Add a miliseconds delay to not cause excessive Flood.<br>
+<br>
+======================== EXAMPLES =======================<br>
+ ./dirb http://url/directory/ (Simple Test)<br>
+ ./dirb http://url/ -X .html (Test files with '.html' extension)<br>
+ ./dirb http://url/ /usr/share/dirb/wordlists/vulns/apache.txt (Test with apache.txt wordlist)<br>
+ ./dirb https://secure_url/ (Simple Test with SSL)</code><h3> html2dic - 生成HTML页面字典</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="52203d3d261239333e3b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# html2dic<br>
+Uso: ./html2dic &lt;file&gt;</code><h3> gendict - 发电机的自定义词典</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f4869b9b80b49f95989d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# gendict<br>
+Usage: gendict -type pattern<br>
+  type: -n numeric [0-9]<br>
+        -c character [a-z]<br>
+        -C uppercase character [A-Z]<br>
+        -h hexa [0-f]<br>
+        -a alfanumeric [0-9a-z]<br>
+        -s case sensitive alfanumeric [0-9a-zA-Z]<br>
+  pattern: Must be an ascii string in which every 'X' character wildcard<br>
+           will be replaced with the incremental value.<br>
+<br>
+Example: gendict -n thisword_X<br>
+  thisword_0<br>
+  thisword_1<br>
+  [...]<br>
+  thisword_9</code><h3> DIRB用法示例</h3><p>扫描Web服务器<b><i>（http://192.168.1.224/）</i></b>利用字典文件<b><i>（/usr/share/wordlists/dirb/common.txt）</i></b>目录： </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9ceef3f3e8dcf7fdf0f5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dirb http://192.168.1.224/ /usr/share/wordlists/dirb/common.txt <br>
+<br>
+-----------------<br>
+DIRB v2.21    <br>
+By The Dark Raver<br>
+-----------------<br>
+<br>
+START_TIME: Fri May 16 13:41:45 2014<br>
+URL_BASE: http://192.168.1.224/<br>
+WORDLIST_FILES: /usr/share/wordlists/dirb/common.txt<br>
+<br>
+-----------------<br>
+<br>
+GENERATED WORDS: 4592                                                          <br>
+<br>
+---- Scanning URL: http://192.168.1.224/ ----<br>
+==&gt; DIRECTORY: http://192.168.1.224/.svn/                                                                                                                               <br>
++ http://192.168.1.224/.svn/entries (CODE:200|SIZE:2726)                                                                                                                <br>
++ http://192.168.1.224/cgi-bin/ (CODE:403|SIZE:1122)                                                                                                                    <br>
+==&gt; DIRECTORY: http://192.168.1.224/config/                                                                                                                             <br>
+==&gt; DIRECTORY: http://192.168.1.224/docs/                                                                                                                               <br>
+==&gt; DIRECTORY: http://192.168.1.224/external/</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

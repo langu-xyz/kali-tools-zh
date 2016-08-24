@@ -1,0 +1,136 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> PACK包装说明</h2><p style="text-align: justify;"> PACK是为了在密码帮助开裂竞争“笑死我，如果你能”的Defcon黑客大会2010年这个工具包的目标是通过分析常见的方式，人们以帮助准备“比暴力破解好”的口令攻击的过程中发生开发创建密码。后的分析阶段，统计数据库可以被用于产生攻击口罩如oclHashcat工具。注：该工具本身无法破解密码，而且还帮助其他工具破解更多的密码更快。 </p><p>资料来源：http://thesprawl.org/projects/pack/ <br> <a href="http://thesprawl.org/projects/pack/" variation="deepblue" target="blank">PACK首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/pack.git;a=summary" variation="deepblue" target="blank">卡利PACK回购</a> </p><ul><li>作者：iphelix </li><li>许可：GPLv3的</li></ul><h3>包含在驮包工具</h3><h5> dictstat - 生成字典文件统计</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="24564b4b50644f45484d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dictstat -h<br>
+[?] Psyco is not available. Install Psyco on 32-bit systems for faster parsing.<br>
+Usage: dictstat [options] passwords.txt<br>
+<br>
+Options:<br>
+  --version             show program's version number and exit<br>
+  -h, --help            show this help message and exit<br>
+  -l 8, --length=8      Password length filter.<br>
+  -c loweralpha, --charset=loweralpha<br>
+                        Password charset filter.<br>
+  -m stringdigit, --mask=stringdigit<br>
+                        Password mask filter<br>
+  -o masks.csv, --maskoutput=masks.csv<br>
+                        Save masks to a file</code><h3> maskgen - 生成hashcat口罩</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3f4d50504b7f545e5356">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# maskgen -h<br>
+Usage: maskgen [options] masksfile.csv<br>
+<br>
+Options:<br>
+  --version             show program's version number and exit<br>
+  -h, --help            show this help message and exit<br>
+  --minlength=8         Minimum password length<br>
+  --maxlength=8         Maximum password length<br>
+  --mintime=MINTIME     Minimum time to crack<br>
+  --maxtime=MAXTIME     Maximum time to crack<br>
+  --complexity=COMPLEXITY<br>
+                        maximum password complexity<br>
+  --occurence=OCCURENCE<br>
+                        minimum times mask was used<br>
+  --checkmask=?u?l ?l ?l ?l ?l ?d<br>
+                        check mask coverage<br>
+  --showmasks           Show matching masks<br>
+  --pps=1000000000      Passwords per Second</code><h3> policygen - 生成hashcat口罩</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2654494952664d474a4f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# policygen -h<br>
+Usage: policygen [options]<br>
+<br>
+Type --help for more options<br>
+<br>
+Options:<br>
+  --version             show program's version number and exit<br>
+  -h, --help            show this help message and exit<br>
+  --length=8            Password length<br>
+  -o masks.txt, --output=masks.txt<br>
+                        Save masks to a file<br>
+  --pps=1000000000      Passwords per Second<br>
+  -v, --verbose<br>
+<br>
+  Password Policy:<br>
+    Define the minimum (or maximum) password strength policy that you<br>
+    would like to test<br>
+<br>
+    --mindigits=1       Minimum number of digits<br>
+    --minlower=1        Minimum number of lower-case characters<br>
+    --minupper=1        Minimum number of upper-case characters<br>
+    --minspecial=1      Minimum number of special characters<br>
+    --maxdigits=3       Maximum number of digits<br>
+    --maxlower=3        Maximum number of lower-case characters<br>
+    --maxupper=3        Maximum number of upper-case characters<br>
+    --maxspecial=3      Maximum number of special characters</code><h3> dictstat用法示例</h3><p>生成的统计信息的密码与包含在单词表RockYou的<b><i><b><i>（rockyou.txt）10（-l</i></b> 10）的长度</i></b> ： </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="51233e3e25113a303d38">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dictstat -l 10 rockyou.txt <br>
+[?] Psyco is not available. Install Psyco on 32-bit systems for faster parsing.<br>
+[*] Analyzing passwords: rockyou.txt<br>
+[+] Analyzing 14% (2013690/14344392) passwords<br>
+    NOTE: Statistics below is relative to the number of analyzed passwords, not total number of passwords<br>
+<br>
+[*] Line Count Statistics...<br>
+[+]                        10: 100% (2013690)<br>
+<br>
+[*] Mask statistics...<br>
+[+]               stringdigit: 37% (750966)<br>
+[+]                  alldigit: 23% (478224)<br>
+[+]                 allstring: 22% (452145)<br>
+[+]                 othermask: 04% (90240)<br>
+[+]               digitstring: 03% (78964)<br>
+[+]         stringdigitstring: 02% (59783)<br>
+[+]       stringspecialstring: 01% (33178)<br>
+[+]        stringspecialdigit: 01% (25295)<br>
+[+]             stringspecial: 01% (22176)<br>
+[+]          digitstringdigit: 00% (17290)<br>
+[+]      specialstringspecial: 00% (3459)<br>
+[+]             specialstring: 00% (1767)<br>
+[+]                allspecial: 00% (203)<br>
+<br>
+[*] Charset statistics...<br>
+[+]             loweralphanum: 41% (836189)<br>
+[+]                   numeric: 23% (478224)<br>
+[+]                loweralpha: 20% (416961)<br>
+[+]      loweralphaspecialnum: 03% (66553)<br>
+[+]         loweralphaspecial: 02% (55720)<br>
+[+]             mixedalphanum: 02% (54199)<br>
+[+]             upperalphanum: 02% (47431)<br>
+[+]                upperalpha: 00% (19723)<br>
+[+]                mixedalpha: 00% (15461)<br>
+[+]      mixedalphaspecialnum: 00% (9014)<br>
+[+]         mixedalphaspecial: 00% (6856)<br>
+[+]      upperalphaspecialnum: 00% (3699)<br>
+[+]         upperalphaspecial: 00% (3457)<br>
+[+]                   special: 00% (203)<br>
+<br>
+[*] Advanced Mask statistics...<br>
+[+]      ?d?d?d?d?d?d?d?d?d?d: 23% (478224)<br>
+[+]      ?l?l?l?l?l?l?l?l?l?l: 20% (416961)<br>
+[+]      ?l?l?l?l?l?l?l?l?d?d: 10% (213117)<br>
+[+]      ?l?l?l?l?l?l?d?d?d?d: 07% (160596)<br>
+[+]      ?l?l?l?l?l?l?l?l?l?d: 06% (129833)<br>
+[+]      ?l?l?l?l?l?l?l?d?d?d: 04% (87613)<br>
+[+]      ?l?l?l?l?d?d?d?d?d?d: 01% (33277)</code><h3> policygen用法示例</h3><p>生成Hashcat掩模为<b><i>8（-length = 8）和</i></b>含有至少1个大写字母<b><i>的</i></b>长度<b><i>（-minupper 1）和至少</i></b> 1位数<b><i>（-mindigit 1），</i></b>节约了掩模<b><i>到</i></b>一个文件<b><i>（-o complexity.hcmask）</i></b> ： </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ccbea3a3b88ca7ada0a5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# policygen --length=8 --minupper 1 --mindigit 1 -o complexity.hcmask<br>
+[*] Password policy:<br>
+[+] Password length: 8<br>
+[+] Minimum strength: lower: 0, upper: 1, digits: 1, special: 0<br>
+[+] Maximum strength: lower: 8, upper: 8, digits: 8, special: 8<br>
+[*] Total Masks:  65536 Runtime: [76d|1834h|110078m|6604680s]<br>
+[*] Policy Masks: 52670 Runtime: [40d|977h|58659m|3519568s]<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="41332e2e35012a202d28">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# head complexity.hcmask <br>
+?l?l?l?l?l?l?u?d<br>
+?l?l?l?l?l?l?d?u<br>
+?l?l?l?l?l?u?l?d<br>
+?l?l?l?l?l?u?u?d<br>
+?l?l?l?l?l?u?d?l<br>
+?l?l?l?l?l?u?d?u<br>
+?l?l?l?l?l?u?d?d<br>
+?l?l?l?l?l?u?d?s<br>
+?l?l?l?l?l?u?s?d<br>
+?l?l?l?l?l?d?l?u</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

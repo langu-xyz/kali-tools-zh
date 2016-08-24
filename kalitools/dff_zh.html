@@ -1,0 +1,88 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> DFF包装说明</h2><p style="text-align: justify;"> DFF（数字取证框架）是建立在一个专用的应用程序编程接口（API）之上的自由和开放源码计算机取证软件。 </p><p>它可以通过专业的和非专业的人才能使用既方便快捷地收集，保存和显示数​​字证据而不影响系统和数据。 </p><ul><li>保留保管的数码连锁：软件写拦截，加密哈希计算</li><li>访问本地和远程设备：磁盘驱动器，可移动设备，远程文件系统</li><li>阅读标准的数字取证文件格式：原始，包住EWF，AFF 3文件格式</li><li>虚拟机磁盘重建：VmWare中（VMDK）兼容</li><li> Windows和Linux操作系统取证：注册，邮箱，NTFS，EXTFS 2/3/4，FAT 12/16/32文件系统</li><li>快速分流和搜索（间位）数据：正则表达式，词典，内容搜索，标签，时间线</li><li>恢复隐藏的和已删除的文物：删除文件/文件夹，未分配的空间，雕刻</li><li>易失性存储器取证：进程，本地文件，二进制提取，网络连接</li></ul><p>资料来源：http://www.digital-forensic.org/ <br> <a href="http://www.digital-forensic.org/" variation="deepblue" target="blank">DFF首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/dff.git;a=summary" variation="deepblue" target="blank">卡利DFF回购</a> </p><ul><li>作者：ArxSys SAS </li><li>许可：GPL第二版</li></ul><h3>包含在DFF包工具</h3><h5> DFF - 数字取证框架</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a1d3ceced5e1cac0cdc8">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dff -h<br>
+DFF<br>
+Digital Forensic Framework<br>
+<br>
+Usage: /usr/bin/dff [options]<br>
+Options:<br>
+  -v      --version                  display current version<br>
+  -g      --graphical                launch graphical interface<br>
+  -b      --batch=FILENAME       executes batch contained in FILENAME<br>
+  -l      --language=LANG            use LANG as interface language<br>
+  -h      --help                     display this help message<br>
+  -d      --debug                    redirect IO to system console<br>
+          --verbosity=LEVEL          set verbosity level when debugging [0-3]<br>
+  -c      --config=FILEPATH          use config file from FILEPATH</code><h3> DFF贵 - 数字取证框架GUI </h3><p>数字取证框架 - GUI。 </p><h3> DFF贵用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d4a6bbbba094bfb5b8bd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dff-gui</code><p> <a href='full/0733f90b3a90505d12ef300e325aaa2a10352da9.jpg'><img src='full/0733f90b3a90505d12ef300e325aaa2a10352da9.jpg' alt="DFF贵" width="920" class="aligncenter size-full wp-image-3600"></a> </p><h3> DFF用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d3a1bcbca793b8b2bfba">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dff<br>
+loading modules in /usr/lib/python2.7/dist-packages/dff/modules<br>
+[OK]    loading load v1.0.0<br>
+[OK]    loading link v1.0.0<br>
+[OK]    loading ls v1.0.0<br>
+[OK]    loading find v1.2.0<br>
+[OK]    loading batch v1.0.0<br>
+[OK]    loading history v1.0.0<br>
+[OK]    loading fg v1.0.0<br>
+[OK]    loading jobs v1.0.0<br>
+[OK]    loading cd v1.0.0<br>
+[OK]    loading show_db v1.0.0<br>
+[OK]    loading show_cwd v1.0.0<br>
+[OK]    loading open v1.0.0<br>
+[OK]    loading man v1.0.0<br>
+[OK]    loading info v1.0.0<br>
+[OK]    loading fileinfo v1.0.0<br>
+[OK]    loading carverui v1.0.0<br>
+[OK]    loading CARVER v1.0.0<br>
+[OK]    loading carvergui v1.0.0<br>
+[OK]    loading fileschart v1.0.0<br>
+[OK]    loading volatility v1.0.0<br>
+[OK]    loading PFF using old style module check<br>
+[OK]    loading FUSE v1.0.0<br>
+[OK]    loading extract v1.0.0<br>
+[OK]    loading DEVICES v1.0.0<br>
+[OK]    loading LOCAL v1.0.0<br>
+[OK]    loading EWF v1.0.0<br>
+[OK]    loading AFF v1.0.0<br>
+[OK]    loading hash v1.0.0<br>
+[OK]    loading merge v1.0.0<br>
+[OK]    loading cut v1.0.0<br>
+[OK]    loading split v1.0.0<br>
+[OK]    loading FATFS v1.0.0<br>
+[OK]    loading spare v1.0.0<br>
+[OK]    loading NTFS v0.5.1<br>
+[OK]    loading EXTFS v1.0.0<br>
+[OK]    loading VMWARE v1.0.0<br>
+[OK]    loading PARTITION v1.0.0<br>
+[OK]    loading sqlitedb v1.0.0<br>
+[OK]    loading imageviewer v1.0.0<br>
+[OK]    loading textviewer v1.0.0<br>
+[OK]    loading player v1.0.0<br>
+[OK]    loading videothumbnailviewer v1.0.0<br>
+[OK]    loading web v1.0.0<br>
+[OK]    loading timeline v1.0.0<br>
+[OK]    loading hexeditor v1.0.0<br>
+[OK]    loading regedit v1.0.0<br>
+[OK]    loading binarydiff v1.0.0<br>
+[OK]    loading lnk v1.0.0<br>
+[OK]    loading prefetch v1.0.0<br>
+[OK]    loading compound v1.0.0<br>
+[OK]    loading metaexif v1.0.0<br>
+<br>
+##########################################<br>
+# Welcome on Digital Forensics Framework #<br>
+##########################################<br>
+<br>
+dff / &gt;</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,53 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> BlueRanger包装说明</h2><p style="text-align: justify;"> BlueRanger是它使用的链路质量定位蓝牙设备无线电一个简单的bash脚本。它发出L2CAP（蓝牙）坪创建蓝牙接口之间的连接，因为大多数设备允许的ping没有任何认证或授权。该链路质量越高，越接近设备（理论上）。 </p><p>使用蓝牙Class 1适配器远距离定位检测。切换到3级适配器进行更精确的短距离定位。所述recision和精度依赖于蓝牙适配器，干扰，以及从远程设备响应的建设质量。即使没有设备在运动，可能会出现波动。 </p><p> <a href="http://www.hackfromacave.com/projects/blueranger.html" variation="deepblue" target="blank">BlueRanger首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/blueranger.git;a=summary" variation="deepblue" target="blank">卡利BlueRanger回购</a> </p><ul><li>作者：JP邓宁</li><li>许可：GPL第二版</li></ul><h3>包含在blueranger包工具</h3><h5> blueranger.sh - 简单的bash脚本来查找蓝牙设备</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fd8f929289bd969c9194">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# blueranger.sh<br>
+<br>
+BlueRanger 1.0 by JP Dunning (.ronin)<br>
+&lt;www.hackfromacave.com&gt;<br>
+(c) 2009-2012 Shadow Cave LLC.<br>
+<br>
+NAME<br>
+    blueranger<br>
+<br>
+SYNOPSIS<br>
+        blueranger.sh &lt;hciX&gt; &lt;bdaddr&gt;<br>
+<br>
+DESCRIPTION<br>
+    &lt;hciX&gt;         Local interface<br>
+    &lt;bdaddr&gt;       Remote Device Address</code><h3> blueranger.sh用法示例</h3><p>使用蓝牙接口<b><i>（HCl，）扫描</i></b>指定的远程地址<b><i>（20：C9：D0：43：4B：D8）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6d1f0202192d060c0104">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# blueranger.sh hci1 20:C9:D0:43:4B:D8<br>
+<br>
+Starting ...<br>
+<br>
+Close with 2 X Crtl+C<br>
+<br>
+<br>
+      (((B(l(u(e(R)a)n)g)e)r)))<br>
+<br>
+By JP Dunning (.ronin) <br>
+www.hackfromacave.com<br>
+<br>
+Locating: ares (20:C9:D0:43:4B:D8)<br>
+Ping Count: 1<br>
+<br>
+Proximity Change    Link Quality<br>
+----------------    ------------<br>
+FOUND           255/255<br>
+<br>
+Range<br>
+------------------------------------<br>
+|*<br>
+------------------------------------</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,82 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2>哈希标识包装说明</h2><p style="text-align: justify;">软件来识别不同类型的用于加密数据，特别是密码散列。 </p><p>资料来源：http://code.google.com/p/hash-identifier/ <br> <a href="http://code.google.com/p/hash-identifier/" variation="deepblue" target="blank">哈希标识首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/hash-identifier.git;a=summary" variation="deepblue" target="blank">卡利散列标识符回购</a> </p><ul><li>作者：Zion3R </li><li>许可：GPLv3的</li></ul><h3>包括在散列标识符包工具</h3><h5>散列标识符 - 确定不同类型的哈希</h5><p>识别不同类型的散列。 </p><h3>哈希标识符用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5725383823173c363b3e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# hash-identifier <br>
+   #########################################################################<br>
+   #     __  __             __       ______    _____       #<br>
+   #    /\ \/\ \           /\ \     /\__  _\  /\  _ `\     #<br>
+   #    \ \ \_\ \     __      ____ \ \ \___ \/_/\ \/  \ \ \/\ \    #<br>
+   #     \ \  _  \  /'__`\   / ,__\ \ \  _ `\      \ \ \   \ \ \ \ \       #<br>
+   #      \ \ \ \ \/\ \_\ \_/\__, `\ \ \ \ \ \      \_\ \__ \ \ \_\ \      #<br>
+   #       \ \_\ \_\ \___ \_\/\____/  \ \_\ \_\     /\_____\ \ \____/      #<br>
+   #        \/_/\/_/\/__/\/_/\/___/    \/_/\/_/     \/_____/  \/___/  v1.1 #<br>
+   #                                 By Zion3R #<br>
+   #                            www.Blackploit.com #<br>
+   #                              <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cc0e6c9ea3a3b88c8ea0adafa7bca0a3a5b8e2afa3a1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> #<br>
+   #########################################################################<br>
+<br>
+   -------------------------------------------------------------------------<br>
+ HASH: 098f6bcd4621d373cade4e832627b4f6<br>
+<br>
+Possible Hashs:<br>
+[+]  MD5<br>
+[+]  Domain Cached Credentials - MD4(MD4(($pass)).(strtolower($username)))<br>
+<br>
+Least Possible Hashs:<br>
+[+]  RAdmin v2.x<br>
+[+]  NTLM<br>
+[+]  MD4<br>
+[+]  MD2<br>
+[+]  MD5(HMAC)<br>
+[+]  MD4(HMAC)<br>
+[+]  MD2(HMAC)<br>
+[+]  MD5(HMAC(Wordpress))<br>
+[+]  Haval-128<br>
+[+]  Haval-128(HMAC)<br>
+[+]  RipeMD-128<br>
+[+]  RipeMD-128(HMAC)<br>
+[+]  SNEFRU-128<br>
+[+]  SNEFRU-128(HMAC)<br>
+[+]  Tiger-128<br>
+[+]  Tiger-128(HMAC)<br>
+[+]  md5($pass.$salt)<br>
+[+]  md5($salt.$pass)<br>
+[+]  md5($salt.$pass.$salt)<br>
+[+]  md5($salt.$pass.$username)<br>
+[+]  md5($salt.md5($pass))<br>
+[+]  md5($salt.md5($pass))<br>
+[+]  md5($salt.md5($pass.$salt))<br>
+[+]  md5($salt.md5($pass.$salt))<br>
+[+]  md5($salt.md5($salt.$pass))<br>
+[+]  md5($salt.md5(md5($pass).$salt))<br>
+[+]  md5($username.0.$pass)<br>
+[+]  md5($username.LF.$pass)<br>
+[+]  md5($username.md5($pass).$salt)<br>
+[+]  md5(md5($pass))<br>
+[+]  md5(md5($pass).$salt)<br>
+[+]  md5(md5($pass).md5($salt))<br>
+[+]  md5(md5($salt).$pass)<br>
+[+]  md5(md5($salt).md5($pass))<br>
+[+]  md5(md5($username.$pass).$salt)<br>
+[+]  md5(md5(md5($pass)))<br>
+[+]  md5(md5(md5(md5($pass))))<br>
+[+]  md5(md5(md5(md5(md5($pass)))))<br>
+[+]  md5(sha1($pass))<br>
+[+]  md5(sha1(md5($pass)))<br>
+[+]  md5(sha1(md5(sha1($pass))))<br>
+[+]  md5(strtoupper(md5($pass)))<br>
+<br>
+   -------------------------------------------------------------------------</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

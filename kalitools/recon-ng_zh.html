@@ -1,0 +1,65 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2>侦察-NG包装说明</h2><p style="text-align: justify;">侦察-NG是用Python写的一个全功能的Web侦察框架。拥有完整的自主模块，数据库交互，建于方便的功能，交互式帮助，并命令完成，侦察-NG提供了在开源的基于网络的侦察可以快速，彻底地进行了一个强大的环境。 </p><p>侦察-NG具有的外观和感觉相似的Metasploit的框架，降低学习曲线利用的框架。然而，这是相当不同的。侦察-NG不打算与现有框架进行竞争，因为它是专为基于Web的开放源码的侦察。如果你想利用，使用Metasploit的框架。如果你想社会工程师，我们的社会工程师工具包。如果你想进行侦察，侦察用-NG！有关详细信息，请参阅使用指南。 </p><p>侦察-NG是一个完全模块化的框架，并很容易让即使是最新的Python开发做出贡献。每个模块的“模块”类的子类。 “模块”类是一个自定义的“CMD”解释配备了内置功能，提供简单的接口，如标准化输出，与数据库交互，使Web请求，以及管理API密钥的常见任务。因此，所有的辛勤工作已经完成。构建模块是简单，花费超过几分钟而已。有关详细信息，请参阅开发指南。 </p><p>资料来源：https://bitbucket.org/LaNMaSteR53/recon-ng <br> <a href="https://bitbucket.org/LaNMaSteR53/recon-ng" variation="deepblue" target="blank">侦察-NG首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/recon-ng.git;a=summary" variation="deepblue" target="blank">卡利侦察-NG回购</a> </p><ul><li>作者：蒂姆·托姆斯</li><li>许可：GPLv3的</li></ul><h3>包括在侦察-NG封装工具</h3><h5>侦察-NG - 网络侦察框架，用Python写的</h5><p>一个全功能的Web侦察框架。 </p><h3>侦察-ng的用法示例</h3><p>搜索结果上<b><i>xssed.com（使用侦察/主机/枚举/ HTTP /网络/ xssed）</i></b>目标域<b><i>（SET结构域cisco.com）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7c0e1313083c171d1015">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# recon-ng <br>
+                                                                                        <br>
+    _/_/_/    _/_/_/_/    _/_/_/    _/_/_/    _/      _/            _/      _/    _/_/_/<br>
+   _/    _/  _/        _/        _/      _/  _/_/    _/            _/_/    _/  _/       <br>
+  _/_/_/    _/_/_/    _/        _/      _/  _/  _/  _/  _/_/_/_/  _/  _/  _/  _/  _/_/_/<br>
+ _/    _/  _/        _/        _/      _/  _/    _/_/            _/    _/_/  _/      _/ <br>
+_/    _/  _/_/_/_/    _/_/_/    _/_/_/    _/      _/            _/      _/    _/_/_/    <br>
+                                                                                        <br>
+     +---------------------------------------------------------------------------+      <br>
+     |  _                     ___    _                        __                 |      <br>
+     | |_)| _  _|_  |_|.|| _   |  _ |_ _  _ _  _ _|_o _  _   (_  _  _    _o_|_   |      <br>
+     | |_)|(_|(_|\  | ||||_\  _|_| || (_)| |||(_| | |(_)| |  __)(/_(_|_|| | | \/ |      <br>
+     |                                                                        /  |      <br>
+     |              Consulting | Research | Development | Training               |      <br>
+     |                     http://www.blackhillsinfosec.com                      |      <br>
+     +---------------------------------------------------------------------------+      <br>
+<br>
+                      [recon-ng v3.5.1, Tim Tomes (@LaNMaSteR53)]                       <br>
+<br>
+[65] Recon modules<br>
+[6]  Discovery modules<br>
+[4]  Reporting modules<br>
+[3]  Import modules<br>
+[2]  Exploitation modules<br>
+<br>
+[recon-ng][default] &gt; use recon/hosts/enum/http/web/xssed<br>
+[recon-ng][default][xssed] &gt; set DOMAIN cisco.com<br>
+DOMAIN =&gt; cisco.com<br>
+[recon-ng][default][xssed] &gt; run<br>
+[*] URL: http://xssed.com/search?key=cisco.com<br>
+--------------------------------------------------<br>
+[*] Mirror: http://xssed.com/mirror/76478/<br>
+[*] Domain: www.cisco.com<br>
+[*] URL: http://www.cisco.com/survey/exit.html?http://xssed.com/<br>
+[*] Date submitted: 16/02/2012<br>
+[*] Date published: 16/02/2012<br>
+[*] Category: Redirect<br>
+[*] Status: UNFIXED<br>
+--------------------------------------------------<br>
+[*] Mirror: http://xssed.com/mirror/76294/<br>
+[*] Domain: developer.cisco.com<br>
+[*] URL: http://developer.cisco.com/web/webdialer/wikidocs?p_p_id=1_WAR_wikinavigationportlet_INSTANCE_v<br>
+    eD7&amp;p&lt;br&gt;_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_count=1&amp;p_r_p<br>
+    _185834411_no&lt;br&gt;deId=803209&amp;p_r_p_185834411_title=%22%3E%3Ch1%3ECross-<br>
+    <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fead978a9bdbcccead9d8c978e8a979099dbcccebe939f8a979f8d92919097998c91">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>%3C/h1%3E%3Cs&lt;br&gt;cript%3Ealert%28/xss/%29%3C/script%3E<br>
+[*] Date submitted: 10/02/2012<br>
+[*] Date published: 13/02/2012<br>
+[*] Category: XSS<br>
+[*] Status: UNFIXED</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

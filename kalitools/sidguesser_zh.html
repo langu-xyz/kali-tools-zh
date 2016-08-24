@@ -1,0 +1,31 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> SidGuesser包装说明</h2><p style="text-align: justify;">猜测SIDS /对根据预定的词典文件的Oracle数据库实例。速度慢（每秒80-100猜测），但它的工作。 </p><p>资料来源：http://www.cqure.net/wp/tool​​s/database/sidguesser/ <br> <a href="http://www.cqure.net/wp/tools/database/sidguesser/" variation="deepblue" target="blank">SidGuesser首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/sidguesser.git;a=summary" variation="deepblue" target="blank">卡利SidGuesser回购</a> </p><ul><li>作者：帕特里克·卡尔松</li><li>许可：GPL第二版</li></ul><h3>包含在sidguesser包工具</h3><h5> sidguess - 猜测小岛屿发展中国家对Oracle数据库</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f785989883b79c969b9e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sidguess<br>
+<br>
+SIDGuesser v1.0.5 by <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="54243520263d3f1437252126317a3a3120">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+-------------------------------------<br>
+sidguess -i &lt;ip&gt; -d &lt;dictionary&gt; [options]<br>
+<br>
+options:<br>
+    -p &lt;portnr&gt; Use specific port (default 1521)<br>
+    -r &lt;report&gt; Report to file<br>
+    -m &lt;mode&gt;   findfirst OR findall(default)</code><h3> sidguess用法示例</h3><p>攻击利用字典文件<b><i>（-d /usr/share/wordlists/metasploit/unix_users.txt）</i></b>服务器<b><i>（-i 192.168.1.205）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2755484853674c464b4e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sidguess -i 192.168.1.205 -d /usr/share/wordlists/metasploit/unix_users.txt<br>
+<br>
+SIDGuesser v1.0.5 by <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e6968792948f8da68597939483c8888392">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+-------------------------------------<br>
+<br>
+Starting Dictionary Attack (&lt;space&gt; for stats, Q for quit) ...</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

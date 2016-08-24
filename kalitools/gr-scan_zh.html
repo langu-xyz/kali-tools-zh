@@ -1,0 +1,74 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> GR-扫描包装说明</h2><p style="text-align: justify;"> GR-扫描是用C ++编写，并在GNU收音机，RTL-SDR，并且OsmoSDR源块内置的程序。它的目的是扫描一个频率范围，并打印发现信号的列表。它应该与任何与该块，其中包括瑞昱RTL2832U设备工程设备。该软件是使用康博U620F，其使用E4000调谐器开发的。该产品似乎并没有提供在美国的网站，但新天DVB-T接收器（RTL2832U / E4000设备）有很好的评价。 </p><p>资料来源：http://www.techmeology.co.uk/gr-scan/ <br> <a href="http://www.techmeology.co.uk/gr-scan/" variation="deepblue" target="blank">GR-扫描首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/gr-scan.git;a=summary" variation="deepblue" target="blank">卡利GR-扫描回购</a> </p><ul><li>作者：尼古拉斯·汤姆林森</li><li>许可：GPLv3的</li></ul><h3>包含在GR-扫描包工具</h3><h5>克扫描 - 扫描一个频率范围，并打印发现信号的列表</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="8cfee3e3f8cce7ede0e5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# gr-scan --help<br>
+linux; GNU C++ version 4.7.2; Boost_104900; UHD_003.005.003-0-unknown<br>
+<br>
+Usage: gr-scan [OPTION...]<br>
+<br>
+  -a, --average=COUNT        Average over COUNT samples<br>
+  -c, --coarse-bandwidth=FREQ   Bandwidth of the coarse window in kHz<br>
+  -f, --fine-bandwidth=FREQ  Bandwidth of the fine window in kHz<br>
+  -p, --time=TIME            Time in seconds to scan on each frequency<br>
+  -r, --sample-rate=RATE     Samplerate in Msamples/s<br>
+  -s, --spread=FREQ          Minimum frequency between detected signals<br>
+  -t, --threshold=POWER      Threshold for the difference between the coarse<br>
+                             and fine filtered signals in dB<br>
+  -w, --fft-width=COUNT      Width of FFT in samples<br>
+  -x, --start-frequency=FREQ Start frequency in MHz<br>
+  -y, --end-frequency=FREQ   End frequency in MHz<br>
+  -z, --step=FREQ            Increment step in MHz<br>
+  -?, --help                 Give this help list<br>
+      --usage                Give a short usage message<br>
+  -V, --version              Print program version<br>
+<br>
+Mandatory or optional arguments to long options are also mandatory or optional<br>
+for any corresponding short options.<br>
+<br>
+Report bugs to <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="bbdcc996c8d8dad5fbcfded8d3d6ded4d7d4dcc295d8d495ced095">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></code><h3> GR-扫描用法示例</h3><p>开始扫描频率为100 <b><i>MHz（-x 100），并</i></b>结束在105兆赫<b><i>（-y 105），</i></b>暂停5秒每个通道<b><i>（-P 5）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a2d0cdcdd6e2c9c3cecb">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# gr-scan -x 100 -y 105 -p 5<br>
+linux; GNU C++ version 4.7.2; Boost_104900; UHD_003.005.003-0-unknown<br>
+<br>
+gr-osmosdr v0.0.x-xxx-xunknown (0.0.3git) gnuradio 3.6.5.1<br>
+built-in source types: file fcd rtl rtl_tcp uhd hackrf <br>
+Using device #0 Realtek RTL2838UHIDIR SN: 00000001<br>
+Found Rafael Micro R820T tuner<br>
+Using Volk machine: avx_64_mmx_orc<br>
+Exact sample rate is: 2000000.052982 Hz<br>
+gr_buffer::allocate_buffer: warning: tried to allocate<br>
+   4 items of size 16000. Due to alignment requirements<br>
+   32 were allocated.  If this isn't OK, consider padding<br>
+   your structure to a power-of-two bytes.<br>
+   On this platform, our allocation granularity is 4096 bytes.<br>
+gr_buffer::allocate_buffer: warning: tried to allocate<br>
+   16 items of size 8000. Due to alignment requirements<br>
+   64 were allocated.  If this isn't OK, consider padding<br>
+   your structure to a power-of-two bytes.<br>
+   On this platform, our allocation granularity is 4096 bytes.<br>
+gr_buffer::allocate_buffer: warning: tried to allocate<br>
+   8 items of size 8000. Due to alignment requirements<br>
+   64 were allocated.  If this isn't OK, consider padding<br>
+   your structure to a power-of-two bytes.<br>
+   On this platform, our allocation granularity is 4096 bytes.<br>
+gr_buffer::allocate_buffer: warning: tried to allocate<br>
+   8 items of size 8000. Due to alignment requirements<br>
+   64 were allocated.  If this isn't OK, consider padding<br>
+   your structure to a power-of-two bytes.<br>
+   On this platform, our allocation granularity is 4096 bytes.<br>
+00:00:01: Finished scanning 99.000000 MHz - 101.000000 MHz<br>
+[+] 00:00:01: Found signal: at 100.298500 MHz of width 63.000000 kHz, peak power -62.707417 dB (difference 8.297215 dB)<br>
+00:00:02: Finished scanning 99.000000 MHz - 101.000000 MHz<br>
+[+] 00:00:02: Found signal: at 99.299500 MHz of width 115.000000 kHz, peak power -74.849541 dB (difference 3.358849 dB)<br>
+00:00:03: Finished scanning 99.000000 MHz - 101.000000 MHz</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

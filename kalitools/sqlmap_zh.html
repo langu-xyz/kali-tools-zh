@@ -1,0 +1,106 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2>的SqlMap包装说明</h2><p style="text-align: justify;">的SqlMap是一个开源渗透测试工具，它可以自动检测和利用SQL注入漏洞，并接管数据库服务器的过程。它配备了一个功能强大的检测引擎，很多小众的功能为最终渗透测试和广泛的交换机从数据库指纹识别持久，在获取数据从数据库，通过输出访问底层的文件系统和执行操作系统命令的带内连接。 </p><p>产品特点： </p><ul><li>为MySQL，甲骨文，PostgreSQL的，微软的SQL Server，Microsoft Access中，IBM DB2，SQLite的，火鸟，Sybase和SAP MaxDB数据库管理系统的全面支持。 </li><li>布尔型盲，基于时间的盲目，错误为基础，UNION查询，堆查询和出带外：六SQL注入技术的全面支持。 </li><li>支持直接连接到数据库，而不通过SQL注入路过，通过提供DBMS凭据，IP地址，端口和数据库名称。 </li><li>支持枚举用户，密码哈希值，权限，角色，数据库，表和列。 </li><li>自动识别的密码哈希格式，使用基于字典的攻击开裂他们的支持。 </li><li>支持转储数据库表完全，一系列条目或特定列的根据用户的选择。用户还可以选择仅倾倒的范围内每列的条目的字符。 </li><li>支持搜索特定的数据库名称，具体的表在所有数据库或特定的列在所有数据库“表。这是有用的，例如，以确定包含自定义应用程序凭据在相关栏目的名称包含字符串如姓名和通表。 </li><li>支持下载和从数据库服务器上传任何文件底层文件系统时，数据库软件MySQL和PostgreSQL或Microsoft SQL Server。 </li><li>支持执行任意指令和检索的数据库服务器的底层操作系统时，数据库软件MySQL和PostgreSQL或Microsoft SQL Server上的标准输出。 </li><li>支持建立攻击机和数据库服务器底层操作系统之间的外的带状态的TCP连接。这个通道可以是一个交互式命令提示符下，一个Meterpreter就会会话或图形用户界面（VNC）会话根据用户选择的。 </li><li>支持通过Metasploit工具的Meterpreter就会getsystem命令数据库进程“用户权限提升。 </li></ul><p>资料来源：http://sqlmap.org/ <br> <a href="http://sqlmap.org/" variation="deepblue" target="blank">的SqlMap首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/sqlmap.git;a=summary" variation="deepblue" target="blank">卡利的SqlMap回购</a> </p><ul><li>作者：贝尔纳Damele阿松桑吉马良斯，米罗斯拉夫Stampar </li><li>许可：GPL第二版</li></ul><h3>列入的SqlMap包工具</h3><h5>的SqlMap - 自动SQL注入工具</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="8ffde0e0fbcfe4eee3e6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sqlmap -h<br>
+Usage: python sqlmap [options]<br>
+<br>
+Options:<br>
+  -h, --help            Show basic help message and exit<br>
+  -hh                   Show advanced help message and exit<br>
+  --version             Show program's version number and exit<br>
+  -v VERBOSE            Verbosity level: 0-6 (default 1)<br>
+<br>
+  Target:<br>
+    At least one of these options has to be provided to define the<br>
+    target(s)<br>
+<br>
+    -u URL, --url=URL   Target URL (e.g. "http://www.site.com/vuln.php?id=1")<br>
+    -g GOOGLEDORK       Process Google dork results as target URLs<br>
+<br>
+  Request:<br>
+    These options can be used to specify how to connect to the target URL<br>
+<br>
+    --data=DATA         Data string to be sent through POST<br>
+    --cookie=COOKIE     HTTP Cookie header value<br>
+    --random-agent      Use randomly selected HTTP User-Agent header value<br>
+    --proxy=PROXY       Use a proxy to connect to the target URL<br>
+    --tor               Use Tor anonymity network<br>
+    --check-tor         Check to see if Tor is used properly<br>
+<br>
+  Injection:<br>
+    These options can be used to specify which parameters to test for,<br>
+    provide custom injection payloads and optional tampering scripts<br>
+<br>
+    -p TESTPARAMETER    Testable parameter(s)<br>
+    --dbms=DBMS         Force back-end DBMS to this value<br>
+<br>
+  Detection:<br>
+    These options can be used to customize the detection phase<br>
+<br>
+    --level=LEVEL       Level of tests to perform (1-5, default 1)<br>
+    --risk=RISK         Risk of tests to perform (0-3, default 1)<br>
+<br>
+  Techniques:<br>
+    These options can be used to tweak testing of specific SQL injection<br>
+    techniques<br>
+<br>
+    --technique=TECH    SQL injection techniques to use (default "BEUSTQ")<br>
+<br>
+  Enumeration:<br>
+    These options can be used to enumerate the back-end database<br>
+    management system information, structure and data contained in the<br>
+    tables. Moreover you can run your own SQL statements<br>
+<br>
+    -a, --all           Retrieve everything<br>
+    -b, --banner        Retrieve DBMS banner<br>
+    --current-user      Retrieve DBMS current user<br>
+    --current-db        Retrieve DBMS current database<br>
+    --passwords         Enumerate DBMS users password hashes<br>
+    --tables            Enumerate DBMS database tables<br>
+    --columns           Enumerate DBMS database table columns<br>
+    --schema            Enumerate DBMS schema<br>
+    --dump              Dump DBMS database table entries<br>
+    --dump-all          Dump all DBMS databases tables entries<br>
+    -D DB               DBMS database to enumerate<br>
+    -T TBL              DBMS database table(s) to enumerate<br>
+    -C COL              DBMS database table column(s) to enumerate<br>
+<br>
+  Operating system access:<br>
+    These options can be used to access the back-end database management<br>
+    system underlying operating system<br>
+<br>
+    --os-shell          Prompt for an interactive operating system shell<br>
+    --os-pwn            Prompt for an OOB shell, Meterpreter or VNC<br>
+<br>
+  General:<br>
+    These options can be used to set some general working parameters<br>
+<br>
+    --batch             Never ask for user input, use the default behaviour<br>
+    --flush-session     Flush session files for current target<br>
+<br>
+  Miscellaneous:<br>
+    --wizard            Simple wizard interface for beginner users<br>
+<br>
+[!] to see full list of options run with '-hh'<br>
+<br>
+[*] shutting down at 15:52:48</code><h3>的SqlMap用法示例</h3><p>攻击给定的<b><i>URL（-u“http://192.168.1.250/?p=1&amp;forumaction=search”），并</i></b>提取数据库名称<b><i>（-dbs）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fe8c91918abe959f9297">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sqlmap -u "http://192.168.1.250/?p=1&amp;forumaction=search" --dbs<br>
+<br>
+    sqlmap/1.0-dev - automatic SQL injection and database takeover tool<br>
+    http://sqlmap.org<br>
+<br>
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program<br>
+<br>
+[*] starting at 13:11:04</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

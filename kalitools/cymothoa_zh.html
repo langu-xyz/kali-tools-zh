@@ -1,0 +1,67 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Cymothoa包装说明</h2><p style="text-align: justify;"> Cymothoa是一个隐形backdooring工具，即借壳注入的shellcode的到现有的过程。该工具使用ptrace的库（适用于几乎所有的* nix中），操作流程和感染他们。 </p><p>资料来源：http://cymothoa.sourceforge.net/ <br> <a href="http://cymothoa.sourceforge.net/" variation="deepblue" target="blank">Cymothoa首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/cymothoa.git;a=summary" variation="deepblue" target="blank">卡利Cymothoa回购</a> </p><ul><li>作者：codwizard，crossbower </li><li>许可：GPL第二版</li></ul><h3>包含在cymothoa包工具</h3><h5> bgrep - 二进制的grep </h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fd8f929289bd969c9194">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# bgrep<br>
+bgrep version: 0.2<br>
+usage: bgrep &lt;hex&gt; [&lt;path&gt; [...]]</code><h3> cymothoa - 隐形backdooring工具</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="87f5e8e8f3c7ece6ebee">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cymothoa -h<br>
+                              _<br>
+                          _  | |<br>
+  ____ _   _ ____   ___ _| |_| |__   ___  _____<br>
+ / ___) | | |    \ / _ (_   _)  _ \ / _ \(____ |<br>
+( (___| |_| | | | | |_| || |_| | | | |_| / ___ |<br>
+ \____)\__  |_|_|_|\___/  \__)_| |_|\___/\_____|<br>
+      (____/<br>
+Ver.1 (beta) - Runtime shellcode injection, for stealthy backdoors...<br>
+<br>
+By codwizard (<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d2b1bdb6a5bba8b3a0b692b5bfb3bbbefcb1bdbf">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>) and crossbower (<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a9cadbc6dadacbc6deccdbe9cec4c8c0c587cac6c4">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>)<br>
+from ES-Malaria by ElectronicSouls (http://www.0x4553.org).<br>
+<br>
+Usage:<br>
+    cymothoa -p &lt;pid&gt; -s &lt;shellcode_number&gt; [options]<br>
+<br>
+Main options:<br>
+    -p  process pid<br>
+    -s  shellcode number<br>
+    -l  memory region name for shellcode injection (default /lib/ld)<br>
+        search for "r-xp" permissions, see /proc/pid/maps...<br>
+    -m  memory region name for persistent memory (default /lib/ld)<br>
+        search for "rw-p" permissions, see /proc/pid/maps...<br>
+    -h  print this help screen<br>
+    -S  list available shellcodes<br>
+<br>
+Injection options (overwrite payload flags):<br>
+    -f  fork parent process<br>
+    -F  don't fork parent process<br>
+    -b  create payload thread (probably you need also -F)<br>
+    -B  don't create payload thread<br>
+    -w  pass persistent memory address<br>
+    -W  don't pass persistent memory address<br>
+    -a  use alarm scheduler<br>
+    -A  don't use alarm scheduler<br>
+    -t  use setitimer scheduler<br>
+    -T  don't use setitimer scheduler<br>
+<br>
+Payload arguments:<br>
+    -j  set timer (seconds)<br>
+    -k  set timer (microseconds)<br>
+    -x  set the IP<br>
+    -y  set the port number<br>
+    -r  set the port number 2<br>
+    -z  set the username (4 bytes)<br>
+    -o  set the password (8 bytes)<br>
+    -c  set the script code (ex: "#!/bin/sh\nls; exit 0")<br>
+        escape codes will not be interpreted...</code><h3> udp_server - UDP服务器Cymothoa </h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="72001d1d063219131e1b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# udp_server<br>
+usage: udp_server port</code><h3> cymothoa用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a4d6cbcbd0e4cfc5c8cd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

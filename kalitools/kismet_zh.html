@@ -1,0 +1,146 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2>天命包装说明</h2><p style="text-align: justify;">天命是802.11二层无线网络探测器，嗅探器和入侵检测系统。它将与支持原始监视（rfmon）模式中的任何无线网卡的工作，并能嗅出的802.11a / b / g / n的流量。它可以使用其他程序来播放音频警报网络事件，读出网络摘要，或提供GPS坐标。这是包含芯，客户端和服务器的主包。 </p><p> <a href="http://www.kismetwireless.net/" variation="deepblue" target="blank">天命首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/kismet.git;a=summary" variation="deepblue" target="blank">卡利天命回购</a> </p><ul><li>作者：迈克·克肖</li><li>许可：GPL第二版</li></ul><h3>包含在天命包工具</h3><h5> kismet_server - 的天命服务器组件</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="12607d7d665279737e7b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kismet_server -h<br>
+Usage: kismet_server [OPTION]<br>
+Nearly all of these options are run-time overrides for values in the<br>
+kismet.conf configuration file.  Permanent changes should be made to<br>
+the configuration file.<br>
+ *** Generic Options ***<br>
+ -v, --version                Show version<br>
+ -f, --config-file &lt;file&gt;     Use alternate configuration file<br>
+     --no-line-wrap           Turn of linewrapping of output<br>
+                              (for grep, speed, etc)<br>
+ -s, --silent                 Turn off stdout output after setup phase<br>
+     --daemonize              Spawn detatched in the background<br>
+     --no-plugins             Do not load plugins<br>
+     --no-root                Do not start the kismet_capture binary<br>
+                               when not running as root.  For no-priv<br>
+                               remote capture ONLY.<br>
+<br>
+ *** Kismet Client/Server Options ***<br>
+ -l, --server-listen          Override Kismet server listen options<br>
+<br>
+ *** Kismet Remote Drone Options ***<br>
+     --drone-listen           Override Kismet drone listen options<br>
+<br>
+ *** Dump/Logging Options ***<br>
+ -T, --log-types &lt;types&gt;      Override activated log types<br>
+ -t, --log-title &lt;title&gt;      Override default log title<br>
+ -p, --log-prefix &lt;prefix&gt;    Directory to store log files<br>
+ -n, --no-logging             Disable logging entirely<br>
+<br>
+ *** Packet Capture Source Options ***<br>
+ -c, --capture-source         Specify a new packet capture source<br>
+                              (Identical syntax to the config file)<br>
+ -C, --enable-capture-sources Enable capture sources (comma-separated<br>
+                              list of names or interfaces)<br>
+<br>
+ *** Kismet Net Tracking Options ***<br>
+     --filter-tracker         Tracker filtering<br>
+<br>
+ *** Kismet GPS Options ***<br>
+     --use-gpsd-gps (h:p)     Use GPSD-controlled GPS at host:port<br>
+                              (default: localhost:2947)<br>
+     --use-nmea-gps (dev)     Use local NMEA serial GPS on device<br>
+                              (default: /dev/ttyUSB0)<br>
+     --use-virtual-gps<br>
+                (lat,lon,alt) Use a virtual fixed-position gps record<br>
+     --gps-modelock &lt;t:f&gt;     Force broken GPS units to act as if they<br>
+                              have a valid signal (true/false)<br>
+     --gps-reconnect &lt;t:f&gt;    Reconnect if a GPS device fails<br>
+                              (true/false)</code><h3> kismet_client - 的天命客户端组件</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c7b5a8a8b387aca6abae">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kismet_client -h<br>
+Usage: kismet_client [OPTION]<br>
+ *** Generic Options ***<br>
+ -h, --help                   The obvious</code><h3> kismet_capture - 意思是在天命IPC框架内运行</h3><p>意思是在天命IPC框架内运行。 </p><h5> kismet_dron​​e - 的天命无人机组件</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1b6974746f5b707a7772">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kismet_drone -h<br>
+Usage: kismet_drone [OPTION]<br>
+Nearly all of these options are run-time overrides for values in the<br>
+kismet.conf configuration file.  Permanent changes should be made to<br>
+the configuration file.<br>
+ *** Generic Options ***<br>
+ -f, --config-file            Use alternate configuration file<br>
+     --no-line-wrap           Turn of linewrapping of output<br>
+                              (for grep, speed, etc)<br>
+ -s, --silent                 Turn off stdout output after setup phase<br>
+     --daemonize              Spawn detatched in the background<br>
+<br>
+ *** Kismet Remote Drone Options ***<br>
+     --drone-listen           Override Kismet drone listen options<br>
+<br>
+ *** Packet Capture Source Options ***<br>
+ -c, --capture-source         Specify a new packet capture source<br>
+                              (Identical syntax to the config file)<br>
+ -C, --enable-capture-sources Enable capture sources (comma-separated<br>
+                              list of names or interfaces)</code><h3>天命 - 天命的主发射器</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="22504d4d566249434e4b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kismet -h<br>
+Usage: /usr/bin/kismet_server [OPTION]<br>
+Nearly all of these options are run-time overrides for values in the<br>
+kismet.conf configuration file.  Permanent changes should be made to<br>
+the configuration file.<br>
+ *** Generic Options ***<br>
+ -v, --version                Show version<br>
+ -f, --config-file &lt;file&gt;     Use alternate configuration file<br>
+     --no-line-wrap           Turn of linewrapping of output<br>
+                              (for grep, speed, etc)<br>
+ -s, --silent                 Turn off stdout output after setup phase<br>
+     --daemonize              Spawn detatched in the background<br>
+     --no-plugins             Do not load plugins<br>
+     --no-root                Do not start the kismet_capture binary<br>
+                               when not running as root.  For no-priv<br>
+                               remote capture ONLY.<br>
+<br>
+ *** Kismet Client/Server Options ***<br>
+ -l, --server-listen          Override Kismet server listen options<br>
+<br>
+ *** Kismet Remote Drone Options ***<br>
+     --drone-listen           Override Kismet drone listen options<br>
+<br>
+ *** Dump/Logging Options ***<br>
+ -T, --log-types &lt;types&gt;      Override activated log types<br>
+ -t, --log-title &lt;title&gt;      Override default log title<br>
+ -p, --log-prefix &lt;prefix&gt;    Directory to store log files<br>
+ -n, --no-logging             Disable logging entirely<br>
+<br>
+ *** Packet Capture Source Options ***<br>
+ -c, --capture-source         Specify a new packet capture source<br>
+                              (Identical syntax to the config file)<br>
+ -C, --enable-capture-sources Enable capture sources (comma-separated<br>
+                              list of names or interfaces)<br>
+<br>
+ *** Kismet Net Tracking Options ***<br>
+     --filter-tracker         Tracker filtering<br>
+<br>
+ *** Kismet GPS Options ***<br>
+     --use-gpsd-gps (h:p)     Use GPSD-controlled GPS at host:port<br>
+                              (default: localhost:2947)<br>
+     --use-nmea-gps (dev)     Use local NMEA serial GPS on device<br>
+                              (default: /dev/ttyUSB0)<br>
+     --use-virtual-gps<br>
+                (lat,lon,alt) Use a virtual fixed-position gps record<br>
+     --gps-modelock &lt;t:f&gt;     Force broken GPS units to act as if they<br>
+                              have a valid signal (true/false)<br>
+     --gps-reconnect &lt;t:f&gt;    Reconnect if a GPS device fails<br>
+                              (true/false)</code><h3> kismet_server用法示例</h3><p>启动天命服务器，使用无线接口作为捕获源<b><i>（-c为wlan0），并使用</i></b>外部GPSD选项<b><i>（-use-GPSD-GPS）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="23514c4c576348424f4a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kismet_server -c wlan0 --use-gpsd-gps<br>
+ERROR: Kismet was started as root, NOT launching external control binary.  <br>
+       This is NOT the preferred method of starting Kismet as Kismet will <br>
+       continue to run as root the entire time.  Please read the README <br>
+       file section about Installation &amp; Security and be sure this is what <br>
+       you want to do.<br>
+INFO: Reading from config file /etc/kismet/kismet.conf<br>
+INFO: No 'dronelisten' config line and no command line drone-listen <br>
+      argument given, Kismet drone server will not be enabled.<br>
+INFO: Created alert tracker...<br>
+INFO: Creating device tracker...<br>
+INFO: Registered 80211 PHY as id</code><h3>天命用法示例</h3><h100>五</h100><p> <a href='full/8a26ca61263d8e1fa11b051d27cd7501b0412c63.jpg'><img src='full/8a26ca61263d8e1fa11b051d27cd7501b0412c63.jpg' alt="天命" width="920" class="aligncenter size-full wp-image-3555"></a> </p><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

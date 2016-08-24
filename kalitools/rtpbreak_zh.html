@@ -1,0 +1,91 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> rtpbreak包装说明</h2><p style="text-align: justify;">随着rtpbreak可以检测，重建和分析任何RTP会话。它不需要的RTCP分组的存在，并且独立地工程形成用于信令协议（SIP，H.323，SCCP，...）。输入是数据包的顺序，输出是一组可以作为其他工具的输入使用的文件（Wireshark的/ tshark的，袜中，grep / awk的/剪切/ CAT / sed的，...）。它也支持无线（AP_DLT_IEEE802_11）网络。 </p><ul><li>一个未知或不支持的信令协议重构任何RTP流</li><li>重建在无线网络中的任何RTP流，而做渠道跳频（VoIP的活动检测器） </li><li>重建和解码在批处理模式下的任何RTP流（用袜，星号，...） </li><li>重建所有已经存在的RTP流</li><li>重新排序任何RTP流以供日后分析的数据包（与tshark的，Wireshark的，...） </li><li>在一个芯片上的Linux设备建立一个微小的无线VoIP窃听系统</li><li>构建一个完整的VoIP窃听系统（rtpbreak将只是RTP剥离模块！） </li></ul><p>资料来源：rtpbreak文档<br> <a href="http://dallachiesa.com/" variation="deepblue" target="blank">rtpbreak首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/rtpbreak.git;a=summary" variation="deepblue" target="blank">卡利rtpbreak回购</a> </p><ul><li>作者：Dallachiesa米歇尔</li><li>许可：GPL第二版</li></ul><h3>包含在rtpbreak包工具</h3><h5> rtpbreak - 检测，重建，并分析RTP会话</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e694898992a68d878a8f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtpbreak -h<br>
+Copyright (c) 2007-2008 Dallachiesa Michele &lt;micheleDOTdallachiesaATposteDOTit&gt;<br>
+rtpbreak v1.3a is free software, covered by the GNU General Public License.<br>
+<br>
+USAGE: rtpbreak (-r|-i) &lt;source&gt; [options]<br>
+<br>
+ INPUT<br>
+<br>
+  -r &lt;str&gt;      Read packets from pcap file &lt;str&gt;<br>
+  -i &lt;str&gt;      Read packets from network interface &lt;str&gt;<br>
+  -L &lt;int&gt;      Force datalink header length == &lt;int&gt; bytes<br>
+<br>
+ OUTPUT<br>
+<br>
+  -d &lt;str&gt;      Set output directory to &lt;str&gt; (def:.)<br>
+  -w            Disable RTP raw dumps<br>
+  -W            Disable RTP pcap dumps<br>
+  -g            Fill gaps in RTP raw dumps (caused by lost packets)<br>
+  -n            Dump noise packets<br>
+  -f            Disable stdout logging<br>
+  -F            Enable syslog logging<br>
+  -v            Be verbose<br>
+<br>
+ SELECT<br>
+<br>
+  -m            Sniff packets in promisc mode<br>
+  -p &lt;str&gt;      Add pcap filter &lt;str&gt;<br>
+  -e            Expect even destination UDP port<br>
+  -u            Expect unprivileged source/destination UDP ports (&gt;1024)<br>
+  -y &lt;int&gt;      Expect RTP payload type == &lt;int&gt;<br>
+  -l &lt;int&gt;      Expect RTP payload length == &lt;int&gt; bytes<br>
+  -t &lt;float&gt;    Set packet timeout to &lt;float&gt; seconds (def:10.00)<br>
+  -T &lt;float&gt;    Set pattern timeout to &lt;float&gt; seconds (def:0.25)<br>
+  -P &lt;int&gt;      Set pattern packets count to &lt;int&gt; (def:5)<br>
+<br>
+ EXECUTION<br>
+<br>
+  -Z &lt;str&gt;      Run as user &lt;str&gt;<br>
+  -D            Run in background (option -f implicit)<br>
+<br>
+ MISC<br>
+<br>
+  -k            List known RTP payload types<br>
+  -h            This</code><h3> rtpbreak用法示例</h3><p>使用eth0设备<b><i>（-i eth0的）分析</i></b> RTP流，填补空白<b><i>（-g），</i></b>嗅探在混杂模式<b><i>（-m），</i></b>并保存到指定目录<b><i>（-d rtplog）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fd8f929289bd969c9194">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtpbreak -i eth0 -g -m -d rtplog<br>
+ + rtpbreak v1.3a running here!<br>
+ + pid: 10951, date/time: 17/05/2014#13:40:02<br>
+ + Configuration<br>
+   + INPUT<br>
+     Packet source: iface 'eth0'<br>
+     Force datalink header length: disabled<br>
+   + OUTPUT<br>
+     Output directory: 'rtplog'<br>
+     RTP raw dumps: enabled<br>
+     RTP pcap dumps: enabled<br>
+     Fill gaps: enabled<br>
+     Dump noise: disabled<br>
+     Logfile: 'rtplog/rtp.0.txt'<br>
+     Logging to stdout: enabled<br>
+     Logging to syslog: disabled<br>
+     Be verbose: disabled<br>
+   + SELECT<br>
+     Sniff packets in promisc mode: enabled<br>
+     Add pcap filter: disabled<br>
+     Expecting even destination UDP port: disabled<br>
+     Expecting unprivileged source/destination UDP ports: disabled<br>
+     Expecting RTP payload type: any<br>
+     Expecting RTP payload length: any<br>
+     Packet timeout: 10.00 seconds<br>
+     Pattern timeout: 0.25 seconds<br>
+     Pattern packets: 5<br>
+   + EXECUTION<br>
+     Running as user/group: root/root<br>
+     Running daemonized: disabled<br>
+ * You can dump stats sending me a SIGUSR2 signal<br>
+ * Reading packets...</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,67 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> SMTP-用户枚举包装说明</h2><p style="text-align: justify;"> SMTP-用户枚举是通过SMTP服务（sendmail）在列举OS级别的用户帐户上的Solaris的工具。枚举通过检查响应VRFY，EXPN和RCPT TO命令来执行。它可以适用于对工作的其他弱势SMTP守护进程，但是这并没有这样做是V1.0的。 </p><p>资料来源：http://pentestmonkey.net/tool​​s/user-enumeration/smtp-user-enum <br> <a href="http://pentestmonkey.net/tools/user-enumeration/smtp-user-enum" variation="deepblue" target="blank">SMTP-用户枚举首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/smtp-user-enum.git;a=summary" variation="deepblue" target="blank">卡利SMTP-用户枚举回购</a> </p><ul><li>作者：pentestmonkey </li><li>许可：GPL第二版</li></ul><h3>包含在SMTP-用户枚举封装工具</h3><h5> SMTP-用户枚举 - 用户名猜工具主要用于SMTP服务</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="8bf9e4e4ffcbe0eae7e2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# smtp-user-enum -h<br>
+smtp-user-enum v1.2 ( http://pentestmonkey.net/tools/smtp-user-enum )<br>
+<br>
+Usage: smtp-user-enum.pl [options] ( -u username | -U file-of-usernames ) ( -t host | -T file-of-targets )<br>
+<br>
+options are:<br>
+        -m n     Maximum number of processes (default: 5)<br>
+    -M mode  Method to use for username guessing EXPN, VRFY or RCPT (default: VRFY)<br>
+    -u user  Check if user exists on remote system<br>
+    -f addr  MAIL FROM email address.  Used only in "RCPT TO" mode (default: <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="84f1f7e1f6c4e1fce5e9f4e8e1aae7ebe9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>)<br>
+        -D dom   Domain to append to supplied user list to make email addresses (Default: none)<br>
+                 Use this option when you want to guess valid email addresses instead of just usernames<br>
+                 e.g. "-D example.com" would guess <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d0b6bfbf90b5a8b1bda0bcb5feb3bfbd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>, <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="88eae9fac8edf0e9e5f8e4eda6ebe7e5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>, etc.  Instead of<br>
+                      simply the usernames foo and bar.<br>
+    -U file  File of usernames to check via smtp service<br>
+    -t host  Server host running smtp service<br>
+    -T file  File of hostnames running the smtp service<br>
+    -p port  TCP port on which smtp service runs (default: 25)<br>
+    -d       Debugging output<br>
+    -t n     Wait a maximum of n seconds for reply (default: 5)<br>
+    -v       Verbose<br>
+    -h       This help message<br>
+<br>
+Also see smtp-user-enum-user-docs.pdf from the smtp-user-enum tar ball.<br>
+<br>
+Examples:<br>
+<br>
+$ smtp-user-enum.pl -M VRFY -U users.txt -t 10.0.0.1<br>
+$ smtp-user-enum.pl -M EXPN -u admin1 -t 10.0.0.1<br>
+$ smtp-user-enum.pl -M RCPT -U users.txt -T mail-server-ips.txt<br>
+$ smtp-user-enum.pl -M EXPN -D example.com -U users.txt -t 10.0.0.1</code><h3> SMTP-用户枚举用法示例</h3><p>使用VRFY方法<b><i>（-M VRFY）来搜索</i></b>目标服务器<b><i>（-t 192.168.1.25）</i></b>上指定的用户<b><i>（-u root用户）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7e0c11110a3e151f1217">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# smtp-user-enum -M VRFY -u root -t 192.168.1.25<br>
+Starting smtp-user-enum v1.2 ( http://pentestmonkey.net/tools/smtp-user-enum )<br>
+<br>
+ ----------------------------------------------------------<br>
+|                   Scan Information                       |<br>
+ ----------------------------------------------------------<br>
+<br>
+Mode ..................... VRFY<br>
+Worker Processes ......... 5<br>
+Target count ............. 1<br>
+Username count ........... 1<br>
+Target TCP port .......... 25<br>
+Query timeout ............ 5 secs<br>
+Target domain ............<br>
+<br>
+######## Scan started at Tue May 13 16:06:28 2014 #########<br>
+192.168.1.25: root exists<br>
+######## Scan completed at Tue May 13 16:06:29 2014 #########<br>
+1 results.<br>
+<br>
+1 queries in 1 seconds (1.0 queries / sec)</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

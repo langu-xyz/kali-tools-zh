@@ -1,0 +1,74 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> dnsenum包装说明</h2><p style="text-align: justify;">多线程perl脚本来枚举域的DNS信息，并发现不连续的IP模块。 </p><p>操作： </p><ul><li>获取主机的addresse（A记录）。 </li><li>获取namservers（螺纹）。 </li><li>获取MX记录（螺纹）。 </li><li>执行AXFR查询的域名服务器，并获得BIND版本（螺纹）。 </li><li>获得通过谷歌刮（谷歌查询=“的allinurl：-www网站域名”）额外的名称和子域。 </li><li>从文件中强力子域，还可以在子域有NS记录（所有线程）执行递归。 </li><li>计算C级域网络范围，并对其执行的whois查询（线程）。 </li><li>执行对netranges反向查找（C类或/和WHOIS netranges）（螺纹）。 </li><li>写domain_ips.txt文件中的IP块。 </li></ul><p>资料来源：https://github.com/fwaeytens/dnsenum <br> <a href="https://github.com/fwaeytens/dnsenum" variation="deepblue" target="blank">dnsenum首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/dnsenum.git;a=summary" variation="deepblue" target="blank">卡利dnsenum回购</a> </p><ul><li>作者：菲利普Waeytens，TIX tixxDZ </li><li>许可：GPL第二版</li></ul><h3>包含在dnsenum包工具</h3><h5> dnsenum </h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="63110c0c172308020f0a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnsenum -h<br>
+dnsenum.pl VERSION:1.2.3<br>
+Usage: dnsenum.pl [Options] &lt;domain&gt;<br>
+[Options]:<br>
+Note: the brute force -f switch is obligatory.<br>
+GENERAL OPTIONS:<br>
+  --dnsserver   &lt;server&gt;<br>
+            Use this DNS server for A, NS and MX queries.<br>
+  --enum        Shortcut option equivalent to --threads 5 -s 15 -w.<br>
+  -h, --help        Print this help message.<br>
+  --noreverse       Skip the reverse lookup operations.<br>
+  --private     Show and save private ips at the end of the file domain_ips.txt.<br>
+  --subfile &lt;file&gt;  Write all valid subdomains to this file.<br>
+  -t, --timeout &lt;value&gt; The tcp and udp timeout values in seconds (default: 10s).<br>
+  --threads &lt;value&gt; The number of threads that will perform different queries.<br>
+  -v, --verbose     Be verbose: show all the progress and all the error messages.<br>
+GOOGLE SCRAPING OPTIONS:<br>
+  -p, --pages &lt;value&gt;   The number of google search pages to process when scraping names,<br>
+            the default is 5 pages, the -s switch must be specified.<br>
+  -s, --scrap &lt;value&gt;   The maximum number of subdomains that will be scraped from Google (default 15).<br>
+BRUTE FORCE OPTIONS:<br>
+  -f, --file &lt;file&gt; Read subdomains from this file to perform brute force.<br>
+  -u, --update  &lt;a|g|r|z&gt;<br>
+            Update the file specified with the -f switch with valid subdomains.<br>
+    a (all)     Update using all results.<br>
+    g       Update using only google scraping results.<br>
+    r       Update using only reverse lookup results.<br>
+    z       Update using only zonetransfer results.<br>
+  -r, --recursion   Recursion on subdomains, brute force all discovred subdomains that have an NS record.<br>
+WHOIS NETRANGE OPTIONS:<br>
+  -d, --delay &lt;value&gt;   The maximum value of seconds to wait between whois queries, the value is defined randomly, default: 3s.<br>
+  -w, --whois       Perform the whois queries on c class network ranges.<br>
+             **Warning**: this can generate very large netranges and it will take lot of time to performe reverse lookups.<br>
+REVERSE LOOKUP OPTIONS:<br>
+  -e, --exclude &lt;regexp&gt;<br>
+            Exclude PTR records that match the regexp expression from reverse lookup results, useful on invalid hostnames.<br>
+OUTPUT OPTIONS:<br>
+  -o --output &lt;file&gt;    Output in XML format. Can be imported in MagicTree (www.gremwell.com)</code><h3> dnsenum用法示例</h3><p>不要做一个反向查找<b><i>（-noreverse）和输出</i></b>保存到文件<b><i>（-o mydomain.xml）</i></b> <b><i>域</i></b> example.com： </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7e0c11110a3e151f1217">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnsenum --noreverse -o mydomain.xml example.com<br>
+dnsenum.pl VERSION:1.2.3<br>
+<br>
+-----   example.com   -----<br>
+<br>
+<br>
+Host's addresses:<br>
+__________________<br>
+<br>
+example.com.                             392      IN    A        93.184.216.119<br>
+<br>
+<br>
+Name Servers:<br>
+______________<br>
+<br>
+b.iana-servers.net.                      122      IN    A        199.43.133.53<br>
+a.iana-servers.net.                      122      IN    A        199.43.132.53<br>
+<br>
+<br>
+Mail (MX) Servers:<br>
+___________________</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

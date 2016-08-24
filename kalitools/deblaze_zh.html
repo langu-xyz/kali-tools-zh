@@ -1,0 +1,53 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> deblaze包装说明</h2><p style="text-align: justify;">通过使用Flex编程模型和ActionScript语言中，Flash Remoting的诞生。 Flash应用程序可以使请求到远程服务器来调用服务器侧的功能，如仰视账户，检索附加数据和图形，并且执行复杂的业务操作。但是，调用远程方法的能力也增加了攻击面由这些应用程序公开。该工具将允许您执行方法枚举和审讯对Flash Remoting的终点。 Deblaze是约的过程中基于Flash的网站，使得大量使用的Flash Remoting的一些安全评估是必要的。我需要的东西给我挖得更深一些到技术和识别安全漏洞的能力。在所有我到目前为止看到的名称是不区分大小写的服务器，使其更容易为暴力破解。很多时候，HTTP POST请求将不被服务器记录，所以穷举也许会被忽视上监视很差系统。 </p><p> Deblaze提供了以下功能： </p><ul><li>蛮力服务和方法名</li><li>方法讯问</li><li> Flex技术指纹</li></ul><p>资料来源：https://github.com/SpiderLabs/deblaze <br> <a href="https://github.com/SpiderLabs/deblaze" variation="deepblue" target="blank">deblaze首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/deblaze.git;a=summary" variation="deepblue" target="blank">卡利deblaze回购</a> </p><ul><li>作者：Trustwave控股公司，乔恩·罗斯</li><li>许可：GPLv3的</li></ul><h3>包含在deblaze包工具</h3><h5> deblaze.py - 执行对Flash Remoting的端点检测</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="03716c6c774368626f6a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# deblaze.py -h<br>
+Usage: deblaze [option]<br>
+<br>
+A remote enumeration tool for Flex Servers<br>
+<br>
+Options:<br>
+  --version             show program's version number and exit<br>
+  -h, --help            show this help message and exit<br>
+  -u URL, --url=URL     URL for AMF Gateway<br>
+  -s SERVICE, --service=SERVICE<br>
+                        Remote service to call<br>
+  -m METHOD, --method=METHOD<br>
+                        Method to call<br>
+  -p PARAMS, --params=PARAMS<br>
+                        Parameters to send pipe seperated<br>
+                        'param1|param2|param3'<br>
+  -f SWF, --fullauto=SWF<br>
+                        URL to SWF - Download SWF, find remoting services,<br>
+                        methods,and parameters<br>
+  --fuzz                Fuzz parameter values<br>
+  -c CREDS, --creds=CREDS<br>
+                        Username and password for service in u:p format<br>
+  -b COOKIE, --cookie=COOKIE<br>
+                        Send cookies with request<br>
+  -A USERAGENT, --user-agent=USERAGENT<br>
+                        User-Agent string to send to the server<br>
+  -1 BRUTESERVICE, --bruteService=BRUTESERVICE<br>
+                        File to load services for brute forcing (mutually<br>
+                        exclusive to -s)<br>
+  -2 BRUTEMETHOD, --bruteMethod=BRUTEMETHOD<br>
+                        File to load methods for brute forcing (mutually<br>
+                        exclusive to -m)<br>
+  -d, --debug           Enable pyamf/AMF debugging<br>
+  -v, --verbose         Print http request/response<br>
+  -r, --report          Generate HTML report<br>
+  -n, --nobanner        Do not display banner<br>
+  -q, --quiet           Do not display messages</code><h3> deblaze.py用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="483a27273c0823292421">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

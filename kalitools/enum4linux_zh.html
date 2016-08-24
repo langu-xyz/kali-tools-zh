@@ -1,0 +1,84 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> enum4linux包装说明</h2><p style="text-align: justify;">一个Linux的替代enum.exe程序用于枚举从Windows和Samba主机的数据。 </p><p>概述： </p><p> Enum4linux用于枚举从Windows和Samba系统信息的工具。它试图提供类似的功能，以enum.exe程序以前可从www.bindview.com。 </p><p>它是用Perl编写的基本上是围绕着桑巴工具的smbclient，rpclient，net和nmblookup的包装。 </p><p>该工具的使用情况，可以发现以下后跟实施例中，工具的先前版本可以在页面的底部。 </p><p>主要特征： </p><ul><li> RID循环（当RestrictAnonymous的设置为1时在Windows 2000上） </li><li>用户列表（当RestrictAnonymous的设定为0的Windows 2000） </li><li>组成员身份信息的列表</li><li>分享枚举</li><li>如果检测主机处于一个工作组或域</li><li>识别远程操作系统</li><li>密码策略检索（使用polenum） </li></ul><p>资料来源：https://labs.portcullis.co.uk/tool​​s/enum4linux/ <br> <a href="https://labs.portcullis.co.uk/tools/enum4linux/" variation="deepblue" target="blank">enum4linux首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/enum4linux.git;a=summary" variation="deepblue" target="blank">卡利enum4linux回购</a> </p><ul><li>作者：马克·罗威</li><li>许可：GPL第二版</li></ul><h3>包含在enum4linux软件包工具</h3><h5> enum4linux </h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e4968b8b90a48f85888d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# enum4linux -h<br>
+enum4linux v0.8.9 (http://labs.portcullis.co.uk/application/enum4linux/)<br>
+Copyright (C) 2011 Mark Lowe (<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="86ebf4eac6f6e9f4f2e5f3eaeaeff5abf5e3e5f3f4eff2ffa8e5e9eb">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>)<br>
+<br>
+Simple wrapper around the tools in the samba package to provide similar<br>
+functionality to enum.exe (formerly from www.bindview.com).  Some additional<br>
+features such as RID cycling have also been added for convenience.<br>
+<br>
+Usage: ./enum4linux.pl [options] ip<br>
+<br>
+Options are (like "enum"):<br>
+    -U        get userlist<br>
+    -M        get machine list*<br>
+    -S        get sharelist<br>
+    -P        get password policy information<br>
+    -G        get group and member list<br>
+    -d        be detailed, applies to -U and -S<br>
+    -u user   specify username to use (default "")<br>
+    -p pass   specify password to use (default "")<br>
+<br>
+The following options from enum.exe aren't implemented: -L, -N, -D, -f<br>
+<br>
+Additional options:<br>
+    -a        Do all simple enumeration (-U -S -G -P -r -o -n -i).<br>
+              This opion is enabled if you don't provide any other options.<br>
+    -h        Display this help message and exit<br>
+    -r        enumerate users via RID cycling<br>
+    -R range  RID ranges to enumerate (default: 500-550,1000-1050, implies -r)<br>
+    -K n      Keep searching RIDs until n consective RIDs don't correspond to<br>
+              a username.  Impies RID range ends at 999999. Useful<br>
+          against DCs.<br>
+    -l        Get some (limited) info via LDAP 389/TCP (for DCs only)<br>
+    -s file   brute force guessing for share names<br>
+    -k user   User(s) that exists on remote system (default: administrator,guest,krbtgt,domain admins,root,bin,none)<br>
+              Used to get sid with "lookupsid known_username"<br>
+              Use commas to try several users: "-k admin,user1,user2"<br>
+    -o        Get OS information<br>
+    -i        Get printer information<br>
+    -w wrkg   Specify workgroup manually (usually found automatically)<br>
+    -n        Do an nmblookup (similar to nbtstat)<br>
+    -v        Verbose.  Shows full commands being run (net, rpcclient, etc.)<br>
+<br>
+RID cycling should extract a list of users from Windows (or Samba) hosts<br>
+which have RestrictAnonymous set to 1 (Windows NT and 2000), or "Network<br>
+access: Allow anonymous SID/Name translation" enabled (XP, 2003).<br>
+<br>
+NB: Samba servers often seem to have RIDs in the range 3000-3050.<br>
+<br>
+Dependancy info: You will need to have the samba package installed as this<br>
+script is basically just a wrapper around rpcclient, net, nmblookup and<br>
+smbclient.  Polenum from http://labs.portcullis.co.uk/application/polenum/<br>
+is required to get Password Policy info.</code><h3> enum4linux用法示例</h3><p>尝试获取目标<b><i>（192.168.1.200）</i></b>的用户列表<b><i>（-U）</i></b>和操作系统信息<b><i>（-o）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="93e1fcfce7d3f8f2fffa">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# enum4linux -U -o 192.168.1.200<br>
+Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Sun Aug 17 12:17:32 2014<br>
+<br>
+ ==========================<br>
+|    Target Information    |<br>
+ ==========================<br>
+Target ........... 192.168.1.200<br>
+RID Range ........ 500-550,1000-1050<br>
+Username ......... ''<br>
+Password ......... ''<br>
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none<br>
+<br>
+<br>
+ ======================================================<br>
+|    Enumerating Workgroup/Domain on 192.168.1.200   |<br>
+ ======================================================<br>
+[+] Got domain/workgroup name: KALI</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

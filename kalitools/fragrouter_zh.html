@@ -1,0 +1,45 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> fragrouter包装说明</h2><p style="text-align: justify;"> Fragrouter是一个网络入侵检测逃避工具包。它实现了大部分的安全网络所描述的攻击“插入，逃避和拒绝服务：逃避网络入侵检测系统”1998年1月纸。 </p><p>这个项目是在一个更精确的测试方法可能适用于网络入侵检测，这仍然是一个黑色艺术充其量领域的希望。 </p><p>从概念上讲，fragrouter只是单向的分段路由器 - IP包都是从攻击者的fragrouter，这将其转换为一个段数据流转发到受害者发送。 </p><p>资料来源：fragrouter自述</p><p> <a href="http://www.anzen.com/research/nidsbench/fragrouter.html" variation="deepblue" target="blank">fragrouter首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/fragrouter.git;a=summary" variation="deepblue" target="blank">卡利fragrouter回购</a> </p><ul><li>作者：宋挖，Anzen计算</li><li>许可：GPL第二版</li></ul><h3>包含在fragrouter包工具</h3><h5> fragrouter - IDS逃避工具包</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b2c0ddddc6f2d9d3dedb">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fragrouter<br>
+Version 1.6<br>
+Usage: fragrouter [-i interface] [-p] [-g hop] [-G hopcount] ATTACK<br>
+<br>
+where ATTACK is one of the following:<br>
+<br>
+-B1: base-1: normal IP forwarding<br>
+-F1: frag-1: ordered 8-byte IP fragments<br>
+-F2: frag-2: ordered 24-byte IP fragments<br>
+-F3: frag-3: ordered 8-byte IP fragments, one out of order<br>
+-F4: frag-4: ordered 8-byte IP fragments, one duplicate<br>
+-F5: frag-5: out of order 8-byte fragments, one duplicate<br>
+-F6: frag-6: ordered 8-byte fragments, marked last frag first<br>
+-F7: frag-7: ordered 16-byte fragments, fwd-overwriting<br>
+-T1: tcp-1: 3-whs, bad TCP checksum FIN/RST, ordered 1-byte segments<br>
+-T3: tcp-3: 3-whs, ordered 1-byte segments, one duplicate<br>
+-T4: tcp-4: 3-whs, ordered 1-byte segments, one overwriting<br>
+-T5: tcp-5: 3-whs, ordered 2-byte segments, fwd-overwriting<br>
+-T7: tcp-7: 3-whs, ordered 1-byte segments, interleaved null segments<br>
+-T8: tcp-8: 3-whs, ordered 1-byte segments, one out of order<br>
+-T9: tcp-9: 3-whs, out of order 1-byte segments<br>
+-C2: tcbc-2: 3-whs, ordered 1-byte segments, interleaved SYNs<br>
+-C3: tcbc-3: ordered 1-byte null segments, 3-whs, ordered 1-byte segments<br>
+-R1: tcbt-1: 3-whs, RST, 3-whs, ordered 1-byte segments<br>
+-I2: ins-2: 3-whs, ordered 1-byte segments, bad TCP checksums<br>
+-I3: ins-3: 3-whs, ordered 1-byte segments, no ACK set<br>
+-M1: misc-1: Windows NT 4 SP2 - http://www.dataprotect.com/ntfrag/<br>
+-M2: misc-2: Linux IP chains - http://www.dataprotect.com/ipchains/</code><h3> fragrouter用法示例</h3><p>使用eth0设备<b><i>（-i eth0的），</i></b>发责令8个字节的IP碎片<b><i>（-F1）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f3819c9c87b398929f9a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fragrouter -i eth0 -F1<br>
+fragrouter: frag-1: ordered 8-byte IP fragments</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,213 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> dc3dd包装说明</h2><p style="text-align: justify;"> dc3dd是GNU的dd与计算机取证添加功能的补丁版本：。 *在飞行散列（MD5，SHA-1，SHA-256和SHA-512）*可能性将错误写入到文件*组错误的错误日志*模式抹*进展报告*方法可行分裂输出</p><p> <a href="http://sourceforge.net/projects/dc3dd/" variation="deepblue" target="blank">dc3dd首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/dc3dd.git;a=summary" variation="deepblue" target="blank">卡利dc3dd回购</a> </p><ul><li>作者：国防部网络犯罪中心</li><li>许可：无</li></ul><h3>包含在dc3dd软件包工具</h3><h5> dc3dd - 修补版本的GNU的dd与计算机取证新增功能</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b3c1dcdcc7f3d8d2dfda">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dc3dd --help<br>
+------<br>
+usage:<br>
+------<br>
+<br>
+    dc3dd [OPTION 1] [OPTION 2] ... [OPTION N]<br>
+<br>
+        *or*<br>
+<br>
+    dc3dd [HELP OPTION]<br>
+<br>
+    where each OPTION is selected from the basic or advanced<br>
+    options listed below, or HELP OPTION is selected from the<br>
+    help options listed below.<br>
+<br>
+--------------<br>
+basic options:<br>
+--------------<br>
+<br>
+    if=DEVICE or FILE    Read input from a device or a file (see note #1<br>
+                         below for how to read from standard input). This<br>
+                         option can only be used once and cannot be<br>
+                         combined with ifs=, pat=, or tpat=.<br>
+    ifs=BASE.FMT         Read input from a set of files with base name<br>
+                         BASE and sequential file name extensions<br>
+                         conforming to the format specifier FMT (see note<br>
+                         #4 below for how to specify FMT). This option<br>
+                         can only be used once and cannot be combined with<br>
+                         if=, pat=, or tpat=.<br>
+    of=FILE or DEVICE    Write output to a file or device (see note #2<br>
+                         below for how to write to standard output). This<br>
+                         option can be used more than once (see note #3<br>
+                         below for how to generate multiple outputs).<br>
+    hof=FILE or DEVICE   Write output to a file or device, hash the<br>
+                         output file or device, and verify by comparing<br>
+                         the output hash(es) to the input hash(es). This<br>
+                         option can be used more than once (see note #3<br>
+                         below for how to generate multiple outputs).<br>
+    ofs=BASE.FMT         Write output to a set of files with base name BASE<br>
+                         and sequential file name extensions generated from<br>
+                         the format specifier FMT (see note #4 below for<br>
+                         how to specify FMT). This option can be used more<br>
+                         than once (see note #3 below for how to generate<br>
+                         multiple outputs). Specify the maximum size of<br>
+                         each file in the set using ofsz=.<br>
+    hofs=BASE.FMT        Write output to a set of files with base name BASE<br>
+                         and sequential file name extensions generated from<br>
+                         the format specifier FMT (see note #4 below for<br>
+                         how to specify FMT). Hash the output files and<br>
+                         verify by comparing the output hash(es) to the<br>
+                         input hash(es). This option can be used more than<br>
+                         once (see note #3 below for how to generate<br>
+                         multiple outputs). Specify the maximum size of<br>
+                         each file in the set using ofsz=.<br>
+    ofsz=BYTES           Set the maximum size of each file in the sets of<br>
+                         files specified using ofs= or hofs= to<br>
+                         BYTES (see note #5 below). A default value for<br>
+                         this option may be set at compile time using<br>
+                         -DDEFAULT_OUTPUT_FILE_SIZE followed by the desired<br>
+                         value in BYTES.<br>
+    hash=ALGORITHM       Compute an ALGORITHM hash of the input and also<br>
+                         of any outputs specified using hof=, hofs=, phod=,<br>
+                         or fhod=, where ALGORITHM is one of md5, sha1,<br>
+                         sha256, or sha512. This option may be used once<br>
+                         for each supported ALGORITHM. Alternatively,<br>
+                         hashing can be activated at compile time using one<br>
+                         or more of -DDEFAULT_HASH_MD5,-DDEFAULT_HASH_SHA1,<br>
+                         -DDEFAULT_HASH_SHA256, and -DDEFAULT_HASH_SHA512.<br>
+    log=FILE             Log I/O statistcs, diagnostics, and total hashes<br>
+                         of input and output to FILE. If hlog= is not<br>
+                         specified, piecewise hashes of multiple file<br>
+                         input and output are also logged to FILE. This<br>
+                         option can be used more than once to generate<br>
+                         multiple logs.<br>
+    hlog=FILE            Log total hashes and piecewise hashes to FILE.<br>
+                         This option can be used more than once to generate<br>
+                         multiple logs.<br>
+<br>
+-----------------<br>
+advanced options:<br>
+-----------------<br>
+<br>
+    phod=DEVICE          The same as hof=DEVICE, except only the bytes<br>
+                         written to DEVICE by dc3dd are verified. This<br>
+                         option can be used more than once (see note<br>
+                         #3 below for how to generate multiple outputs).<br>
+    fhod=DEVICE          The same as phod=DEVICE, with additional<br>
+                         hashing of the entire output DEVICE. This option<br>
+                         can be used more than once (see note #3 below<br>
+                         for how to generate multiple outputs).<br>
+    rec=off              By default, zeros are written to the output(s) in<br>
+                         place of bad sectors when the input is a device.<br>
+                         Use this option to cause the program to instead<br>
+                         exit when a bad sector is encountered.<br>
+    wipe=DEVICE          Wipe DEVICE by writing zeros (default) or a<br>
+                         pattern specified by pat= or tpat=.<br>
+    hwipe=DEVICE         Wipe DEVICE by writing zeros (default) or a<br>
+                         pattern specified by pat= or tpat=. Verify<br>
+                         DEVICE after writing it by hashing it and<br>
+                         comparing the hash(es) to the input hash(es).<br>
+    pat=HEX              Use pattern as input, writing HEX to every byte<br>
+                         of the output. This option can only be used once<br>
+                         and cannot be combined with if=, ifs=, or<br>
+                         tpat=.<br>
+    tpat=TEXT            Use text pattern as input, writing the string TEXT<br>
+                         repeatedly to the output. This option can only be<br>
+                         used once and cannot be combined with if=, ifs=,<br>
+                         or pat=.<br>
+    cnt=SECTORS          Read only SECTORS input sectors. Must be used<br>
+                         with pat= or tpat= if not using the pattern with<br>
+                         wipe= or hwipe= to wipe a device.<br>
+    iskip=SECTORS        Skip SECTORS sectors at start of the input device<br>
+                         or file.<br>
+    oskip=SECTORS        Skip SECTORS sectors at start of the output<br>
+                         file. Specifying oskip= automatically<br>
+                         sets app=on.<br>
+    app=on               Do not overwrite an output file specified with<br>
+                         of= if it already exists, appending output instead.<br>
+    ssz=BYTES            Unconditionally use BYTES (see note #5 below) bytes<br>
+                         for sector size. If ssz= is not specified,<br>
+                         sector size is determined by probing the device;<br>
+                         if the probe fails or the target is not a device,<br>
+                         a sector size of 512 bytes is assumed.<br>
+    bufsz=BYTES          Set the size of the internal byte buffers to BYTES<br>
+                         (see note #5 below). This effectively sets the<br>
+                         maximum number of bytes that may be read at a time<br>
+                         from the input. BYTES must be a multiple of sector<br>
+                         size. Use this option to fine-tune performance.<br>
+    verb=on              Activate verbose reporting, where sectors in/out<br>
+                         are reported for each file in sets of files<br>
+                         specified using ifs=, ofs=, or hofs=.<br>
+                         Alternatively, verbose reporting may be activated<br>
+                         at compile time using -DDEFAULT_VERBOSE_REPORTING.<br>
+    nwspc=on             Activate compact reporting, where the use<br>
+                         of white space to divide log output into<br>
+                         logical sections is suppressed. Alternatively,<br>
+                         compact reporting may be activated at compile<br>
+                         time using -DDEFAULT_COMPACT_REPORTING.<br>
+    b10=on               Activate base 10 bytes reporting, where the<br>
+                         progress display reports 1000 bytes instead<br>
+                         of 1024 bytes as 1 KB. Alternatively, base 10<br>
+                         bytes reporting may be activated at compile<br>
+                         time using -DDEFAULT_BASE_TEN_BYTES_REPORTING.<br>
+    corruptoutput=on     For verification testing and demonstration<br>
+                         purposes, corrupt the output file(s) with extra<br>
+                         bytes so a hash mismatch is guaranteed.<br>
+<br>
+-------------<br>
+help options:<br>
+-------------<br>
+<br>
+      --help     display this help and exit<br>
+      --version  output version information and exit<br>
+      --flags    display compile-time flags and exit<br>
+<br>
+------<br>
+notes:<br>
+------<br>
+<br>
+1. To read from stdin, do not specify if=, ifs=, pat=, or tpat=.<br>
+2. To write to stdout, do not specify of=, hof=, ofs=, hofs=, phod=,<br>
+   fhod=, wipe=, or hwipe=.<br>
+3. To write to multiple outputs specify more than one of of=, hof=, ofs=,<br>
+   hofs=, phod=, or fhod=, in any combination.<br>
+4. FMT is a pattern for a sequence of file extensions that can be numerical<br>
+   starting at zero, numerical starting at one, or alphabetical. Specify FMT<br>
+   by using a series of zeros, ones, or a's, respectively. The number of<br>
+   characters used indicates the desired length of the extensions.<br>
+   For example, a FMT specifier of 1111 indicates four character<br>
+   numerical extensions starting with 0000.<br>
+5. BYTES may be followed by the following multiplicative suffixes:<br>
+   c (1), w (2), b (512), kB (1000), K (1024), MB (1000*1000),<br>
+   M (1024*1024), GB (1000*1000*1000), G (1024*1024*1024), and<br>
+   so on for T, P, E, Z, and Y.<br>
+6. Consider using cnt=, iskip= and oskip= to work around<br>
+   unreadable sectors if error recovery fails.<br>
+7. Sending an interrupt (e.g., CTRL+C) to dc3dd will cause<br>
+   the program to report the work completed at the time<br>
+   the interrupt is received and then exit.<br>
+<br>
+Report bugs to &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="741017471010341017475a191d18">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;.<br>
+dc3dd completed at 2014-05-21 08:20:28 -0600</code><h3> dc3dd用法示例</h3><p>从源头上写的二进制图像<b><i>（IF =的/ var / log / messages中）</i></b>到目的地<b><i>（=的/ tmp / dc3dd）和</i></b>计算MD5校验和<b><i>（哈希= MD5）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="dcaeb3b3a89cb7bdb0b5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dc3dd if=/var/log/messages of=/tmp/dc3dd hash=md5<br>
+<br>
+dc3dd 7.1.614 started at 2014-05-15 17:34:10 -0400<br>
+compiled options:<br>
+command line: dc3dd if=/var/log/messages of=/tmp/dc3dd hash=md5<br>
+sector size: 512 bytes (assumed)<br>
+1809457 bytes (1.7 M) copied (100%), 0.307655 s, 5.6 M/s                      <br>
+<br>
+input results for file `/var/log/messages':<br>
+   3534 sectors + 49 bytes in<br>
+   eac0ac10f5e79c2699e989d2e1bb3caa (md5)<br>
+<br>
+output results for file `/tmp/dc3dd':<br>
+   3534 sectors + 49 bytes out<br>
+<br>
+dc3dd completed at 2014-05-15 17:34:11 -0400</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

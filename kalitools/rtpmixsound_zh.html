@@ -1,0 +1,95 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> rtpmixsound包装说明</h2><p style="text-align: justify;">一个工具来在实时与在指定的目标音频流中的音频（即，RTP）混合预先记录的音频。 </p><p> <a href="http://www.hackingvoip.com/sec_tools.html" variation="deepblue" target="blank">rtpmixsound首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/rtpmixsound.git;a=summary" variation="deepblue" target="blank">卡利rtpmixsound回购</a> </p><ul><li>作者：马克D.科利尔，马克·奥布莱恩，SecureLogix，达斯汀D.特拉梅尔</li><li>许可：GNU自由文档许可证</li></ul><h3>包含在rtpmixsound包工具</h3><h5> rtpmixsound - 实时混合曲目预先录制的音频</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="87f5e8e8f3c7ece6ebee">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtpmixsound -h<br>
+<br>
+rtpmixsound - Version 3.0<br>
+              January 03, 2007<br>
+ Usage:<br>
+ Mandatory -<br>
+    pathname of file whose audio is to be mixed into the<br>
+        targeted live audio stream. If the file extension is<br>
+        .wav, then the file must be a standard Microsoft<br>
+        RIFF formatted WAVE file meeting these constraints:<br>
+          1) header 'chunks' must be in one of two sequences:<br>
+               RIFF, fmt, fact, data<br>
+                 or<br>
+               RIFF, fmt, data<br>
+          2) Compression Code = 1 (PCM/Uncompressed)<br>
+          3) Number of Channels = 1 (mono)<br>
+          4) Sample Rate (Hz) = 8000<br>
+          5) Significant Bits/Sample =<br>
+                  signed,   linear 16-bit or<br>
+                  unsigned, linear  8-bit<br>
+        If the file name does not specify a .wav extension,<br>
+        then the file is presumed to be a tcpdump formatted<br>
+        file with a sequence of, exclusively, G.711 u-law<br>
+        RTP/UDP/IP/ETHERNET messages<br>
+        Note: Yep, the format is referred to as 'tcpdump'<br>
+              even though this file must contain udp messages<br>
+ Optional -<br>
+    -a source RTP IPv4 addr<br>
+    -A source RTP port<br>
+    -b destination RTP IPv4 addr<br>
+    -B destination RTP port<br>
+    -f spoof factor - amount by which to:<br>
+         a) increment the RTP hdr sequence number obtained<br>
+            from the ith legitimate packet to produce the<br>
+            RTP hdr sequence number for the ith spoofed packet<br>
+         b) multiply the RTP payload length and add that<br>
+            product to the RTP hdr timestamp obtained from<br>
+            the ith legitimate packet to produce the RTP hdr<br>
+            timestamp for the ith spoofed packet<br>
+         c) increment the IP hdr ID number obtained from the<br>
+            ith legitimate packet to produce the IP hdr ID<br>
+            number for the ith spoofed packet<br>
+       [ range: +/- 1000, default: 2 ]<br>
+    -i interface (e.g. eth0)<br>
+    -j jitter factor - the reception of a legitimate RTP<br>
+         packet in the target audio stream enables the output<br>
+         of the next spoofed packet. This factor determines<br>
+         when that spoofed packet is actually transmitted.<br>
+         The factor relates how close to the next legitimate<br>
+         packet you'd actually like the enabled spoofed packet<br>
+         to be transmitted. For example, -j 10 means 10% of<br>
+         the codec's transmission interval. If the transmission<br>
+         interval = 20,000 usec (i.e. G.711), then delay the<br>
+         output of the spoofed RTP packet until the time-of-day<br>
+         is within 2,000 usec (i.e. 10%) of the time the next<br>
+         legitimate RTP packet is expected. In other words,<br>
+         delay 100% minus the jitter factor, or 18,000 usec<br>
+         in this example. The smaller the jitter factor, the<br>
+         greater the risk you run of not outputting the<br>
+         spoofed packet before the next legitimate RTP packet<br>
+         is received. Therefore, a factor &gt;= 10 is advised.<br>
+       [ range: 0 - 80, default: 80 = output spoof ASAP ]<br>
+    -p seconds to pause between setup and injection<br>
+    -h help - print this usage<br>
+    -v verbose output mode<br>
+<br>
+Note: If you are running the tool from a host with multiple<br>
+      ethernet interfaces which are up, be forewarned that<br>
+      the order those interfaces appear in your route table<br>
+      and the networks accessible from those interfaces might<br>
+      compel Linux to output spoofed audio packets to an<br>
+      interface different than the one stipulated by you on<br>
+      command line. This should not affect the tool unless<br>
+      those spoofed packets arrive back at the host through<br>
+      the interface you have specified on the command line<br>
+      (e.g. the interfaces have connectivity through a hub).</code><h3> rtpmixsound用法示例</h3><p>通过混合显示详细的输出网络所给的音频<b><i>文件<b><i>（/usr/share/rtpmixsound/stapler.wav）（-v）：</i></b></i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="dba9b4b4af9bb0bab7b2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtpmixsound /usr/share/rtpmixsound/stapler.wav -v<br>
+Targeting interface eth0<br>
+libfindrtp_find_rtp(): using pcap filter "ip".<br>
+State: ip_a ==  | port_a == 0 | ip_b ==  | port_b == 0</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

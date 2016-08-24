@@ -1,0 +1,56 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<p><script type="text/javascript" src="https://asciinema.org/a/31882.js" id="asciicast-31882" async></script></p><h2> urlcrazy包装说明</h2><p style="text-align: justify;">生成和测试领域的错别字和变化来检测并执行错字蹲，网址拦截，网络钓鱼和企业间谍活动。 </p><p>特征</p><ul><li>生成15种域变种</li><li>知道8000常见的拼写错误</li><li>支持宇宙射线引起的位翻转</li><li>多种键盘布局（QWERTY，AZERTY，QWERTZ，德沃夏克） </li><li>如果域变体是有效的检查</li><li>如果测试域变体使用</li><li>估计域变体的流行度</li></ul><p>资料来源：http://www.morningstarsecurity.com/research/urlcrazy <br> <a href="http://www.morningstarsecurity.com/research/urlcrazy" variation="deepblue" target="blank">URLCrazy首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/urlcrazy.git;a=summary" variation="deepblue" target="blank">卡利URLCrazy回购</a> </p><ul><li>作者：安德鲁·霍顿</li><li>许可：非商业</li></ul><h3>包含在urlcrazy包工具</h3><h5> urlcrazy - 域名错字发电机</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0775686873476c666b6e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# urlcrazy -h<br>
+URLCrazy version 0.5<br>
+by Andrew Horton (urbanadventurer)<br>
+http://www.morningstarsecurity.com/research/urlcrazy<br>
+<br>
+Generate and test domain typos and variations to detect and perform typo squatting, URL hijacking,<br>
+phishing, and corporate espionage.<br>
+<br>
+Supports the following domain variations:<br>
+Character omission, character repeat, adjacent character swap, adjacent character replacement, double<br>
+character replacement, adjacent character insertion, missing dot, strip dashes, singular or pluralise,<br>
+common misspellings, vowel swaps, homophones, bit flipping (cosmic rays), homoglyphs, wrong top level<br>
+domain, and wrong second level domain.<br>
+<br>
+Usage: /usr/bin/urlcrazy [options] domain<br>
+<br>
+Options<br>
+ -k, --keyboard=LAYOUT  Options are: qwerty, azerty, qwertz, dvorak (default: qwerty)<br>
+ -p, --popularity   Check domain popularity with Google<br>
+ -r, --no-resolve   Do not resolve DNS<br>
+ -i, --show-invalid Show invalid domain names<br>
+ -f, --format=TYPE  Human readable or CSV (default: human readable)<br>
+ -o, --output=FILE  Output file<br>
+ -h, --help     This help<br>
+ -v, --version      Print version information. This version is 0.5</code><h3> urlcrazy用法示例</h3><p>搜索使用Dvorak布局的网址<b><i>（-k德沃夏克），并</i></b>没有做解析主机名<b><i>（-r）</i></b>对于给定域<b><i>（example.com）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ef9d80809baf848e8386">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# urlcrazy -k dvorak -r example.com<br>
+URLCrazy Domain Report<br>
+Domain    : example.com<br>
+Keyboard  : dvorak<br>
+At        : 2014-05-13 17:04:01 -0600<br>
+<br>
+# Please wait. 95 hostnames to process<br>
+<br>
+Typo Type              Typo            CC-A  Extn<br>
+---------------------------------------------------<br>
+Character Omission     eample.com      ?     com<br>
+Character Omission     examle.com      ?     com<br>
+Character Omission     exampe.com      ?     com<br>
+Character Omission     exampl.com      ?     com<br>
+Character Omission     example.cm      ?     cm<br>
+Character Omission     exaple.com      ?     com</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

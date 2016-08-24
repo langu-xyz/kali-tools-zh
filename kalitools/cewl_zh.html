@@ -1,0 +1,60 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> CeWL包装说明</h2><p style="text-align: justify;"> CeWL是一个Ruby应用程序，它蜘蛛指定的URL到指定深度，可选择以下外部链接，并返回的话，然后可以用于密码破解，例如约翰开膛手的名单。 </p><p> CeWL也有一个相关的命令行应用程序，FAB（文件已经袋装），它使用相同的元数据提取技术来创建作者/创作者列出了已下载。 </p><p>资料来源：http://www.digininja.org/projects/cewl.php <br> <a href="http://www.digininja.org/projects/cewl.php" variation="deepblue" target="blank">CeWL首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/cewl.git;a=summary" variation="deepblue" target="blank">卡利CeWL回购</a> </p><ul><li>作者：罗宾·伍德</li><li>许可：知识共享署名 - 相同方式分享2.0 </li></ul><h3>包含在cewl软件包工具</h3><h5> cewl - 自定义词库生成器</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="790b16160d3912181510">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cewl --help<br>
+CeWL 5.0 Robin Wood (<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c9bba6aba0a789ada0aea0a7a0a7a3a8e7a6bbae">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>) (www.digininja.org)<br>
+<br>
+Usage: cewl [OPTION] ... URL<br>
+    --help, -h: show help<br>
+    --keep, -k: keep the downloaded file<br>
+    --depth x, -d x: depth to spider to, default 2<br>
+    --min_word_length, -m: minimum word length, default 3<br>
+    --offsite, -o: let the spider visit other sites<br>
+    --write, -w file: write the output to the file<br>
+    --ua, -u user-agent: useragent to send<br>
+    --no-words, -n: don't output the wordlist<br>
+    --meta, -a include meta data<br>
+    --meta_file file: output file for meta data<br>
+    --email, -e include email addresses<br>
+    --email_file file: output file for email addresses<br>
+    --meta-temp-dir directory: the temporary directory used by exiftool when parsing files, default /tmp<br>
+    --count, -c: show the count for each word found<br>
+<br>
+    Authentication<br>
+    --auth_type: digest or basic<br>
+    --auth_user: authentication username<br>
+    --auth_pass: authentication password<br>
+<br>
+    Proxy Support<br>
+    --proxy_host: proxy host<br>
+    --proxy_port: proxy port, default 8080<br>
+    --proxy_username: username for proxy, if required<br>
+    --proxy_password: password for proxy, if required<br>
+<br>
+    --verbose, -v: verbose<br>
+<br>
+    URL: The site to spider.</code><h3>晶圆厂 - 文件已经袋装</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="32405d5d467259535e5b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fab --help<br>
+xx<br>
+<br>
+Usage: xx [OPTION] ... filename/list<br>
+    -h, --help: show help<br>
+    -v: verbose<br>
+<br>
+    filename/list: the file or list of files to check</code><h3> cewl用法示例</h3><p>扫描至<b><i>2（-d 2）</i></b>的深度，并用<b><i>5（-m 5）的最小</i></b>字长，字保存到一个文件<b><i>（-w docswords.txt），</i></b>针对给定的<b><i>URL（HTTP：//文档。 kali.org）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="23514c4c576348424f4a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cewl -d 2 -m 5 -w docswords.txt http://docs.kali.org<br>
+CeWL 5.0 Robin Wood (<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="61130e03080f21050806080f080f0b004f0e1306">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>) (www.digininja.org)<br>
+<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cab8a5a5be8aa1aba6a3">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wc -l docswords.txt <br>
+4093 docswords.txt</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

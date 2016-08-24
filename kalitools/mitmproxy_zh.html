@@ -1,0 +1,203 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> mitmproxy包装说明</h2><p style="text-align: justify;"> mitmproxy是一个支持SSL的人在这方面的中间人HTTP代理。它提供了一个控制台界面，允许流量进行检查和编辑的飞行。同时运是mitmdump，mitmproxy的命令行版本，具有相同的功能，但没有多余的装饰。想想tcpdump的断点续传。 </p><p>产品特点： </p><ul><li>截取和修改在飞行HTTP流量</li><li>保存以备将来回放和分析HTTP会话</li><li>重播两个HTTP客户端和服务器</li><li>让使用Python脚本修改HTTP流量</li><li>在飞行中产生的SSL拦截证书</li></ul><p>资料来源：http://mitmproxy.org/ <br> <a href="http://mitmproxy.org/" variation="deepblue" target="blank">mitmproxy首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/mitmproxy.git;a=summary" variation="deepblue" target="blank">卡利mitmproxy回购</a> </p><ul><li>作者：阿尔Cortesi的</li><li>许可：GPLv3的</li></ul><h3>包含在mitmproxy包工具</h3><h5> mitmproxy - 支持SSL的人在这方面的中间人HTTP代理</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9eecf1f1eadef5fff2f7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# mitmproxy -h<br>
+usage: mitmproxy [options]<br>
+<br>
+optional arguments:<br>
+  -h, --help            show this help message and exit<br>
+  --version             show program's version number and exit<br>
+  -b ADDR               Address to bind proxy to (defaults to all interfaces)<br>
+  --anticache           Strip out request headers that might cause the server<br>
+                        to return 304-not-modified.<br>
+  --confdir CONFDIR     Configuration directory. (~/.mitmproxy)<br>
+  -e                    Show event log.<br>
+  -n                    Don't start a proxy server.<br>
+  -p PORT               Proxy service port.<br>
+  -P REVERSE_PROXY      Reverse proxy to upstream server:<br>
+                        http[s]://host[:port]<br>
+  -F FORWARD_PROXY      Proxy to unconditionally forward to:<br>
+                        http[s]://host[:port]<br>
+  -q                    Quiet.<br>
+  -r RFILE              Read flows from file.<br>
+  -s "script.py --bar"  Run a script. Surround with quotes to pass script<br>
+                        arguments. Can be passed multiple times.<br>
+  -t FILTER             Set sticky cookie filter. Matched against requests.<br>
+  -T                    Set transparent proxy mode.<br>
+  -u FILTER             Set sticky auth filter. Matched against requests.<br>
+  -v                    Increase verbosity. Can be passed multiple times.<br>
+  -w WFILE              Write flows to file.<br>
+  -z                    Try to convince servers to send us un-compressed data.<br>
+  -Z SIZE               Byte size limit of HTTP request and response bodies.<br>
+                        Understands k/m/g suffixes, i.e. 3m for 3 megabytes.<br>
+  --host                Use the Host header to construct URLs for display.<br>
+  --no-upstream-cert    Don't connect to upstream server to look up<br>
+                        certificate details.<br>
+  --debug<br>
+  --palette PALETTE     Select color palette: dark, light, solarized_dark,<br>
+                        solarized_light<br>
+<br>
+Web App:<br>
+  -a                    Disable the mitmproxy web app.<br>
+  --app-host host       Domain to serve the app from. For transparent mode,<br>
+                        use an IP when a DNS entry for the app domain is not<br>
+                        present. Default: mitm.it<br>
+  --app-port 80         Port to serve the app from.<br>
+  --app-external        Serve the app outside of the proxy.<br>
+<br>
+Client Replay:<br>
+  -c PATH               Replay client requests from a saved file.<br>
+<br>
+Server Replay:<br>
+  -S PATH               Replay server responses from a saved file.<br>
+  -k                    Kill extra requests during replay.<br>
+  --rheader RHEADERS    Request headers to be considered during replay. Can be<br>
+                        passed multiple times.<br>
+  --norefresh           Disable response refresh, which updates times in<br>
+                        cookies and headers for replayed responses.<br>
+  --no-pop              Disable response pop from response flow. This makes it<br>
+                        possible to replay same response multiple times.<br>
+<br>
+Replacements:<br>
+  Replacements are of the form "/pattern/regex/replacement", where the<br>
+  separator can be any character. Please see the documentation for more<br>
+  information.<br>
+<br>
+  --replace PATTERN     Replacement pattern.<br>
+  --replace-from-file PATH<br>
+                        Replacement pattern, where the replacement clause is a<br>
+                        path to a file.<br>
+<br>
+Set Headers:<br>
+  Header specifications are of the form "/pattern/header/value", where the<br>
+  separator can be any character. Please see the documentation for more<br>
+  information.<br>
+<br>
+  --setheader PATTERN   Header set pattern.<br>
+<br>
+Proxy Authentication:<br>
+  Specify which users are allowed to access the proxy and the method used<br>
+  for authenticating them. These options are ignored if the proxy is in<br>
+  transparent or reverse proxy mode.<br>
+<br>
+  --nonanonymous        Allow access to any user long as a credentials are<br>
+                        specified.<br>
+  --singleuser USER     Allows access to a a single user, specified in the<br>
+                        form username:password.<br>
+  --htpasswd PATH       Allow access to users specified in an Apache htpasswd<br>
+                        file.<br>
+<br>
+SSL:<br>
+  --cert CERT           User-created SSL certificate file.<br>
+  --client-certs CLIENTCERTS<br>
+                        Client certificate directory.<br>
+<br>
+Filters:<br>
+  See help in mitmproxy for filter expression syntax.<br>
+<br>
+  -i INTERCEPT, --intercept INTERCEPT<br>
+                        Intercept filter expression.</code><h3> mitmdump（命令行的同伴mitmproxy） - 改进后的tcpdump的用于HTTP </h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="73011c1c073318121f1a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# mitmdump -h<br>
+usage: mitmdump [options] [filter]<br>
+<br>
+positional arguments:<br>
+  args<br>
+<br>
+optional arguments:<br>
+  -h, --help            show this help message and exit<br>
+  --version             show program's version number and exit<br>
+  -b ADDR               Address to bind proxy to (defaults to all interfaces)<br>
+  --anticache           Strip out request headers that might cause the server<br>
+                        to return 304-not-modified.<br>
+  --confdir CONFDIR     Configuration directory. (~/.mitmproxy)<br>
+  -e                    Show event log.<br>
+  -n                    Don't start a proxy server.<br>
+  -p PORT               Proxy service port.<br>
+  -P REVERSE_PROXY      Reverse proxy to upstream server:<br>
+                        http[s]://host[:port]<br>
+  -F FORWARD_PROXY      Proxy to unconditionally forward to:<br>
+                        http[s]://host[:port]<br>
+  -q                    Quiet.<br>
+  -r RFILE              Read flows from file.<br>
+  -s "script.py --bar"  Run a script. Surround with quotes to pass script<br>
+                        arguments. Can be passed multiple times.<br>
+  -t FILTER             Set sticky cookie filter. Matched against requests.<br>
+  -T                    Set transparent proxy mode.<br>
+  -u FILTER             Set sticky auth filter. Matched against requests.<br>
+  -v                    Increase verbosity. Can be passed multiple times.<br>
+  -w WFILE              Write flows to file.<br>
+  -z                    Try to convince servers to send us un-compressed data.<br>
+  -Z SIZE               Byte size limit of HTTP request and response bodies.<br>
+                        Understands k/m/g suffixes, i.e. 3m for 3 megabytes.<br>
+  --host                Use the Host header to construct URLs for display.<br>
+  --no-upstream-cert    Don't connect to upstream server to look up<br>
+                        certificate details.<br>
+  --keepserving         Continue serving after client playback or file read.<br>
+                        We exit by default.<br>
+<br>
+Web App:<br>
+  -a                    Disable the mitmproxy web app.<br>
+  --app-host host       Domain to serve the app from. For transparent mode,<br>
+                        use an IP when a DNS entry for the app domain is not<br>
+                        present. Default: mitm.it<br>
+  --app-port 80         Port to serve the app from.<br>
+  --app-external        Serve the app outside of the proxy.<br>
+<br>
+Client Replay:<br>
+  -c PATH               Replay client requests from a saved file.<br>
+<br>
+Server Replay:<br>
+  -S PATH               Replay server responses from a saved file.<br>
+  -k                    Kill extra requests during replay.<br>
+  --rheader RHEADERS    Request headers to be considered during replay. Can be<br>
+                        passed multiple times.<br>
+  --norefresh           Disable response refresh, which updates times in<br>
+                        cookies and headers for replayed responses.<br>
+  --no-pop              Disable response pop from response flow. This makes it<br>
+                        possible to replay same response multiple times.<br>
+<br>
+Replacements:<br>
+  Replacements are of the form "/pattern/regex/replacement", where the<br>
+  separator can be any character. Please see the documentation for more<br>
+  information.<br>
+<br>
+  --replace PATTERN     Replacement pattern.<br>
+  --replace-from-file PATH<br>
+                        Replacement pattern, where the replacement clause is a<br>
+                        path to a file.<br>
+<br>
+Set Headers:<br>
+  Header specifications are of the form "/pattern/header/value", where the<br>
+  separator can be any character. Please see the documentation for more<br>
+  information.<br>
+<br>
+  --setheader PATTERN   Header set pattern.<br>
+<br>
+Proxy Authentication:<br>
+  Specify which users are allowed to access the proxy and the method used<br>
+  for authenticating them. These options are ignored if the proxy is in<br>
+  transparent or reverse proxy mode.<br>
+<br>
+  --nonanonymous        Allow access to any user long as a credentials are<br>
+                        specified.<br>
+  --singleuser USER     Allows access to a a single user, specified in the<br>
+                        form username:password.<br>
+  --htpasswd PATH       Allow access to users specified in an Apache htpasswd<br>
+                        file.<br>
+<br>
+SSL:<br>
+  --cert CERT           User-created SSL certificate file.<br>
+  --client-certs CLIENTCERTS<br>
+                        Client certificate directory.</code><h3> mitmproxy用法示例</h3><p>运行在端口<b><i>2139</i></b> mitmproxy监听<b><i>（P）。</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7f0d10100b3f141e1316">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# mitmproxy -p 2139</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

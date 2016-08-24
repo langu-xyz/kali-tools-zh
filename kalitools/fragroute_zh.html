@@ -1,0 +1,47 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> fragroute包装说明</h2><p style="text-align: justify;"> fragroute截取，修改和重写出口发往一个指定的主机，实现最in的安全网络所描述的攻击“插入，逃避和拒绝服务：逃避网络入侵检测系统”1998年1月纸。 </p><p>它具有一个简单的规则集的语言延迟，复制，丢弃，分段，重叠，打印，重新排序段，源路由，否则猴子往目标主机的所有出站数据包，与随机或概率的行为最小的支持。 </p><p>这个工具是写在诚信网络入侵检测系统，防火墙，以及基本的TCP / IP协议栈的行为的测试来帮助。请不要滥用这个软件。 </p><p>资料来源：http://www.monkey.org/~dugsong/fragroute/ <br> <a href="http://www.monkey.org/~dugsong/fragroute/" variation="deepblue" target="blank">fragroute首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/fragroute.git;a=summary" variation="deepblue" target="blank">卡利fragroute回购</a> </p><ul><li>作者：宋挖</li><li>许可：3，第BSD </li></ul><h3>包含在fragroute软件包工具</h3><h5> fragroute - 测试NIDS通过尝试使用分段数据包，以逃避</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="87f5e8e8f3c7ece6ebee">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fragroute<br>
+Usage: fragroute [-f file] dst<br>
+Rules:<br>
+       delay first|last|random &lt;ms&gt;<br>
+       drop first|last|random &lt;prob-%&gt;<br>
+       dup first|last|random &lt;prob-%&gt;<br>
+       echo &lt;string&gt; ...<br>
+       ip_chaff dup|opt|&lt;ttl&gt;<br>
+       ip_frag &lt;size&gt; [old|new]<br>
+       ip_opt lsrr|ssrr &lt;ptr&gt; &lt;ip-addr&gt; ...<br>
+       ip_ttl &lt;ttl&gt;<br>
+       ip_tos &lt;tos&gt;<br>
+       order random|reverse<br>
+       print<br>
+       tcp_chaff cksum|null|paws|rexmit|seq|syn|&lt;ttl&gt;<br>
+       tcp_opt mss|wscale &lt;size&gt;<br>
+       tcp_seg &lt;size&gt; [old|new]</code><h3> fragtest - 测试NIDS通过尝试使用分段数据包，以逃避</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2f5d40405b6f444e4346">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fragtest<br>
+Usage: fragtest TESTS ... &lt;host&gt;<br>
+<br>
+  where TESTS is any combination of the following (or "all"):<br>
+<br>
+  ping      prerequisite for all tests<br>
+  ip-opt    determine supported IP options (BROKEN)<br>
+  ip-tracert    determine path to target<br>
+  frag      try 8-byte IP fragments<br>
+  frag-new  try 8-byte fwd-overlapping IP fragments, favoring new data (BROKEN)<br>
+  frag-old  try 8-byte fwd-overlapping IP fragments, favoring old data<br>
+  frag-timeout  determine IP fragment reassembly timeout (BROKEN)</code><h3> fragroute用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e4968b8b90a48f85888d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fragroute 192.168.1.123<br>
+fragroute: tcp_seg -&gt; ip_frag -&gt; ip_chaff -&gt; order -&gt; print<br>
+172.16.79.182.53735 &gt; 192.168.1.123.80: S 617662291:617662291(0) win 29200</code><h3> fragtest用法示例</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c3b1acacb783a8a2afaa">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fragtest ip-tracert frag-new 192.168.1.123<br>
+ip-tracert: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

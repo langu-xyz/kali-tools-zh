@@ -1,0 +1,96 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> BlindElephant包装说明</h2><p style="text-align: justify;">该BlindElephant Web应用程序指纹识别试图通过在对预先计算的哈希已知位置对这些文件的所有所有可用版本的版本比较静态文件发现一个（已知）的Web应用程序的版本。该技术是快速，低带宽，非侵入性的，通用的，高度自动化的。 </p><p>资料来源：http://blindelephant.sourceforge.net/ <br> <a href="http://blindelephant.sourceforge.net/" variation="deepblue" target="blank">BlindElephant首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/blindelephant.git;a=summary" variation="deepblue" target="blank">卡利BlindElephant回购</a> </p><ul><li>作者：科力斯</li><li>许可：LGPL-3 </li></ul><h3>包含在blindelephant包工具</h3><h5> BlindElephant.py - 一个通用的Web应用程序指纹识别</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="30425f5f44705b515c59">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# BlindElephant.py -h<br>
+Usage: BlindElephant.py [options] url appName<br>
+<br>
+Options:<br>
+  -h, --help            show this help message and exit<br>
+  -p PLUGINNAME, --pluginName=PLUGINNAME<br>
+                        Fingerprint version of plugin (should apply to web app<br>
+                        given in appname)<br>
+  -s, --skip            Skip fingerprinting webpp, just fingerprint plugin<br>
+  -n NUMPROBES, --numProbes=NUMPROBES<br>
+                        Number of files to fetch (more may increase accuracy).<br>
+                        Default: 15<br>
+  -w, --winnow          If more than one version are returned, use winnowing<br>
+                        to attempt to narrow it down (up to numProbes<br>
+                        additional requests).<br>
+  -l, --list            List supported webapps and plugins<br>
+  -u, --updateDB        Pull latest DB files from<br>
+                        blindelephant.sourceforge.net repo (Equivalent to svn<br>
+                        update on blindelephant/dbs/). May require root if<br>
+                        blindelephant was installed with root.<br>
+<br>
+Use "guess" as app or plugin name to attempt to attempt to<br>
+discover which supported apps/plugins are installed.</code><h3> BlindElephant用法示例</h3><p>扫描远程主机<b><i>（http://192.168.1.252/wp），</i></b>指定所使用的Web应用程序<b><i>（WordPress的）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ff8d90908bbf949e9396">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# BlindElephant.py http://192.168.1.252/wp wordpress<br>
+Loaded /usr/lib/python2.7/dist-packages/blindelephant/dbs/wordpress.pkl with 293 versions, 5389 differentiating paths, and 480 version groups.<br>
+Starting BlindElephant fingerprint for version of wordpress at http://192.168.1.252/wp<br>
+<br>
+Hit http://192.168.1.252/wp/readme.html<br>
+Possible versions based on result: 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/tinymce/tiny_mce.js<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-IIS, 2.8-RC1<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/autosave.js<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-IIS, 2.8-RC1<br>
+<br>
+Hit http://192.168.1.252/wp/wp-content/themes/twentyten/languages/twentyten.pot<br>
+File produced no match. Error: Failed to reach a server: Not Found<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/tinymce/wp-tinymce.js.gz<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-IIS, 2.8-RC1<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/tinymce/themes/advanced/about.htm<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-IIS, 2.8-RC1<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/tinymce/plugins/wordpress/editor_plugin.js<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-beta1, 2.8-beta2, 2.8-IIS, 2.8-RC1<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/tinymce/themes/advanced/source_editor.htm<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-IIS, 2.8-RC1<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/tinymce/themes/advanced/link.htm<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-IIS, 2.8-RC1<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/swfupload/handlers.js<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-beta2, 2.8-IIS, 2.8-RC1<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/tinymce/themes/advanced/image.htm<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-IIS, 2.8-RC1<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/tinymce/themes/advanced/color_picker.htm<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-IIS, 2.8-RC1<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/tinymce/plugins/inlinepopups/editor_plugin.js<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-beta1, 2.8-beta2, 2.8-IIS, 2.8-RC1<br>
+<br>
+Hit http://192.168.1.252/wp/wp-content/plugins/akismet/readme.txt<br>
+Possible versions based on result: 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.9-beta-1, 2.9-beta-1-IIS, 2.9-beta-2, 2.9-beta-2-IIS, 2.9-RC1, 2.9-RC1-IIS<br>
+<br>
+Hit http://192.168.1.252/wp/wp-includes/js/tinymce/themes/advanced/anchor.htm<br>
+Possible versions based on result: 2.8, 2.8.1, 2.8.1-beta1, 2.8.1-beta2, 2.8.1-IIS, 2.8.1-RC1, 2.8.2, 2.8.2-IIS, 2.8.3, 2.8.3-IIS, 2.8.4, 2.8.4-IIS, 2.8.4a-IIS, 2.8.4b-IIS, 2.8.5, 2.8.5-beta1, 2.8.5-IIS, 2.8.6, 2.8.6-beta1, 2.8.6-beta1-IIS, 2.8.6-IIS, 2.8-IIS, 2.8-RC1<br>
+<br>
+<br>
+Fingerprinting resulted in:<br>
+2.8.6<br>
+2.8.6-beta1<br>
+2.8.6-beta1-IIS<br>
+2.8.6-IIS<br>
+<br>
+<br>
+Best Guess: 2.8.6</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,58 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2>在keimpx包的说明</h2><p style="text-align: justify;"> keimpx是一个开源的工具，在Apache 1.1许可的修改版本发布。 </p><p>它可以用来快速检查在网络上通过SMB有效凭证。凭据可以是： </p><ul><li>结合用户/明文密码。 </li><li>结合用户/ NTLM哈希值。 </li><li>结合用户/ NTLM登录会话令牌。 </li></ul><p>如果有任何有效凭据被发现在网络上的攻击阶段后，用户被要求选择连接到和使用的有效凭据，那么他将被提示一个互动SMB外壳，用户可以在哪些主机： </p><ul><li>产卵的交互式命令提示符。 </li><li>导航通过远程SMB共享：列表，上传，下载文件，创建，删除文件等等。 </li><li>部署和取消部署自己的服务，例如，一个后门监听传入连接的TCP端口。 </li><li>列表用户的详细信息，域和密码策略。 </li></ul><p>资料来源：https://github.com/inquisb/keimpx <br> <a href="https://github.com/inquisb/keimpx" variation="deepblue" target="blank">keimpx首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/keimpx.git;a=summary" variation="deepblue" target="blank">卡利keimpx回购</a> </p><ul><li>作者：贝尔纳Damele AG </li><li>许可：阿帕奇</li></ul><h3>包含在keimpx包工具</h3><h5> keimpx - 检查在网络上通过SMB有效凭据</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5624393922163d373a3f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# keimpx -h<br>
+<br>
+    keimpx 0.3-dev<br>
+    by Bernardo Damele A. G. &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7f1d1a0d111e0d1b10511b1e121a131a3f18121e1613511c1012">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+    <br>
+Usage: ./keimpx.py [options]<br>
+<br>
+Options:<br>
+  --version       show program's version number and exit<br>
+  -h, --help      show this help message and exit<br>
+  -v VERBOSE      Verbosity level: 0-2 (default: 0)<br>
+  -t TARGET       Target address<br>
+  -l LIST         File with list of targets<br>
+  -U USER         User<br>
+  -P PASSWORD     Password<br>
+  --nt=NTHASH     NT hash<br>
+  --lm=LMHASH     LM hash<br>
+  -c CREDSFILE    File with list of credentials<br>
+  -D DOMAIN       Domain<br>
+  -d DOMAINSFILE  File with list of domains<br>
+  -p PORT         SMB port: 139 or 445 (default: 445)<br>
+  -n NAME         Local hostname<br>
+  -T THREADS      Maximum simultaneous connections (default: 10)<br>
+  -b              Batch mode: do not ask to get an interactive SMB shell<br>
+  -x EXECUTELIST  Execute a list of commands against all hosts</code><h3> keimpx用法示例</h3><p>阅读的IP <b><i>地址（-l /root/smbopen.txt）</i></b>列表，并尝试登录的用户被害人<b><i>（-U受害者）</i></b>与<b><i>s3cr3t（-P s3cr3t）的密码</i></b>用的详细级别<b><i>1（-v 1）</i></b>在批处理模式<b><i>（-b）</i></b>运行<b><i>/ I&gt;：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4d3f2222390d262c2124">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# keimpx -l /root/smbopen.txt -U victim -P s3cr3t -v 1 -b<br>
+<br>
+    keimpx 0.3-dev<br>
+    by Bernardo Damele A. G. &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="84e6e1f6eae5f6e0ebaae0e5e9e1e8e1c4e3e9e5ede8aae7ebe9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+    <br>
+[09:26:59] [INFO] Loading targets<br>
+[09:26:59] [INFO] Loading credentials<br>
+[09:26:59] [INFO] Loading domains<br>
+[09:26:59] [INFO] Loaded 4 unique targets<br>
+[09:26:59] [INFO] Loaded 1 unique credentials<br>
+[09:26:59] [INFO] No domains specified, using NULL domain<br>
+[09:26:59] [INFO] Attacking host 192.168.1.104:445<br>
+[09:26:59] [INFO] Attacking host 192.168.1.200:445<br>
+[09:26:59] [INFO] Attacking host 192.168.1.220:445<br>
+[09:26:59] [INFO] Attacking host 192.168.1.232:445<br>
+[09:26:59] [INFO] Wrong credentials on 192.168.1.104:445: victim/s3cr3t (ERRnoaccess(Access denied.))<br>
+[09:26:59] [INFO] Attack on host 192.168.1.104:445 finished<br>
+[09:26:59] [INFO] Valid credentials on 192.168.1.200:445: victim/s3cr3t</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,205 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2>波动性包装说明</h2><p style="text-align: justify;">波动率框架是一个完全开放的工具集合，实现在Python GNU通用公共许可证下，数字文物从易失性存储器（RAM）的样品的提取。提取技术进行完全独立的被调查系统，但提供了前所未有的可视性系统的运行状态。该框架旨在向人们介绍了与提取数字文物从易失性存储器样品，并提供进一步工作的平台，为研究这一令人兴奋的领域相关的技术和复杂性。 </p><p>波动性支持来自所有主要的32位和64位的Windows版本和服务包，包括XP，2003服务器，Vista中，服务器2008，Server 2008 R2中，七内存转储。无论你的内存转储是RAW格式，微软崩溃转储，休眠文件或虚拟机快照，波动性能够与它的工作。我们现在也支持原始的或石灰格式Linux的内存转储，包括35 +插件从2.6.11分析32位和64位的Linux内核 - 3.5.x的和发行比​​如Debian，Ubuntu的，OpenSuSE的，Fedora的，CentOS的，并Mandrake的。我们支持38版本的Mac OSX内存转储从10.5〜10.8.3山狮，32位和64位。也支持Android手机使用ARM处理器。支持Windows 8，8.1，服务器2012，2012 R2，和OSX 10.9（小牛）是不是已经在SVN或指日可待</p><p>资料来源：https://code.google.com/p/volatility/ <br> <a href="https://code.google.com/p/volatility/" variation="deepblue" target="blank">波幅首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/volatility.git;a=summary" variation="deepblue" target="blank">卡利波动回购</a> </p><ul><li>作者：挥发性系统，Komoku股份有限公司</li><li>许可：GPL第二版</li></ul><h3>包含在波动包工具</h3><h5>波动性 - 内存取证分析平台</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="61130e0e15210a000d08">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# volatility -h<br>
+Volatility Foundation Volatility Framework 2.4<br>
+Usage: Volatility - A memory forensics analysis platform.<br>
+<br>
+Options:<br>
+  -h, --help            list all available options and their default values.<br>
+                        Default values may be set in the configuration file<br>
+                        (/etc/volatilityrc)<br>
+  --conf-file=/root/.volatilityrc<br>
+                        User based configuration file<br>
+  -d, --debug           Debug volatility<br>
+  --plugins=PLUGINS     Additional plugin directories to use (colon separated)<br>
+  --info                Print information about all registered objects<br>
+  --cache-directory=/root/.cache/volatility<br>
+                        Directory where cache files are stored<br>
+  --cache               Use caching<br>
+  --tz=TZ               Sets the timezone for displaying timestamps<br>
+  -f FILENAME, --filename=FILENAME<br>
+                        Filename to use when opening an image<br>
+  --profile=WinXPSP2x86<br>
+                        Name of the profile to load<br>
+  -l LOCATION, --location=LOCATION<br>
+                        A URN location from which to load an address space<br>
+  -w, --write           Enable write support<br>
+  --dtb=DTB             DTB Address<br>
+  --shift=SHIFT         Mac KASLR shift address<br>
+  --output=text         Output in this format (format support is module<br>
+                        specific)<br>
+  --output-file=OUTPUT_FILE<br>
+                        write output in this file<br>
+  -v, --verbose         Verbose information<br>
+  -g KDBG, --kdbg=KDBG  Specify a specific KDBG virtual address<br>
+  -k KPCR, --kpcr=KPCR  Specify a specific KPCR address<br>
+<br>
+    Supported Plugin Commands:<br>
+<br>
+        apihooks        Detect API hooks in process and kernel memory<br>
+        atoms           Print session and window station atom tables<br>
+        atomscan        Pool scanner for atom tables<br>
+        auditpol        Prints out the Audit Policies from HKLM\SECURITY\Policy\PolAdtEv<br>
+        bigpools        Dump the big page pools using BigPagePoolScanner<br>
+        bioskbd         Reads the keyboard buffer from Real Mode memory<br>
+        cachedump       Dumps cached domain hashes from memory<br>
+        callbacks       Print system-wide notification routines<br>
+        clipboard       Extract the contents of the windows clipboard<br>
+        cmdline         Display process command-line arguments<br>
+        cmdscan         Extract command history by scanning for _COMMAND_HISTORY<br>
+        connections     Print list of open connections [Windows XP and 2003 Only]<br>
+        connscan        Pool scanner for tcp connections<br>
+        consoles        Extract command history by scanning for _CONSOLE_INFORMATION<br>
+        crashinfo       Dump crash-dump information<br>
+        deskscan        Poolscaner for tagDESKTOP (desktops)<br>
+        devicetree      Show device tree<br>
+        dlldump         Dump DLLs from a process address space<br>
+        dlllist         Print list of loaded dlls for each process<br>
+        driverirp       Driver IRP hook detection<br>
+        driverscan      Pool scanner for driver objects<br>
+        dumpcerts       Dump RSA private and public SSL keys<br>
+        dumpfiles       Extract memory mapped and cached files<br>
+        envars          Display process environment variables<br>
+        eventhooks      Print details on windows event hooks<br>
+        evtlogs         Extract Windows Event Logs (XP/2003 only)<br>
+        filescan        Pool scanner for file objects<br>
+        gahti           Dump the USER handle type information<br>
+        gditimers       Print installed GDI timers and callbacks<br>
+        gdt             Display Global Descriptor Table<br>
+        getservicesids  Get the names of services in the Registry and return Calculated SID<br>
+        getsids         Print the SIDs owning each process<br>
+        handles         Print list of open handles for each process<br>
+        hashdump        Dumps passwords hashes (LM/NTLM) from memory<br>
+        hibinfo         Dump hibernation file information<br>
+        hivedump        Prints out a hive<br>
+        hivelist        Print list of registry hives.<br>
+        hivescan        Pool scanner for registry hives<br>
+        hpakextract     Extract physical memory from an HPAK file<br>
+        hpakinfo        Info on an HPAK file<br>
+        idt             Display Interrupt Descriptor Table<br>
+        iehistory       Reconstruct Internet Explorer cache / history<br>
+        imagecopy       Copies a physical address space out as a raw DD image<br>
+        imageinfo       Identify information for the image<br>
+        impscan         Scan for calls to imported functions<br>
+        joblinks        Print process job link information<br>
+        kdbgscan        Search for and dump potential KDBG values<br>
+        kpcrscan        Search for and dump potential KPCR values<br>
+        ldrmodules      Detect unlinked DLLs<br>
+        lsadump         Dump (decrypted) LSA secrets from the registry<br>
+        machoinfo       Dump Mach-O file format information<br>
+        malfind         Find hidden and injected code<br>
+        mbrparser       Scans for and parses potential Master Boot Records (MBRs)<br>
+        memdump         Dump the addressable memory for a process<br>
+        memmap          Print the memory map<br>
+        messagehooks    List desktop and thread window message hooks<br>
+        mftparser       Scans for and parses potential MFT entries<br>
+        moddump         Dump a kernel driver to an executable file sample<br>
+        modscan         Pool scanner for kernel modules<br>
+        modules         Print list of loaded modules<br>
+        multiscan       Scan for various objects at once<br>
+        mutantscan      Pool scanner for mutex objects<br>
+        notepad         List currently displayed notepad text<br>
+        objtypescan     Scan for Windows object type objects<br>
+        patcher         Patches memory based on page scans<br>
+        poolpeek        Configurable pool scanner plugin<br>
+        printkey        Print a registry key, and its subkeys and values<br>
+        privs           Display process privileges<br>
+        procdump        Dump a process to an executable file sample<br>
+        pslist          Print all running processes by following the EPROCESS lists<br>
+        psscan          Pool scanner for process objects<br>
+        pstree          Print process list as a tree<br>
+        psxview         Find hidden processes with various process listings<br>
+        raw2dmp         Converts a physical memory sample to a windbg crash dump<br>
+        screenshot      Save a pseudo-screenshot based on GDI windows<br>
+        sessions        List details on _MM_SESSION_SPACE (user logon sessions)<br>
+        shellbags       Prints ShellBags info<br>
+        shimcache       Parses the Application Compatibility Shim Cache registry key<br>
+        sockets         Print list of open sockets<br>
+        sockscan        Pool scanner for tcp socket objects<br>
+        ssdt            Display SSDT entries<br>
+        strings         Match physical offsets to virtual addresses (may take a while, VERY verbose)<br>
+        svcscan         Scan for Windows services<br>
+        symlinkscan     Pool scanner for symlink objects<br>
+        thrdscan        Pool scanner for thread objects<br>
+        threads         Investigate _ETHREAD and _KTHREADs<br>
+        timeliner       Creates a timeline from various artifacts in memory<br>
+        timers          Print kernel timers and associated module DPCs<br>
+        truecryptmaster Recover TrueCrypt 7.1a Master Keys<br>
+        truecryptpassphrase TrueCrypt Cached Passprhase Finder<br>
+        truecryptsummary    TrueCrypt Summary<br>
+        unloadedmodules Print list of unloaded modules<br>
+        userassist      Print userassist registry keys and information<br>
+        userhandles     Dump the USER handle tables<br>
+        vaddump         Dumps out the vad sections to a file<br>
+        vadinfo         Dump the VAD info<br>
+        vadtree         Walk the VAD tree and display in tree format<br>
+        vadwalk         Walk the VAD tree<br>
+        vboxinfo        Dump virtualbox information<br>
+        verinfo         Prints out the version information from PE images<br>
+        vmwareinfo      Dump VMware VMSS/VMSN information<br>
+        volshell        Shell in the memory image<br>
+        windows         Print Desktop Windows (verbose details)<br>
+        wintree         Print Z-Order Desktop Windows Tree<br>
+        wndscan         Pool scanner for window stations<br>
+        yarascan        Scan process or kernel memory with Yara signatures</code><h3>第一卷用法示例</h3><p>阅读给定的内存映像<b><i>（-f /root/xp-laptop-2005-07-04-1430.img），并显示</i></b>正在运行的进程<b><i>（则PsList）：</i></b> </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d1a3bebea591bab0bdb8">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# volatility -f /root/xp-laptop-2005-07-04-1430.img pslist<br>
+Volatility Foundation Volatility Framework 2.4<br>
+Offset(V)  Name                    PID   PPID   Thds     Hnds   Sess  Wow64 Start                          Exit                          <br>
+---------- -------------------- ------ ------ ------ -------- ------ ------ ------------------------------ ------------------------------<br>
+0x823c87c0 System                    4      0     62     1133 ------      0                                                              <br>
+0x8214b020 smss.exe                400      4      3       21 ------      0 2005-07-04 18:17:26 UTC+0000                                 <br>
+0x821c11a8 csrss.exe               456    400     11      551      0      0 2005-07-04 18:17:29 UTC+0000                                 <br>
+0x814dc020 winlogon.exe            480    400     18      522      0      0 2005-07-04 18:17:29 UTC+0000                                 <br>
+0x815221c8 services.exe            524    480     17      321      0      0 2005-07-04 18:17:30 UTC+0000                                 <br>
+0x821d8248 lsass.exe               536    480     20      369      0      0 2005-07-04 18:17:30 UTC+0000                                 <br>
+0x814f0020 svchost.exe             680    524     19      206      0      0 2005-07-04 18:17:31 UTC+0000                                 <br>
+0x821daa88 svchost.exe             760    524     10      289      0      0 2005-07-04 18:17:31 UTC+0000                                 <br>
+0x821463a8 svchost.exe             800    524     75     1558      0      0 2005-07-04 18:17:31 UTC+0000                                 <br>
+0x8216c9b0 Smc.exe                 840    524     22      421      0      0 2005-07-04 18:17:32 UTC+0000                                 <br>
+0x81530228 svchost.exe             932    524      6       93      0      0 2005-07-04 18:17:33 UTC+0000                                 <br>
+0x81534c10 svchost.exe             972    524     15      212      0      0 2005-07-04 18:17:34 UTC+0000                                 <br>
+0x8202e7e8 spoolsv.exe            1104    524     11      145      0      0 2005-07-04 18:17:38 UTC+0000                                 <br>
+0x8152f9a0 ati2evxx.exe           1272    524      4       38      0      0 2005-07-04 18:17:39 UTC+0000                                 <br>
+0x820ac020 Crypserv.exe           1356    524      3       34      0      0 2005-07-04 18:17:40 UTC+0000                                 <br>
+0x81521da0 DefWatch.exe           1380    524      3       27      0      0 2005-07-04 18:17:40 UTC+0000                                 <br>
+0x820b5670 msdtc.exe              1440    524     15      164      0      0 2005-07-04 18:17:40 UTC+0000                                 <br>
+0x81fcf460 Rtvscan.exe            1484    524     37      312      0      0 2005-07-04 18:17:40 UTC+0000                                 <br>
+0x8204b8e0 tcpsvcs.exe            1548    524      2      105      0      0 2005-07-04 18:17:41 UTC+0000                                 <br>
+0x82027a78 snmp.exe               1564    524      5      192      0      0 2005-07-04 18:17:41 UTC+0000                                 <br>
+0x8204c558 svchost.exe            1588    524      5      122      0      0 2005-07-04 18:17:41 UTC+0000                                 <br>
+0x8202f558 wdfmgr.exe             1640    524      4       65      0      0 2005-07-04 18:17:42 UTC+0000                                 <br>
+0x81fb5da0 Fast.exe               1844    524      2       33      0      0 2005-07-04 18:17:43 UTC+0000                                 <br>
+0x81fe9da0 mqsvc.exe              1860    524     23      218      0      0 2005-07-04 18:17:43 UTC+0000                                 <br>
+0x82022760 mqtgsvc.exe             712    524      9      119      0      0 2005-07-04 18:17:47 UTC+0000                                 <br>
+0x81fe6a78 alg.exe                 992    524      5      105      0      0 2005-07-04 18:17:50 UTC+0000                                 <br>
+0x8202c6a0 ssonsvr.exe            2196   2172      1       24      0      0 2005-07-04 18:17:59 UTC+0000                                 <br>
+0x8146e860 explorer.exe           2392   2300     18      489      0      0 2005-07-04 18:18:03 UTC+0000                                 <br>
+0x820d1b00 Directcd.exe           2456   2392      4       40      0      0 2005-07-04 18:18:05 UTC+0000                                 <br>
+0x81540da0 TaskSwitch.exe         2472   2392      1       24      0      0 2005-07-04 18:18:05 UTC+0000                                 <br>
+0x8219dda0 Fast.exe               2480   2392      1       23      0      0 2005-07-04 18:18:05 UTC+0000                                 <br>
+0x81462be0 VPTray.exe             2496   2392      2      111      0      0 2005-07-04 18:18:06 UTC+0000                                 <br>
+0x8219d960 atiptaxx.exe           2524   2392      1       51      0      0 2005-07-04 18:18:06 UTC+0000                                 <br>
+0x814ecc00 jusched.exe            2548   2392      1       22      0      0 2005-07-04 18:18:07 UTC+0000                                 <br>
+0x820d1718 EM_EXEC.EXE            2588   2540      2       80      0      0 2005-07-04 18:18:09 UTC+0000                                 <br>
+0x814b8a58 WZQKPICK.EXE           2692   2392      1       17      0      0 2005-07-04 18:18:15 UTC+0000                                 <br>
+0x81474510 wuauclt.exe            3128    800      3      157      0      0 2005-07-04 18:19:11 UTC+0000                                 <br>
+0x81f7fb98 taskmgr.exe            3192   2392      3       65      0      0 2005-07-04 18:19:33 UTC+0000                                 <br>
+0x8153f480 cmd.exe                3256   2392      1       29      0      0 2005-07-04 18:20:58 UTC+0000                                 <br>
+0x8133d810 firefox.exe            3276   2392      7      189      0      0 2005-07-04 18:21:11 UTC+0000                                 <br>
+0xff96b860 PluckSvr.exe           3352    680      6      206      0      0 2005-07-04 18:21:42 UTC+0000                                 <br>
+0x813383b0 PluckTray.exe          3612   3352      3      102      0      0 2005-07-04 18:24:00 UTC+0000                                 <br>
+0x81488350 PluckUpdater.ex         368   3352      0 --------      0      0 2005-07-04 18:24:30 UTC+0000   2005-07-04 18:26:44 UTC+0000  <br>
+0x81543870 dd.exe</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

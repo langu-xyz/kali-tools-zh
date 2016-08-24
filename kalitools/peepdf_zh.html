@@ -1,0 +1,57 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2> peepdf包装说明</h2><p style="text-align: justify;"> peepdf是一个Python的工具来探讨，以找出是否该文件可能是有害的或不PDF文件。这个工具的目的是提供所有的安全研究人员可能需要在一个PDF分析，而无需使用3或4个工具，使所有任务所需的组件。与peepdf有可能看到显示的可疑元素在文件中的所有对象，支持最常用的过滤和编码，它可以解析不同版本的文件，对象流和加密文件。随着PyV8和Pylibemu安装它提供的Javascript和shellcode的分析，包装了。除了这个它能够创建新的PDF文件，修改存在的人，并混淆他们。 </p><p>资料来源：http://eternal-todo.com/tool​​s/peepdf-pdf-analysis-tool <br> <a href="http://eternal-todo.com/tools/peepdf-pdf-analysis-tool" variation="deepblue" target="blank">peepdf首页</a> | <a href="http://git.kali.org/gitweb/?p=packages/peepdf.git;a=summary" variation="deepblue" target="blank">卡利peepdf回购</a> </p><ul><li>作者：何塞·米格尔·埃斯帕扎</li><li>许可：GPLv3的</li></ul><h3>包含在peepdf包工具</h3><h5> peepdf - PDF分析工具</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="bcced3d3c8fcd7ddd0d5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# peepdf -h<br>
+Usage: /usr/bin/peepdf [options] PDF_file<br>
+<br>
+Version: peepdf 0.2 r183<br>
+<br>
+Options:<br>
+  -h, --help            show this help message and exit<br>
+  -i, --interactive     Sets console mode.<br>
+  -s SCRIPTFILE, --load-script=SCRIPTFILE<br>
+                        Loads the commands stored in the specified file and<br>
+                        execute them.<br>
+  -f, --force-mode      Sets force parsing mode to ignore errors.<br>
+  -l, --loose-mode      Sets loose parsing mode to catch malformed objects.<br>
+  -u, --update          Updates peepdf with the latest files from the<br>
+                        repository.<br>
+  -g, --grinch-mode     Avoids colorized output in the interactive console.<br>
+  -v, --version         Shows program's version number.<br>
+  -x, --xml             Shows the document information in XML format.</code><h3> peepdf用法示例</h3><p>使用XML格式<b><i>（-x）来显示</i></b> PDF文件<b><i>（/usr/share/doc/texmf/fonts/lm/lm-info.pdf）</i></b>的信息： </p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="493b26263d0922282520">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# peepdf -x /usr/share/doc/texmf/fonts/lm/lm-info.pdf <br>
+&lt;peepdf_analysis url="http://peepdf.eternal-todo.com" version="0.2 r183" author="Jose Miguel Esparza"&gt;<br>
+  &lt;date&gt;2014-05-16 12:22&lt;/date&gt;<br>
+  &lt;basic&gt;<br>
+    &lt;filename&gt;lm-info.pdf&lt;/filename&gt;<br>
+    &lt;md5&gt;26c07d35ad8b5a0e402b2481ae03ffed&lt;/md5&gt;<br>
+    &lt;sha1&gt;4f5284d0a128a53e405e13f9b958ab19dc09be5c&lt;/sha1&gt;<br>
+    &lt;sha256&gt;5907f59e368762a3a2858a6826aab019d0accb367f1b8cc6062d472635579fe6&lt;/sha256&gt;<br>
+    &lt;size&gt;900836&lt;/size&gt;<br>
+    &lt;pdf_version&gt;1.4&lt;/pdf_version&gt;<br>
+    &lt;binary status="true"/&gt;<br>
+    &lt;linearized status="false"/&gt;<br>
+    &lt;encrypted status="false"/&gt;<br>
+    &lt;updates&gt;0&lt;/updates&gt;<br>
+    &lt;num_objects&gt;526&lt;/num_objects&gt;<br>
+    &lt;num_streams&gt;151&lt;/num_streams&gt;<br>
+    &lt;comments&gt;0&lt;/comments&gt;<br>
+    &lt;errors num="0"/&gt;<br>
+  &lt;/basic&gt;<br>
+  &lt;advanced&gt;<br>
+    &lt;version num="0" type="original"&gt;<br>
+      &lt;catalog object_id="1"/&gt;<br>
+      &lt;info object_id="2"/&gt;<br>
+      &lt;objects num="526"&gt;</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

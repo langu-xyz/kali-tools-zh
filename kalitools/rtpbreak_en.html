@@ -1,0 +1,114 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>rtpbreak Package Description</h2>
+<p style="text-align: justify;">With rtpbreak you can detect, reconstruct and analyze any RTP session. It doesn’t require the presence of RTCP packets and works independently form the used signaling protocol (SIP, H.323, SCCP, …). The input is a sequence of packets, the output is a set of files you can use as input for other tools (wireshark/tshark, sox, grep/awk/cut/ cat/sed, …). It supports also wireless (AP_DLT_IEEE802_11) networks.</p>
+<ul>
+<li>reconstruct any RTP stream with an unknown or unsupported signaling protocol</li>
+<li>reconstruct any RTP stream in wireless networks, while doing channel hopping (VoIP activity detector)</li>
+<li>reconstruct and decode any RTP stream in batch mode (with sox, asterisk, …)</li>
+<li>reconstruct any already existing RTP stream</li>
+<li>reorder the packets of any RTP stream for later analysis (with tshark, wireshark, …)</li>
+<li>build a tiny wireless VoIP tapping system in a single chip Linux unit</li>
+<li>build a complete VoIP tapping system (rtpbreak would be just the RTP dissector module!)</li>
+</ul>
+<p>Source: rtpbreak Documentation<br>
+<a href="http://dallachiesa.com/" variation="deepblue" target="blank">rtpbreak Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/rtpbreak.git;a=summary" variation="deepblue" target="blank">Kali rtpbreak Repo</a></p>
+<ul>
+<li>Author: Dallachiesa Michele</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the rtpbreak package</h3>
+<h5>rtpbreak – Detects, reconstructs, and analyzes RTP sessions</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="11637e7e65517a707d78">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtpbreak -h<br>
+Copyright (c) 2007-2008 Dallachiesa Michele &lt;micheleDOTdallachiesaATposteDOTit&gt;<br>
+rtpbreak v1.3a is free software, covered by the GNU General Public License.<br>
+<br>
+USAGE: rtpbreak (-r|-i) &lt;source&gt; [options]<br>
+<br>
+ INPUT<br>
+<br>
+  -r &lt;str&gt;      Read packets from pcap file &lt;str&gt;<br>
+  -i &lt;str&gt;      Read packets from network interface &lt;str&gt;<br>
+  -L &lt;int&gt;      Force datalink header length == &lt;int&gt; bytes<br>
+<br>
+ OUTPUT<br>
+<br>
+  -d &lt;str&gt;      Set output directory to &lt;str&gt; (def:.)<br>
+  -w            Disable RTP raw dumps<br>
+  -W            Disable RTP pcap dumps<br>
+  -g            Fill gaps in RTP raw dumps (caused by lost packets)<br>
+  -n            Dump noise packets<br>
+  -f            Disable stdout logging<br>
+  -F            Enable syslog logging<br>
+  -v            Be verbose<br>
+<br>
+ SELECT<br>
+<br>
+  -m            Sniff packets in promisc mode<br>
+  -p &lt;str&gt;      Add pcap filter &lt;str&gt;<br>
+  -e            Expect even destination UDP port<br>
+  -u            Expect unprivileged source/destination UDP ports (&gt;1024)<br>
+  -y &lt;int&gt;      Expect RTP payload type == &lt;int&gt;<br>
+  -l &lt;int&gt;      Expect RTP payload length == &lt;int&gt; bytes<br>
+  -t &lt;float&gt;    Set packet timeout to &lt;float&gt; seconds (def:10.00)<br>
+  -T &lt;float&gt;    Set pattern timeout to &lt;float&gt; seconds (def:0.25)<br>
+  -P &lt;int&gt;      Set pattern packets count to &lt;int&gt; (def:5)<br>
+<br>
+ EXECUTION<br>
+<br>
+  -Z &lt;str&gt;      Run as user &lt;str&gt;<br>
+  -D            Run in background (option -f implicit)<br>
+<br>
+ MISC<br>
+<br>
+  -k            List known RTP payload types<br>
+  -h            This</code>
+<h3>rtpbreak Usage Example</h3>
+<p>Analyze RTP traffic using interface eth0 <b><i>(-i eth0)</i></b>, fill in gaps <b><i>(-g)</i></b>, sniff in promiscuous mode <b><i>(-m)</i></b>, and save to the given directory <b><i>(-d rtplog)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6b1904041f2b000a0702">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtpbreak -i eth0 -g -m -d rtplog<br>
+ + rtpbreak v1.3a running here!<br>
+ + pid: 10951, date/time: 17/05/2014#13:40:02<br>
+ + Configuration<br>
+   + INPUT<br>
+     Packet source: iface 'eth0'<br>
+     Force datalink header length: disabled<br>
+   + OUTPUT<br>
+     Output directory: 'rtplog'<br>
+     RTP raw dumps: enabled<br>
+     RTP pcap dumps: enabled<br>
+     Fill gaps: enabled<br>
+     Dump noise: disabled<br>
+     Logfile: 'rtplog/rtp.0.txt'<br>
+     Logging to stdout: enabled<br>
+     Logging to syslog: disabled<br>
+     Be verbose: disabled<br>
+   + SELECT<br>
+     Sniff packets in promisc mode: enabled<br>
+     Add pcap filter: disabled<br>
+     Expecting even destination UDP port: disabled<br>
+     Expecting unprivileged source/destination UDP ports: disabled<br>
+     Expecting RTP payload type: any<br>
+     Expecting RTP payload length: any<br>
+     Packet timeout: 10.00 seconds<br>
+     Pattern timeout: 0.25 seconds<br>
+     Pattern packets: 5<br>
+   + EXECUTION<br>
+     Running as user/group: root/root<br>
+     Running daemonized: disabled<br>
+ * You can dump stats sending me a SIGUSR2 signal<br>
+ * Reading packets...</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

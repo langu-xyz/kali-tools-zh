@@ -1,0 +1,101 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>Lynis Package Description</h2>
+<p style="text-align: justify;">Lynis is an open source security auditing tool. Its main goal is to audit and harden Unix and Linux based systems. It scans the system by performing many security control checks. Examples include searching for installed software and determine possible configuration flaws.</p>
+<p>Many tests are part of common security guidelines and standards, with on top additional security tests. After the scan a report will be displayed with all discovered findings. To provide you with initial guidance, a link is shared to the related Lynis control.</p>
+<p>Source: http://rootkit.nl/projects/lynis.html<br>
+<a href="http://www.rootkit.nl/projects/lynis.html" variation="deepblue" target="blank">Lynis Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/lynis.git;a=summary" variation="deepblue" target="blank">Kali Lynis Repo</a></p>
+<ul>
+<li>Author: Michael Boelen</li>
+<li>License: GPLv3</li>
+</ul>
+<h3>Tools included in the lynis package</h3>
+<h5>lynis – Open source security auditing tool</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4b3924243f0b202a2722">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# lynis -h<br>
+<br>
+[ Lynis 1.4.1 ]<br>
+<br>
+################################################################################<br>
+ Lynis comes with ABSOLUTELY NO WARRANTY. This is free software, and you are<br>
+ welcome to redistribute it under the terms of the GNU General Public License.<br>
+ See the LICENSE file for details about using this software.<br>
+<br>
+ Copyright 2007-2014 - Michael Boelen, http://cisofy.com<br>
+ Enterprise support and plugins available via CISOfy - http://cisofy.com<br>
+################################################################################<br>
+<br>
+[+] Initializing program<br>
+------------------------------------<br>
+  Scan options:<br>
+    --auditor "&lt;name&gt;"            : Auditor name<br>
+    --check-all (-c)              : Check system<br>
+    --no-log                      : Don't create a log file<br>
+    --profile &lt;profile&gt;           : Scan the system with the given profile file<br>
+    --quick (-Q)                  : Quick mode, don't wait for user input<br>
+    --tests "&lt;tests&gt;"             : Run only tests defined by &lt;tests&gt;<br>
+    --tests-category "&lt;category&gt;" : Run only tests defined by &lt;category&gt;<br>
+<br>
+  Layout options:<br>
+    --no-colors                   : Don't use colors in output<br>
+    --quiet (-q)                  : No output, except warnings<br>
+    --reverse-colors              : Optimize color display for light backgrounds<br>
+<br>
+  Misc options:<br>
+    --check-update                : Check for updates<br>
+    --view-manpage (--man)        : View man page<br>
+    --version (-V)                : Display version number and quit<br>
+<br>
+  See man page and documentation for all available options.<br>
+<br>
+Exiting..</code>
+<h3>lynis Usage Example</h3>
+<p>Scan the system in quiet mode <b><i>(-Q)</i></b> and output in cronjob format <b><i>(–cronjob)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1e6c71716a5e757f7277">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# lynis -Q --cronjob<br>
+<br>
+[ Lynis 1.5.5 ]<br>
+<br>
+################################################################################<br>
+ Lynis comes with ABSOLUTELY NO WARRANTY. This is free software, and you are<br>
+ welcome to redistribute it under the terms of the GNU General Public License.<br>
+ See the LICENSE file for details about using this software.<br>
+<br>
+ Copyright 2007-2014 - Michael Boelen, http://cisofy.com<br>
+ Enterprise support and plugins available via CISOfy - http://cisofy.com<br>
+################################################################################<br>
+<br>
+[+] Initializing program<br>
+------------------------------------<br>
+- Detecting OS...  [ DONE ]<br>
+- Clearing log file (/var/log/lynis.log)...  [ DONE ]<br>
+<br>
+  ---------------------------------------------------<br>
+  Program version:           1.5.5<br>
+  Operating system:          Linux<br>
+  Operating system name:     Debian<br>
+  Operating system version:  Kali Linux 1.0.9<br>
+  Kernel version:            3.14-kali1-686-pae<br>
+  Hardware platform:         i686<br>
+  Hostname:                  kali<br>
+  Auditor:                   [Unknown]<br>
+  Profile:                   /etc/lynis/default.prf<br>
+  Log file:                  /var/log/lynis.log<br>
+  Report file:               /var/log/lynis-report.dat<br>
+  Report version:            1.0<br>
+  Plugin directory:          /etc/lynis/plugins<br>
+  ---------------------------------------------------<br>
+- Checking profile file (/etc/lynis/default.prf)...</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

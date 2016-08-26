@@ -1,0 +1,394 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>Nmap Package Description</h2>
+<p style="text-align: justify;">Nmap (“Network Mapper”) is a free and open source (license) utility for network discovery and security auditing. Many systems and network administrators also find it useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics. It was designed to rapidly scan large networks, but works fine against single hosts. Nmap runs on all major computer operating systems, and official binary packages are available for Linux, Windows, and Mac OS X. In addition to the classic command-line Nmap executable, the Nmap suite includes an advanced GUI and results viewer (Zenmap), a flexible data transfer, redirection, and debugging tool (Ncat), a utility for comparing scan results (Ndiff), and a packet generation and response analysis tool (Nping).</p>
+<p>Nmap was named “Security Product of the Year” by Linux Journal, Info World, LinuxQuestions.Org, and Codetalker Digest. It was even featured in twelve movies, including The Matrix Reloaded, Die Hard 4, Girl With the Dragon Tattoo, and The Bourne Ultimatum.</p>
+<p><strong>Nmap is …</strong></p>
+<ul>
+<li>Flexible: Supports dozens of advanced techniques for mapping out networks filled with IP filters, firewalls, routers, and other obstacles. This includes many port scanning mechanisms (both TCP &amp; UDP), OS detection, version detection, ping sweeps, and more. See the documentation page.</li>
+<li>Powerful: Nmap has been used to scan huge networks of literally hundreds of thousands of machines.</li>
+<li>Portable: Most operating systems are supported, including Linux, Microsoft Windows, FreeBSD, OpenBSD, Solaris, IRIX, Mac OS X, HP-UX, NetBSD, Sun OS, Amiga, and more.</li>
+<li>Easy: While Nmap offers a rich set of advanced features for power users, you can start out as simply as “nmap -v -A targethost”. Both traditional command line and graphical (GUI) versions are available to suit your preference. Binaries are available for those who do not wish to compile Nmap from source.</li>
+<li>Free: The primary goals of the Nmap Project is to help make the Internet a little more secure and to provide administrators/auditors/hackers with an advanced tool for exploring their networks. Nmap is available for free download, and also comes with full source code that you may modify and redistribute under the terms of the license.</li>
+<li>Well Documented: Significant effort has been put into comprehensive and up-to-date man pages, whitepapers, tutorials, and even a whole book! Find them in multiple languages here.</li>
+<li>Supported: While Nmap comes with no warranty, it is well supported by a vibrant community of developers and users. Most of this interaction occurs on the Nmap mailing lists. Most bug reports and questions should be sent to the nmap-dev list, but only after you read the guidelines. We recommend that all users subscribe to the low-traffic nmap-hackers announcement list. You can also find Nmap on Facebook and Twitter. For real-time chat, join the #nmap channel on Freenode or EFNet.</li>
+<li>Acclaimed: Nmap has won numerous awards, including “Information Security Product of the Year” by Linux Journal, Info World and Codetalker Digest. It has been featured in hundreds of magazine articles, several movies, dozens of books, and one comic book series. Visit the press page for further details.</li>
+<li>Popular: Thousands of people download Nmap every day, and it is included with many operating systems (Redhat Linux, Debian Linux, Gentoo, FreeBSD, OpenBSD, etc). It is among the top ten (out of 30,000) programs at the Freshmeat.Net repository. This is important because it lends Nmap its vibrant development and user support communities.</li>
+</ul>
+<p>Source: http://nmap.org/<br>
+<a href="http://insecure.org/" variation="deepblue" target="blank">Nmap Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/nmap.git;a=summary" variation="deepblue" target="blank">Kali Nmap Repo</a></p>
+<ul>
+<li>Author: Fyodor</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the nmap package</h3>
+<h5>nping – Network packet generation tool / ping utility</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="85f7eaeaf1c5eee4e9ec">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# nping -h<br>
+Nping 0.6.40 ( http://nmap.org/nping )<br>
+Usage: nping [Probe mode] [Options] {target specification}<br>
+<br>
+TARGET SPECIFICATION:<br>
+  Targets may be specified as hostnames, IP addresses, networks, etc.<br>
+  Ex: scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0.*.1-24<br>
+PROBE MODES:<br>
+  --tcp-connect                    : Unprivileged TCP connect probe mode.<br>
+  --tcp                            : TCP probe mode.<br>
+  --udp                            : UDP probe mode.<br>
+  --icmp                           : ICMP probe mode.<br>
+  --arp                            : ARP/RARP probe mode.<br>
+  --tr, --traceroute               : Traceroute mode (can only be used with<br>
+                                     TCP/UDP/ICMP modes).<br>
+TCP CONNECT MODE:<br>
+   -p, --dest-port &lt;port spec&gt;     : Set destination port(s).<br>
+   -g, --source-port &lt;portnumber&gt;  : Try to use a custom source port.<br>
+TCP PROBE MODE:<br>
+   -g, --source-port &lt;portnumber&gt;  : Set source port.<br>
+   -p, --dest-port &lt;port spec&gt;     : Set destination port(s).<br>
+   --seq &lt;seqnumber&gt;               : Set sequence number.<br>
+   --flags &lt;flag list&gt;             : Set TCP flags (ACK,PSH,RST,SYN,FIN...)<br>
+   --ack &lt;acknumber&gt;               : Set ACK number.<br>
+   --win &lt;size&gt;                    : Set window size.<br>
+   --badsum                        : Use a random invalid checksum.<br>
+UDP PROBE MODE:<br>
+   -g, --source-port &lt;portnumber&gt;  : Set source port.<br>
+   -p, --dest-port &lt;port spec&gt;     : Set destination port(s).<br>
+   --badsum                        : Use a random invalid checksum.<br>
+ICMP PROBE MODE:<br>
+  --icmp-type &lt;type&gt;               : ICMP type.<br>
+  --icmp-code &lt;code&gt;               : ICMP code.<br>
+  --icmp-id &lt;id&gt;                   : Set identifier.<br>
+  --icmp-seq &lt;n&gt;                   : Set sequence number.<br>
+  --icmp-redirect-addr &lt;addr&gt;      : Set redirect address.<br>
+  --icmp-param-pointer &lt;pnt&gt;       : Set parameter problem pointer.<br>
+  --icmp-advert-lifetime &lt;time&gt;    : Set router advertisement lifetime.<br>
+  --icmp-advert-entry &lt;IP,pref&gt;    : Add router advertisement entry.<br>
+  --icmp-orig-time  &lt;timestamp&gt;    : Set originate timestamp.<br>
+  --icmp-recv-time  &lt;timestamp&gt;    : Set receive timestamp.<br>
+  --icmp-trans-time &lt;timestamp&gt;    : Set transmit timestamp.<br>
+ARP/RARP PROBE MODE:<br>
+  --arp-type &lt;type&gt;                : Type: ARP, ARP-reply, RARP, RARP-reply.<br>
+  --arp-sender-mac &lt;mac&gt;           : Set sender MAC address.<br>
+  --arp-sender-ip  &lt;addr&gt;          : Set sender IP address.<br>
+  --arp-target-mac &lt;mac&gt;           : Set target MAC address.<br>
+  --arp-target-ip  &lt;addr&gt;          : Set target IP address.<br>
+IPv4 OPTIONS:<br>
+  -S, --source-ip                  : Set source IP address.<br>
+  --dest-ip &lt;addr&gt;                 : Set destination IP address (used as an<br>
+                                     alternative to {target specification} ).<br>
+  --tos &lt;tos&gt;                      : Set type of service field (8bits).<br>
+  --id  &lt;id&gt;                       : Set identification field (16 bits).<br>
+  --df                             : Set Don't Fragment flag.<br>
+  --mf                             : Set More Fragments flag.<br>
+  --ttl &lt;hops&gt;                     : Set time to live [0-255].<br>
+  --badsum-ip                      : Use a random invalid checksum.<br>
+  --ip-options &lt;S|R [route]|L [route]|T|U ...&gt; : Set IP options<br>
+  --ip-options &lt;hex string&gt;                    : Set IP options<br>
+  --mtu &lt;size&gt;                     : Set MTU. Packets get fragmented if MTU is<br>
+                                     small enough.<br>
+IPv6 OPTIONS:<br>
+  -6, --IPv6                       : Use IP version 6.<br>
+  --dest-ip                        : Set destination IP address (used as an<br>
+                                     alternative to {target specification}).<br>
+  --hop-limit                      : Set hop limit (same as IPv4 TTL).<br>
+  --traffic-class &lt;class&gt; :        : Set traffic class.<br>
+  --flow &lt;label&gt;                   : Set flow label.<br>
+ETHERNET OPTIONS:<br>
+  --dest-mac &lt;mac&gt;                 : Set destination mac address. (Disables<br>
+                                     ARP resolution)<br>
+  --source-mac &lt;mac&gt;               : Set source MAC address.<br>
+  --ether-type &lt;type&gt;              : Set EtherType value.<br>
+PAYLOAD OPTIONS:<br>
+  --data &lt;hex string&gt;              : Include a custom payload.<br>
+  --data-string &lt;text&gt;             : Include a custom ASCII text.<br>
+  --data-length &lt;len&gt;              : Include len random bytes as payload.<br>
+ECHO CLIENT/SERVER:<br>
+  --echo-client &lt;passphrase&gt;       : Run Nping in client mode.<br>
+  --echo-server &lt;passphrase&gt;       : Run Nping in server mode.<br>
+  --echo-port &lt;port&gt;               : Use custom &lt;port&gt; to listen or connect.<br>
+  --no-crypto                      : Disable encryption and authentication.<br>
+  --once                           : Stop the server after one connection.<br>
+  --safe-payloads                  : Erase application data in echoed packets.<br>
+TIMING AND PERFORMANCE:<br>
+  Options which take &lt;time&gt; are in seconds, or append 'ms' (milliseconds),<br>
+  's' (seconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m, 0.25h).<br>
+  --delay &lt;time&gt;                   : Adjust delay between probes.<br>
+  --rate  &lt;rate&gt;                   : Send num packets per second.<br>
+MISC:<br>
+  -h, --help                       : Display help information.<br>
+  -V, --version                    : Display current version number.<br>
+  -c, --count &lt;n&gt;                  : Stop after &lt;n&gt; rounds.<br>
+  -e, --interface &lt;name&gt;           : Use supplied network interface.<br>
+  -H, --hide-sent                  : Do not display sent packets.<br>
+  -N, --no-capture                 : Do not try to capture replies.<br>
+  --privileged                     : Assume user is fully privileged.<br>
+  --unprivileged                   : Assume user lacks raw socket privileges.<br>
+  --send-eth                       : Send packets at the raw Ethernet layer.<br>
+  --send-ip                        : Send packets using raw IP sockets.<br>
+  --bpf-filter &lt;filter spec&gt;       : Specify custom BPF filter.<br>
+OUTPUT:<br>
+  -v                               : Increment verbosity level by one.<br>
+  -v[level]                        : Set verbosity level. E.g: -v4<br>
+  -d                               : Increment debugging level by one.<br>
+  -d[level]                        : Set debugging level. E.g: -d3<br>
+  -q                               : Decrease verbosity level by one.<br>
+  -q[N]                            : Decrease verbosity level N times<br>
+  --quiet                          : Set verbosity and debug level to minimum.<br>
+  --debug                          : Set verbosity and debug to the max level.<br>
+EXAMPLES:<br>
+  nping scanme.nmap.org<br>
+  nping --tcp -p 80 --flags rst --ttl 2 192.168.1.1<br>
+  nping --icmp --icmp-type time --delay 500ms 192.168.254.254<br>
+  nping --echo-server "public" -e wlan0 -vvv<br>
+  nping --echo-client "public" echo.nmap.org --tcp -p1-1024 --flags ack<br>
+<br>
+SEE THE MAN PAGE FOR MANY MORE OPTIONS, DESCRIPTIONS, AND EXAMPLES</code>
+<h3>ndiff – Utility to compare the results of Nmap scans</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ef9d80809baf848e8386">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ndiff -h<br>
+Usage: /usr/bin/ndiff [option] FILE1 FILE2<br>
+Compare two Nmap XML files and display a list of their differences.<br>
+Differences include host state changes, port state changes, and changes to<br>
+service and OS detection.<br>
+<br>
+  -h, --help     display this help<br>
+  -v, --verbose  also show hosts and ports that haven't changed.<br>
+  --text         display output in text format (default)<br>
+  --xml          display output in XML format</code>
+<h3>ncat – Concatenate and redirect sockets</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cfbda0a0bb8fa4aea3a6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ncat -h<br>
+Ncat 6.40 ( http://nmap.org/ncat )<br>
+Usage: ncat [options] [hostname] [port]<br>
+<br>
+Options taking a time assume seconds. Append 'ms' for milliseconds,<br>
+'s' for seconds, 'm' for minutes, or 'h' for hours (e.g. 500ms).<br>
+  -4                         Use IPv4 only<br>
+  -6                         Use IPv6 only<br>
+  -U, --unixsock             Use Unix domain sockets only<br>
+  -C, --crlf                 Use CRLF for EOL sequence<br>
+  -c, --sh-exec &lt;command&gt;    Executes the given command via /bin/sh<br>
+  -e, --exec &lt;command&gt;       Executes the given command<br>
+      --lua-exec &lt;filename&gt;  Executes the given Lua script<br>
+  -g hop1[,hop2,...]         Loose source routing hop points (8 max)<br>
+  -G &lt;n&gt;                     Loose source routing hop pointer (4, 8, 12, ...)<br>
+  -m, --max-conns &lt;n&gt;        Maximum &lt;n&gt; simultaneous connections<br>
+  -h, --help                 Display this help screen<br>
+  -d, --delay &lt;time&gt;         Wait between read/writes<br>
+  -o, --output &lt;filename&gt;    Dump session data to a file<br>
+  -x, --hex-dump &lt;filename&gt;  Dump session data as hex to a file<br>
+  -i, --idle-timeout &lt;time&gt;  Idle read/write timeout<br>
+  -p, --source-port port     Specify source port to use<br>
+  -s, --source addr          Specify source address to use (doesn't affect -l)<br>
+  -l, --listen               Bind and listen for incoming connections<br>
+  -k, --keep-open            Accept multiple connections in listen mode<br>
+  -n, --nodns                Do not resolve hostnames via DNS<br>
+  -t, --telnet               Answer Telnet negotiations<br>
+  -u, --udp                  Use UDP instead of default TCP<br>
+      --sctp                 Use SCTP instead of default TCP<br>
+  -v, --verbose              Set verbosity level (can be used several times)<br>
+  -w, --wait &lt;time&gt;          Connect timeout<br>
+      --append-output        Append rather than clobber specified output files<br>
+      --send-only            Only send data, ignoring received; quit on EOF<br>
+      --recv-only            Only receive data, never send anything<br>
+      --allow                Allow only given hosts to connect to Ncat<br>
+      --allowfile            A file of hosts allowed to connect to Ncat<br>
+      --deny                 Deny given hosts from connecting to Ncat<br>
+      --denyfile             A file of hosts denied from connecting to Ncat<br>
+      --broker               Enable Ncat's connection brokering mode<br>
+      --chat                 Start a simple Ncat chat server<br>
+      --proxy &lt;addr[:port]&gt;  Specify address of host to proxy through<br>
+      --proxy-type &lt;type&gt;    Specify proxy type ("http" or "socks4")<br>
+      --proxy-auth &lt;auth&gt;    Authenticate with HTTP or SOCKS proxy server<br>
+      --ssl                  Connect or listen with SSL<br>
+      --ssl-cert             Specify SSL certificate file (PEM) for listening<br>
+      --ssl-key              Specify SSL private key (PEM) for listening<br>
+      --ssl-verify           Verify trust and domain name of certificates<br>
+      --ssl-trustfile        PEM file containing trusted SSL certificates<br>
+      --version              Display Ncat's version information and exit<br>
+<br>
+See the ncat(1) manpage for full options, descriptions and usage examples</code>
+<h3>nmap – The Network Mapper</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f0829f9f84b09b919c99">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# nmap -h<br>
+Nmap 6.40 ( http://nmap.org )<br>
+Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
+TARGET SPECIFICATION:<br>
+  Can pass hostnames, IP addresses, networks, etc.<br>
+  Ex: scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0.0-255.1-254<br>
+  -iL &lt;inputfilename&gt;: Input from list of hosts/networks<br>
+  -iR &lt;num hosts&gt;: Choose random targets<br>
+  --exclude &lt;host1[,host2][,host3],...&gt;: Exclude hosts/networks<br>
+  --excludefile &lt;exclude_file&gt;: Exclude list from file<br>
+HOST DISCOVERY:<br>
+  -sL: List Scan - simply list targets to scan<br>
+  -sn: Ping Scan - disable port scan<br>
+  -Pn: Treat all hosts as online -- skip host discovery<br>
+  -PS/PA/PU/PY[portlist]: TCP SYN/ACK, UDP or SCTP discovery to given ports<br>
+  -PE/PP/PM: ICMP echo, timestamp, and netmask request discovery probes<br>
+  -PO[protocol list]: IP Protocol Ping<br>
+  -n/-R: Never do DNS resolution/Always resolve [default: sometimes]<br>
+  --dns-servers &lt;serv1[,serv2],...&gt;: Specify custom DNS servers<br>
+  --system-dns: Use OS's DNS resolver<br>
+  --traceroute: Trace hop path to each host<br>
+SCAN TECHNIQUES:<br>
+  -sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans<br>
+  -sU: UDP Scan<br>
+  -sN/sF/sX: TCP Null, FIN, and Xmas scans<br>
+  --scanflags &lt;flags&gt;: Customize TCP scan flags<br>
+  -sI &lt;zombie host[:probeport]&gt;: Idle scan<br>
+  -sY/sZ: SCTP INIT/COOKIE-ECHO scans<br>
+  -sO: IP protocol scan<br>
+  -b &lt;FTP relay host&gt;: FTP bounce scan<br>
+PORT SPECIFICATION AND SCAN ORDER:<br>
+  -p &lt;port ranges&gt;: Only scan specified ports<br>
+    Ex: -p22; -p1-65535; -p U:53,111,137,T:21-25,80,139,8080,S:9<br>
+  -F: Fast mode - Scan fewer ports than the default scan<br>
+  -r: Scan ports consecutively - don't randomize<br>
+  --top-ports &lt;number&gt;: Scan &lt;number&gt; most common ports<br>
+  --port-ratio &lt;ratio&gt;: Scan ports more common than &lt;ratio&gt;<br>
+SERVICE/VERSION DETECTION:<br>
+  -sV: Probe open ports to determine service/version info<br>
+  --version-intensity &lt;level&gt;: Set from 0 (light) to 9 (try all probes)<br>
+  --version-light: Limit to most likely probes (intensity 2)<br>
+  --version-all: Try every single probe (intensity 9)<br>
+  --version-trace: Show detailed version scan activity (for debugging)<br>
+SCRIPT SCAN:<br>
+  -sC: equivalent to --script=default<br>
+  --script=&lt;Lua scripts&gt;: &lt;Lua scripts&gt; is a comma separated list of<br>
+           directories, script-files or script-categories<br>
+  --script-args=&lt;n1=v1,[n2=v2,...]&gt;: provide arguments to scripts<br>
+  --script-args-file=filename: provide NSE script args in a file<br>
+  --script-trace: Show all data sent and received<br>
+  --script-updatedb: Update the script database.<br>
+  --script-help=&lt;Lua scripts&gt;: Show help about scripts.<br>
+           &lt;Lua scripts&gt; is a comma separted list of script-files or<br>
+           script-categories.<br>
+OS DETECTION:<br>
+  -O: Enable OS detection<br>
+  --osscan-limit: Limit OS detection to promising targets<br>
+  --osscan-guess: Guess OS more aggressively<br>
+TIMING AND PERFORMANCE:<br>
+  Options which take &lt;time&gt; are in seconds, or append 'ms' (milliseconds),<br>
+  's' (seconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m).<br>
+  -T&lt;0-5&gt;: Set timing template (higher is faster)<br>
+  --min-hostgroup/max-hostgroup &lt;size&gt;: Parallel host scan group sizes<br>
+  --min-parallelism/max-parallelism &lt;numprobes&gt;: Probe parallelization<br>
+  --min-rtt-timeout/max-rtt-timeout/initial-rtt-timeout &lt;time&gt;: Specifies<br>
+      probe round trip time.<br>
+  --max-retries &lt;tries&gt;: Caps number of port scan probe retransmissions.<br>
+  --host-timeout &lt;time&gt;: Give up on target after this long<br>
+  --scan-delay/--max-scan-delay &lt;time&gt;: Adjust delay between probes<br>
+  --min-rate &lt;number&gt;: Send packets no slower than &lt;number&gt; per second<br>
+  --max-rate &lt;number&gt;: Send packets no faster than &lt;number&gt; per second<br>
+FIREWALL/IDS EVASION AND SPOOFING:<br>
+  -f; --mtu &lt;val&gt;: fragment packets (optionally w/given MTU)<br>
+  -D &lt;decoy1,decoy2[,ME],...&gt;: Cloak a scan with decoys<br>
+  -S &lt;IP_Address&gt;: Spoof source address<br>
+  -e &lt;iface&gt;: Use specified interface<br>
+  -g/--source-port &lt;portnum&gt;: Use given port number<br>
+  --data-length &lt;num&gt;: Append random data to sent packets<br>
+  --ip-options &lt;options&gt;: Send packets with specified ip options<br>
+  --ttl &lt;val&gt;: Set IP time-to-live field<br>
+  --spoof-mac &lt;mac address/prefix/vendor name&gt;: Spoof your MAC address<br>
+  --badsum: Send packets with a bogus TCP/UDP/SCTP checksum<br>
+OUTPUT:<br>
+  -oN/-oX/-oS/-oG &lt;file&gt;: Output scan in normal, XML, s|&lt;rIpt kIddi3,<br>
+     and Grepable format, respectively, to the given filename.<br>
+  -oA &lt;basename&gt;: Output in the three major formats at once<br>
+  -v: Increase verbosity level (use -vv or more for greater effect)<br>
+  -d: Increase debugging level (use -dd or more for greater effect)<br>
+  --reason: Display the reason a port is in a particular state<br>
+  --open: Only show open (or possibly open) ports<br>
+  --packet-trace: Show all packets sent and received<br>
+  --iflist: Print host interfaces and routes (for debugging)<br>
+  --log-errors: Log errors/warnings to the normal-format output file<br>
+  --append-output: Append to rather than clobber specified output files<br>
+  --resume &lt;filename&gt;: Resume an aborted scan<br>
+  --stylesheet &lt;path/URL&gt;: XSL stylesheet to transform XML output to HTML<br>
+  --webxml: Reference stylesheet from Nmap.Org for more portable XML<br>
+  --no-stylesheet: Prevent associating of XSL stylesheet w/XML output<br>
+MISC:<br>
+  -6: Enable IPv6 scanning<br>
+  -A: Enable OS detection, version detection, script scanning, and traceroute<br>
+  --datadir &lt;dirname&gt;: Specify custom Nmap data file location<br>
+  --send-eth/--send-ip: Send using raw ethernet frames or IP packets<br>
+  --privileged: Assume that the user is fully privileged<br>
+  --unprivileged: Assume the user lacks raw socket privileges<br>
+  -V: Print version number<br>
+  -h: Print this help summary page.<br>
+EXAMPLES:<br>
+  nmap -v -A scanme.nmap.org<br>
+  nmap -v -sn 192.168.0.0/16 10.0.0.0/8<br>
+  nmap -v -iR 10000 -Pn -p 80<br>
+SEE THE MAN PAGE (http://nmap.org/book/man.html) FOR MORE OPTIONS AND EXAMPLES</code>
+<h3>nmap Usage Example</h3>
+<p>Scan in verbose mode <b><i>(-v)</i></b>, enable OS detection, version detection, script scanning, and traceroute <b><i>(-A)</i></b>, with version detection <b><i>(-sV)</i></b> against the target IP <b><i>(192.168.1.1)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="acdec3c3d8ecc7cdc0c5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# nmap -v -A -sV 192.168.1.1<br>
+<br>
+Starting Nmap 6.45 ( http://nmap.org ) at 2014-05-13 18:40 MDT<br>
+NSE: Loaded 118 scripts for scanning.<br>
+NSE: Script Pre-scanning.<br>
+Initiating ARP Ping Scan at 18:40<br>
+Scanning 192.168.1.1 [1 port]<br>
+Completed ARP Ping Scan at 18:40, 0.06s elapsed (1 total hosts)<br>
+Initiating Parallel DNS resolution of 1 host. at 18:40<br>
+Completed Parallel DNS resolution of 1 host. at 18:40, 0.00s elapsed<br>
+Initiating SYN Stealth Scan at 18:40<br>
+Scanning router.localdomain (192.168.1.1) [1000 ports]<br>
+Discovered open port 53/tcp on 192.168.1.1<br>
+Discovered open port 22/tcp on 192.168.1.1<br>
+Discovered open port 80/tcp on 192.168.1.1<br>
+Discovered open port 3001/tcp on 192.168.1.1</code>
+<h3>nping Usage Example</h3>
+<p>Using TCP mode <b><i>(–tcp)</i></b> to probe port 22 <b><i>(-p 22)</i></b> using the SYN flag <b><i>(–flags syn)</i></b> with a TTL of 2 <b><i>(–ttl 2)</i></b> on the remote host <b><i>(192.168.1.1)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b2c0ddddc6f2d9d3dedb">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# nping --tcp -p 22 --flags syn --ttl 2 192.168.1.1<br>
+<br>
+Starting Nping 0.6.45 ( http://nmap.org/nping ) at 2014-05-13 18:43 MDT<br>
+SENT (0.0673s) TCP 192.168.1.15:60125 &gt; 192.168.1.1:22 S ttl=2 id=54240 iplen=40  seq=1720523417 win=1480<br>
+RCVD (0.0677s) TCP 192.168.1.1:22 &gt; 192.168.1.15:60125 SA ttl=64 id=0 iplen=44  seq=3377886789 win=5840 &lt;mss 1460&gt;<br>
+SENT (1.0678s) TCP 192.168.1.15:60125 &gt; 192.168.1.1:22 S ttl=2 id=54240 iplen=40  seq=1720523417 win=1480<br>
+RCVD (1.0682s) TCP 192.168.1.1:22 &gt; 192.168.1.15:60125 SA ttl=64 id=0 iplen=44  seq=3393519366 win=5840 &lt;mss 1460&gt;<br>
+SENT (2.0693s) TCP 192.168.1.15:60125 &gt; 192.168.1.1:22 S ttl=2 id=54240 iplen=40  seq=1720523417 win=1480<br>
+RCVD (2.0696s) TCP 192.168.1.1:22 &gt; 192.168.1.15:60125 SA ttl=64 id=0 iplen=44  seq=3409166569 win=5840 &lt;mss 1460&gt;<br>
+SENT (3.0707s) TCP 192.168.1.15:60125 &gt; 192.168.1.1:22 S ttl=2 id=54240 iplen=40  seq=1720523417 win=1480<br>
+RCVD (3.0710s) TCP 192.168.1.1:22 &gt; 192.168.1.15:60125 SA ttl=64 id=0 iplen=44  seq=3424813300 win=5840 &lt;mss 1460&gt;<br>
+SENT (4.0721s) TCP 192.168.1.15:60125 &gt; 192.168.1.1:22 S ttl=2 id=54240 iplen=40  seq=1720523417 win=1480<br>
+RCVD (4.0724s) TCP 192.168.1.1:22 &gt; 192.168.1.15:60125 SA ttl=64 id=0 iplen=44  seq=3440460772 win=5840 &lt;mss 1460&gt;<br>
+<br>
+Max rtt: 0.337ms | Min rtt: 0.282ms | Avg rtt: 0.296ms<br>
+Raw packets sent: 5 (200B) | Rcvd: 5 (230B) | Lost: 0 (0.00%)<br>
+Nping done: 1 IP address pinged in 4.13 seconds</code>
+<h3>ndiff Usage Example</h3>
+<p>Compare yesterday’s port scan <b><i>(yesterday.xml)</i></b> with the scan from today <b><i>(today.xml)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d9abb6b6ad99b2b8b5b0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ndiff yesterday.xml today.xml<br>
+-Nmap 6.45 scan initiated Tue May 13 18:46:43 2014 as: nmap -v -F -oX yesterday.xml 192.168.1.1<br>
++Nmap 6.45 scan initiated Tue May 13 18:47:58 2014 as: nmap -v -F -oX today.xml 192.168.1.1<br>
+<br>
+ endian.localdomain (192.168.1.1, 00:01:6C:6F:DD:D1):<br>
+-Not shown: 96 filtered ports<br>
++Not shown: 97 filtered ports<br>
+ PORT   STATE SERVICE VERSION<br>
+-22/tcp open  ssh</code>
+<h3>ncat Usage Example</h3>
+<p>Be verbose <b><i>(-v)</i></b>, running /bin/bash on connect <b><i>(–exec “/bin/bash”)</i></b>, only allowing 1 IP address <b><i>(–allow 192.168.1.123)</i></b>, listen on TCP port 4444 <b><i>(-l 4444)</i></b>, and keep the listener open on disconnect <b><i>(–keep-open)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c2b0adadb682a9a3aeab">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ncat -v --exec "/bin/bash" --allow 192.168.1.123 -l 4444 --keep-open<br>
+Ncat: Version 6.45 ( http://nmap.org/ncat )<br>
+Ncat: Listening on :::4444<br>
+Ncat: Listening on 0.0.0.0:4444<br>
+Ncat: Connection from 192.168.1.123.<br>
+Ncat: Connection from 192.168.1.123:39501.<br>
+Ncat: Connection from 192.168.1.15.<br>
+Ncat: Connection from 192.168.1.15:60393.<br>
+Ncat: New connection denied: not allowed</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

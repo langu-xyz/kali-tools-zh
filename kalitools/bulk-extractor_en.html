@@ -1,0 +1,183 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>bulk-extractor Package Description</h2>
+<p style="text-align: justify;">bulk_extractor is a program that extracts features such as email addresses, credit card numbers, URLs, and other types of information from digital evidence files. It is a useful forensic investigation tool for many tasks such as malware and intrusion investigations, identity investigations and cyber investigations, as well as analyzing imagery and pass-word cracking. The program provides several unusual capabilities including:</p>
+<ul>
+<li>It finds email addresses, URLs and credit card numbers that other tools miss because it can process compressed data (like ZIP, PDF and GZIP ﬁles) and incomplete or partially corrupted data. It can carve JPEGs, office documents and other kinds of files out of fragments of compressed data. It will detect and carve encrypted RAR files.</li>
+<li>It builds word lists based on all of the words found within the data, even those in compressed files that are in unallocated space. Those word lists can be useful for password cracking.</li>
+<li>It is multi-threaded; running bulk_extractor on a computer with twice the number of cores typically makes it complete a run in half the time.</li>
+<li>It creates histograms showing the most common email addresses, URLs, domains, search terms and other kinds of information on the drive.</li>
+</ul>
+<p>bulk_extractor operates on disk images, files or a directory of files and extracts useful information without parsing the ﬁle system or ﬁle system structures. The input is split into pages and processed by one or more scanners. The results are stored in feature files that can be easily inspected, parsed, or processed with other automated tools.<br>
+bulk_extractor also creates histograms of features that it finds. This is useful because features such as email addresses and internet search terms that are more common tend to be important.<br>
+In addition to the capabilities described above, bulk_extractor also includes:</p>
+<ul>
+<li>A graphical user interface, Bulk Extractor Viewer, for browsing features stored in feature ﬁles and for launching bulk_extractor scans</li>
+<li>A small number of python programs for performing additional analysis on feature ﬁles</li>
+</ul>
+<p>Source: http://digitalcorpora.org/downloads/bulk_extractor/BEUsersManual.pdf<br>
+<a href="https://github.com/simsong/bulk_extractor/" variation="deepblue" target="blank">bulk-extractor Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/bulk-extractor.git;a=summary" variation="deepblue" target="blank">Kali bulk-extractor Repo</a></p>
+<ul>
+<li>Author: Simson L. Garfinkel</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the bulk-extractor package</h3>
+<h5>bulk_extractor – Extracts information without parsing filesystem</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="63110c0c172308020f0a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# bulk_extractor<br>
+bulk_extractor version 1.3 $Rev: 10606 $<br>
+Usage: bulk_extractor [options] imagefile<br>
+  runs bulk extractor and outputs to stdout a summary of what was found where<br>
+<br>
+Required parameters:<br>
+   imagefile     - the file to extract<br>
+ or  -R filedir  - recurse through a directory of files<br>
+                  SUPPORT FOR E01 FILES COMPILED IN<br>
+                  SUPPORT FOR AFF FILES COMPILED IN<br>
+   -o outdir    - specifies output directory. Must not exist.<br>
+                  bulk_extractor creates this directory.<br>
+Options:<br>
+   -b banner.txt- Add banner.txt contents to the top of every output file.<br>
+   -r alert_list.txt  - a file containing the alert list of features to alert<br>
+                       (can be a feature file or a list of globs)<br>
+                       (can be repeated.)<br>
+   -w stop_list.txt   - a file containing the stop list of features (white list<br>
+                       (can be a feature file or a list of globs)s<br>
+                       (can be repeated.)<br>
+   -F &lt;rfile&gt;   - Read a list of regular expressions from &lt;rfile&gt; to find<br>
+   -f &lt;regex&gt;   - find occurrences of &lt;regex&gt;; may be repeated.<br>
+                  results go into find.txt<br>
+   -q nn        - Quiet Rate; only print every nn status reports. Default 0; -1 for no status at all<br>
+<br>
+Tuning parameters:<br>
+   -C NN         - specifies the size of the context window (default 16)<br>
+   -G NN         - specify the page size (default 16777216)<br>
+   -g NN         - specify margin (default 4194304)<br>
+   -W n1:n2      - Specifies minimum and maximum word size<br>
+                  (default is -w6:14)<br>
+   -B NN         - Specify the blocksize for bulk data analysis (default 512)<br>
+   -j NN         - Number of analysis threads to run (default 2)<br>
+   -M nn        - sets max recursion depth (default 5)<br>
+<br>
+Path Processing Mode:<br>
+   -p &lt;path&gt;/f  - print the value of &lt;path&gt; with a given format.<br>
+                  formats: r = raw; h = hex.<br>
+                  Specify -p - for interactive mode.<br>
+                  Specify -p -http for HTTP mode.<br>
+<br>
+Parallelizing:<br>
+   -Y &lt;o1&gt;      - Start processing at o1 (o1 may be 1, 1K, 1M or 1G)<br>
+   -Y &lt;o1&gt;-&lt;o2&gt; - Process o1-o2<br>
+   -A &lt;off&gt;     - Add &lt;off&gt; to all reported feature offsets<br>
+<br>
+Debugging:<br>
+   -h           - print this message<br>
+   -H           - print detailed info on the scanners<br>
+   -V           - print version number<br>
+   -z nn        - start on page nn<br>
+   -dN          - debug mode (see source code<br>
+   -Z           - zap (erase) output directory<br>
+<br>
+Control of Scanners:<br>
+   -P &lt;dir&gt;     - Specifies a plugin directory<br>
+   -E scanner   - turn off all scanners except scanner<br>
+   -m &lt;max&gt;     - maximum number of minutes to wait for memory starvation<br>
+                  default is 60<br>
+   -s name=value - sets a bulk extractor option name to be value<br>
+<br>
+   -e bulk - enable scanner bulk<br>
+   -e wordlist - enable scanner wordlist<br>
+<br>
+   -x accts - disable scanner accts<br>
+   -x aes - disable scanner aes<br>
+   -x base16 - disable scanner base16<br>
+   -x base64 - disable scanner base64<br>
+   -x elf - disable scanner elf<br>
+   -x email - disable scanner email<br>
+   -x exif - disable scanner exif<br>
+   -x gps - disable scanner gps<br>
+   -x gzip - disable scanner gzip<br>
+   -x hiber - disable scanner hiber<br>
+   -x json - disable scanner json<br>
+   -x kml - disable scanner kml<br>
+   -x net - disable scanner net<br>
+   -x pdf - disable scanner pdf<br>
+   -x vcard - disable scanner vcard<br>
+   -x windirs - disable scanner windirs<br>
+   -x winpe - disable scanner winpe<br>
+   -x winprefetch - disable scanner winprefetch<br>
+   -x zip - disable scanner zip</code>
+<h3>bulk_extractor Usage Example</h3>
+<p>Extract files to the output directory <b><i>(-o bulk-out)</i></b> after analyzing the image file <b><i>(xp-laptop-2005-07-04-1430.img)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="394b56564d7952585550">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# bulk_extractor -o bulk-out xp-laptop-2005-07-04-1430.img <br>
+bulk_extractor version: 1.3<br>
+Hostname: kali<br>
+Input file: xp-laptop-2005-07-04-1430.img<br>
+Output directory: bulk-out<br>
+Disk Size: 536715264<br>
+Threads: 1<br>
+Phase 1.<br>
+13:02:46 Offset 0MB (0.00%) Done in n/a at 13:02:45<br>
+13:03:39 Offset 67MB (12.50%) Done in  0:06:14 at 13:09:53<br>
+13:04:43 Offset 134MB (25.01%) Done in  0:05:50 at 13:10:33<br>
+13:04:55 Offset 201MB (37.51%) Done in  0:03:36 at 13:08:31<br>
+13:06:01 Offset 268MB (50.01%) Done in  0:03:15 at 13:09:16<br>
+13:06:48 Offset 335MB (62.52%) Done in  0:02:25 at 13:09:13<br>
+13:07:04 Offset 402MB (75.02%) Done in  0:01:25 at 13:08:29<br>
+13:07:20 Offset 469MB (87.53%) Done in  0:00:39 at 13:07:59<br>
+All Data is Read; waiting for threads to finish...<br>
+Time elapsed waiting for 1 thread to finish:<br>
+     (please wait for another 60 min .)<br>
+Time elapsed waiting for 1 thread to finish:<br>
+    6 sec (please wait for another 59 min 54 sec.)<br>
+Thread 0: Processing 520093696<br>
+<br>
+Time elapsed waiting for 1 thread to finish:<br>
+    12 sec (please wait for another 59 min 48 sec.)<br>
+Thread 0: Processing 520093696<br>
+<br>
+Time elapsed waiting for 1 thread to finish:<br>
+    18 sec (please wait for another 59 min 42 sec.)<br>
+Thread 0: Processing 520093696<br>
+<br>
+Time elapsed waiting for 1 thread to finish:<br>
+    24 sec (please wait for another 59 min 36 sec.)<br>
+Thread 0: Processing 520093696<br>
+<br>
+Time elapsed waiting for 1 thread to finish:<br>
+    30 sec (please wait for another 59 min 30 sec.)<br>
+Thread 0: Processing 520093696<br>
+<br>
+All Threads Finished!<br>
+Producer time spent waiting: 335.984 sec.<br>
+Average consumer time spent waiting: 0.143353 sec.<br>
+*******************************************<br>
+** bulk_extractor is probably CPU bound. **<br>
+**    Run on a computer with more cores  **<br>
+**      to get better performance.       **<br>
+*******************************************<br>
+Phase 2. Shutting down scanners<br>
+Phase 3. Creating Histograms<br>
+   ccn histogram...   ccn_track2 histogram...   domain histogram...<br>
+   email histogram...   ether histogram...   find histogram...<br>
+   ip histogram...   tcp histogram...   telephone histogram...<br>
+   url histogram...   url microsoft-live...   url services...<br>
+   url facebook-address...   url facebook-id...   url searches...<br>
+<br>
+Elapsed time: 378.5 sec.<br>
+Overall performance: 1.418 MBytes/sec.<br>
+Total email features found: 899</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

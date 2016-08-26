@@ -1,0 +1,74 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>TrueCrack Package Description</h2>
+<p style="text-align: justify;">TrueCrack is a brute-force password cracker for TrueCrypt volumes. It works on Linux and it is optimized for Nvidia Cuda technology. It supports:</p>
+<ul>
+<li>PBKDF2 (defined in PKCS5 v2.0) based on key derivation functions: Ripemd160, Sha512 and Whirlpool.</li>
+<li>XTS block cipher mode for hard disk encryption based on encryption algorithms: AES, SERPENT, TWOFISH.</li>
+<li>File-hosted (container) and Partition/device-hosted.</li>
+<li>Hidden volumes and Backup headers.</li>
+</ul>
+<p>TrueCrack is able to perform a brute-force attack based on:</p>
+<ul>
+<li>Dictionary: read the passwords from a file of words.</li>
+<li>Alphabet: generate all passwords of given length from given alphabet.</li>
+</ul>
+<p>TrueCrack works on gpu and cpu</p>
+<p>Source: https://code.google.com/p/truecrack/<br>
+<a href="http://code.google.com/p/truecrack/" variation="deepblue" target="blank">TrueCrack Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/truecrack.git;a=summary" variation="deepblue" target="blank">Kali TrueCrack Repo</a></p>
+<ul>
+<li>Author: Luca Vaccaro</li>
+<li>License: GPLv3</li>
+</ul>
+<h2>Tools included in the truecrack package</h2>
+<h5>truecrack – Bruteforce password cracker for Truecrypt volumes</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0b7964647f4b606a6762">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# truecrack --help<br>
+TrueCrack v3.0<br>
+Website: http://code.google.com/p/truecrack<br>
+Contact us: <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="365f58505942444353554457555d76515b575f5a1855595b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+Bruteforce password cracker for Truecrypt volume. Optimazed with Nvidia Cuda technology.<br>
+Based on TrueCrypt, freely available at http://www.truecrypt.org/<br>
+Copyright (c) 2011 by Luca Vaccaro.<br>
+<br>
+Usage:<br>
+ truecrack -t &lt;truecrypt_file&gt; -k &lt;ripemd160|sha512|whirlpool&gt; -w &lt;wordlist_file&gt; [-b &lt;parallel_block&gt;]<br>
+ truecrack -t &lt;truecrypt_file&gt; -k &lt;ripemd160|sha512|whirlpool&gt; -c &lt;charset&gt; [-s &lt;minlength&gt;] -m &lt;maxlength&gt; [-b &lt;parallel_block&gt;]<br>
+<br>
+Options:<br>
+ -h --help                      Display this information.<br>
+ -t --truecrypt &lt;truecrypt_file&gt;    Truecrypt volume file.<br>
+ -k --key &lt;ripemd160 | sha512 | whirlpool&gt;      Key derivation function (default ripemd160).<br>
+ -b --blocksize &lt;parallel_blocks&gt;       Number of parallel computations (board dependent).<br>
+ -w --wordlist &lt;wordlist_file&gt;      File of words, for Dictionary attack.<br>
+ -c --charset &lt;alphabet&gt;        Alphabet generator, for Alphabet attack.<br>
+ -s --startlength &lt;minlength&gt;       Starting length of passwords, for Alphabet attack (default 1).<br>
+ -m --maxlength &lt;maxlength&gt;     Maximum length of passwords, for Alphabet attack.<br>
+ -r --restore &lt;number&gt;          Restore the computation.<br>
+ -v --verbose                   Show computation messages.<br>
+<br>
+Sample:<br>
+ Dictionary mode: truecrack --truecrypt ./volume --wordlist ./dictionary.txt<br>
+ Charset mode: truecrack --truecrypt ./volume --charset ./dictionary.txt --maxlength 10</code>
+<h3>truecrack Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c6b4a9a9b286ada7aaaf">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# truecrack -t truecrypt_vol -k ripemd160 -w passes.txt <br>
+TrueCrack v3.0<br>
+Website: http://code.google.com/p/truecrack<br>
+Contact us: <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b4dddad2dbc0c6c1d1d7c6d5d7dff4d3d9d5ddd89ad7dbd9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+Found password:     "s3cr3t"<br>
+Password length:    "7"<br>
+Total computations: "78"</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,77 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>CeWL Package Description</h2>
+<p style="text-align: justify;">CeWL is a ruby app which spiders a given url to a specified depth, optionally following external links, and returns a list of words which can then be used for password crackers such as John the Ripper.</p>
+<p>CeWL also has an associated command line app, FAB (Files Already Bagged) which uses the same meta data extraction techniques to create author/creator lists from already downloaded.</p>
+<p>Source: http://www.digininja.org/projects/cewl.php<br>
+<a href="http://www.digininja.org/projects/cewl.php" variation="deepblue" target="blank">CeWL Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/cewl.git;a=summary" variation="deepblue" target="blank">Kali CeWL Repo</a></p>
+<ul>
+<li>Author: Robin Wood</li>
+<li>License: Creative Commons Attribution-Share Alike 2.0</li>
+</ul>
+<h3>tools included in the cewl package</h3>
+<h5>cewl – Custom wordlist generator</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f2809d9d86b299939e9b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cewl --help<br>
+CeWL 5.0 Robin Wood (<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="71031e13181f31151816181f181f1b105f1e0316">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>) (www.digininja.org)<br>
+<br>
+Usage: cewl [OPTION] ... URL<br>
+    --help, -h: show help<br>
+    --keep, -k: keep the downloaded file<br>
+    --depth x, -d x: depth to spider to, default 2<br>
+    --min_word_length, -m: minimum word length, default 3<br>
+    --offsite, -o: let the spider visit other sites<br>
+    --write, -w file: write the output to the file<br>
+    --ua, -u user-agent: useragent to send<br>
+    --no-words, -n: don't output the wordlist<br>
+    --meta, -a include meta data<br>
+    --meta_file file: output file for meta data<br>
+    --email, -e include email addresses<br>
+    --email_file file: output file for email addresses<br>
+    --meta-temp-dir directory: the temporary directory used by exiftool when parsing files, default /tmp<br>
+    --count, -c: show the count for each word found<br>
+<br>
+    Authentication<br>
+    --auth_type: digest or basic<br>
+    --auth_user: authentication username<br>
+    --auth_pass: authentication password<br>
+<br>
+    Proxy Support<br>
+    --proxy_host: proxy host<br>
+    --proxy_port: proxy port, default 8080<br>
+    --proxy_username: username for proxy, if required<br>
+    --proxy_password: password for proxy, if required<br>
+<br>
+    --verbose, -v: verbose<br>
+<br>
+    URL: The site to spider.</code>
+<h3>fab – Files Already Bagged</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c5b7aaaab185aea4a9ac">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fab --help<br>
+xx<br>
+<br>
+Usage: xx [OPTION] ... filename/list<br>
+    -h, --help: show help<br>
+    -v: verbose<br>
+<br>
+    filename/list: the file or list of files to check</code>
+<h3>cewl Usage Example</h3>
+<p>Scan to a depth of 2 <b><i>(-d 2)</i></b> and use a minimum word length of 5 <b><i>(-m 5)</i></b>, save the words to a file <b><i>(-w docswords.txt)</i></b>, targeting the given URL <b><i>(http://docs.kali.org)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c6b4a9a9b286ada7aaaf">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cewl -d 2 -m 5 -w docswords.txt http://docs.kali.org<br>
+CeWL 5.0 Robin Wood (<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9eecf1fcf7f0defaf7f9f7f0f7f0f4ffb0f1ecf9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>) (www.digininja.org)<br>
+<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="11637e7e65517a707d78">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wc -l docswords.txt <br>
+4093 docswords.txt</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

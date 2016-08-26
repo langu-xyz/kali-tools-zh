@@ -1,0 +1,70 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>rcracki-mt Package Description</h2>
+<p style="text-align: justify;">rcracki_mt is a modified version of rcrack which supports hybrid and indexed tables. In addition to that, it also adds multi-core support.</p>
+<p>Source: https://www.freerainbowtables.com/en/download/<br>
+<a href="http://freerainbowtables.com/" variation="deepblue" target="blank">rcracki-mt Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/rcracki-mt.git;a=summary" variation="deepblue" target="blank">Kali rcracki-mt Repo</a></p>
+<ul>
+<li>Author: Martin Westergaard, James Nobis, Original code by Zhu Shuanglei</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the rcracki-mt package</h3>
+<h5>rcracki_mt – RainbowCrack (improved, multi-threaded)</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3c4e5353487c575d5055">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rcracki_mt<br>
+RainbowCrack (improved, multi-threaded) - Making a Faster Cryptanalytic Time-Memory Trade-Off<br>
+by Martin Westergaard &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="533e3221273a3d24396163636613343e323a3f7d303c3e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+multi-threaded and enhanced by neinbrucke<br>
+*nix/64-bit compatibility and co-maintainer - James Nobis &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5c2d2939301c2d2939302e333872323928">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+http://www.freerainbowtables.com/<br>
+All code/binaries are under GPL2 Copyright at a minimum<br>
+original code by Zhu Shuanglei &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="50233825313e373c353910383f243d31393c7e333f3d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+<br>
+usage: rcracki_mt -h hash rainbow_table_pathname<br>
+       rcracki_mt -l hash_list_file rainbow_table_pathname<br>
+       rcracki_mt -f pwdump_file rainbow_table_pathname<br>
+       rcracki_mt -c lst_file rainbow_table_pathname<br>
+<br>
+-h hash:                use raw hash as input<br>
+-l hash_list_file:      use hash list file as input, each hash in a line<br>
+-f pwdump_file:         use pwdump file as input, handles lanmanager hash only<br>
+-c lst_file:            use .lst (cain format) file as input<br>
+-r [-s session_name]:   resume from previous session, optional session name<br>
+rainbow_table_pathname: pathname(s) of the rainbow table(s)<br>
+<br>
+Extra options:    -t [nr] use this amount of threads/cores, default is 1<br>
+                  -o [output_file] write (temporary) results to this file<br>
+                  -s [session_name] write session data with this name<br>
+                  -k keep precalculation on disk<br>
+                  -d run sha1 hashes against mysqlsha1 tables<br>
+                  -m [megabytes] limit memory usage<br>
+                  -v show debug information<br>
+<br>
+example: rcracki_mt -h 5d41402abc4b2a76b9719d911017c592 -t 2 [path]/MD5<br>
+         rcracki_mt -l hash.txt [path_to_specific_table]/*<br>
+         rcracki_mt -f hash.txt -t 4 -o results.txt *.rti</code>
+<h3>rcracki_mt Usage Example</h3>
+<p>Crack the password hash <b><i>(-h 5d41402abc4b2a76b9719d911017c592)</i></b> using 4 CPU cores <b><i>(-t 4)</i></b> and the specified rainbow tables <b><i>(tables2/md5/)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="99ebf6f6edd9f2f8f5f0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rcracki_mt -h 5d41402abc4b2a76b9719d911017c592 -t 4 tables2/md5/<br>
+Using 4 threads for pre-calculation and false alarm checking...<br>
+Found 440 rainbowtable files...<br>
+<br>
+md5_mixalpha-numeric-space#1-8_0_60000x27443102_distrrtgen[p][i]_109.rti2:<br>
+Chain Position is now 27443102<br>
+192101714 bytes read, disk access time: 1.19 s<br>
+searching for 1 hash...<br>
+cryptanalysis time: 0.26 s</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

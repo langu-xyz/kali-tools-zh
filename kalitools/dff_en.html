@@ -1,0 +1,117 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>DFF Package Description</h2>
+<p style="text-align: justify;">DFF (Digital Forensics Framework) is a free and Open Source computer forensics software built on top of a dedicated Application Programming Interface (API).</p>
+<p>It can be used both by professional and non-expert people in order to quickly and easily collect, preserve and reveal digital evidences without compromising systems and data.</p>
+<ul>
+<li>Preserve digital chain of custody: Software write blocker, cryptographic hash calculation</li>
+<li>Access to local and remote devices: Disk drives, removable devices, remote file systems</li>
+<li>Read standard digital forensics file formats: Raw, Encase EWF, AFF 3 file formats</li>
+<li>Virtual machine disk reconstruction: VmWare (VMDK) compatible</li>
+<li>Windows and Linux OS forensics: Registry, Mailboxes, NTFS, EXTFS 2/3/4, FAT 12/16/32 file systems</li>
+<li>Quickly triage and search for (meta-)data: Regular expressions, dictionaries, content search, tags, time-line</li>
+<li>Recover hidden and deleted artifacts: Deleted files / folders, unallocated spaces, carving</li>
+<li>Volatile memory forensics: Processes, local files, binary extraction, network connections</li>
+</ul>
+<p>Source: http://www.digital-forensic.org/<br>
+<a href="http://www.digital-forensic.org/" variation="deepblue" target="blank">DFF Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/dff.git;a=summary" variation="deepblue" target="blank">Kali DFF Repo</a></p>
+<ul>
+<li>Author: ArxSys S.A.S.</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the dff package</h3>
+<h5>dff – Digital Forensic Framework</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f88a97978cb893999491">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dff -h<br>
+DFF<br>
+Digital Forensic Framework<br>
+<br>
+Usage: /usr/bin/dff [options]<br>
+Options:<br>
+  -v      --version                  display current version<br>
+  -g      --graphical                launch graphical interface<br>
+  -b      --batch=FILENAME       executes batch contained in FILENAME<br>
+  -l      --language=LANG            use LANG as interface language<br>
+  -h      --help                     display this help message<br>
+  -d      --debug                    redirect IO to system console<br>
+          --verbosity=LEVEL          set verbosity level when debugging [0-3]<br>
+  -c      --config=FILEPATH          use config file from FILEPATH</code>
+<h3>dff-gui – Digital Forensics Framework GUI</h3>
+<p>The Digital Forensics Framework – GUI.</p>
+<h3>dff-gui Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1a6875756e5a717b7673">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dff-gui</code>
+<p><a href='full/0733f90b3a90505d12ef300e325aaa2a10352da9.jpg'><img src='full/0733f90b3a90505d12ef300e325aaa2a10352da9.jpg' alt="dff-gui" width="920" class="aligncenter size-full wp-image-3600"></a></p>
+<h3>dff Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a4d6cbcbd0e4cfc5c8cd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dff<br>
+loading modules in /usr/lib/python2.7/dist-packages/dff/modules<br>
+[OK]    loading load v1.0.0<br>
+[OK]    loading link v1.0.0<br>
+[OK]    loading ls v1.0.0<br>
+[OK]    loading find v1.2.0<br>
+[OK]    loading batch v1.0.0<br>
+[OK]    loading history v1.0.0<br>
+[OK]    loading fg v1.0.0<br>
+[OK]    loading jobs v1.0.0<br>
+[OK]    loading cd v1.0.0<br>
+[OK]    loading show_db v1.0.0<br>
+[OK]    loading show_cwd v1.0.0<br>
+[OK]    loading open v1.0.0<br>
+[OK]    loading man v1.0.0<br>
+[OK]    loading info v1.0.0<br>
+[OK]    loading fileinfo v1.0.0<br>
+[OK]    loading carverui v1.0.0<br>
+[OK]    loading CARVER v1.0.0<br>
+[OK]    loading carvergui v1.0.0<br>
+[OK]    loading fileschart v1.0.0<br>
+[OK]    loading volatility v1.0.0<br>
+[OK]    loading PFF using old style module check<br>
+[OK]    loading FUSE v1.0.0<br>
+[OK]    loading extract v1.0.0<br>
+[OK]    loading DEVICES v1.0.0<br>
+[OK]    loading LOCAL v1.0.0<br>
+[OK]    loading EWF v1.0.0<br>
+[OK]    loading AFF v1.0.0<br>
+[OK]    loading hash v1.0.0<br>
+[OK]    loading merge v1.0.0<br>
+[OK]    loading cut v1.0.0<br>
+[OK]    loading split v1.0.0<br>
+[OK]    loading FATFS v1.0.0<br>
+[OK]    loading spare v1.0.0<br>
+[OK]    loading NTFS v0.5.1<br>
+[OK]    loading EXTFS v1.0.0<br>
+[OK]    loading VMWARE v1.0.0<br>
+[OK]    loading PARTITION v1.0.0<br>
+[OK]    loading sqlitedb v1.0.0<br>
+[OK]    loading imageviewer v1.0.0<br>
+[OK]    loading textviewer v1.0.0<br>
+[OK]    loading player v1.0.0<br>
+[OK]    loading videothumbnailviewer v1.0.0<br>
+[OK]    loading web v1.0.0<br>
+[OK]    loading timeline v1.0.0<br>
+[OK]    loading hexeditor v1.0.0<br>
+[OK]    loading regedit v1.0.0<br>
+[OK]    loading binarydiff v1.0.0<br>
+[OK]    loading lnk v1.0.0<br>
+[OK]    loading prefetch v1.0.0<br>
+[OK]    loading compound v1.0.0<br>
+[OK]    loading metaexif v1.0.0<br>
+<br>
+##########################################<br>
+# Welcome on Digital Forensics Framework #<br>
+##########################################<br>
+<br>
+dff / &gt;</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

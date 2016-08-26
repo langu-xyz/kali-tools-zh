@@ -1,0 +1,111 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>dnmap Package Description</h2>
+<p style="text-align: justify;">dnmap is a framework to distribute nmap scans among several clients. It reads an already created file with nmap commands and send those commands to each client connected to it.</p>
+<p>The framework use a client/server architecture. The server knows what to do and the clients do it. All the logic and statistics are managed in the server. Nmap output is stored on both server and client. </p>
+<p>Usually you would want this if you have to scan a large group of hosts and you have several different internet connections (or friends that want to help you).</p>
+<p>Source: http://mateslab.weebly.com/dnmap-the-distributed-nmap.html<br>
+<a href="http://sourceforge.net/projects/dnmap/" variation="deepblue" target="blank">dnmap Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/dnmap.git;a=summary" variation="deepblue" target="blank">Kali dnmap Repo</a></p>
+<ul>
+<li>Author: www.mateslab.com.ar</li>
+<li>License: GPLv3</li>
+</ul>
+<h3>Tools included in the dnmap package</h3>
+<h5>dnmap_client – Distributed nmap framework (client)</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="22504d4d566249434e4b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnmap_client -h<br>
++----------------------------------------------------------------------+<br>
+| dnmap Client Version 0.6                                             |<br>
+| This program is free software; you can redistribute it and/or modify |<br>
+| it under the terms of the GNU General Public License as published by |<br>
+| the Free Software Foundation; either version 2 of the License, or    |<br>
+| (at your option) any later version.                                  |<br>
+|                                                                      |<br>
+| Author: Garcia Sebastian, <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="bcd9d0d8cedddfd3fcdbd1ddd5d092dfd3d1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>                          |<br>
+| www.mateslab.com.ar                                                  |<br>
++----------------------------------------------------------------------+<br>
+<br>
+usage: /usr/bin/dnmap_client &lt;options&gt;<br>
+options:<br>
+  -s, --server-ip        IP address of dnmap server.<br>
+  -p, --server-port      Port of dnmap server. Dnmap port defaults to 46001<br>
+  -a, --alias      Your name alias so we can give credit to you for your help. Optional<br>
+  -d, --debug      Debuging.<br>
+  -m, --max-rate      Force nmaps commands to use at most this rate. Useful to slow nmap down. Adds the --max-rate parameter.</code>
+<h3>dnmap_server – Distributed nmap framework (server)</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cab8a5a5be8aa1aba6a3">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnmap_server -h<br>
++----------------------------------------------------------------------+<br>
+| dnmap_server Version 0.6                                             |<br>
+| This program is free software; you can redistribute it and/or modify |<br>
+| it under the terms of the GNU General Public License as published by |<br>
+| the Free Software Foundation; either version 2 of the License, or    |<br>
+| (at your option) any later version.                                  |<br>
+|                                                                      |<br>
+| Author: Garcia Sebastian, <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cda8a1a9bfacaea28daaa0aca4a1e3aea2a0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>                          |<br>
+| www.mateslab.com.ar                                                  |<br>
++----------------------------------------------------------------------+<br>
+<br>
+usage: /usr/bin/dnmap_server &lt;options&gt;<br>
+options:<br>
+  -f, --nmap-commands        Nmap commands file<br>
+  -p, --port        TCP port where we listen for connections.<br>
+  -L, --log-file        Log file. Defaults to /var/log/dnmap_server.conf.<br>
+  -l, --log-level       Log level. Defaults to info.<br>
+  -v, --verbose_level         Verbose level. Give a number between 1 and 5. Defaults to 1. Level 0 means be quiet.<br>
+  -t, --client-timeout         How many time should we wait before marking a client Offline. We still remember its values just in case it cames back.<br>
+  -s, --sort            Field to sort the statical value. You can choose from: Alias, #Commands, UpTime, RunCmdXMin, AvrCmdXMin, Status<br>
+  -P, --pem-file         pem file to use for TLS connection. By default we use the server.pem file provided with the server in the current directory.<br>
+<br>
+dnmap_server uses a '&lt;nmap-commands-file-name&gt;.dnmaptrace' file to know where it must continue reading the nmap commands file. If you want to start over again,<br>
+just delete the '&lt;nmap-commands-file-name&gt;.dnmaptrace' file</code>
+<h3>dnmap_server Usage Example</h3>
+<p>Create a text file containing the nmap commands that the clients will run. Pass the file <b><i>dnmap.txt (-f)</i></b> to start the server:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="afddc0c0dbefc4cec3c6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# echo "nmap -F 192.168.1.0/24 -v -n -oA sub1" &gt;&gt; dnmap.txt<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="186a77776c5873797471">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# echo "nmap -F 192.168.0.0/24 -v -n -oA sub0" &gt;&gt; dnmap.txt<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="10627f7f64507b717c79">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnmap_server -f dnmap.txt<br>
++----------------------------------------------------------------------+<br>
+| dnmap_server Version 0.6                                             |<br>
+| This program is free software; you can redistribute it and/or modify |<br>
+| it under the terms of the GNU General Public License as published by |<br>
+| the Free Software Foundation; either version 2 of the License, or    |<br>
+| (at your option) any later version.                                  |<br>
+|                                                                      |<br>
+| Author: Garcia Sebastian, <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="157079716774767a557278747c793b767a78">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>                          |<br>
+| www.mateslab.com.ar                                                  |<br>
++----------------------------------------------------------------------+<br>
+<br>
+=| MET:0:00:00.000544 | Amount of Online clients: 0 |=</code>
+<h3>dnmap_client Usage Example</h3>
+<p>Connect to the server at <b><i>192.168.1.15 (-s)</i></b> using the alias <b><i>dnmap-client1 (-a)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="83f1ececf7c3e8e2efea">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnmap_client -s 192.168.1.15 -a dnmap-client1<br>
++----------------------------------------------------------------------+<br>
+| dnmap Client Version 0.6                                             |<br>
+| This program is free software; you can redistribute it and/or modify |<br>
+| it under the terms of the GNU General Public License as published by |<br>
+| the Free Software Foundation; either version 2 of the License, or    |<br>
+| (at your option) any later version.                                  |<br>
+|                                                                      |<br>
+| Author: Garcia Sebastian, <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="23464f475142404c63444e424a4f0d404c4e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>                          |<br>
+| www.mateslab.com.ar                                                  |<br>
++----------------------------------------------------------------------+<br>
+<br>
+Client Started...<br>
+Nmap output files stored in 'nmap_output' directory...<br>
+Starting connection...<br>
+Client connected succesfully...<br>
+Waiting for more commands....<br>
+        Command Executed: nmap -F 192.168.1.0/24 -v -n -oA sub1</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

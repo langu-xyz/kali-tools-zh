@@ -1,0 +1,55 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>Greenbone Security Assistant Package Description</h2>
+<p style="text-align: justify;"> The Greenbone Security Assistant is a web application that connects to the OpenVAS Manager and OpenVAS Administrator to provide for a full-featured user interface for vulnerability management.</p>
+<p><a href="http://openvas.org/" variation="deepblue" target="blank">Greenbone Security Assistant Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/greenbone-security-assistant.git;a=summary" variation="deepblue" target="blank">Kali Greenbone Security Assistant Repo</a></p>
+<ul>
+<li>Author: Greenbone</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the greenbone-security-assistant package</h3>
+<h5>gsad – Greenbone Security Assistant Daemon</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="bfcdd0d0cbffd4ded3d6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# gsad -h<br>
+Usage:<br>
+  gsad [OPTION...] - Greenbone Security Assistant Daemon<br>
+<br>
+Help Options:<br>
+  -h, --help                       Show help options<br>
+<br>
+Application Options:<br>
+  -f, --foreground                 Run in foreground.<br>
+  --http-only                      Serve HTTP only, without SSL.<br>
+  --listen=&lt;address&gt;               Listen on &lt;address&gt;.<br>
+  --alisten=&lt;address&gt;              Administrator address.<br>
+  --mlisten=&lt;address&gt;              Manager address.<br>
+  -p, --port=&lt;number&gt;              Use port number &lt;number&gt;.<br>
+  -a, --aport=&lt;number&gt;             Use administrator port number &lt;number&gt;.<br>
+  -m, --mport=&lt;number&gt;             Use manager port number &lt;number&gt;.<br>
+  -r, --rport=&lt;number&gt;             Redirect HTTP from this port number &lt;number&gt;.<br>
+  -R, --redirect                   Redirect HTTP to HTTPS.<br>
+  -v, --verbose                    Print progress messages.<br>
+  -V, --version                    Print version and exit.<br>
+  -k, --ssl-private-key=&lt;file&gt;     Use &lt;file&gt; as the private key for HTTPS<br>
+  -c, --ssl-certificate=&lt;file&gt;     Use &lt;file&gt; as the certificate for HTTPS<br>
+  --do-chroot                      Do chroot and drop privileges.<br>
+  --secure-cookie                  Use a secure cookie (implied when using HTTPS).<br>
+  --timeout=&lt;number&gt;               Minutes of user idle time before session expires.<br>
+  --debug-tls=&lt;level&gt;              Enable TLS debugging at &lt;level&gt;</code>
+<h3>gsad Usage Example</h3>
+<p>Start the daemon in the foreground <b><i>(-f)</i></b> on port 8888 <b><i>(-p 8888)</i></b> and redirect HTTP to HTTPS <b><i>(-R)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="65170a0a11250e04090c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# gsad -f -p 8888 -R</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

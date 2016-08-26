@@ -1,0 +1,170 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>Kismet Package Description</h2>
+<p style="text-align: justify;">Kismet is an 802.11 layer-2 wireless network detector, sniffer, and intrusion detection system. It will work with any wireless card that supports raw monitoring (rfmon) mode, and can sniff 802.11a/b/g/n traffic. It can use other programs to play audio alarms for network events, read out network summaries, or provide GPS coordinates. This is the main package containing the core, client, and server.</p>
+<p><a href="http://www.kismetwireless.net/" variation="deepblue" target="blank">Kismet Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/kismet.git;a=summary" variation="deepblue" target="blank">Kali Kismet Repo</a></p>
+<ul>
+<li>Author: Mike Kershaw</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the kismet package</h3>
+<h5>kismet_server – The Kismet server component</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d4a6bbbba094bfb5b8bd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kismet_server -h<br>
+Usage: kismet_server [OPTION]<br>
+Nearly all of these options are run-time overrides for values in the<br>
+kismet.conf configuration file.  Permanent changes should be made to<br>
+the configuration file.<br>
+ *** Generic Options ***<br>
+ -v, --version                Show version<br>
+ -f, --config-file &lt;file&gt;     Use alternate configuration file<br>
+     --no-line-wrap           Turn of linewrapping of output<br>
+                              (for grep, speed, etc)<br>
+ -s, --silent                 Turn off stdout output after setup phase<br>
+     --daemonize              Spawn detatched in the background<br>
+     --no-plugins             Do not load plugins<br>
+     --no-root                Do not start the kismet_capture binary<br>
+                               when not running as root.  For no-priv<br>
+                               remote capture ONLY.<br>
+<br>
+ *** Kismet Client/Server Options ***<br>
+ -l, --server-listen          Override Kismet server listen options<br>
+<br>
+ *** Kismet Remote Drone Options ***<br>
+     --drone-listen           Override Kismet drone listen options<br>
+<br>
+ *** Dump/Logging Options ***<br>
+ -T, --log-types &lt;types&gt;      Override activated log types<br>
+ -t, --log-title &lt;title&gt;      Override default log title<br>
+ -p, --log-prefix &lt;prefix&gt;    Directory to store log files<br>
+ -n, --no-logging             Disable logging entirely<br>
+<br>
+ *** Packet Capture Source Options ***<br>
+ -c, --capture-source         Specify a new packet capture source<br>
+                              (Identical syntax to the config file)<br>
+ -C, --enable-capture-sources Enable capture sources (comma-separated<br>
+                              list of names or interfaces)<br>
+<br>
+ *** Kismet Net Tracking Options ***<br>
+     --filter-tracker         Tracker filtering<br>
+<br>
+ *** Kismet GPS Options ***<br>
+     --use-gpsd-gps (h:p)     Use GPSD-controlled GPS at host:port<br>
+                              (default: localhost:2947)<br>
+     --use-nmea-gps (dev)     Use local NMEA serial GPS on device<br>
+                              (default: /dev/ttyUSB0)<br>
+     --use-virtual-gps<br>
+                (lat,lon,alt) Use a virtual fixed-position gps record<br>
+     --gps-modelock &lt;t:f&gt;     Force broken GPS units to act as if they<br>
+                              have a valid signal (true/false)<br>
+     --gps-reconnect &lt;t:f&gt;    Reconnect if a GPS device fails<br>
+                              (true/false)</code>
+<h3>kismet_client – The Kismet client component</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5b2934342f1b303a3732">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kismet_client -h<br>
+Usage: kismet_client [OPTION]<br>
+ *** Generic Options ***<br>
+ -h, --help                   The obvious</code>
+<h3>kismet_capture – Meant to be run inside the Kismet IPC framework</h3>
+<p>Meant to be run inside the Kismet IPC framework.</p>
+<h5>kismet_drone – The Kismet drone component</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="681a07071c2803090401">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kismet_drone -h<br>
+Usage: kismet_drone [OPTION]<br>
+Nearly all of these options are run-time overrides for values in the<br>
+kismet.conf configuration file.  Permanent changes should be made to<br>
+the configuration file.<br>
+ *** Generic Options ***<br>
+ -f, --config-file            Use alternate configuration file<br>
+     --no-line-wrap           Turn of linewrapping of output<br>
+                              (for grep, speed, etc)<br>
+ -s, --silent                 Turn off stdout output after setup phase<br>
+     --daemonize              Spawn detatched in the background<br>
+<br>
+ *** Kismet Remote Drone Options ***<br>
+     --drone-listen           Override Kismet drone listen options<br>
+<br>
+ *** Packet Capture Source Options ***<br>
+ -c, --capture-source         Specify a new packet capture source<br>
+                              (Identical syntax to the config file)<br>
+ -C, --enable-capture-sources Enable capture sources (comma-separated<br>
+                              list of names or interfaces)</code>
+<h3>kismet – The main Kismet launcher</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c6b4a9a9b286ada7aaaf">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kismet -h<br>
+Usage: /usr/bin/kismet_server [OPTION]<br>
+Nearly all of these options are run-time overrides for values in the<br>
+kismet.conf configuration file.  Permanent changes should be made to<br>
+the configuration file.<br>
+ *** Generic Options ***<br>
+ -v, --version                Show version<br>
+ -f, --config-file &lt;file&gt;     Use alternate configuration file<br>
+     --no-line-wrap           Turn of linewrapping of output<br>
+                              (for grep, speed, etc)<br>
+ -s, --silent                 Turn off stdout output after setup phase<br>
+     --daemonize              Spawn detatched in the background<br>
+     --no-plugins             Do not load plugins<br>
+     --no-root                Do not start the kismet_capture binary<br>
+                               when not running as root.  For no-priv<br>
+                               remote capture ONLY.<br>
+<br>
+ *** Kismet Client/Server Options ***<br>
+ -l, --server-listen          Override Kismet server listen options<br>
+<br>
+ *** Kismet Remote Drone Options ***<br>
+     --drone-listen           Override Kismet drone listen options<br>
+<br>
+ *** Dump/Logging Options ***<br>
+ -T, --log-types &lt;types&gt;      Override activated log types<br>
+ -t, --log-title &lt;title&gt;      Override default log title<br>
+ -p, --log-prefix &lt;prefix&gt;    Directory to store log files<br>
+ -n, --no-logging             Disable logging entirely<br>
+<br>
+ *** Packet Capture Source Options ***<br>
+ -c, --capture-source         Specify a new packet capture source<br>
+                              (Identical syntax to the config file)<br>
+ -C, --enable-capture-sources Enable capture sources (comma-separated<br>
+                              list of names or interfaces)<br>
+<br>
+ *** Kismet Net Tracking Options ***<br>
+     --filter-tracker         Tracker filtering<br>
+<br>
+ *** Kismet GPS Options ***<br>
+     --use-gpsd-gps (h:p)     Use GPSD-controlled GPS at host:port<br>
+                              (default: localhost:2947)<br>
+     --use-nmea-gps (dev)     Use local NMEA serial GPS on device<br>
+                              (default: /dev/ttyUSB0)<br>
+     --use-virtual-gps<br>
+                (lat,lon,alt) Use a virtual fixed-position gps record<br>
+     --gps-modelock &lt;t:f&gt;     Force broken GPS units to act as if they<br>
+                              have a valid signal (true/false)<br>
+     --gps-reconnect &lt;t:f&gt;    Reconnect if a GPS device fails<br>
+                              (true/false)</code>
+<h3>kismet_server Usage Example</h3>
+<p>Start the Kismet server, using the wireless interface as the capture source <b><i>(-c wlan0)</i></b> and use the external GPSD option <b><i>(–use-gpsd-gps)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="24564b4b50644f45484d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kismet_server -c wlan0 --use-gpsd-gps<br>
+ERROR: Kismet was started as root, NOT launching external control binary.  <br>
+       This is NOT the preferred method of starting Kismet as Kismet will <br>
+       continue to run as root the entire time.  Please read the README <br>
+       file section about Installation &amp; Security and be sure this is what <br>
+       you want to do.<br>
+INFO: Reading from config file /etc/kismet/kismet.conf<br>
+INFO: No 'dronelisten' config line and no command line drone-listen <br>
+      argument given, Kismet drone server will not be enabled.<br>
+INFO: Created alert tracker...<br>
+INFO: Creating device tracker...<br>
+INFO: Registered 80211 PHY as id</code>
+<h3>kismet Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="04766b6b70446f65686d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kismet</code>
+<p><a href='full/8a26ca61263d8e1fa11b051d27cd7501b0412c63.jpg'><img src='full/8a26ca61263d8e1fa11b051d27cd7501b0412c63.jpg' alt="kismet" width="920" class="aligncenter size-full wp-image-3555"></a></p>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

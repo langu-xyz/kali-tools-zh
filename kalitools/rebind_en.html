@@ -1,0 +1,59 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>rebind Package Description</h2>
+<p style="text-align: justify;">Rebind is a tool that implements the multiple A record DNS rebinding attack. Although this tool was originally written to target home routers, it can be used to target any public (non RFC1918) IP address. Rebind provides an external attacker access to a target router’s internal Web interface. This tool works on routers that implement the weak end system model in their IP stack, have specifically configured firewall rules, and who bind their Web service to the router’s WAN interface. Note that remote administration does not need to be enabled for this attack to work. All that is required is that a user inside the target network surf to a Web site that is controlled, or has been compromised, by the attacker.</p>
+<p>Source: https://code.google.com/p/rebind/<br>
+<a href="https://code.google.com/p/rebind/" variation="deepblue" target="blank">rebind Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/rebind.git;a=summary" variation="deepblue" target="blank">Kali rebind Repo</a></p>
+<ul>
+<li>Author: Craig Heffner</li>
+<li>License: MIT</li>
+</ul>
+<h3>Tools included in the rebind package</h3>
+<h5>rebind – DNS rebinding tool</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="52203d3d261239333e3b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rebind<br>
+<br>
+Rebind v0.3.4<br>
+<br>
+Usage: rebind [OPTIONS]<br>
+<br>
+    -i &lt;interface&gt;  Specify the network interface to bind to<br>
+    -d &lt;fqdn&gt;       Specify your registered domain name<br>
+    -u &lt;user&gt;       Specify the Basic Authentication user name [admin]<br>
+    -a &lt;pass&gt;       Specify the Basic Authentication password [admin]<br>
+    -r &lt;path&gt;       Specify the initial URL request path [/]<br>
+    -t &lt;ip&gt;         Specify a comma separated list of target IP addresses [client IP]<br>
+    -n &lt;time&gt;       Specify the callback interval in milliseconds [2000]<br>
+    -p &lt;port&gt;       Specify the target port [80]<br>
+    -c &lt;port&gt;       Specify the callback port [81]<br>
+    -C &lt;value&gt;      Specify a cookie to set for the client<br>
+    -H &lt;file&gt;       Specify a file of HTTP headers for the client to send to the target</code>
+<h3>rebind Usage Example</h3>
+<p>Use interface eth0 <b><i>(-i eth0)</i></b> to conduct the rebind attack with the specified domain <b><i>(-d kali.local)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="89fbe6e6fdc9e2e8e5e0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rebind -i eth0 -d kali.local<br>
+<br>
+[+] Starting DNS server on port 53<br>
+[+] Starting attack Web server on port 80<br>
+[+] Starting callback Web server on port 81<br>
+[+] Starting proxy server on 192.168.1.202:664<br>
+[+] Services started and running!<br>
+<br>
+&gt; dns<br>
+[+] 192.168.1.202       kali.local.<br>
+[+] 192.168.1.202       www.kali.local.<br>
+[+] 192.168.1.202       ns1.kali.local.<br>
+[+] 192.168.1.202       ns2.kali.local.</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,68 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>polenum Package Description</h2>
+<p style="text-align: justify;">polenum is a python script which uses the Impacket Library from CORE Security Technologies to extract the password policy information from a windows machine. This allows a non-windows (Linux, Mac OSX, BSD etc..) user to query the password policy of a remote windows box without the need to have access to a windows machine.</p>
+<p>Source: https://labs.portcullis.co.uk/tools/polenum/<br>
+<a href="http://labs.portcullis.co.uk/application/polenum/" variation="deepblue" target="blank">polenum Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/polenum.git;a=summary" variation="deepblue" target="blank">Kali polenum Repo</a></p>
+<ul>
+<li>Author: deanx</li>
+<li>License: Modified Apache</li>
+</ul>
+<h3>Tools included in the polenum package</h3>
+<h5>polenum – Extracts the password policy from a Windows system</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="abd9c4c4dfebc0cac7c2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# polenum<br>
+<br>
+  polenum 0.2 - (C) 2008 deanx<br>
+<br>
+             RID[at]Portcullis-Security.com<br>
+<br>
+  Usage:/usr/bin/polenum [username[:password]@]&lt;address&gt; [protocol list...]<br>
+<br>
+        Available protocols: ['445/SMB', '139/SMB']</code>
+<h3>polenum Usage Example</h3>
+<p>Get the password policy of the system by logging in with the provided username and password <b><i>(victim:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f88bcb9b8acb8cb8c9c1cad6c9cec0d6c9d6cac8c8">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>)</i></b> using SMB port 445 <b><i>(‘445/SMB’)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4b3924243f0b202a2722">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# polenum victim:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="582b6b3b2a6b2c1869616a76696e607669766a6868">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> '445/SMB'<br>
+<br>
+[+] Attaching to 192.168.1.200 using victim:s3cr3t<br>
+<br>
+    [+] Trying protocol 445/SMB...<br>
+<br>
+[+] Found domain(s):<br>
+<br>
+    [+] WIN7-X86<br>
+    [+] Builtin<br>
+<br>
+[+] Password Info for Domain: WIN7-X86<br>
+<br>
+    [+] Minimum password length: None<br>
+    [+] Password history length: None<br>
+    [+] Maximum password age: Not Set<br>
+    [+] Password Complexity Flags: 000000<br>
+<br>
+        [+] Domain Refuse Password Change: 0<br>
+        [+] Domain Password Store Cleartext: 0<br>
+        [+] Domain Password Lockout Admins: 0<br>
+        [+] Domain Password No Clear Change: 0<br>
+        [+] Domain Password No Anon Change: 0<br>
+        [+] Domain Password Complex: 0<br>
+<br>
+    [+] Minimum password age: None<br>
+    [+] Reset Account Lockout Counter: 30 minutes<br>
+    [+] Locked Account Duration: 30 minutes<br>
+    [+] Account Lockout Threshold: None<br>
+    [+] Forced Log off Time: Not Set</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

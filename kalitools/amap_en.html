@@ -1,0 +1,107 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<h2>Amap Package Description</h2><p style="text-align: justify;">Amap was the first next-generation scanning tool for pentesters. It attempts to identify applications even if they are running on a different port than normal.<br>
+It also identifies non-ascii based applications. This is achieved by sending trigger packets, and looking up the responses in a list of response strings.</p><p>Source: https://www.thc.org/thc-amap/<br>
+<a href="http://www.thc.org/thc-amap/" target="_blank">Amap Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/amap.git;a=summary" target="_blank">Kali Amap Repo</a></p><ul>
+<li>Author: van Hauser and DJ RevMoon</li>
+<li>License: Other</li>
+</ul><h3>Tools included in the amap package</h3><h5>amapcrap – sends random data to a UDP, TCP or SSL’ed port to illicit a response</h5><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0c7e6363784c676d6065">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# amapcrap<br>
+amapcrap v5.4 (c) 2011 by van Hauser/THC &amp;lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f18799b1859992df9e8396">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&amp;gt;<br>
+<br>
+Syntax: amapcrap [-S] [-u] [-m 0ab] [-M min,max] [-n connects] [-N delay] [-w delay] [-e] [-v] TARGET PORT<br>
+<br>
+Options:<br>
+-S use SSL after TCP connect (not usuable with -u)<br>
+-u use UDP protocol (default: TCP) (not usable with -c)<br>
+-n connects maximum number of connects (default: unlimited)<br>
+-N delay delay between connects in ms (default: 0)<br>
+-w delay delay before closing the port (default: 250)<br>
+-e do NOT stop when a response was made by the server<br>
+-v verbose mode<br>
+-m 0ab send as random crap:0-nullbytes, a-letters+spaces, b-binary<br>
+-M min,max minimum and maximum length of random crap<br>
+TARGET PORT target (ip or dns) and port to send random crap<br>
+<br>
+This tool sends random data to a silent port to illicit a response, which can<br>
+then be used within amap for future detection. It outputs proper amap<br>
+appdefs definitions. Note: by default all modes are activated (0:10%, a:40%,<br>
+b:50%). Mode 'a' always sends one line with letters and spaces which end with<br>
+\r\n. Visit our homepage at http://www.thc.org</code><h3>amap – Application MAPper: next-generation scanning tool for pentesters</h3><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="63110c0c172308020f0a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# amap<br>
+amap v5.4 (c) 2011 by van Hauser &amp;lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3a4c527a4e52591455485d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&amp;gt; www.thc.org/thc-amap<br>
+Syntax: amap [-A|-B|-P|-W] [-1buSRHUdqv] [[-m] -o ] [-D ] [-t/-T sec] [-c cons] [-C retries] [-p proto] [-i ] [target port [port] ...]<br>
+Modes:<br>
+-A Map applications: send triggers and analyse responses (default)<br>
+-B Just grab banners, do not send triggers<br>
+-P No banner or application stuff - be a (full connect) port scanner<br>
+Options:<br>
+-1 Only send triggers to a port until 1st identification. Speeeeed!<br>
+-6 Use IPv6 instead of IPv4<br>
+-b Print ascii banner of responses<br>
+-i FILE Nmap machine readable outputfile to read ports from<br>
+-u Ports specified on commandline are UDP (default is TCP)<br>
+-R Do NOT identify RPC service<br>
+-H Do NOT send application triggers marked as potentially harmful<br>
+-U Do NOT dump unrecognised responses (better for scripting)<br>
+-d Dump all responses<br>
+-v Verbose mode, use twice (or more!) for debug (not recommended :-)<br>
+-q Do not report closed ports, and do not print them as unidentified<br>
+-o FILE [-m] Write output to file FILE, -m creates machine readable output<br>
+-c CONS Amount of parallel connections to make (default 32, max 256)<br>
+-C RETRIES Number of reconnects on connect timeouts (see -T) (default 3)<br>
+-T SEC Connect timeout on connection attempts in seconds (default 5)<br>
+-t SEC Response wait timeout in seconds (default 5)<br>
+-p PROTO Only send triggers for this protocol (e.g. ftp)<br>
+TARGET PORT The target address and port(s) to scan (additional to -i)<br>
+amap is a tool to identify application protocols on target ports.<br>
+Note: this version was NOT compiled with SSL support!<br>
+Usage hint: Options "-bqv" are recommended, add "-1" for fast/rush checks.</code><h5>amap Usage Example</h5><p>Scan port <b><i>80</i></b> on <b><i>192.168.1.15</i></b>. Display the received banners <b><i>(b)</i></b>, do not display closed ports <b><i>(q)</i></b>, and use verbose output <b><i>(v)</i></b>:</p><code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1b6974746f5b707a7772">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# amap -bqv 192.168.1.15 80<br>
+Using trigger file /etc/amap/appdefs.trig ... loaded 30 triggers<br>
+Using response file /etc/amap/appdefs.resp ... loaded 346 responses<br>
+Using trigger file /etc/amap/appdefs.rpc ... loaded 450 triggers<br>
+<br>
+amap v5.4 (www.thc.org/thc-amap) started at 2014-05-13 19:07:16 - APPLICATION MAPPING mode<br>
+<br>
+Total amount of tasks to perform in plain connect mode: 23<br>
+Protocol on 192.168.1.15:80/tcp (by trigger ssl) matches http - banner: \n\n501 Method Not Implemented\n\n<br>
+&lt;h1&gt;Method Not Implemented&lt;/h1&gt;<br>
+\n<br>
+<br>
+to /index.html not supported.<br>
+\n<br>
+<br>
+\n<br>
+<br>
+&lt;hr /&gt;<br>
+<br>
+\n<br>
+<br>
+&lt;address&gt;Apache/2.2.22 (Debian) Server at 12<br>
+Protocol on 192.168.1.15:80/tcp (by trigger ssl) matches http-apache-2 - banner: \n\n501 Method Not Implemented\n\n&lt;/address&gt;<br>
+&lt;h1&gt;Method Not Implemented&lt;/h1&gt;<br>
+\n<br>
+<br>
+to /index.html not supported.<br>
+\n<br>
+<br>
+\n<br>
+<br>
+&lt;hr /&gt;<br>
+<br>
+\n<br>
+<br>
+&lt;address&gt;Apache/2.2.22 (Debian) Server at 12<br>
+Waiting for timeout on 19 connections ...&lt;/address&gt;amap v5.4 finished at 2014-05-13 19:07:22</code><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

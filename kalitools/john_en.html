@@ -1,0 +1,128 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>john Package Description</h2>
+<p style="text-align: justify;">John the Ripper is designed to be both feature-rich and fast. It combines several cracking modes in one program and is fully configurable for your particular needs (you can even define a custom cracking mode using the built-in compiler supporting a subset of C). Also, John is available for several different platforms which enables you to use the same cracker everywhere (you can even continue a cracking session which you started on another platform).</p>
+<p>Out of the box, John supports (and autodetects) the following Unix crypt(3) hash types: traditional DES-based, “bigcrypt”, BSDI extended DES-based, FreeBSD MD5-based (also used on Linux and in Cisco IOS), and OpenBSD Blowfish-based (now also used on some Linux distributions and supported by recent versions of Solaris). Also supported out of the box are Kerberos/AFS and Windows LM (DES-based) hashes, as well as DES-based tripcodes.</p>
+<p>When running on Linux distributions with glibc 2.7+, John 1.7.6+ additionally supports (and autodetects) SHA-crypt hashes (which are actually used by recent versions of Fedora and Ubuntu), with optional OpenMP parallelization (requires GCC 4.2+, needs to be explicitly enabled at compile-time by uncommenting the proper OMPFLAGS line near the beginning of the Makefile).</p>
+<p>Similarly, when running on recent versions of Solaris, John 1.7.6+ supports and autodetects SHA-crypt and SunMD5 hashes, also with optional OpenMP parallelization (requires GCC 4.2+ or recent Sun Studio, needs to be explicitly enabled at compile-time by uncommenting the proper OMPFLAGS line near the beginning of the Makefile and at runtime by setting the OMP_NUM_THREADS environment variable to the desired number of threads).</p>
+<p>John the Ripper Pro adds support for Windows NTLM (MD4-based) and Mac OS X 10.4+ salted SHA-1 hashes.</p>
+<p>“Community enhanced” -jumbo versions add support for many more password hash types, including Windows NTLM (MD4-based), Mac OS X 10.4-10.6 salted SHA-1 hashes, Mac OS X 10.7 salted SHA-512 hashes, raw MD5 and SHA-1, arbitrary MD5-based “web application” password hash types, hashes used by SQL database servers (MySQL, MS SQL, Oracle) and by some LDAP servers, several hash types used on OpenVMS, password hashes of the Eggdrop IRC bot, and lots of other hash types, as well as many non-hashes such as OpenSSH private keys, S/Key skeykeys files, Kerberos TGTs, PDF files, ZIP (classic PKZIP and WinZip/AES) and RAR archives.</p>
+<p>Unlike older crackers, John normally does not use a crypt(3)-style routine. Instead, it has its own highly optimized modules for different hash types and processor architectures. Some of the algorithms used, such as bitslice DES, couldn’t have been implemented within the crypt(3) API; they require a more powerful interface such as the one used in John. Additionally, there are assembly language routines for several processor architectures, most importantly for x86-64 and x86 with SSE2.</p>
+<p>Source: http://www.openwall.com/john/doc/<br>
+<a href="http://www.openwall.com/john/" variation="deepblue" target="blank">John the Ripper Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/john.git;a=summary" variation="deepblue" target="blank">Kali John the Ripper Repo</a></p>
+<ul>
+<li>Author: Solar Designer</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the john package</h3>
+<h5>mailer – Emails users who have had their passwords cracked</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="12607d7d665279737e7b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# mailer<br>
+Usage: /usr/sbin/mailer PASSWORD-FILE</code>
+<h3>john – John the Ripper password cracker</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9fedf0f0ebdff4fef3f6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# john<br>
+John the Ripper password cracker, ver: 1.7.9-jumbo-7_omp [linux-x86-sse2]<br>
+Copyright (c) 1996-2012 by Solar Designer and others<br>
+Homepage: http://www.openwall.com/john/<br>
+<br>
+Usage: john [OPTIONS] [PASSWORD-FILES]<br>
+--config=FILE             use FILE instead of john.conf or john.ini<br>
+--single[=SECTION]        "single crack" mode<br>
+--wordlist[=FILE] --stdin wordlist mode, read words from FILE or stdin<br>
+                  --pipe  like --stdin, but bulk reads, and allows rules<br>
+--loopback[=FILE]         like --wordlist, but fetch words from a .pot file<br>
+--dupe-suppression        suppress all dupes in wordlist (and force preload)<br>
+--encoding=NAME           input data is non-ascii (eg. UTF-8, ISO-8859-1).<br>
+                          For a full list of NAME use --list=encodings<br>
+--rules[=SECTION]         enable word mangling rules for wordlist modes<br>
+--incremental[=MODE]      "incremental" mode [using section MODE]<br>
+--markov[=OPTIONS]        "Markov" mode (see doc/MARKOV)<br>
+--external=MODE           external mode or word filter<br>
+--stdout[=LENGTH]         just output candidate passwords [cut at LENGTH]<br>
+--restore[=NAME]          restore an interrupted session [called NAME]<br>
+--session=NAME            give a new session the NAME<br>
+--status[=NAME]           print status of a session [called NAME]<br>
+--make-charset=FILE       make a charset file. It will be overwritten<br>
+--show[=LEFT]             show cracked passwords [if =LEFT, then uncracked]<br>
+--test[=TIME]             run tests and benchmarks for TIME seconds each<br>
+--users=[-]LOGIN|UID[,..] [do not] load this (these) user(s) only<br>
+--groups=[-]GID[,..]      load users [not] of this (these) group(s) only<br>
+--shells=[-]SHELL[,..]    load users with[out] this (these) shell(s) only<br>
+--salts=[-]COUNT[:MAX]    load salts with[out] COUNT [to MAX] hashes<br>
+--pot=NAME                pot file to use<br>
+--format=NAME             force hash type NAME: afs bf bfegg bsdi crc32 crypt<br>
+                          des django dmd5 dominosec dragonfly3-32 dragonfly3-64<br>
+                          dragonfly4-32 dragonfly4-64 drupal7 dummy dynamic_n<br>
+                          epi episerver gost hdaa hmac-md5 hmac-sha1<br>
+                          hmac-sha224 hmac-sha256 hmac-sha384 hmac-sha512<br>
+                          hmailserver ipb2 keepass keychain krb4 krb5 lm lotus5<br>
+                          md4-gen md5 md5ns mediawiki mscash mscash2 mschapv2<br>
+                          mskrb5 mssql mssql05 mysql mysql-sha1 nethalflm netlm<br>
+                          netlmv2 netntlm netntlmv2 nsldap nt nt2 odf office<br>
+                          oracle oracle11 osc pdf phpass phps pix-md5 pkzip po<br>
+                          pwsafe racf rar raw-md4 raw-md5 raw-md5u raw-sha<br>
+                          raw-sha1 raw-sha1-linkedin raw-sha1-ng raw-sha224<br>
+                          raw-sha256 raw-sha384 raw-sha512 salted-sha1 sapb<br>
+                          sapg sha1-gen sha256crypt sha512crypt sip ssh<br>
+                          sybasease trip vnc wbb3 wpapsk xsha xsha512 zip<br>
+--list=WHAT               list capabilities, see --list=help or doc/OPTIONS<br>
+--save-memory=LEVEL       enable memory saving, at LEVEL 1..3<br>
+--mem-file-size=SIZE      size threshold for wordlist preload (default 5 MB)<br>
+--nolog                   disables creation and writing to john.log file<br>
+--crack-status            emit a status line whenever a password is cracked<br>
+--max-run-time=N          gracefully exit after this many seconds<br>
+--regen-lost-salts=N      regenerate lost salts (see doc/OPTIONS)<br>
+--plugin=NAME[,..]        load this (these) dynamic plugin(s)</code>
+<h3>unafs – Script to warn users about their weak passwords</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="25574a4a51654e44494c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# unafs<br>
+Usage: unafs DATABASE-FILE CELL-NAME</code>
+<h3>unshadow – Combines passwd and shadow files</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="80f2efeff4c0ebe1ece9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# unshadow<br>
+Usage: unshadow PASSWORD-FILE SHADOW-FILE</code>
+<h3>unique – Removes duplicates from a wordlist</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="bac8d5d5cefad1dbd6d3">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# unique<br>
+Usage: unique [-v] [-inp=fname] [-cut=len] [-mem=num] OUTPUT-FILE [-ex_file=FNAME2] [-ex_file_only=FNAME2]<br>
+<br>
+       reads from stdin 'normally', but can be overridden by optional -inp=<br>
+       If -ex_file=XX is used, then data from file XX is also used to<br>
+       unique the data, but nothing is ever written to XX. Thus, any data in<br>
+       XX, will NOT output into OUTPUT-FILE (for making iterative dictionaries)<br>
+       -ex_file_only=XX assumes the file is 'unique', and only checks against XX<br>
+       -cut=len  Will trim each input lines to 'len' bytes long, prior to running<br>
+       the unique algorithm. The 'trimming' is done on any -ex_file[_only] file<br>
+       -mem=num.  A number that overrides the UNIQUE_HASH_LOG value from within<br>
+       params.h.  The default is 21.  This can be raised, up to 25 (memory usage<br>
+       doubles each number).  If you go TOO large, unique will swap and thrash and<br>
+       work VERY slow<br>
+<br>
+       -v is for 'verbose' mode, outputs line counts during the run</code>
+<h3>unshadow Usage Example</h3>
+<p>Combine the provided passwd <b><i>(passwd)</i></b> and shadow <b><i>(shadow)</i></b>(shadow) and redirect them to a file <b><i>(&gt; unshadowed.txt)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3d4f5252497d565c5154">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# unshadow passwd shadow &gt; unshadowed.txt</code>
+<h3>john Usage Example</h3>
+<p>Using a wordlist <b><i>(–wordlist=/usr/share/john/password.lst)</i></b>, apply mangling rules <b><i>(–rules)</i></b> and attempt to crack the password hashes in the given file <b><i>(unshadowed.txt)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1e6c71716a5e757f7277">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# john --wordlist=/usr/share/john/password.lst --rules unshadowed.txt <br>
+Warning: detected hash type "sha512crypt", but the string is also recognized as "crypt"<br>
+Use the "--format=crypt" option to force loading these as that type instead<br>
+Loaded 1 password hash (sha512crypt [64/64])<br>
+toor             (root)<br>
+guesses: 1  time: 0:00:00:07 DONE (Mon May 19 08:13:05 2014)  c/s: 482  trying: 1701d - andrew<br>
+Use the "--show" option to display all of the cracked passwords reliably</code>
+<h3>unique Usage Example</h3>
+<p>Using verbose mode <b><i>(-v)</i></b>, read a list of passwords <b><i>(-inp=allwords.txt)</i></b> and save only unique words to a file <b><i>(uniques.txt)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="92e0fdfde6d2f9f3fefb">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# unique -v -inp=allwords.txt uniques.txt<br>
+Total lines read 6089 Unique lines written 5083</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

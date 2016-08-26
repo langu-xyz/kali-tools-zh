@@ -1,0 +1,202 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>wireshark Package Description</h2>
+<p style="text-align: justify;">Wireshark is the world’s foremost network protocol analyzer. It lets you see what’s happening on your network at a microscopic level. It is the de facto (and often de jure) standard across many industries and educational institutions. Wireshark development thrives thanks to the contributions of networking experts across the globe. It is the continuation of a project that started in 1998. </p>
+<p>Wireshark has a rich feature set which includes the following:</p>
+<ul>
+<li>Deep inspection of hundreds of protocols, with more being added all the time</li>
+<li>Live capture and offline analysis</li>
+<li>Standard three-pane packet browser</li>
+<li>Multi-platform: Runs on Windows, Linux, OS X, Solaris, FreeBSD, NetBSD, and many others</li>
+<li>Captured network data can be browsed via a GUI, or via the TTY-mode TShark utility</li>
+<li>The most powerful display filters in the industry</li>
+<li>Rich VoIP analysis</li>
+<li>Capture files compressed with gzip can be decompressed on the fly</li>
+<li>Live data can be read from Ethernet, IEEE 802.11, PPP/HDLC, ATM, Bluetooth, USB, Token Ring, Frame Relay, FDDI, and others (depending on your platform)</li>
+<li>Coloring rules can be applied to the packet list for quick, intuitive analysis</li>
+<li>Output can be exported to XML, PostScript®, CSV, or plain text</li>
+<li>Decryption support for many protocols, including IPsec, ISAKMP, Kerberos, SNMPv3, SSL/TLS, WEP, and WPA/WPA2</li>
+<li>Read/write many different capture file formats: tcpdump (libpcap), Pcap NG, Catapult DCT2000, Cisco Secure IDS iplog, Microsoft Network Monitor, Network * General Sniffer® (compressed and uncompressed), Sniffer® Pro, and NetXray®, Network Instruments Observer, NetScreen snoop, Novell LANalyzer, RADCOM WAN/LAN Analyzer, Shomiti/Finisar Surveyor, Tektronix K12xx, Visual Networks Visual UpTime, WildPackets EtherPeek/TokenPeek/AiroPeek, and many others</li>
+</ul>
+<p>Source: http://www.wireshark.org/about.html<br>
+<a href="http://www.wireshark.org/" variation="deepblue" target="blank">Wireshark Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/wireshark.git;a=summary" variation="deepblue" target="blank">Kali Wireshark Repo</a></p>
+<ul>
+<li>Author: Gerald Combs and contributors</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the wireshark package</h3>
+<h3>wireshark – network traffic analyzer – GTK+ version
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e3918c8c97a388828f8a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wireshark -h<br>
+Wireshark 1.10.2 (SVN Rev 51934 from /trunk-1.10)<br>
+Interactively dump and analyze network traffic.<br>
+See http://www.wireshark.org for more information.<br>
+<br>
+Copyright 1998-2013 Gerald Combs &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a8cfcddac9c4cce8dfc1dacddbc0c9dac386c7dacf">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; and contributors.<br>
+This is free software; see the source for copying conditions. There is NO<br>
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br>
+<br>
+Usage: wireshark [options] ... [ &lt;infile&gt; ]<br>
+<br>
+Capture interface:<br>
+  -i &lt;interface&gt;           name or idx of interface (def: first non-loopback)<br>
+  -f &lt;capture filter&gt;      packet filter in libpcap filter syntax<br>
+  -s &lt;snaplen&gt;             packet snapshot length (def: 65535)<br>
+  -p                       don't capture in promiscuous mode<br>
+  -k                       start capturing immediately (def: do nothing)<br>
+  -S                       update packet display when new packets are captured<br>
+  -l                       turn on automatic scrolling while -S is in use<br>
+  -I                       capture in monitor mode, if available<br>
+  -B &lt;buffer size&gt;         size of kernel buffer (def: 2MB)<br>
+  -y &lt;link type&gt;           link layer type (def: first appropriate)<br>
+  -D                       print list of interfaces and exit<br>
+  -L                       print list of link-layer types of iface and exit<br>
+<br>
+Capture stop conditions:<br>
+  -c &lt;packet count&gt;        stop after n packets (def: infinite)<br>
+  -a &lt;autostop cond.&gt; ...  duration:NUM - stop after NUM seconds<br>
+                           filesize:NUM - stop this file after NUM KB<br>
+                              files:NUM - stop after NUM files<br>
+Capture output:<br>
+  -b &lt;ringbuffer opt.&gt; ... duration:NUM - switch to next file after NUM secs<br>
+                           filesize:NUM - switch to next file after NUM KB<br>
+                              files:NUM - ringbuffer: replace after NUM files<br>
+Input file:<br>
+  -r &lt;infile&gt;              set the filename to read from (no pipes or stdin!)<br>
+<br>
+Processing:<br>
+  -R &lt;read filter&gt;         packet filter in Wireshark display filter syntax<br>
+  -n                       disable all name resolutions (def: all enabled)<br>
+  -N &lt;name resolve flags&gt;  enable specific name resolution(s): "mntC"<br>
+<br>
+User interface:<br>
+  -C &lt;config profile&gt;      start with specified configuration profile<br>
+  -Y &lt;display filter&gt;      start with the given display filter<br>
+  -g &lt;packet number&gt;       go to specified packet number after "-r"<br>
+  -J &lt;jump filter&gt;         jump to the first packet matching the (display)<br>
+                           filter<br>
+  -j                       search backwards for a matching packet after "-J"<br>
+  -m &lt;font&gt;                set the font name used for most text<br>
+  -t a|ad|d|dd|e|r|u|ud    output format of time stamps (def: r: rel. to first)<br>
+  -u s|hms                 output format of seconds (def: s: seconds)<br>
+  -X &lt;key&gt;:&lt;value&gt;         eXtension options, see man page for details<br>
+  -z &lt;statistics&gt;          show various statistics, see man page for details<br>
+<br>
+Output:<br>
+  -w &lt;outfile|-&gt;           set the output filename (or '-' for stdout)<br>
+<br>
+Miscellaneous:<br>
+  -h                       display this help and exit<br>
+  -v                       display version info and exit<br>
+  -P &lt;key&gt;:&lt;path&gt;          persconf:path - personal configuration files<br>
+                           persdata:path - personal data files<br>
+  -o &lt;name&gt;:&lt;value&gt; ...    override preference or recent setting<br>
+  -K &lt;keytab&gt;              keytab file to use for kerberos decryption<br>
+  --display=DISPLAY        X display to use</code>
+<h3>tshark – network traffic analyzer – console version</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d2a0bdbda692b9b3bebb">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# tshark -h<br>
+TShark 1.10.2 (SVN Rev 51934 from /trunk-1.10)<br>
+Dump and analyze network traffic.<br>
+See http://www.wireshark.org for more information.<br>
+<br>
+Copyright 1998-2013 Gerald Combs &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fc9b998e9d9098bc8b958e998f949d8e97d2938e9b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt; and contributors.<br>
+This is free software; see the source for copying conditions. There is NO<br>
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br>
+<br>
+Usage: tshark [options] ...<br>
+<br>
+Capture interface:<br>
+  -i &lt;interface&gt;           name or idx of interface (def: first non-loopback)<br>
+  -f &lt;capture filter&gt;      packet filter in libpcap filter syntax<br>
+  -s &lt;snaplen&gt;             packet snapshot length (def: 65535)<br>
+  -p                       don't capture in promiscuous mode<br>
+  -I                       capture in monitor mode, if available<br>
+  -B &lt;buffer size&gt;         size of kernel buffer (def: 2MB)<br>
+  -y &lt;link type&gt;           link layer type (def: first appropriate)<br>
+  -D                       print list of interfaces and exit<br>
+  -L                       print list of link-layer types of iface and exit<br>
+<br>
+Capture stop conditions:<br>
+  -c &lt;packet count&gt;        stop after n packets (def: infinite)<br>
+  -a &lt;autostop cond.&gt; ...  duration:NUM - stop after NUM seconds<br>
+                           filesize:NUM - stop this file after NUM KB<br>
+                              files:NUM - stop after NUM files<br>
+Capture output:<br>
+  -b &lt;ringbuffer opt.&gt; ... duration:NUM - switch to next file after NUM secs<br>
+                           filesize:NUM - switch to next file after NUM KB<br>
+                              files:NUM - ringbuffer: replace after NUM files<br>
+Input file:<br>
+  -r &lt;infile&gt;              set the filename to read from (no pipes or stdin!)<br>
+<br>
+Processing:<br>
+  -2                       perform a two-pass analysis<br>
+  -R &lt;read filter&gt;         packet Read filter in Wireshark display filter syntax<br>
+  -Y &lt;display filter&gt;      packet displaY filter in Wireshark display filter syntax<br>
+  -n                       disable all name resolutions (def: all enabled)<br>
+  -N &lt;name resolve flags&gt;  enable specific name resolution(s): "mntC"<br>
+  -d &lt;layer_type&gt;==&lt;selector&gt;,&lt;decode_as_protocol&gt; ...<br>
+                           "Decode As", see the man page for details<br>
+                           Example: tcp.port==8888,http<br>
+  -H &lt;hosts file&gt;          read a list of entries from a hosts file, which will<br>
+                           then be written to a capture file. (Implies -W n)<br>
+Output:<br>
+  -w &lt;outfile|-&gt;           write packets to a pcap-format file named "outfile"<br>
+                           (or to the standard output for "-")<br>
+  -C &lt;config profile&gt;      start with specified configuration profile<br>
+  -F &lt;output file type&gt;    set the output file type, default is pcapng<br>
+                           an empty "-F" option will list the file types<br>
+  -V                       add output of packet tree        (Packet Details)<br>
+  -O &lt;protocols&gt;           Only show packet details of these protocols, comma<br>
+                           separated<br>
+  -P                       print packet summary even when writing to a file<br>
+  -S &lt;separator&gt;           the line separator to print between packets<br>
+  -x                       add output of hex and ASCII dump (Packet Bytes)<br>
+  -T pdml|ps|psml|text|fields<br>
+                           format of text output (def: text)<br>
+  -e &lt;field&gt;               field to print if -Tfields selected (e.g. tcp.port, col.Info);<br>
+                           this option can be repeated to print multiple fields<br>
+  -E&lt;fieldsoption&gt;=&lt;value&gt; set options for output when -Tfields selected:<br>
+     header=y|n            switch headers on and off<br>
+     separator=/t|/s|&lt;char&gt; select tab, space, printable character as separator<br>
+     occurrence=f|l|a      print first, last or all occurrences of each field<br>
+     aggregator=,|/s|&lt;char&gt; select comma, space, printable character as<br>
+                           aggregator<br>
+     quote=d|s|n           select double, single, no quotes for values<br>
+  -t a|ad|d|dd|e|r|u|ud    output format of time stamps (def: r: rel. to first)<br>
+  -u s|hms                 output format of seconds (def: s: seconds)<br>
+  -l                       flush standard output after each packet<br>
+  -q                       be more quiet on stdout (e.g. when using statistics)<br>
+  -Q                       only log true errors to stderr (quieter than -q)<br>
+  -g                       enable group read access on the output file(s)<br>
+  -W n                     Save extra information in the file, if supported.<br>
+                           n = write network address resolution information<br>
+  -X &lt;key&gt;:&lt;value&gt;         eXtension options, see the man page for details<br>
+  -z &lt;statistics&gt;          various statistics, see the man page for details<br>
+<br>
+Miscellaneous:<br>
+  -h                       display this help and exit<br>
+  -v                       display version info and exit<br>
+  -o &lt;name&gt;:&lt;value&gt; ...    override preference setting<br>
+  -K &lt;keytab&gt;              keytab file to use for kerberos decryption<br>
+  -G [report]              dump one of several available reports and exit<br>
+                           default report="fields"<br>
+                           use "-G ?" for more help</code>
+<h3>tshark Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3d4f5252497d565c5154">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# tshark -f "tcp port 80" -i eth0</code>
+<h3>wireshark Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="14667b7b60547f75787d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wireshark</code>
+</h3><p><a href='full/e4bee257f7ac8a7fcab6b46c2f1e79231121272b.jpg'><img src='full/e4bee257f7ac8a7fcab6b46c2f1e79231121272b.jpg' alt="wireshark" width="920" class="aligncenter size-full wp-image-3736"></a></p>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

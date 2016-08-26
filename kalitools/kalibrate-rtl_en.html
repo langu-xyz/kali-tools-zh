@@ -1,0 +1,76 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>kalibrate-rtl Package Description</h2>
+<p style="text-align: justify;">Kalibrate, or kal, can scan for GSM base stations in a given frequency band and can use those GSM base stations to calculate the local oscillator frequency offset.</p>
+<p>Source: https://github.com/steve-m/kalibrate-rtl<br>
+<a href="https://github.com/steve-m/kalibrate-rtl" variation="deepblue" target="blank">kalibrate-rtl Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/kalibrate-rtl.git;a=summary" variation="deepblue" target="blank">Kali kalibrate-rtl Repo</a></p>
+<ul>
+<li>Author: Joshua Lackey, Steve Markgraf</li>
+<li>License: Other</li>
+</ul>
+<h3>Tools included in the kalibrate-rtl package</h3>
+<h5>kal – Calculate local oscillator frequency offset using GSM base stations</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4a3825253e0a212b2623">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kal -h<br>
+kalibrate v0.4.1-rtl, Copyright (c) 2010, Joshua Lackey<br>
+modified for use with rtl-sdr devices, Copyright (c) 2012, Steve Markgraf<br>
+Usage:<br>
+    GSM Base Station Scan:<br>
+        kal &lt;-s band indicator&gt; [options]<br>
+<br>
+    Clock Offset Calculation:<br>
+        kal &lt;-f frequency | -c channel&gt; [options]<br>
+<br>
+Where options are:<br>
+    -s  band to scan (GSM850, GSM-R, GSM900, EGSM, DCS, PCS)<br>
+    -f  frequency of nearby GSM base station<br>
+    -c  channel of nearby GSM base station<br>
+    -b  band indicator (GSM850, GSM-R, GSM900, EGSM, DCS, PCS)<br>
+    -g  gain in dB<br>
+    -d  rtl-sdr device index<br>
+    -e  initial frequency error in ppm<br>
+    -v  verbose<br>
+    -D  enable debug messages<br>
+    -h  help</code>
+<h3>kal Usage Example</h3>
+<p>Scan for GSM base stations in the GSM-850 band <b><i>(-s GSM850)</i></b>, then use channel 128 <b><i>(-c 128)</i></b> to get the frequency offset:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cfbda0a0bb8fa4aea3a6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kal -s GSM850<br>
+Found 1 device(s):<br>
+  0:  ezcap USB 2.0 DVB-T/DAB/FM dongle<br>
+<br>
+Using device 0: ezcap USB 2.0 DVB-T/DAB/FM dongle<br>
+Found Rafael Micro R820T tuner<br>
+Exact sample rate is: 270833.002142 Hz<br>
+kal: Scanning for GSM-850 base stations.<br>
+GSM-850:<br>
+    chan: 128 (869.2MHz - 3.988kHz) power: 486634.32<br>
+    chan: 143 (872.2MHz - 3.760kHz) power: 56331.63<br>
+<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5f2d30302b1f343e3336">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kal -c 128<br>
+Found 1 device(s):<br>
+  0:  ezcap USB 2.0 DVB-T/DAB/FM dongle<br>
+<br>
+Using device 0: ezcap USB 2.0 DVB-T/DAB/FM dongle<br>
+Found Rafael Micro R820T tuner<br>
+Exact sample rate is: 270833.002142 Hz<br>
+kal: Calculating clock frequency offset.<br>
+Using GSM-850 channel 128 (869.2MHz)<br>
+average     [min, max]  (range, stddev)<br>
+- 4.093kHz      [-4102, -4083]  (20, 5.314593)<br>
+overruns: 0<br>
+not found: 0<br>
+average absolute error: 4.709 ppm</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

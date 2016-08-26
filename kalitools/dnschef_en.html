@@ -1,0 +1,95 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>DNSChef Package Description</h2>
+<p style="text-align: justify;">DNSChef is a highly configurable DNS proxy for Penetration Testers and Malware Analysts. A DNS proxy (aka “Fake DNS”) is a tool used for application network traffic analysis among other uses. For example, a DNS proxy can be used to fake requests for “badguy.com” to point to a local machine for termination or interception instead of a real host somewhere on the Internet.</p>
+<p>There are several DNS Proxies out there. Most will simply point all DNS queries a single IP address or implement only rudimentary filtering. DNSChef was developed as part of a penetration test where there was a need for a more configurable system. As a result, DNSChef is cross-platform application capable of forging responses based on inclusive and exclusive domain lists, supporting multiple DNS record types, matching domains with wildcards, proxying true responses for nonmatching domains, defining external configuration files, IPv6 and many other features. You can find detailed explanation of each of the features and suggested uses below.</p>
+<p>The use of DNS Proxy is recommended in situations where it is not possible to force an application to use some other proxy server directly. For example, some mobile applications completely ignore OS HTTP Proxy settings. In these cases, the use of a DNS proxy server such as DNSChef will allow you to trick that application into forwarding connections to the desired destination.</p>
+<p>Source: http://thesprawl.org/projects/dnschef/<br>
+<a href="http://thesprawl.org/projects/dnschef/" variation="deepblue" target="blank">DNSChef Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/dnschef.git;a=summary" variation="deepblue" target="blank">Kali DNSChef Repo</a></p>
+<ul>
+<li>Author: iphelix</li>
+<li>License: GPLv3</li>
+</ul>
+<h3>Tools included in the dnschef package</h3>
+<h5>dnschef – DNS proxy for penetration testers</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9ae8f5f5eedaf1fbf6f3">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnschef -h<br>
+Usage: dnschef.py [options]:<br>
+          _                _          __<br>
+         | | version 0.1  | |        / _|<br>
+       __| |_ __  ___  ___| |__   ___| |_<br>
+      / _` | '_ \/ __|/ __| '_ \ / _ \  _|<br>
+     | (_| | | | \__ \ (__| | | |  __/ |<br>
+      \__,_|_| |_|___/\___|_| |_|\___|_|<br>
+                  <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6dafcd041d05080104152d1905081e1d1f0c1a0143021f0a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+<br>
+<br>
+DNSChef is a highly configurable DNS Proxy for Penetration Testers and Malware<br>
+Analysts. It is capable of fine configuration of which DNS replies to modify<br>
+or to simply proxy with real responses. In order to take advantage of the tool<br>
+you must either manually configure or poison DNS server entry to point to<br>
+DNSChef. The tool requires root privileges to run.<br>
+<br>
+Options:<br>
+  -h, --help            show this help message and exit<br>
+  --fakeip=192.168.1.100<br>
+                        IP address to use for matching DNS queries. If you use<br>
+                        this parameter without specifying domain names, then<br>
+                        all queries will be spoofed. Consider using --file<br>
+                        argument if you need to define more than one IP<br>
+                        address.<br>
+  --fakedomains=thesprawl.org,google.com<br>
+                        A comma separated list of domain names which will be<br>
+                        resolved to a FAKE value specified in the --ip<br>
+                        parameter. All other domain names will be resolved to<br>
+                        their true values.<br>
+  --truedomains=thesprawl.org,google.com<br>
+                        A comma separated list of domain names which will be<br>
+                        resolved to their TRUE values. All other domain names<br>
+                        will be resolved to a fake value specified in the --ip<br>
+                        parameter.<br>
+  --nameservers=4.2.2.1,4.2.2.2<br>
+                        A comma separated list of alternative DNS servers to<br>
+                        use with proxied requests. A randomly selected server<br>
+                        from the list will be used for proxy requests. By<br>
+                        default, the tool uses Google's public DNS server<br>
+                        8.8.8.8.<br>
+  --file=FILE           Specify a file containing a list of DOMAIN=IP pairs<br>
+                        (one pair per line) used for DNS responses. For<br>
+                        example: google.com=1.1.1.1 will force all queries to<br>
+                        'google.com' to be resolved to '1.1.1.1'. You can be<br>
+                        even more specific by combining --file with other<br>
+                        arguments. However, data obtained from the file will<br>
+                        take precedence over others.<br>
+  --interface=0.0.0.0   Define an interface to use for the DNS listener. For<br>
+                        example, use 127.0.0.1 to listen for only requests<br>
+                        coming from a loopback device.<br>
+  --tcp                 Use TCP DNS proxy instead of the default UDP.<br>
+  -q, --quiet           Don't show headers.</code>
+<h3>dnschef Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ff8d90908bbf949e9396">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnschef <br>
+          _                _          __  <br>
+         | | version 0.1  | |        / _| <br>
+       __| |_ __  ___  ___| |__   ___| |_ <br>
+      / _` | '_ \/ __|/ __| '_ \ / _ \  _|<br>
+     | (_| | | | \__ \ (__| | | |  __/ |  <br>
+      \__,_|_| |_|___/\___|_| |_|\___|_|  <br>
+                  <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f230529b829a979e9b8ab2869a9781828093859edc9d8095">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>  <br>
+<br>
+[*] DNS Chef started on interface: 127.0.0.1 <br>
+[*] Using the following nameservers: 8.8.8.8<br>
+[*] No parameters were specified. Running in full proxy mode</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

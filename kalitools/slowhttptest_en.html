@@ -1,0 +1,108 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>SlowHTTPTest Package Description</h2>
+<p style="text-align: justify;">SlowHTTPTest is a highly configurable tool that simulates some Application Layer Denial of Service attacks. It works on majority of Linux platforms, OSX and Cygwin – a Unix-like environment and command-line interface for Microsoft Windows.</p>
+<p>It implements most common low-bandwidth Application Layer DoS attacks, such as slowloris, Slow HTTP POST, Slow Read attack (based on TCP persist timer exploit) by draining concurrent connections pool, as well as Apache Range Header attack by causing very significant memory and CPU usage on the server.</p>
+<p>Slowloris and Slow HTTP POST DoS attacks rely on the fact that the HTTP protocol, by design, requires requests to be completely received by the server before they are processed. If an HTTP request is not complete, or if the transfer rate is very low, the server keeps its resources busy waiting for the rest of the data. If the server keeps too many resources busy, this creates a denial of service. This tool is sending partial HTTP requests, trying to get denial of service from target HTTP server.</p>
+<p>Source: https://code.google.com/p/slowhttptest/<br>
+<a href="https://code.google.com/p/slowhttptest/" variation="deepblue" target="blank">SlowHTTPTest Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/slowhttptest.git;a=summary" variation="deepblue" target="blank">Kali SlowHTTPTest Repo</a></p>
+<ul>
+<li>Author: shekyan</li>
+<li>License: Apache 2.0</li>
+</ul>
+<h3>Tools included in the slowhttptest package</h3>
+<h5>slowhttptest – A tool to test for slow HTTP DoS vulnerabilities</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="44362b2b30042f25282d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# slowhttptest -h<br>
+<br>
+slowhttptest, a tool to test for slow HTTP DoS vulnerabilities - version 1.6<br>
+Usage: slowhttptest [options ...]<br>
+Test modes:<br>
+  -H               slow headers a.k.a. Slowloris (default)<br>
+  -B               slow body a.k.a R-U-Dead-Yet<br>
+  -R               range attack a.k.a Apache killer<br>
+  -X               slow read a.k.a Slow Read<br>
+<br>
+Reporting options:<br>
+<br>
+  -g               generate statistics with socket state changes (off)<br>
+  -o file_prefix   save statistics output in file.html and file.csv (-g required)<br>
+  -v level         verbosity level 0-4: Fatal, Info, Error, Warning, Debug<br>
+<br>
+General options:<br>
+<br>
+  -c connections   target number of connections (50)<br>
+  -i seconds       interval between followup data in seconds (10)<br>
+  -l seconds       target test length in seconds (240)<br>
+  -r rate          connections per seconds (50)<br>
+  -s bytes         value of Content-Length header if needed (4096)<br>
+  -t verb          verb to use in request, default to GET for<br>
+                   slow headers and response and to POST for slow body<br>
+  -u URL           absolute URL of target (http://localhost/)<br>
+  -x bytes         max length of each randomized name/value pair of<br>
+                   followup data per tick, e.g. -x 2 generates<br>
+                   X-xx: xx for header or &amp;xx=xx for body, where x<br>
+                   is random character (32)<br>
+<br>
+Probe/Proxy options:<br>
+<br>
+  -d host:port     all traffic directed through HTTP proxy at host:port (off)<br>
+  -e host:port     probe traffic directed through HTTP proxy at host:port (off)<br>
+  -p seconds       timeout to wait for HTTP response on probe connection,<br>
+                   after which server is considered inaccessible (5)<br>
+<br>
+Range attack specific options:<br>
+<br>
+  -a start        left boundary of range in range header (5)<br>
+  -b bytes        limit for range header right boundary values (2000)<br>
+<br>
+Slow read specific options:<br>
+<br>
+  -k num          number of times to repeat same request in the connection. Use to<br>
+                  multiply response size if server supports persistent connections (1)<br>
+  -n seconds      interval between read operations from recv buffer in seconds (1)<br>
+  -w bytes        start of the range advertised window size would be picked from (1)<br>
+  -y bytes        end of the range advertised window size would be picked from (512)<br>
+  -z bytes        bytes to slow read from receive buffer with single read() call (5)</code>
+<h3>slowhttptest Usage Example</h3>
+<p>Use 1000 connections <b><i>(-c 1000)</i></b> with the Slowloris mode <b><i>(-H)</i></b>, and generate statistics <b><i>(-g&gt;</i></b> with the output file name <b><i>(-o slowhttp)</i></b>. Use 10 seconds to wait for data <b><i>(-i 10)</i></b>, 200 connections <b><i>(-r 200)</i></b> with GET requests <b><i>(-t GET)</i></b> against the target URL <b><i>(-u http://192.168.1.202/index.php)</i></b> with a maximum of length of 24 bytes <b><i>(-x 24)</i></b> and a 3 second time out <b><i>(-p 3)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6a1805051e2a010b0603">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# slowhttptest -c 1000 -H -g -o slowhttp -i 10 -r 200 -t GET -u http://192.168.1.202/index.php -x 24 -p 3<br>
+Sat May 17 10:45:26 2014:<br>
+Sat May 17 10:45:26 2014:<br>
+    slowhttptest version 1.6<br>
+ - https://code.google.com/p/slowhttptest/ -<br>
+test type:                        SLOW HEADERS<br>
+number of connections:            1000<br>
+URL:                              http://192.168.1.202/index.php<br>
+verb:                             GET<br>
+Content-Length header value:      4096<br>
+follow up data max size:          52<br>
+interval between follow up data:  10 seconds<br>
+connections per seconds:          200<br>
+probe connection timeout:         3 seconds<br>
+test duration:                    240 seconds<br>
+using proxy:                      no proxy <br>
+<br>
+Sat May 17 10:45:26 2014:<br>
+slow HTTP test status on 0th second:<br>
+<br>
+initializing:        0<br>
+pending:             1<br>
+connected:           0<br>
+error:               0<br>
+closed:              0<br>
+service available:   YES</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

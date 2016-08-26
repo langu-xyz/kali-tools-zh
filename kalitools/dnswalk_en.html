@@ -1,0 +1,55 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>dnswalk Package Description</h2>
+<p style="text-align: justify;">dnswalk is a DNS debugger. It performs zone transfers of specified domains, and checks the database in numerous ways for internal consistency, as well as accuracy.</p>
+<p>Source: http://sourceforge.net/projects/dnswalk/<br>
+<a href="http://sourceforge.net/projects/dnswalk/" variation="deepblue" target="blank">dnswalk Homepage</a> | <a href="" http: variation="deepblue" target="blank">Kali dnswalk Repo</a></p>
+<ul>
+<li>Author: David Barr</li>
+<li>License: Artistic</li>
+</ul>
+<h3>tools included in the dnswalk package</h3>
+<h5>dnswalk – Checks DNS zone information using nameserver lookups</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ec9e838398ac878d8085">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnswalk --help<br>
+<br>
+Usage: dnswalk [-OPTIONS [-MORE_OPTIONS]] [--] [PROGRAM_ARG1 ...]<br>
+<br>
+The following single-character options are accepted:<br>
+With arguments: -D<br>
+Boolean (without arguments): -r -f -i -a -d -m -F -l<br>
+<br>
+Options may be merged together. -- stops processing of options.<br>
+Space is not required between options and their arguments.<br>
+[Now continuing due to backward compatibility and excessive paranoia.<br>
+See ``perldoc Getopt::Std'' about $Getopt::Std::STANDARD_HELP_VERSION.]<br>
+Usage: dnswalk domain<br>
+domain MUST end with a '.'</code>
+<h3>dnswalk Options</h3>
+<code>-r     Recursively descend sub-domains of the specified domain.<br>
+-a     Turn on warning of duplicate A records.<br>
+-d     Print debugging and 'status' information to stderr.  (Use only if redirecting stdout).<br>
+-m     Perform checks only if the zone has been modified since the previous run.<br>
+-F     Perform  "fascist"  checking.  When checking an A record, compare the PTR name for each IP address with the forward name and report mismatches.<br>
+-i     Suppress check for invalid characters in a domain name.<br>
+-l     Perform  "lame  delegation"  checking.   For every NS record, check to see that the listed host is  indeed returning authoritative answers for this domain.</code>
+<h3>dnswalk Usage Example</h3>
+<p>Attempt to get DNS zone information from the target domain <b><i>(example.com.)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="dba9b4b4af9bb0bab7b2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnswalk example.com.<br>
+Checking example.com.</code>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d7a5b8b8a397bcb6bbbe">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnswalk -r -d example.com.<br>
+Checking example.com.</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

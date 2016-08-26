@@ -1,0 +1,55 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>copy-router-config Package Description</h2>
+<p style="text-align: justify;">Copies configuration files from Cisco devices running SNMP.
+</p><p>
+<a href="http://www.offensive-security.com" variation="deepblue" target="blank">copy-router-config Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/copy-router-config.git;a=summary" variation="deepblue" target="blank">Kali copy-router-config Repo</a></p>
+<ul>
+<li>Author: muts</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the copy-router-config package</h3>
+<h5>copy-router-config.pl – Copies Cisco configs via SNMP</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="82f0ededf6c2e9e3eeeb">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# copy-router-config.pl<br>
+<br>
+######################################################<br>
+# Copy Cisco Router config  - Using SNMP<br>
+# Hacked up by muts - <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5e332b2a2d1e3138383b302d37283b732d3b3d2b2c372a27703d3133">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+#######################################################<br>
+<br>
+Usage : ./copy-copy-config.pl &lt;router-ip&gt; &lt;tftp-serverip&gt; &lt;community&gt;<br>
+<br>
+Make sure a TFTP server is set up, preferably running from /tmp !</code>
+[/toggle]
+[toggle title=”merge-router-config.pl – Merges Cisco configs via SNMP” variation=”deepblue”]
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f3819c9c87b398929f9a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# merge-router-config.pl<br>
+<br>
+######################################################<br>
+# Merge Cisco Router config  - Using SNMP<br>
+# Hacked up by muts - <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="315c444542715e5757545f425847541c42545244435845481f525e5c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+#######################################################<br>
+<br>
+Usage : ./merge-copy-config.pl &lt;router-ip&gt; &lt;tftp-serverip&gt; &lt;community&gt;<br>
+<br>
+Make sure a TFTP server is set up, preferably running from /tmp !</code>
+<h3>copy-router-config Usage Example</h3>
+<p>Copy the config from the router <b><i>(192.168.1.1)</i></b> to the TFTP server <b><i>(192.168.1.15)</i></b>, authenticating with the community string <b><i>(private)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2e5c41415a6e454f4247">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# copy-router-config.pl 192.168.1.1 192.168.1.15 private</code>
+<h3>merge-router-config Usage Example(s)</h3>
+<p>Merge the config with the router <b><i>(192.168.1.1)</i></b>, copying from the TFTP server <b><i>(192.168.1.15)</i></b>, using the community string <b><i>(private)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2654494952664d474a4f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# merge-router-config.pl 192.168.1.1 192.168.1.15 private</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

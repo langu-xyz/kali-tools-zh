@@ -1,0 +1,60 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>RidEnum Package Description</h2>
+<p style="text-align: justify;">Rid Enum is a RID cycling attack that attempts to enumerate user accounts through null sessions and the SID to RID enum. If you specify a password file, it will automatically attempt to brute force the user accounts when its finished enumerating.</p>
+<p>Source: https://github.com/trustedsec/ridenum<br>
+<a href="https://github.com/trustedsec/ridenum" variation="deepblue" target="blank">RidEnum Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/ridenum.git;a=summary" variation="deepblue" target="blank">Kali RidEnum Repo</a></p>
+<ul>
+<li>Author: TrustedSec, LLC</li>
+<li>License: BSD</li>
+</ul>
+<h3>Tools included in the ridenum package</h3>
+<h5>ridenum – Null session RID cycle attack tool</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5d2f3232291d363c3134">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ridenum<br>
+<br>
+.______       __   _______         _______ .__   __.  __    __  .___  ___.<br>
+|   _  \     |  | |       \       |   ____||  \ |  | |  |  |  | |   \/   |<br>
+|  |_)  |    |  | |  .--.  |      |  |__   |   \|  | |  |  |  | |  \  /  |<br>
+|      /     |  | |  |  |  |      |   __|  |  . `  | |  |  |  | |  |\/|  |<br>
+|  |\  \----.|  | |  '--'  |      |  |____ |  |\   | |  `--'  | |  |  |  |<br>
+| _| `._____||__| |_______/  _____|_______||__| \__|  \______/  |__|  |__|<br>
+                            |______|<br>
+<br>
+Written by: David Kennedy (ReL1K)<br>
+Company: https://www.trustedsec.com<br>
+Twitter: @TrustedSec<br>
+Twitter: @Dave_ReL1K<br>
+<br>
+Rid Enum is a RID cycling attack that attempts to enumerate user accounts through<br>
+null sessions and the SID to RID enum. If you specify a password file, it will<br>
+automatically attempt to brute force the user accounts when its finished enumerating.<br>
+<br>
+- RID_ENUM is open source and uses all standard python libraries minus python-pexpect. -<br>
+<br>
+You can also specify an already dumped username file, it needs to be in the DOMAINNAME\USERNAME<br>
+format.<br>
+<br>
+Example: ./rid_enum.py 192.168.1.50 500 50000 /root/dict.txt<br>
+<br>
+Usage: ./rid_enum.py &lt;server_ip&gt; &lt;start_rid&gt; &lt;end_rid&gt; &lt;optional_password_file&gt; &lt;optional_username_filename&gt;</code>
+<h3>ridenum Usage Example</h3>
+<p>Connect to the remote server <b><i>(192.168.1.236)</i></b> and cycle from RID 500 to 50000 <b><i>(500 50000)</i></b>, using the given password file <b><i>(/tmp/passes.txt)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fa8895958eba919b9693">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ridenum 192.168.1.236 500 50000 /tmp/passes.txt<br>
+[*] Attempting lsaquery first...This will enumerate the base domain SID<br>
+[*] Successfully enumerated base domain SID.. Moving on to extract via RID<br>
+[*] Enumerating user accounts.. This could take a little while.</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

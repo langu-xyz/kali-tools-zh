@@ -1,0 +1,158 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>joomscan Package Description</h2>
+<p style="text-align: justify;">Joomla! is probably the most widely-used CMS out there due to its flexibility, user-friendlinesss, extensibility to name a few. So, watching its vulnerabilities and adding such vulnerabilities as KB to Joomla scanner takes ongoing activity. It will help web developers and web masters to help identify possible security weaknesses on their deployed Joomla! sites.</p>
+<p>The following features are currently available:</p>
+<ul>
+<li>Exact version Probing (the scanner can tell whether a target is running version 1.5.12)</li>
+<li>Common Joomla! based web application firewall detection</li>
+<li>Searching known vulnerabilities of Joomla! and its components</li>
+<li>Reporting to Text &amp; HTML output</li>
+<li>Immediate update capability via scanner or svn</li>
+</ul>
+<p>Source: https://www.owasp.org/index.php/Category:OWASP_Joomla_Vulnerability_Scanner_Project<br>
+<a href="https://www.owasp.org/index.php/Category:OWASP_Joomla_Vulnerability_Scanner_Project" variation="deepblue" target="blank">joomscan Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/joomscan.git;a=summary" variation="deepblue" target="blank">Kali joomscan Repo</a></p>
+<ul>
+<li>Author: Aung Khant, OWASP.org</li>
+<li>License: GPLv3</li>
+</ul>
+<h3>Tools included in the joomscan package</h3>
+<h5>joomscan – OWASP Joomla Vulnerability Scanner Project</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="40322f2f34002b212c29">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# joomscan<br>
+<br>
+<br>
+ ..|''||   '|| '||'  '|'     |      .|'''.|  '||''|.<br>
+.|'    ||   '|. '|.  .'     |||     ||..  '   ||   ||<br>
+||      ||   ||  ||  |     |  ||     ''|||.   ||...|'<br>
+'|.     ||    ||| |||     .''''|.  .     '||  ||<br>
+ ''|...|'      |   |     .|.  .||. |'....|'  .||.<br>
+<br>
+<br>
+=================================================================<br>
+ OWASP Joomla! Vulnerability Scanner v0.0.4<br>
+ (c) Aung Khant, aungkhant]at[yehg.net<br>
+ YGN Ethical Hacker Group, Myanmar, http://yehg.net/lab<br>
+ Update by: Web-Center, http://web-center.si (2011)<br>
+=================================================================<br>
+<br>
+ Vulnerability Entries: 611<br>
+ Last update: February 2, 2012<br>
+<br>
+ Usage:  ./joomscan.pl -u &lt;string&gt; -x proxy:port<br>
+         -u &lt;string&gt;      = joomla Url<br>
+<br>
+         ==Optional==<br>
+<br>
+         -x &lt;string:int&gt;  = proXy to tunnel<br>
+         -c &lt;string&gt;      = Cookie (name=value;)<br>
+         -g "&lt;string&gt;"    = desired useraGent string(within ")<br>
+         -nv              = No Version fingerprinting check<br>
+         -nf              = No Firewall detection check<br>
+         -nvf/-nfv        = No version+firewall check<br>
+         -pe          = Poke version only and Exit<br>
+         -ot              = Output to Text file (target-joexploit.txt)<br>
+         -oh              = Output to Html file (target-joexploit.htm)<br>
+         -vu              = Verbose (output every Url scan)<br>
+     -sp          = Show completed Percentage<br>
+<br>
+ ~Press ENTER key to continue<br>
+<br>
+ Example:  ./joomscan.pl -u victim.com -x localhost:8080<br>
+<br>
+ Check:    ./joomscan.pl check<br>
+           - Check if the scanner update is available or not.<br>
+<br>
+ Update:   ./joomscan.pl update<br>
+           - Check and update the local database if newer version is available.<br>
+<br>
+ Download: ./joomscan.pl download<br>
+           - Download the scanner latest version as a single zip file - joomscan-latest.zip.<br>
+<br>
+ Defense:  ./joomscan.pl defense<br>
+           - Give a defensive note.<br>
+<br>
+ About:    ./joomscan.pl story<br>
+           - A short story about joomscan.<br>
+<br>
+ Read:     ./joomscan.pl read DOCFILE<br>
+           DOCFILE - changelog,release_note,readme,credits,faq,owasp_project</code>
+<h3>joomscan Usage Example</h3>
+<p>Scan the Joomla installation at the given URL <b><i>(-u http://192.168.1.202/joomla)</i></b> for vulnerabilities:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f785989883b79c969b9e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# joomscan -u http://192.168.1.202/joomla<br>
+<br>
+<br>
+ ..|''||   '|| '||'  '|'     |      .|'''.|  '||''|.  <br>
+.|'    ||   '|. '|.  .'     |||     ||..  '   ||   || <br>
+||      ||   ||  ||  |     |  ||     ''|||.   ||...|' <br>
+'|.     ||    ||| |||     .''''|.  .     '||  ||      <br>
+ ''|...|'      |   |     .|.  .||. |'....|'  .||.     <br>
+    <br>
+ <br>
+=================================================================<br>
+OWASP Joomla! Vulnerability Scanner v0.0.4  <br>
+(c) Aung Khant, aungkhant]at[yehg.net<br>
+YGN Ethical Hacker Group, Myanmar, http://yehg.net/lab<br>
+Update by: Web-Center, http://web-center.si (2011)<br>
+=================================================================<br>
+<br>
+<br>
+Vulnerability Entries: 673<br>
+Last update: October 22, 2012<br>
+<br>
+Use "update" option to update the database<br>
+Use "check" option to check the scanner update<br>
+Use "download" option to download the scanner latest version package<br>
+Use svn co to update the scanner and the database<br>
+svn co https://joomscan.svn.sourceforge.net/svnroot/joomscan joomscan <br>
+<br>
+<br>
+Target: http://192.168.1.202/joomla<br>
+<br>
+Server: Apache/2.2.22 (Debian)<br>
+X-Powered-By: PHP/5.4.4-14+deb7u9<br>
+<br>
+<br>
+## Checking if the target has deployed an Anti-Scanner measure<br>
+<br>
+[!] Scanning Passed ..... OK <br>
+<br>
+<br>
+## Detecting Joomla! based Firewall ...<br>
+<br>
+[!] No known firewall detected!<br>
+<br>
+<br>
+## Fingerprinting in progress ...<br>
+<br>
+Use of uninitialized value in pattern match (m//) at ./joomscan.pl line 1009.<br>
+~Unable to detect the version. Is it sure a Joomla? <br>
+<br>
+## Fingerprinting done.<br>
+<br>
+<br>
+<br>
+<br>
+Vulnerabilities Discovered<br>
+==========================<br>
+<br>
+# 1<br>
+Info -&gt; Generic: htaccess.txt has not been renamed. <br>
+Versions Affected: Any<br>
+Check: /htaccess.txt<br>
+Exploit: Generic defenses implemented in .htaccess are not available, so exploiting is more likely to succeed.<br>
+Vulnerable? Yes</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

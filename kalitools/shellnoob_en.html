@@ -1,0 +1,81 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>shellnoob Package Description</h2>
+<p style="text-align: justify;">Writing shellcodes has always been super fun, but some parts are extremely boring and error prone. Focus only on the fun part, and use ShellNoob!</p>
+<p>Features:</p>
+<ul>
+<li>convert shellcode between different formats and sources. Formats currently supported: asm, bin, hex, obj, exe, C, python, ruby, pretty, safeasm, completec, shellstorm. (All details in the “Formats description” section.)</li>
+<li>interactive asm-to-opcode conversion (and viceversa) mode. This is useful when you cannot use specific bytes in the shellcode and you want to figure out if a specific assembly instruction will cause problems.</li>
+<li>support for both ATT &amp; Intel syntax. Check the –intel switch.</li>
+<li>support for 32 and 64 bits (when playing on x86_64 machine). Check the –64 switch.</li>
+<li>resolve syscall numbers, constants, and error numbers (now implemented for real! :-)).</li>
+<li>portable and easily deployable (it only relies on gcc/as/objdump and python). It is just one self-contained python script, and it supports both Python2.7+ and Python3+.</li>
+<li>in-place development: you run ShellNoob directly on the target architecture!</li>
+<li>built-in support for Linux/x86, Linux/x86_64, Linux/ARM, FreeBSD/x86, FreeBSD/x86_64.</li>
+<li>“prepend breakpoint” option. Check the -c switch.</li>
+<li>read from stdin / write to stdout support (use “-” as filename)</li>
+<li>uber cheap debugging: check the –to-strace and –to-gdb option!</li>
+<li>Use ShellNoob as a Python module in your scripts! Check the “ShellNoob as a library” section.</li>
+<li>Verbose mode shows the low-level steps of the conversion: useful to debug / understand / learn!</li>
+<li>Extra plugins: binary patching made easy with the –file-patch, –vm-patch, –fork-nopper options! (all details below)</li>
+</ul>
+<p>Source: https://github.com/reyammer/shellnoob<br>
+<a href="https://github.com/reyammer/shellnoob" variation="deepblue" target="blank">ShellNoob Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/shellnoob.git;a=summary" variation="deepblue" target="blank">Kali ShellNoob Repo</a></p>
+<ul>
+<li>Author: Yanick Fratantonio</li>
+<li>License: MIT</li>
+</ul>
+<h3>Tools included in the shellnoob package</h3>
+<h5>shellnoob – Shellcode writing toolkit</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6a1805051e2a010b0603">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# shellnoob -h<br>
+shellnoob.py [--from-INPUT] (input_file_path | - ) [--to-OUTPUT] [output_file_path | - ]<br>
+shellnoob.py -c (prepend a breakpoint (Warning: only few platforms/OS are supported!)<br>
+shellnoob.py --64 (64 bits mode, default: 32 bits)<br>
+shellnoob.py --intel (intel syntax mode, default: att)<br>
+shellnoob.py -q (quite mode)<br>
+shellnoob.py -v (or -vv, -vvv)<br>
+shellnoob.py --to-strace (compiles it &amp; run strace)<br>
+shellnoob.py --to-gdb (compiles it &amp; run gdb &amp; set breakpoint on entrypoint)<br>
+<br>
+Standalone "plugins"<br>
+shellnoob.py -i [--to-asm | --to-opcode ] (for interactive mode)<br>
+shellnoob.py --get-const &lt;const&gt;<br>
+shellnoob.py --get-sysnum &lt;sysnum&gt;<br>
+shellnoob.py --get-strerror &lt;errno&gt;<br>
+shellnoob.py --file-patch &lt;exe_fp&gt; &lt;file_offset&gt; &lt;data&gt; (in hex). (Warning: tested only on x86/x86_64)<br>
+shellnoob.py --vm-patch &lt;exe_fp&gt; &lt;vm_address&gt; &lt;data&gt; (in hex). (Warning: tested only on x86/x86_64)<br>
+shellnoob.py --fork-nopper &lt;exe_fp&gt; (this nops out the calls to fork(). Warning: tested only on x86/x86_64)<br>
+<br>
+"Installation"<br>
+shellnoob.py --install [--force] (this just copies the script in a convinient position)<br>
+shellnoob.py --uninstall [--force]<br>
+<br>
+Supported INPUT format: asm, obj, bin, hex, c, shellstorm<br>
+Supported OUTPUT format: asm, obj, exe, bin, hex, c, completec, python, bash, ruby, pretty, safeasm<br>
+All combinations from INPUT to OUTPUT are supported!<br>
+<br>
+Check out the README file for more info.</code>
+<h3>shellnoob Usage Example</h3>
+<p>Start in interactive mode <b><i>(-i)</i></b> in asm to opcode mode <b><i>(–to-opcode)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0674696972466d676a6f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# shellnoob -i --to-opcode<br>
+asm_to_opcode selected (type "quit" or ^C to end)<br>
+&gt;&gt; xchg %eax, %esp<br>
+xchg %eax, %esp ~&gt; 94<br>
+&gt;&gt; ret<br>
+ret ~&gt; c3<br>
+&gt;&gt;</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

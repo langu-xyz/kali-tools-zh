@@ -1,0 +1,161 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>dex2jar Package Description</h2>
+<p style="text-align: justify;">dex2jar contains following compments:</p>
+<ul>
+<li>dex-reader is designed to read the Dalvik Executable (.dex/.odex) format. It has a light weight API similar with ASM.</li>
+<li>dex-translator is designed to do the convert job. It reads the dex instruction to dex-ir format, after some optimize, convert to ASM format.</li>
+<li>dex-ir used by dex-translator, is designed to represent the dex instruction</li>
+<li>dex-tools tools to work with .class files. here are examples: Modify a apk, DeObfuscate a jar</li>
+<li>
+</li><li>d2j-smali [To be published] disassemble dex to smali files and assemble dex from smali files. different implementation to smali/baksmali, same syntax, but we support escape in type desc “Lcom/dex2jar\t\u1234;”</li>
+<li>dex-writer [To be published] write dex same way as dex-reader.</li>
+</ul>
+<p>Source: https://code.google.com/p/dex2jar/<br>
+<a hef='http://code.google.com/p/dex2jar/"' variation="deepblue" target="blank">dex2jar Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/dex2jar.git;a=summary" variation="deepblue" target="blank">Kali dex2jar Repo</a></p>
+<ul>
+<li>Author: Panxiaobo</li>
+<li>License: Apache-2.0</li>
+</ul>
+<h3>Tools included in the dex2jar package</h3>
+<h5>d2j-jar2dex – Convert jar to dex by invoking dx</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="394b56564d7952585550">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# d2j-jar2dex -h<br>
+d2j-jar2dex -- Convert jar to dex by invoking dx.<br>
+usage: d2j-jar2dex [options] &lt;dir&gt;<br>
+options:<br>
+ -f,--force                   force overwrite<br>
+ -h,--help                    Print this help message<br>
+ -o,--output &lt;out-dex-file&gt;   output .dex file, default is $current_dir/[jar-nam<br>
+                              e]-jar2dex.dex<br>
+version: 0.0.9.15</code>
+<h3>d2j-jar-remap – Rename package/class/method/field name in a jar</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c7b5a8a8b387aca6abae">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# d2j-jar-remap -h<br>
+d2j-jar-remap -- rename package/class/method/field name in a jar<br>
+usage: d2j-jar-remap [options] jar<br>
+options:<br>
+ -c,--config &lt;config&gt;    config file for remap, this is REQUIRED<br>
+ -f,--force              force overwrite<br>
+ -h,--help               Print this help message<br>
+ -o,--output &lt;out-jar&gt;   output .jar file, default is $current_dir/[jar-name]-re<br>
+                         map.jar<br>
+version: 0.0.9.15<br>
+online help: https://code.google.com/p/dex2jar/wiki/DeObfuscateJarWithDexTool</code>
+<h3>d2j-dex2jar – Convert dex to jar</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="52203d3d261239333e3b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# d2j-dex2jar -h<br>
+d2j-dex2jar -- convert dex to jar<br>
+usage: d2j-dex2jar [options] &lt;file0&gt; [file1 ... fileN]<br>
+options:<br>
+ -d,--debug-info              translate debug info<br>
+ -e,--exception-file &lt;file&gt;   detail exception file, default is $current_dir/[fi<br>
+                              le-name]-error.zip<br>
+ -f,--force                   force overwrite<br>
+ -h,--help                    Print this help message<br>
+ -n,--not-handle-exception    not handle any exception throwed by dex2jar<br>
+ -o,--output &lt;out-jar-file&gt;   output .jar file, default is $current_dir/[file-na<br>
+                              me]-dex2jar.jar<br>
+ -os,--optmize-synchronized   optmize-synchronized<br>
+ -p,--print-ir                print ir to Syste.out<br>
+ -r,--reuse-reg               reuse regiter while generate java .class file<br>
+ -s                           same with --topological-sort/-ts<br>
+ -ts,--topological-sort       sort block by topological, that will generate more<br>
+                               readable code<br>
+ -v,--verbose                 show progress<br>
+version: reader-1.15, translator-0.0.9.15, ir-1.12</code>
+<h3>dex2jar – This cmd is deprecated, use the d2j-dex2jar if possible</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e4968b8b90a48f85888d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dex2jar<br>
+this cmd is deprecated, use the d2j-dex2jar if possible<br>
+dex2jar version: translator-0.0.9.15<br>
+dex2jar file1.dexORapk file2.dexORapk ...</code>
+<h3>d2j-jasmin2jar – Assemble .j files to .class file</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a9dbc6c6dde9c2c8c5c0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# d2j-jasmin2jar -h<br>
+d2j-jasmin2jar -- d2j-jasmin2jar - assemble .j files to .class file<br>
+usage: d2j-jasmin2jar [options] &lt;dir&gt;<br>
+options:<br>
+ -e,--encoding &lt;enc&gt;             encoding for .j files, default is UTF-8<br>
+ -f,--force                      force overwrite<br>
+ -g,--autogenerate-linenumbers   autogenerate-linenumbers<br>
+ -h,--help                       Print this help message<br>
+ -o,--output &lt;out-jar-file&gt;      output .jar file, default is $current_dir/[jar-<br>
+                                 name]-jasmin2jar.jar<br>
+version: 0.0.9.15</code>
+<h3>d2j-jar-access – Add or remove class/method/field access in jar file</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2e5c41415a6e454f4247">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# d2j-jar-access -h<br>
+d2j-jar-access -- add or remove class/method/field access in jar file<br>
+usage: d2j-jar-access [options] &lt;jar&gt;<br>
+options:<br>
+ -ac,--add-class-access &lt;ACC&gt;       add access from class<br>
+ -af,--add-field-access &lt;ACC&gt;       add access from field<br>
+ -am,--add-method-access &lt;ACC&gt;      add access from method<br>
+ -f,--force                         force overwrite<br>
+ -h,--help                          Print this help message<br>
+ -o,--output &lt;out-dir&gt;              output dir of .j files, default is $current_<br>
+                                    dir/[jar-name]-access.jar<br>
+ -rc,--remove-class-access &lt;ACC&gt;    remove access from class<br>
+ -rd,--remove-debug                 remove debug info<br>
+ -rf,--remove-field-access &lt;ACC&gt;    remove access from field<br>
+ -rm,--remove-method-access &lt;ACC&gt;   remove access from method<br>
+version: 0.0.9.15</code>
+<h3>d2j-asm-verify – Verify .class in jar</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fb8994948fbb909a9792">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# d2j-asm-verify -h<br>
+d2j-asm-verify -- Verify .class in jar<br>
+usage: d2j-asm-verify [options] &lt;jar0&gt; [jar1 ... jarN]<br>
+options:<br>
+ -d,--detail   Print detail error message<br>
+ -h,--help     Print this help message<br>
+version: 0.0.9.15</code>
+<h3>d2j-dex-dump</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="dcaeb3b3a89cb7bdb0b5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# d2j-dex-dump -h<br>
+Dump in.dexORapk out.dump.jar</code>
+<h3>d2j-init-deobf – Generate an init config file for deObfuscate a jar</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6e1c01011a2e050f0207">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# d2j-init-deobf -h<br>
+d2j-init-deobf -- generate an init config file for deObfuscate a jar<br>
+usage: d2j-init-deobf [options] &lt;jar&gt;<br>
+options:<br>
+ -f,--force                force overwrite<br>
+ -h,--help                 Print this help message<br>
+ -max,--max-length &lt;MAX&gt;   do the rename if the length &gt; MIN, default is 40<br>
+ -min,--min-length &lt;MIN&gt;   do the rename if the length &lt; MIN, default is 2<br>
+ -o,--output &lt;out-file&gt;    output .jar file, default is $current_dir/[file-name]<br>
+                           -deobf-init.txt<br>
+version: 0.0.9.15</code>
+<h3>d2j-apk-sign – Sign an android apk file use a test certificate</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="394b56564d7952585550">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# d2j-apk-sign -h<br>
+d2j-apk-sign -- Sign an android apk file use a test certificate.<br>
+usage: d2j-apk-sign [options] &lt;apk&gt;<br>
+options:<br>
+ -f,--force                   force overwrite<br>
+ -h,--help                    Print this help message<br>
+ -o,--output &lt;out-apk-file&gt;   output .apk file, default is $current_dir/[apk-nam<br>
+                              e]-signed.apk<br>
+ -w,--sign-whole              Sign whole apk file<br>
+version: 0.0.9.15</code>
+<h3>d2j-jar2jasmin – Disassemble .class in jar file to jasmin file</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7b0914140f3b101a1712">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# d2j-jar2jasmin -h<br>
+d2j-jar2jasmin -- Disassemble .class in jar file to jasmin file<br>
+usage: d2j-jar2jasmin [options] &lt;jar&gt;<br>
+options:<br>
+ -d,--debug              disassemble debug info<br>
+ -e,--encoding &lt;enc&gt;     encoding for .j files, default is UTF-8<br>
+ -f,--force              force overwrite<br>
+ -h,--help               Print this help message<br>
+ -o,--output &lt;out-dir&gt;   output dir of .j files, default is $current_dir/[jar-na<br>
+                         me]-jar2jasmin/<br>
+version: 0.0.9.15</code>
+<h3>d2j-dex2jar Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="73011c1c073318121f1a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# d2j-dex2jar /usr/share/metasploit-framework/data/android/apk/classes.dex <br>
+dex2jar /usr/share/metasploit-framework/data/android/apk/classes.dex -&gt; classes-dex2jar.jar</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

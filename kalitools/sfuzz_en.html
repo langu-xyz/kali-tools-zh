@@ -1,0 +1,83 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>sfuzz Package Description</h2>
+<p style="text-align: justify;">simple fuzz is exactly what it sounds like – a simple fuzzer. don’t mistake simple with a lack of fuzz capability. this fuzzer has two network modes of operation, an output mode for developing command line fuzzing scripts, as well as taking fuzzing strings from literals and building strings from sequences.</p>
+<p>simple fuzz is built to fill a need – the need for a quickly configurable black box testing utility that doesn’t require intimate knowledge of the inner workings of C or require specialized software rigs. the aim is to just provide a simple interface, clear inputs/outputs, and reusability.</p>
+<p>Features:</p>
+<ul>
+<li>simple script language for creating test cases</li>
+<li>support for repeating strings as well as fixed strings (‘sequences’ vs. ‘literals’)</li>
+<li>variables within test cases (ex: strings to be replaced with different strings)</li>
+<li>tcp and udp payload transport (icmp support tbd)</li>
+<li>binary substitution support (see basic.a11 for more information)</li>
+<li>plugin support (NEW!) see plugin.txt for more information.</li>
+<li>previous packet contents inclusion</li>
+</ul>
+<p>Source: https://github.com/orgcandman/Simple-Fuzzer<br>
+<a href="http://aconole.brad-x.com/programs/sfuzz.html" variation="deepblue" target="blank">sfuzz Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/sfuzz.git;a=summary" variation="deepblue" target="blank">Kali sfuzz Repo</a></p>
+<ul>
+<li>Author: Aaron Conole</li>
+<li>License: Other</li>
+</ul>
+<h3>Tools included in the sfuzz package</h3>
+<h5>sfuzz – Black Box testing utilities</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="40322f2f34002b212c29">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sfuzz -h<br>
+        Simple Fuzzer<br>
+By:  Aaron Conole<br>
+version: 0.7.0<br>
+url:     http://aconole.brad-x.com/programs/sfuzz.html<br>
+EMAIL:  <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fa385a9b8a99959495969fba839b929595d4999597">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script><br>
+Build-prefix: /usr<br>
+    -h   This message.<br>
+    -V   Version information.<br>
+<br>
+networking / output:<br>
+    -v   Verbose output<br>
+    -q   Silent output mode (generally for CLI fuzzing)<br>
+    -X   prints the output in hex<br>
+<br>
+    -b   Begin fuzzing at the test specified.<br>
+    -e   End testing on failure.<br>
+    -t   Wait time for reading the socket<br>
+    -S   Remote host<br>
+    -p   Port<br>
+    -T|-U|-O TCP|UDP|Output mode<br>
+    -R   Refrain from closing connections (ie: "leak" them)<br>
+<br>
+    -f   Config File<br>
+    -L   Log file<br>
+    -n   Create a new logfile after each fuzz<br>
+    -r   Trim the tailing newline<br>
+    -D   Define a symbol and value (X=y).<br>
+    -l   Only perform literal fuzzing<br>
+    -s   Only perform sequence fuzzing</code>
+<h3>sfuzz Usage Example</h3>
+<p>Fuzz the target server <b><i>(-S 192.168.1.1)</i></b> on port 10443 <b><i>(-p 10443)</i></b> with TCP output mode <b><i>(-T)</i></b>, using the basic HTTP config <b><i>(-f /usr/share/sfuzz/sfuzz-sample/basic.http)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="41332e2e35012a202d28">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sfuzz -S 192.168.1.1 -p 10443 -T -f /usr/share/sfuzz/sfuzz-sample/basic.http<br>
+[12:53:47] dumping options:<br>
+    filename: &lt;/usr/share/sfuzz/sfuzz-sample/basic.http&gt;<br>
+    state:    &lt;8&gt;<br>
+    lineno:   &lt;56&gt;<br>
+    literals:  [74]<br>
+    sequences: [34]<br>
+    symbols: [0]<br>
+    req_del:  &lt;200&gt;<br>
+    mseq_len: &lt;10024&gt;<br>
+    plugin: &lt;none&gt;<br>
+    s_syms: &lt;0&gt;<br>
+    literal[1] = [AREALLYBADSTRING]</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

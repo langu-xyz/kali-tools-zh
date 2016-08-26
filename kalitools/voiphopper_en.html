@@ -1,0 +1,92 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>VoIPHopper Package Description</h2>
+<p style="text-align: justify;">VoIP Hopper is a GPLv3 licensed security tool, written in C, that rapidly runs a VLAN Hop into the Voice VLAN on specific ethernet switches. VoIP Hopper does this by mimicking the behavior of an IP Phone, in Cisco, Avaya, Nortel, and Alcatel-Lucent environments. This requires two important steps in order for the tool to traverse VLANs for unauthorized access. First, discovery of the correct 12 bit Voice VLAN ID (VVID) used by the IP Phones is required. VoIP Hopper supports multiple protocol discovery methods (CDP, DHCP, LLDP-MED, 802.1q ARP) for this important first step. Second, the tool creates a virtual VoIP ethernet interface on the OS. It then inserts a spoofed 4-byte 802.1q vlan header containing the 12 bit VVID into a spoofed DHCP request. Once it receives an IP address in the VoIP VLAN subnet, all subsequent ethernet frames are “tagged” with the spoofed 802.1q header. VoIP Hopper is a VLAN Hop test tool but also a tool to test VoIP infrastructure security. </p>
+<p>Source: http://voiphopper.sourceforge.net/details.html<br>
+<a href="http://voiphopper.sourceforge.net/" variation="deepblue" target="blank">VoIPHopper Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/voiphopper.git;a=summary" variation="deepblue" target="blank">Kali VoIPHopper Repo</a></p>
+<ul>
+<li>Author: Jason Ostrom</li>
+<li>License: GPLv3</li>
+</ul>
+<h3>Tools included in the voiphopper package</h3>
+<h5>voiphopper – Runs a VLAN hop security test</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="33415c5c477358525f5a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# voiphopper -h<br>
+VoIP Hopper Extended Usage:<br>
+<br>
+Miscellaneous Options:<br>
+    -l (list available interfaces for CDP sniffing, then exit)<br>
+    Example:  voiphopper -l<br>
+    -m (Spoof the MAC Address, then exit)<br>
+    Example:  voiphopper -i eth0 -m 00:07:0E:EA:50:86<br>
+    -d (Delete the VLAN Interface, then exit)<br>
+    Example:  voiphopper -d eth0.200<br>
+    -V (Print the VoIP Hopper version, then exit)<br>
+    Example:  voiphopper -V<br>
+<br>
+MAC Address Spoofing Options (used with -a, -v, or -c options):<br>
+    -m (Spoof the MAC Address of existing interface, and new Interface)<br>
+    -D -m (Spoof the MAC Address of only new Voice Interface)<br>
+    Example:  voiphopper -i eth0 -m 00:07:0E:EA:50:86<br>
+    Example:  voiphopper -i eth0 -D -m 00:07:0E:EA:50:86<br>
+<br>
+CDP Sniff Mode (-c 0)<br>
+    Example:  voiphopper -i eth0 -c 0<br>
+<br>
+CDP Spoof Mode (-c 1):<br>
+    -E &lt;string&gt; (Device ID)<br>
+    -P &lt;string&gt; (Port ID)<br>
+    -C &lt;string&gt; (Capabilities)<br>
+    -L &lt;string&gt; (Platform)<br>
+    -S &lt;string&gt; (Software)<br>
+    -U &lt;string&gt; (Duplex)<br>
+<br>
+Example Usage for SIP Firmware Phone:<br>
+voiphopper -i eth0 -c 1 -E 'SIP00070EEA5086' -P 'Port 1' -C Host -L 'Cisco IP Phone 7940' -S 'P003-08-8-00' -U 1<br>
+<br>
+Example Usage for SCCP Firmware Phone:<br>
+voiphopper -i eth0 -c 1 -E 'SEP0070EEA5086' -P 'Port 1' -C Host -L 'Cisco IP Phone 7940' -S 'P00308000700' -U 1<br>
+<br>
+Example Usage for Phone with MAC Spoofing:<br>
+voiphopper -i eth0 -m 00:07:0E:EA:50:86 -c 1 -E 'SEP00070EEA5086' -P 'Port 1' -C Host -L 'Cisco IP Phone 7940' -S 'P003-08-8-00' -U 1<br>
+<br>
+Avaya DHCP Option Mode (-a):<br>
+    Example:  voiphopper -i eth0 -a<br>
+    Example:  voiphopper -i eth0 -a -m 00:07:0E:EA:50:86<br>
+<br>
+VLAN Hop Mode (-v VLAN ID):<br>
+    Example:  voiphopper -i eth0 -v 200<br>
+    Example:  voiphopper -i eth0 -v 200 -D -m 00:07:0E:EA:50:86<br>
+<br>
+Alcatel VLAN Discovery (-t 0|1|2):<br>
+    Example:  voiphopper -i eth0 -t 0<br>
+    Example:  voiphopper -i eth0 -t 1<br>
+    Example:  voiphopper -i eth0 -t 0 -m 00:80:9f:ad:42:42<br>
+    Example:  voiphopper -i eth0 -t 1 -m 00:80:9f:ad:42:42<br>
+    Example:  voiphopper -i eth0 -t 2 -v 800<br>
+    Example:  voiphopper -i eth0 -t 2 -v 800 -m 00:80:9f:ad:42:42</code>
+<h3>voiphopper Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4c3e2323380c272d2025">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# voiphopper -i eth0 -z<br>
+VoIP Hopper assessment mode ~ Select 'q' to quit and 'h' for help menu.<br>
+Main Sniffer:  capturing packets on eth0<br>
+a<br>
+Analyzing ARP packets on default interface: eth0<br>
+New host #1 learned on eth0: (MAC): 78:ca:39:fe:0b:4c   (IP): 192.168.1.229<br>
+New host #2 learned on eth0: (MAC): 60:6b:bd:5a:b6:6c   (IP): 192.168.1.213<br>
+New host #3 learned on eth0: (MAC): 40:6c:8f:1b:cb:90   (IP): 192.168.1.232<br>
+a<br>
+Disabling analysis of ARP packets on default interface:  eth0</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

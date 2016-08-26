@@ -1,0 +1,65 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>pdfid Package Description</h2>
+<p style="text-align: justify;">This tool is not a PDF parser, but it will scan a file to look for certain PDF keywords, allowing you to identify PDF documents that contain (for example) JavaScript or execute an action when opened. PDFiD will also handle name obfuscation.</p>
+<p>The idea is to use this tool first to triage PDF documents, and then analyze the suspicious ones with my pdf-parser.</p>
+<p>An important design criterium for this program is simplicity. Parsing a PDF document completely requires a very complex program, and hence it is bound to contain many (security) bugs. To avoid the risk of getting exploited, I decided to keep this program very simple (it is even simpler than pdf-parser.py).</p>
+<p>Source: http://blog.didierstevens.com/programs/pdf-tools/<br>
+<a href="http://blog.didierstevens.com/programs/pdf-tools/" variation="deepblue" target="blank">pdfid Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/pdfid.git;a=summary" variation="deepblue" target="blank">Kali pdfid Repo</a></p>
+<ul>
+<li>Author: Didier Stevens</li>
+<li>License: None</li>
+</ul>
+<h3>Tools included in the pdfid package</h3>
+<h5>pdfid – Scans PDF files for certain PDF keywords</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2b5944445f6b404a4742">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pdfid -h<br>
+Usage: pdfid [options] [pdf-file]<br>
+Tool to test a PDF file<br>
+<br>
+Options:<br>
+  --version     show program's version number and exit<br>
+  -h, --help    show this help message and exit<br>
+  -s, --scan    scan the given directory<br>
+  -a, --all     display all the names<br>
+  -e, --extra   display extra data, like dates<br>
+  -f, --force   force the scan of the file, even without proper %PDF header<br>
+  -d, --disarm  disable JavaScript and auto launch</code>
+<h3>pdfid Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e5978a8a91a58e84898c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pdfid /usr/share/doc/texmf/fonts/lm/lm-info.pdf<br>
+PDFiD 0.0.12 /usr/share/doc/texmf/fonts/lm/lm-info.pdf<br>
+ PDF Header: %PDF-1.4<br>
+ obj                  526<br>
+ endobj               526<br>
+ stream               151<br>
+ endstream            151<br>
+ xref                   1<br>
+ trailer                1<br>
+ startxref              1<br>
+ /Page                 26<br>
+ /Encrypt               0<br>
+ /ObjStm                0<br>
+ /JS                    0<br>
+ /JavaScript            0<br>
+ /AA                    0<br>
+ /OpenAction            0<br>
+ /AcroForm              0<br>
+ /JBIG2Decode           0<br>
+ /RichMedia             0<br>
+ /Launch                0<br>
+ /EmbeddedFile          0<br>
+ /Colors &gt; 2^24         0</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

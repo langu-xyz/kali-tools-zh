@@ -1,0 +1,95 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>patator Package Description</h2>
+<p style="text-align: justify;">Patator is a multi-purpose brute-forcer, with a modular design and a flexible usage. Currently it supports the following modules:</p>
+<ul>
+<li>ftp_login : Brute-force FTP</li>
+<li>ssh_login : Brute-force SSH</li>
+<li>telnet_login : Brute-force Telnet</li>
+<li>smtp_login : Brute-force SMTP</li>
+<li>smtp_vrfy : Enumerate valid users using the SMTP ‘VRFY’ command</li>
+<li>smtp_rcpt : Enumerate valid users using the SMTP ‘RCPT TO’ command</li>
+<li>finger_lookup : Enumerate valid users using Finger</li>
+<li>http_fuzz : Brute-force HTTP</li>
+<li>pop_login : Brute-force POP3</li>
+<li>pop_passd : Brute-force poppassd (http://netwinsite.com/poppassd/)</li>
+<li>imap_login : Brute-force IMAP4 – ldap_login : Brute-force LDAP</li>
+<li>smb_login : Brute-force SMB</li>
+<li>smb_lookupsid : Brute-force SMB SID-lookup</li>
+<li>vmauthd_login : Brute-force VMware Authentication Daemon</li>
+<li>mssql_login : Brute-force MSSQL</li>
+<li>oracle_login : Brute-force Oracle</li>
+<li>mysql_login : Brute-force MySQL</li>
+<li>pgsql_login : Brute-force PostgreSQL</li>
+<li>vnc_login : Brute-force VNC</li>
+<li>dns_forward : Brute-force DNS</li>
+<li>dns_reverse : Brute-force DNS (reverse lookup subnets)</li>
+<li>snmp_login : Brute-force SNMPv1/2 and SNMPv3</li>
+<li>unzip_pass : Brute-force the password of encrypted ZIP files</li>
+<li>keystore_pass : Brute-force the password of Java keystore files</li>
+</ul>
+<p>Source: http://code.google.com/p/patator/<br>
+<a href="http://code.google.com/p/patator/" variation="deepblue" target="blank">patator Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/patator.git;a=summary" variation="deepblue" target="blank">Kali patator Repo</a></p>
+<ul>
+<li>Author: Sebastien MACKE</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the patator package”</h3>
+<h5>patator – Multi-purpose brute-forcer</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="beccd1d1cafed5dfd2d7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# patator<br>
+Patator v0.5 (http://code.google.com/p/patator/)<br>
+Usage: patator.py module --help<br>
+<br>
+Available modules:<br>
+  + ftp_login     : Brute-force FTP<br>
+  + ssh_login     : Brute-force SSH<br>
+  + telnet_login  : Brute-force Telnet<br>
+  + smtp_login    : Brute-force SMTP<br>
+  + smtp_vrfy     : Enumerate valid users using SMTP VRFY<br>
+  + smtp_rcpt     : Enumerate valid users using SMTP RCPT TO<br>
+  + finger_lookup : Enumerate valid users using Finger<br>
+  + http_fuzz     : Brute-force HTTP<br>
+  + pop_login     : Brute-force POP3<br>
+  + pop_passd     : Brute-force poppassd (http://netwinsite.com/poppassd/)<br>
+  + imap_login    : Brute-force IMAP4<br>
+  + ldap_login    : Brute-force LDAP<br>
+  + smb_login     : Brute-force SMB<br>
+  + smb_lookupsid : Brute-force SMB SID-lookup<br>
+  + vmauthd_login : Brute-force VMware Authentication Daemon<br>
+  + mssql_login   : Brute-force MSSQL<br>
+  + oracle_login  : Brute-force Oracle<br>
+  + mysql_login   : Brute-force MySQL<br>
+  + mysql_query   : Brute-force MySQL queries<br>
+  + pgsql_login   : Brute-force PostgreSQL<br>
+  + vnc_login     : Brute-force VNC<br>
+  + dns_forward   : Forward lookup names<br>
+  + dns_reverse   : Reverse lookup subnets<br>
+  + snmp_login    : Brute-force SNMP v1/2/3<br>
+  + unzip_pass    : Brute-force the password of encrypted ZIP files<br>
+  + keystore_pass : Brute-force the password of Java keystore files<br>
+  + tcp_fuzz      : Fuzz TCP services<br>
+  + dummy_test    : Testing module</code>
+<h3>patator Usage Example</h3>
+<p>Do a MySQL brute force attack <b><i>(mysql_login)</i></b> with the root user <b><i>(user=root)</i></b> and passwords contained in a file <b><i>(password=FILE0 0=/root/passes.txt)</i></b> against the given host <b><i>(host=127.0.0.1)</i></b>, ignoring the specified string <b><i>(-x ignore:fgrep=’Access denied for user’)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5725383823173c363b3e">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# patator mysql_login user=root password=FILE0 0=/root/passes.txt host=127.0.0.1 -x ignore:fgrep='Access denied for user'<br>
+12:30:36 patator    INFO - Starting Patator v0.5 (http://code.google.com/p/patator/) at 2014-05-19 12:30 EDT<br>
+12:30:36 patator    INFO - <br>
+12:30:36 patator    INFO - code  size | candidate                          |   num | mesg<br>
+12:30:36 patator    INFO - ----------------------------------------------------------------------<br>
+12:30:37 patator    INFO - 0     16   | toor                               |  4493 | 5.5.37-0+wheezy1<br>
+12:30:37 patator    INFO - Hits/Done/Skip/Fail/Size: 1/4493/0/0/4493, Avg: 3582 r/s, Time: 0h 0m 1s</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

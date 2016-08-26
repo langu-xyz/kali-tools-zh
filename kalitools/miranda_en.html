@@ -1,0 +1,65 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>Miranda Package Description</h2>
+<p style="text-align: justify;">Miranda is a Python-based Universal Plug-N-Play client application designed to discover, query and interact with UPNP devices, particularly Internet Gateway Devices (aka, routers). It can be used to audit UPNP-enabled devices on a network for possible vulnerabilities. Some of its features include:</p>
+<ul>
+<li>Interactive shell with tab completion and command history</li>
+<li>Passive and active discovery of UPNP devices</li>
+<li>Customizable MSEARCH queries (query for specific devices/services)</li>
+<li>Full control over application settings such as IP addresses, ports and headers</li>
+<li>Simple enumeration of UPNP devices, services, actions and variables</li>
+<li>Correlation of input/output state variables with service actions</li>
+<li>Ability to send actions to UPNP services/devices</li>
+<li>Ability to save data to file for later analysis and collaboration</li>
+<li>Command logging</li>
+</ul>
+<p>Miranda was built on and for a Linux system and has been tested on a Linux 2.6 kernel with Python 2.5. However, since it is written in Python, most functionality should be available for any Python-supported platform. Miranda has been tested against IGDs from various vendors, including Linksys, D-Link, Belkin and ActionTec. All Python modules came installed by default on a Linux Mint 5 (Ubuntu 8.04) test system.</p>
+<p>Source: https://code.google.com/p/mirandaupnptool/<br>
+<a href="http://code.google.com/p/mirandaupnptool/" variation="deepblue" target="blank">Miranda Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/miranda.git;a=summary" variation="deepblue" target="blank">Kali Miranda Repo</a></p>
+<ul>
+<li>Author: Craig Heffner</li>
+<li>License: MIT</li>
+</ul>
+<h3>Tools included in the miranda package</h3>
+<h5>miranda – UPNP administration tool</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="acdec3c3d8ecc7cdc0c5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# miranda -h<br>
+<br>
+Command line usage: /usr/bin/miranda [OPTIONS]<br>
+<br>
+    -s &lt;struct file&gt;    Load previous host data from struct file<br>
+    -l &lt;log file&gt;       Log user-supplied commands to log file<br>
+    -i &lt;interface&gt;      Specify the name of the interface to use (Linux only, requires root)<br>
+    -u          Disable show-uniq-hosts-only option<br>
+    -d          Enable debug mode<br>
+    -v          Enable verbose mode<br>
+    -h          Show help</code>
+<h3>miranda Usage Example</h3>
+<p>Start on interface eth0 <b><i>(-i eth0)</i></b> in verbose mode <b><i>(-v)</i></b>, then start discovery mode <b><i>(msearch)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a0d2cfcfd4e0cbc1ccc9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# miranda -i eth0 -v<br>
+<br>
+Binding to interface eth0 ...<br>
+<br>
+Verbose mode enabled!<br>
+upnp&gt; msearch<br>
+<br>
+Entering discovery mode for 'upnp:rootdevice', Ctl+C to stop...<br>
+<br>
+****************************************************************<br>
+SSDP notification message from 192.168.1.230:80<br>
+XML file is located at http://192.168.1.230:80/description.xml<br>
+Device is running FreeRTOS/6.0.5, UPnP/1.0, IpBridge/0.1</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

@@ -1,0 +1,115 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>Reaver Package Description</h2>
+<p style="text-align: justify;">Reaver implements a brute force attack against Wifi Protected Setup (WPS) registrar PINs in order to recover WPA/WPA2 passphrases, as described in http://sviehb.files.wordpress.com/2011/12/viehboeck_wps.pdf.</p>
+<p>Reaver has been designed to be a robust and practical attack against WPS, and has been tested against a wide variety of access points and WPS implementations.</p>
+<p>On average Reaver will recover the target AP’s plain text WPA/WPA2 passphrase in 4-10 hours, depending on the AP. In practice, it will generally take half this time to guess the correct WPS pin and recover the passphrase</p>
+<p>Source: https://code.google.com/p/reaver-wps/<br>
+<a href="http://code.google.com/p/reaver-wps/" variation="deepblue" target="blank">Reaver Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/reaver.git;a=summary" variation="deepblue" target="blank">Kali Reaver Repo</a></p>
+<ul>
+<li>Author: Tactical Network Solutions, Craig Heffner</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the reaver package</h3>
+<h5>reaver – WiFi Protected Setup Attack Tool</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="65170a0a11250e04090c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# reaver -h<br>
+<br>
+Reaver v1.4 WiFi Protected Setup Attack Tool<br>
+Copyright (c) 2011, Tactical Network Solutions, Craig Heffner &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1b78737e7d7d757e695b6f7a78757e6f68747735787476">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+<br>
+Required Arguments:<br>
+    -i, --interface=&lt;wlan&gt;          Name of the monitor-mode interface to use<br>
+    -b, --bssid=&lt;mac&gt;               BSSID of the target AP<br>
+<br>
+Optional Arguments:<br>
+    -m, --mac=&lt;mac&gt;                 MAC of the host system<br>
+    -e, --essid=&lt;ssid&gt;              ESSID of the target AP<br>
+    -c, --channel=&lt;channel&gt;         Set the 802.11 channel for the interface (implies -f)<br>
+    -o, --out-file=&lt;file&gt;           Send output to a log file [stdout]<br>
+    -s, --session=&lt;file&gt;            Restore a previous session file<br>
+    -C, --exec=&lt;command&gt;            Execute the supplied command upon successful pin recovery<br>
+    -D, --daemonize                 Daemonize reaver<br>
+    -a, --auto                      Auto detect the best advanced options for the target AP<br>
+    -f, --fixed                     Disable channel hopping<br>
+    -5, --5ghz                      Use 5GHz 802.11 channels<br>
+    -v, --verbose                   Display non-critical warnings (-vv for more)<br>
+    -q, --quiet                     Only display critical messages<br>
+    -h, --help                      Show help<br>
+<br>
+Advanced Options:<br>
+    -p, --pin=&lt;wps pin&gt;             Use the specified 4 or 8 digit WPS pin<br>
+    -d, --delay=&lt;seconds&gt;           Set the delay between pin attempts [1]<br>
+    -l, --lock-delay=&lt;seconds&gt;      Set the time to wait if the AP locks WPS pin attempts [60]<br>
+    -g, --max-attempts=&lt;num&gt;        Quit after num pin attempts<br>
+    -x, --fail-wait=&lt;seconds&gt;       Set the time to sleep after 10 unexpected failures [0]<br>
+    -r, --recurring-delay=&lt;x:y&gt;     Sleep for y seconds every x pin attempts<br>
+    -t, --timeout=&lt;seconds&gt;         Set the receive timeout period [5]<br>
+    -T, --m57-timeout=&lt;seconds&gt;     Set the M5/M7 timeout period [0.20]<br>
+    -A, --no-associate              Do not associate with the AP (association must be done by another application)<br>
+    -N, --no-nacks                  Do not send NACK messages when out of order packets are received<br>
+    -S, --dh-small                  Use small DH keys to improve crack speed<br>
+    -L, --ignore-locks              Ignore locked state reported by the target AP<br>
+    -E, --eap-terminate             Terminate each WPS session with an EAP FAIL packet<br>
+    -n, --nack                      Target AP always sends a NACK [Auto]<br>
+    -w, --win7                      Mimic a Windows 7 registrar [False]<br>
+<br>
+Example:<br>
+    reaver -i mon0 -b 00:90:4C:C1:AC:21 -vv</code>
+<h3>wash – WiFi Protected Setup Scan Tool</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e694898992a68d878a8f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wash -h<br>
+<br>
+Wash v1.4 WiFi Protected Setup Scan Tool<br>
+Copyright (c) 2011, Tactical Network Solutions, Craig Heffner &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ef8c878a8989818a9daf9b8e8c818a9b9c8083c18c8082">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+<br>
+Required Arguments:<br>
+    -i, --interface=&lt;iface&gt;              Interface to capture packets on<br>
+    -f, --file [FILE1 FILE2 FILE3 ...]   Read packets from capture files<br>
+<br>
+Optional Arguments:<br>
+    -c, --channel=&lt;num&gt;                  Channel to listen on [auto]<br>
+    -o, --out-file=&lt;file&gt;                Write data to file<br>
+    -n, --probes=&lt;num&gt;                   Maximum number of probes to send to each AP in scan mode [15]<br>
+    -D, --daemonize                      Daemonize wash<br>
+    -C, --ignore-fcs                     Ignore frame checksum errors<br>
+    -5, --5ghz                           Use 5GHz 802.11 channels<br>
+    -s, --scan                           Use scan mode<br>
+    -u, --survey                         Use survey mode [default]<br>
+    -h, --help                           Show help<br>
+<br>
+Example:<br>
+    wash -i mon0</code>
+<h3>wash Usage Example</h3>
+<p>Scan for networks using the monitor mode interface <b><i>(-i mon0)</i></b> on channel 6 <b><i>(-c 6)</i></b>, while ignoring frame checksum errors <b><i>(-C)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="95e7fafae1d5fef4f9fc">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wash -i mon0 -c 6 -C<br>
+<br>
+Wash v1.4 WiFi Protected Setup Scan Tool<br>
+Copyright (c) 2011, Tactical Network Solutions, Craig Heffner &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="294a414c4f4f474c5b695d484a474c5d5a4645074a4644">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+<br>
+BSSID                  Channel       RSSI       WPS Version       WPS Locked        ESSID<br>
+---------------------------------------------------------------------------------------------------------------<br>
+E0:3F:49:6A:57:78       6            -73        1.0               No                ASUS</code>
+<h3>reaver Usage Example</h3>
+<p>Use the monitor mode interface <b><i>(-i mon0)</i></b> to attack the access point <b><i>(-b E0:3F:49:6A:57:78)</i></b>, displaying verbose output <b><i>(-v)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="04766b6b70446f65686d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# reaver -i mon0 -b E0:3F:49:6A:57:78 -v<br>
+<br>
+Reaver v1.4 WiFi Protected Setup Attack Tool<br>
+Copyright (c) 2011, Tactical Network Solutions, Craig Heffner &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="dfbcb7bab9b9b1baad9fabbebcb1baabacb0b3f1bcb0b2">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+<br>
+[+] Waiting for beacon from E0:3F:49:6A:57:78<br>
+[+] Associated with E0:3F:49:6A:57:78 (ESSID: ASUS)<br>
+[+] Trying pin 12345670</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

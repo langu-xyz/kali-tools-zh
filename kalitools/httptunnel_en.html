@@ -1,0 +1,109 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>HTTPTunnel Package Description</h2>
+<p style="text-align: justify;">HTTPTunnel is a tunneling software that can tunnel network connections through restrictive HTTP proxies over pure HTTP “GET” and “POST” requests. HTTPTunnel consists of two components: </p>
+<ul>
+<li>The client that resides behind the firewall and accepts network connections on ports that will either be mapped to a specific remote target server/port (portmapping) or will act as a SOCKS (v4 and v5) proxy. The SOCKS authentication source can be a fixed user list, an LDAP or MySQL directory. The client is available as platform-independent Perl script or as Win32 binary.</li>
+<li>The server that resides on the internet and accepts HTTP requests from the client which will be translated and forwarded to network connections to the remote servers.</li>
+</ul>
+<p>Two different servers are available: </p>
+<ul>
+<li>The hosted server, which is basically a PHP script that must be put on a PHP enabled web server. Putting the PHP script on a webserver enables the webserver to act as your HTTP tunnel server.</li>
+<li>The standalone server, which is available as platform-independent Perl script or as Win32 binary. This server can be used if you have a box on the internet where you can run your own programs (e.g. your box at home). Using the standalone server (as opposed to the hosted server) is recommended as it does not suffer from many restrictions that the webserver may impose on the PHP script, e.g. maximum script runtime (which will limit the duration of your connections), load-balanced server environments, provider policies etc.</li>
+</ul>
+<p>Configuration of all components is done over a web-based GUI. SOCKS proxy cascading is supported.</p>
+<p><a href="http://www.nocrew.org/software/httptunnel.html" variation="deepblue" target="blank">HTTPTunnel Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/httptunnel.git;a=summary" variation="deepblue" target="blank">Kali HTTPTunnel Repo</a></p>
+<ul>
+<li>Author: Lars Brinkhoff</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the httptunnel package</h3>
+<h5>hts – httptunnel server component</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0a7865657e4a616b6663">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# hts -h<br>
+Usage: hts [OPTION]... [HOST:][PORT]<br>
+Listen for incoming httptunnel connections at PORT (default port is 8888).<br>
+When a connection is made, I/O is redirected to the destination specified<br>
+by the --device, --forward-port or --stdin-stdout switch.<br>
+<br>
+  -c, --content-length BYTES     use HTTP PUT requests of BYTES size<br>
+                                 (k, M, and G postfixes recognized)<br>
+  -d, --device DEVICE            use DEVICE for input and output<br>
+  -F, --forward-port HOST:PORT   connect to PORT at HOST and use it for<br>
+                                 input and output<br>
+  -h, --help                     display this help and exit<br>
+  -k, --keep-alive SECONDS       send keepalive bytes every SECONDS seconds<br>
+                                 (default is 5)<br>
+  -M, --max-connection-age SEC   maximum time a connection will stay<br>
+                                 open is SEC seconds (default is 300)<br>
+  -s, --stdin-stdout             use stdin/stdout for communication<br>
+                                 (implies --no-daemon)<br>
+  -S, --strict-content-length    always write Content-Length bytes in requests<br>
+  -V, --version                  output version information and exit<br>
+  -w, --no-daemon                don't fork into the background<br>
+  -p, --pid-file LOCATION        write a PID file to LOCATION<br>
+<br>
+Report bugs to <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c9abbcaee4a1bdbdb9bdbca7a7aca589aea7bce7a6bbaee7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></code>
+<h3>htc – httptunnel client component</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3c4e5353487c575d5055">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# htc -h<br>
+Usage: htc [OPTION]... HOST[:PORT]<br>
+Set up a httptunnel connection to PORT at HOST (default port is 8888).<br>
+When a connection is made, I/O is redirected from the source specified<br>
+by the --device, --forward-port or --stdin-stdout switch to the tunnel.<br>
+<br>
+  -A, --proxy-authorization USER:PASSWORD  proxy authorization<br>
+  -z, --proxy-authorization-file FILE      proxy authorization file<br>
+  -B, --proxy-buffer-size BYTES  assume a proxy buffer size of BYTES bytes<br>
+                                 (k, M, and G postfixes recognized)<br>
+  -c, --content-length BYTES     use HTTP PUT requests of BYTES size<br>
+                                 (k, M, and G postfixes recognized)<br>
+  -d, --device DEVICE            use DEVICE for input and output<br>
+  -F, --forward-port PORT        use TCP port PORT for input and output<br>
+  -h, --help                     display this help and exit<br>
+  -k, --keep-alive SECONDS       send keepalive bytes every SECONDS seconds<br>
+                                 (default is 5)<br>
+  -M, --max-connection-age SEC   maximum time a connection will stay<br>
+                                 open is SEC seconds (default is 300)<br>
+  -P, --proxy HOSTNAME[:PORT]    use a HTTP proxy (default port is 8080)<br>
+  -s, --stdin-stdout             use stdin/stdout for communication<br>
+                                 (implies --no-daemon)<br>
+  -S, --strict-content-length    always write Content-Length bytes in requests<br>
+  -T, --timeout TIME             timeout, in milliseconds, before sending<br>
+                                 padding to a buffering proxy<br>
+  -U, --user-agent STRING        specify User-Agent value in HTTP requests<br>
+  -V, --version                  output version information and exit<br>
+  -w, --no-daemon                don't fork into the background<br>
+<br>
+Report bugs to <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e4869183c98c90909490918a8a8188a4838a91ca8b9683ca">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></code>
+<h3>hts Usage Example</h3>
+<p>Start hts (on kali-srv) and forward <b><i>(-F)</i></b> incoming connections on port <b><i>2130</i></b> to <b><i>localhost:22</i></b>.</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="43312c2c370328222f2a6e303135">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# hts -F localhost:22 2139</code>
+<h3>htc Usage Example</h3>
+<p>Start htc (on kali-htc) and forward <b><i>(-F)</i></b> incoming connections on port <b><i>8090</i></b> to <b><i>192.168.1.15:2139</i></b>. Afterward connect to <b><i>kali-srv</i></b> via ssh through <b><i>HTTPTunnel</i></b>.</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c1b3aeaeb581aaa0ada8eca2adb5">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# htc -F 8090 192.168.1.15:2139<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="54263b3b20143f35383d79373820">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ssh localhost -p 8090<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f5879a9a81b5999a9694999d9a8681">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>'s password:<br>
+Linux kali-srv 3.12-kali1-amd64 #1 SMP Debian 3.12.6-2kali1 (2014-01-06) x86_64<br>
+<br>
+The programs included with the Kali GNU/Linux system are free software;<br>
+the exact distribution terms for each program are described in the<br>
+individual files in /usr/share/doc/*/copyright.<br>
+<br>
+Kali GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>
+permitted by applicable law.<br>
+Last login: Fri Aug  1 02:13:32 2014 from localhost<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="55273a3a21153e34393c78262723">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~#</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

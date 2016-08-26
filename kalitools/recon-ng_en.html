@@ -1,0 +1,81 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>Recon-ng Package Description</h2>
+<p style="text-align: justify;">Recon-ng is a full-featured Web Reconnaissance framework written in Python. Complete with independent modules, database interaction, built in convenience functions, interactive help, and command completion, Recon-ng provides a powerful environment in which open source web-based reconnaissance can be conducted quickly and thoroughly.</p>
+<p>Recon-ng has a look and feel similar to the Metasploit Framework, reducing the learning curve for leveraging the framework. However, it is quite different. Recon-ng is not intended to compete with existing frameworks, as it is designed exclusively for web-based open source reconnaissance. If you want to exploit, use the Metasploit Framework. If you want to Social Engineer, us the Social Engineer Toolkit. If you want to conduct reconnaissance, use Recon-ng! See the Usage Guide for more information.</p>
+<p>Recon-ng is a completely modular framework and makes it easy for even the newest of Python developers to contribute. Each module is a subclass of the “module” class. The “module” class is a customized “cmd” interpreter equipped with built-in functionality that provides simple interfaces to common tasks such as standardizing output, interacting with the database, making web requests, and managing API keys. Therefore, all the hard work has been done. Building modules is simple and takes little more than a few minutes. See the Development Guide for more information.</p>
+<p>Source: https://bitbucket.org/LaNMaSteR53/recon-ng<br>
+<a href="https://bitbucket.org/LaNMaSteR53/recon-ng" variation="deepblue" target="blank">Recon-ng Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/recon-ng.git;a=summary" variation="deepblue" target="blank">Kali Recon-ng Repo</a></p>
+<ul>
+<li>Author: Tim Tomes</li>
+<li>License: GPLv3</li>
+</ul>
+<h3>Tools included in the recon-ng package</h3>
+<h5>recon-ng – Web Reconnaissance framework written in Python</h5>
+<p>A full-featured Web Reconnaissance framework.</p>
+<h3>recon-ng Usage Example</h3>
+<p>Search for results on xssed.com <b><i>(use recon/hosts/enum/http/web/xssed)</i></b> for the target domain <b><i>(set DOMAIN cisco.com)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="23514c4c576348424f4a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# recon-ng <br>
+                                                                                        <br>
+    _/_/_/    _/_/_/_/    _/_/_/    _/_/_/    _/      _/            _/      _/    _/_/_/<br>
+   _/    _/  _/        _/        _/      _/  _/_/    _/            _/_/    _/  _/       <br>
+  _/_/_/    _/_/_/    _/        _/      _/  _/  _/  _/  _/_/_/_/  _/  _/  _/  _/  _/_/_/<br>
+ _/    _/  _/        _/        _/      _/  _/    _/_/            _/    _/_/  _/      _/ <br>
+_/    _/  _/_/_/_/    _/_/_/    _/_/_/    _/      _/            _/      _/    _/_/_/    <br>
+                                                                                        <br>
+     +---------------------------------------------------------------------------+      <br>
+     |  _                     ___    _                        __                 |      <br>
+     | |_)| _  _|_  |_|.|| _   |  _ |_ _  _ _  _ _|_o _  _   (_  _  _    _o_|_   |      <br>
+     | |_)|(_|(_|\  | ||||_\  _|_| || (_)| |||(_| | |(_)| |  __)(/_(_|_|| | | \/ |      <br>
+     |                                                                        /  |      <br>
+     |              Consulting | Research | Development | Training               |      <br>
+     |                     http://www.blackhillsinfosec.com                      |      <br>
+     +---------------------------------------------------------------------------+      <br>
+<br>
+                      [recon-ng v3.5.1, Tim Tomes (@LaNMaSteR53)]                       <br>
+<br>
+[65] Recon modules<br>
+[6]  Discovery modules<br>
+[4]  Reporting modules<br>
+[3]  Import modules<br>
+[2]  Exploitation modules<br>
+<br>
+[recon-ng][default] &gt; use recon/hosts/enum/http/web/xssed<br>
+[recon-ng][default][xssed] &gt; set DOMAIN cisco.com<br>
+DOMAIN =&gt; cisco.com<br>
+[recon-ng][default][xssed] &gt; run<br>
+[*] URL: http://xssed.com/search?key=cisco.com<br>
+--------------------------------------------------<br>
+[*] Mirror: http://xssed.com/mirror/76478/<br>
+[*] Domain: www.cisco.com<br>
+[*] URL: http://www.cisco.com/survey/exit.html?http://xssed.com/<br>
+[*] Date submitted: 16/02/2012<br>
+[*] Date published: 16/02/2012<br>
+[*] Category: Redirect<br>
+[*] Status: UNFIXED<br>
+--------------------------------------------------<br>
+[*] Mirror: http://xssed.com/mirror/76294/<br>
+[*] Domain: developer.cisco.com<br>
+[*] URL: http://developer.cisco.com/web/webdialer/wikidocs?p_p_id=1_WAR_wikinavigationportlet_INSTANCE_v<br>
+    eD7&amp;p&lt;br&gt;_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_count=1&amp;p_r_p<br>
+    _185834411_no&lt;br&gt;deId=803209&amp;p_r_p_185834411_title=%22%3E%3Ch1%3ECross-<br>
+    <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0e5d677a6b2b3c3e5d6d7c677e7a6760692b3c3e4e636f7a676f7d62616067697c61">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>%3C/h1%3E%3Cs&lt;br&gt;cript%3Ealert%28/xss/%29%3C/script%3E<br>
+[*] Date submitted: 10/02/2012<br>
+[*] Date published: 13/02/2012<br>
+[*] Category: XSS<br>
+[*] Status: UNFIXED</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

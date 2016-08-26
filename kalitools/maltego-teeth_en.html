@@ -1,0 +1,94 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>Maltego Teeth Package Description</h2>
+<p style="text-align: justify;">Maltego is a unique platform developed to deliver a clear threat picture to the environment that an organization owns and operates. Maltego’s unique advantage is to demonstrate the complexity and severity of single points of failure as well as trust relationships that exist currently within the scope of your infrastructure. </p>
+<p>The unique perspective that Maltego offers to both network and resource based entities is the aggregation of information posted all over the internet – whether it’s the current configuration of a router poised on the edge of your network or the current whereabouts of your Vice President on his international visits, Maltego can locate, aggregate and visualize this information. </p>
+<p>Maltego offers the user with unprecedented information. Information is leverage. Information is power. Information is Maltego. </p>
+<p>What does Maltego do?</p>
+<p>Maltego is a program that can be used to determine the relationships and real world links between:</p>
+<ul>
+<li>People</li>
+<li>Groups of people (social networks)</li>
+<li>Companies</li>
+<li>Organizations</li>
+<li>Web sites</li>
+<li>Internet infrastructure such as:</li>
+<li>Domains</li>
+<li>DNS names</li>
+<li>Netblocks</li>
+<li>IP addresses</li>
+<li>Phrases</li>
+<li>Affiliations</li>
+<li>Documents and files</li>
+<li>These entities are linked using open source intelligence.</li>
+<li>Maltego is easy and quick to install – it uses Java, so it runs on Windows, Mac and Linux.</li>
+<li>Maltego provides you with a graphical interface that makes seeing these relationships instant and accurate – making it possible to see hidden connections.</li>
+<li>Using the graphical user interface (GUI) you can see relationships easily – even if they are three or four degrees of separation away.</li>
+<li>Maltego is unique because it uses a powerful, flexible framework that makes customizing possible. As such, Maltego can be adapted to your own, unique requirements.</li>
+</ul>
+<h3>What can Maltego do for me?</h3>
+<ul>
+<li>Maltego can be used for the information gathering phase of all security related work. It will save you time and will allow you to work more accurately and smarter.</li>
+<li>Maltego aids you in your thinking process by visually demonstrating interconnected links between searched items.</li>
+<li>Maltego provide you with a much more powerful search, giving you smarter results.</li>
+<li>If access to “hidden” information determines your success, Maltego can help you discover it.</li>
+</ul>
+<p>Source: http://paterva.com/web6/products/maltego.php<br>
+<a href="http://paterva.com" variation="deepblue" target="blank">Maltego Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/maltego-teeth.git;a=summary" variation="deepblue" target="blank">Kali Maltego Teeth Repo</a></p>
+<ul>
+<li>Author: Paterva</li>
+<li>License: Commercial</li>
+</ul>
+<h3>Maltego Teeth README</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d3a1bcbca793b8b2bfba">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cat /opt/Teeth/README.txt <br>
+NB NB: This runs on Kali Linux<br>
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-<br>
+#Make directory /opt/Teeth/<br>
+#Copy tgz to /opt/Teeth/<br>
+#Untar<br>
+<br>
+Load the config file called /opt/Teeth/etc/Maltego_config.mtz file into Maltego. <br>
+This is painless:<br>
+1) Open Maltego Tungsten (or Radium)<br>
+2) Click top left globe/sphere (Application button) <br>
+3) Import -&gt; Import configuration, choose /opt/Teeth/etc/Maltego_config.mtz<br>
+<br>
+Notes<br>
+-----<br>
+Config file is in /opt/Teeth/etc/TeethConfig.txt<br>
+Everything can be set in the config file.<br>
+<br>
+Log file is /var/log/Teeth.log, tail -f it while you running transforms for<br>
+real time logs of what's happening.<br>
+<br>
+You can set DEBUG/INFO. DEBUG is useful for seeing progress - set in<br>
+/opt/Teeth/units/TeethLib.py line 26<br>
+<br>
+Look in cache/ directory. Here you find caches of:<br>
+1) Nmap results<br>
+2) Mirrors<br>
+3) SQLMAP results<br>
+<br>
+You need to remove cache files by hand if you no longer want them.<br>
+You can run housekeep/clear_cache.sh but it removes EVERYTHING.<br>
+<br>
+The WP brute transform uses Metasploit.Start Metasploit server so:<br>
+    msfconsole -r /opt/Teeth/static/Teeth-MSF.rc <br>
+It takes a while to start, so be patient.<br>
+<br>
+In /housekeep is killswitch.sh - it's the same as killall python.</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

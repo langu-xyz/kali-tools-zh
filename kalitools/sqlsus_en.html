@@ -1,0 +1,66 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>sqlsus Package Description</h2>
+<p style="text-align: justify;">sqlsus is an open source MySQL injection and takeover tool, written in perl.</p>
+<p>Via a command line interface, you can retrieve the database(s) structure, inject your own SQL queries (even complex ones), download files from the web server, crawl the website for writable directories, upload and control a backdoor, clone the database(s), and much more…<br>
+Whenever relevant, sqlsus will mimic a MySQL console output.</p>
+<p>sqlsus focuses on speed and efficiency, optimizing the available injection space, making the best use (I can think of) of MySQL functions.<br>
+It uses stacked subqueries and an powerful blind injection algorithm to maximize the data gathered per web server hit.<br>
+Using multi-threading on top of that, sqlsus is an extremely fast database dumper, be it for inband or blind injection.</p>
+<p>If the privileges are high enough, sqlsus will be a great help for uploading a backdoor through the injection point, and takeover the web server.</p>
+<p>It uses SQLite as a backend, for an easier use of what has been dumped, and integrates a lot of usual features (see below) such as cookie support, socks/http proxying, https.</p>
+<p>Source: http://sqlsus.sourceforge.net/<br>
+<a href="http://sqlsus.sourceforge.net/" variation="deepblue" target="blank">sqlsus Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/sqlsus.git;a=summary" variation="deepblue" target="blank">Kali sqlsus Repo</a></p>
+<ul>
+<li>Author: Jérémy Ruffet</li>
+<li>License: GPLv3</li>
+</ul>
+<h3>Tools included in the sqlsus package</h3>
+<h5>sqlsus – MySQL injection tool</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="deacb1b1aa9eb5bfb2b7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sqlsus -h<br>
+<br>
+              sqlsus version 0.7.2<br>
+<br>
+  Copyright (c) 2008-2011 Jérémy Ruffet (sativouf)<br>
+<br>
+Usage:<br>
+    sqlsus [options] [config file]<br>
+<br>
+     Options:<br>
+         -h, --help                    brief help message<br>
+         -v, --version                 version information<br>
+         -e, --execute &lt;commands&gt;      execute commands and exit<br>
+         -g, --genconf &lt;filename&gt;      generate configuration file</code>
+<h3>sqlsus Usage Example</h3>
+<p>Generate a configuration file for the scan <b><i>(-g sqlsus.cfg)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4a3825253e0a212b2623">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sqlsus -g sqlsus.cfg<br>
+<br>
+              sqlsus version 0.7.2<br>
+<br>
+  Copyright (c) 2008-2011 Jérémy Ruffet (sativouf)<br>
+<br>
+[+] Configuration successfully saved to sqlsus.cfg<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3a4855554e7a515b5653">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# nano sqlsus.cfg</code>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9eecf1f1eadef5fff2f7">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# sqlsus sqlsus.cfg <br>
+<br>
+              sqlsus version 0.7.2<br>
+<br>
+  Copyright (c) 2008-2011 Jérémy Ruffet (sativouf)<br>
+<br>
+[+] Session "192.168.1.25" created<br>
+sqlsus&gt; start</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

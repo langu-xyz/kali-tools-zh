@@ -1,0 +1,83 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>creddump Package Description</h2>
+<p style="text-align: justify;">creddump is a python tool to extract various credentials and secrets from Windows registry hives. It currently extracts:</p>
+<ul>
+<li>LM and NT hashes (SYSKEY protected)</li>
+<li>Cached domain passwords</li>
+<li>LSA secrets</li>
+</ul>
+<p>It essentially performs all the functions that bkhive/samdump2, cachedump, and lsadump2 do, but in a platform-independent way.</p>
+<p>It is also the first tool that does all of these things in an offline way (actually, Cain &amp; Abel does, but is not open source and is only available on Windows).</p>
+<p>Source: https://code.google.com/p/creddump/</p>
+<p><a href="http://code.google.com/p/creddump" variation="deepblue" target="blank">creddump Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/creddump.git;a=summary" variation="deepblue" target="blank">Kali creddump Repo</a></p>
+<ul>
+<li>Author: Brendan Dolan-Gavitt</li>
+<li>License: GPLv3</li>
+</ul>
+<h3>Tools included in the creddump package</h3>
+<h5>cachedump – Dump cached credentials</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b4c6dbdbc0f4dfd5d8dd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cachedump<br>
+usage: /usr/bin/cachedump &lt;system hive&gt; &lt;security hive&gt;</code>
+<h3>lsadump – Dump LSA secrets</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="40322f2f34002b212c29">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# lsadump<br>
+usage: /usr/bin/lsadump &lt;system hive&gt; &lt;security hive&gt;</code>
+<h3>pwdump – Dump password hashes</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="295b46465d6942484540">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pwdump<br>
+usage: /usr/bin/pwdump &lt;system hive&gt; &lt;SAM hive&gt;</code>
+<h3>pwdump Usage Example</h3>
+<p>Dump the password hashes using the system <b><i>(system)</i></b> and sam <b><i>(sam)</i></b> hives:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="61130e0e15210a000d08">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# pwdump system sam<br>
+Administrator:500:41aa818b512a8c0e72381e4c174e281b:1896d0a309184775f67c14d14b5c365a:::<br>
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::<br>
+HelpAssistant:1000:667d6c58d451dbf236ae37ab1de3b9f7:af733642ab69e156ba0c219d3bbc3c83:::<br>
+SUPPORT_388945a0:1002:aad3b435b51404eeaad3b435b51404ee:8dffa305e2bee837f279c2c0b082affb:::</code>
+<h3>lsadump Usage Example</h3>
+<p>Dump the LSA secrets using the system <b><i>(system)</i></b> and security <b><i>(security)</i></b> hives:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="98eaf7f7ecd8f3f9f4f1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# lsadump system security <br>
+_SC_ALG<br>
+<br>
+_SC_Dnscache<br>
+<br>
+_SC_upnphost<br>
+<br>
+20ed87e2-3b82-4114-81f9-5e219ed4c481-SALEMHELPACCOUNT<br>
+<br>
+_SC_WebClient<br>
+<br>
+_SC_RpcLocator<br>
+<br>
+0083343a-f925-4ed7-b1d6-d95d17a0b57b-RemoteDesktopHelpAssistantSID<br>
+0000   01 05 00 00 00 00 00 05 15 00 00 00 B6 44 E4 23    .............D.#<br>
+0010   F4 50 BA 74 07 E5 3B 2B E8 03 00 00                .P.t..;+....<br>
+<br>
+0083343a-f925-4ed7-b1d6-d95d17a0b57b-RemoteDesktopHelpAssistantAccount<br>
+0000   00 38 00 48 00 6F 00 31 00 49 45 00 4A 00 26 00    E.J.&amp;.8.H.o.1.I.<br>
+0010   00 63 00 72 00 48 00 68 00 53 6B 00 00 00          h.S.c.r.H.k...<br>
+<br>
+_SC_MSDTC<br>
+<br>
+_SC_SSDPSRV<br>
+<br>
+_SC_Alerter<br>
+<br>
+_SC_RpcSs<br>
+<br>
+_SC_LmHosts<br>
+<br>
+_SC_BthServ</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

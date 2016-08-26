@@ -1,0 +1,92 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>statsprocessor Package Description</h2>
+<p style="text-align: justify;">Statsprocessor is a high-performance word-generator based on per-position markov-attack packed into a single stand-alone binary.</p>
+<p>Source: https://hashcat.net/wiki/doku.php?id=statsprocessor<br>
+<a href="https://hashcat.net/wiki/doku.php?id=statsprocessor" variation="deepblue" target="blank">Statsprocessor Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/statsprocessor.git;a=summary" variation="deepblue" target="blank">Kali Statsprocessor Repo</a></p>
+<ul>
+<li>Author: Atom</li>
+<li>License: Other</li>
+</ul>
+<h3>Tools included in the statsprocessor package</h3>
+<h5>statsprocessor – High-Performance word generator based on hashcat markov stats</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0b7964647f4b606a6762">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# statsprocessor --help<br>
+sp by atom, High-Performance word generator based on hashcat markov stats<br>
+<br>
+Usage: ./sp.bin [options]... hcstat-file [filter-mask]<br>
+<br>
+* Startup:<br>
+<br>
+  -V,  --version             Print version<br>
+  -h,  --help                Print help<br>
+<br>
+* Increment:<br>
+<br>
+       --pw-min=NUM          Start incrementing at NUM<br>
+       --pw-max=NUM          Stop incrementing at NUM<br>
+<br>
+* Markov:<br>
+<br>
+       --markov-disable      Emulates maskprocessor output<br>
+       --markov-classic      No per-position tables<br>
+       --threshold=NUM       Filter out chars after NUM chars added<br>
+                             Set to 0 to disable<br>
+<br>
+* Misc:<br>
+<br>
+       --combinations        Calculate number of combinations<br>
+       --hex-charset         Assume charset is given in hex<br>
+<br>
+* Resources:<br>
+<br>
+  -s,  --skip=NUM            skip number of words (for restore)<br>
+  -l,  --limit=NUM           limit number of words (for distributed)<br>
+<br>
+* Files:<br>
+<br>
+  -o,  --output-file=FILE    Output-file<br>
+<br>
+* Custom charsets:<br>
+<br>
+  -1,  --custom-charset1=CS  User-defineable charsets<br>
+  -2,  --custom-charset2=CS  Example:<br>
+  -3,  --custom-charset3=CS  --custom-charset1=?dabcdef<br>
+  -4,  --custom-charset4=CS  sets charset ?1 to 0123456789abcdef<br>
+<br>
+* Built-in charsets:<br>
+<br>
+  ?l = abcdefghijklmnopqrstuvwxyz<br>
+  ?u = ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+  ?d = 0123456789<br>
+  ?s =  !"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~<br>
+  ?a = ?l?u?d?s<br>
+  ?h = 8 bit characters from 0xc0 - 0xff<br>
+  ?D = 8 bit characters from german alphabet<br>
+  ?F = 8 bit characters from french alphabet<br>
+  ?R = 8 bit characters from russian alphabet</code>
+<h3>statsprocessor Usage Example</h3>
+<p>Generate passwords with a minimum length of 6 <b><i>(–pw-min=6)</i></b> and a maximum length of 8 <b><i>(–pw-max=8)</i></b> using the stats in the provided file <b><i>(/usr/share/oclhashcat/hashcat.hcstat)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e4968b8b90a48f85888d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~#  statsprocessor --pw-min=6 --pw-max=8 /usr/share/oclhashcat/hashcat.hcstat<br>
+13nger<br>
+13aner<br>
+13rina<br>
+13erer<br>
+13ller<br>
+131200<br>
+13ster<br>
+13iner</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

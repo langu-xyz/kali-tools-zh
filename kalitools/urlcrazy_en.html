@@ -1,0 +1,81 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><p><script type="text/javascript" src="https://asciinema.org/a/31882.js" id="asciicast-31882" async></script></p>
+<h2>urlcrazy Package Description</h2>
+<p style="text-align: justify;">Generate and test domain typos and variations to detect and perform typo squatting, URL hijacking, phishing, and corporate espionage.</p>
+<p>Features</p>
+<ul>
+<li>Generates 15 types of domain variants</li>
+<li>Knows over 8000 common misspellings</li>
+<li>Supports cosmic ray induced bit flipping</li>
+<li>Multiple keyboard layouts (qwerty, azerty, qwertz, dvorak)</li>
+<li>Checks if a domain variant is valid</li>
+<li>Test if domain variants are in use</li>
+<li>Estimate popularity of a domain variant</li>
+</ul>
+<p>Source: http://www.morningstarsecurity.com/research/urlcrazy<br>
+<a href="http://www.morningstarsecurity.com/research/urlcrazy" variation="deepblue" target="blank">URLCrazy Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/urlcrazy.git;a=summary" variation="deepblue" target="blank">Kali URLCrazy Repo</a></p>
+<ul>
+<li>Author: Andrew Horton</li>
+<li>License: Non-commercial</li>
+</ul>
+<h3>Tools included in the urlcrazy package</h3>
+<h5>urlcrazy – Domain typo generator</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="295b46465d6942484540">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# urlcrazy -h<br>
+URLCrazy version 0.5<br>
+by Andrew Horton (urbanadventurer)<br>
+http://www.morningstarsecurity.com/research/urlcrazy<br>
+<br>
+Generate and test domain typos and variations to detect and perform typo squatting, URL hijacking,<br>
+phishing, and corporate espionage.<br>
+<br>
+Supports the following domain variations:<br>
+Character omission, character repeat, adjacent character swap, adjacent character replacement, double<br>
+character replacement, adjacent character insertion, missing dot, strip dashes, singular or pluralise,<br>
+common misspellings, vowel swaps, homophones, bit flipping (cosmic rays), homoglyphs, wrong top level<br>
+domain, and wrong second level domain.<br>
+<br>
+Usage: /usr/bin/urlcrazy [options] domain<br>
+<br>
+Options<br>
+ -k, --keyboard=LAYOUT  Options are: qwerty, azerty, qwertz, dvorak (default: qwerty)<br>
+ -p, --popularity   Check domain popularity with Google<br>
+ -r, --no-resolve   Do not resolve DNS<br>
+ -i, --show-invalid Show invalid domain names<br>
+ -f, --format=TYPE  Human readable or CSV (default: human readable)<br>
+ -o, --output=FILE  Output file<br>
+ -h, --help     This help<br>
+ -v, --version      Print version information. This version is 0.5</code>
+<h3>urlcrazy Usage Example</h3>
+<p>Search for URLs using the dvorak layout <b><i>(-k dvorak)</i></b> and do no resolve hostnames <b><i>(-r)</i></b> for the given domain <b><i>(example.com)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="63110c0c172308020f0a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# urlcrazy -k dvorak -r example.com<br>
+URLCrazy Domain Report<br>
+Domain    : example.com<br>
+Keyboard  : dvorak<br>
+At        : 2014-05-13 17:04:01 -0600<br>
+<br>
+# Please wait. 95 hostnames to process<br>
+<br>
+Typo Type              Typo            CC-A  Extn<br>
+---------------------------------------------------<br>
+Character Omission     eample.com      ?     com<br>
+Character Omission     examle.com      ?     com<br>
+Character Omission     exampe.com      ?     com<br>
+Character Omission     exampl.com      ?     com<br>
+Character Omission     example.cm      ?     cm<br>
+Character Omission     exaple.com      ?     com</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

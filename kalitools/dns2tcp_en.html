@@ -1,0 +1,92 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>dns2tcp Package Description</h2>
+<p style="text-align: justify;">Dns2tcp is a network tool designed to relay TCP connections through DNS traffic. Encapsulation is done on the TCP level, thus no specific driver is needed (i.e: TUN/TAP). Dns2tcp client doesn’t need to be run with specific privileges.</p>
+<p>Dns2tcp is composed of two parts : a server-side tool and a client-side tool. The server has a list of resources specified in a configuration file. Each resource is a local or remote service listening for TCP connections. The client listen on a predefined TCP port and relays each incoming connection through DNS to the final service.</p>
+<p>Source: http://www.hsc.fr/ressources/outils/dns2tcp/<br>
+<a href="http://www.hsc.fr/ressources/outils/dns2tcp/" variation="deepblue" target="blank">dns2tcp Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/dns2tcp.git;a=summary" variation="deepblue" target="blank">Kali dns2tcp Repo</a></p>
+<ul>
+<li>Author: Olivier Dembour</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the dns2tcp package</h3>
+<h5>dns2tcpd – dns2tcp server component</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4b3924243f0b202a2722">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dns2tcpd<br>
+Usage : dns2tcpd [ -i IP ] [ -F ] [ -d debug_level ] [ -f config-file ] [ -p pidfile ]<br>
+     -F : dns2tcpd will run in foreground</code>
+<h3>dns2tcpc – dns2tcp client component</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="04766b6b70446f65686d">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dns2tcpc<br>
+No DNS given, using 192.168.1.1 (first entry found in resolv.conf)<br>
+Missing parameter : need a dns zone<br>
+dns2tcp v0.5.2 ( http://www.hsc.fr/ )<br>
+Usage : dns2tcpc [options] [server]<br>
+    -c          : enable compression<br>
+    -z &lt;domain&gt; : domain to use (mandatory)<br>
+    -d &lt;1|2|3&gt;  : debug_level (1, 2 or 3)<br>
+    -r &lt;resource&gt;   : resource to access<br>
+    -k &lt;key&gt;    : pre-shared key<br>
+    -f &lt;filename&gt;   : configuration file<br>
+    -l &lt;port|-&gt; : local port to bind, '-' is for stdin (mandatory if resource defined without program )<br>
+    -e &lt;program&gt;    : program to execute<br>
+    -t &lt;delay&gt;  : max DNS server's answer delay in seconds (default is 3)<br>
+    -T &lt;TXT|KEY&gt;    : DNS request type (default is TXT)<br>
+    server  : DNS server to use<br>
+    If no resources are specified, available resources will be printed</code>
+<h3>dns2tcpd Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="acdec3c3d8ecc7cdc0c581dfc9dedac9de">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cat &gt;&gt;.dns2tcpdrc &lt;&lt;END<br>
+listen = 0.0.0.0<br>
+port = 53<br>
+user=nobody<br>
+chroot = /root/dns2tcp<br>
+pid_file = /var/run/dns2tcp.pid<br>
+domain = dns2tcp.kali.org<br>
+key = secretkey<br>
+resources = ssh:127.0.0.1:22<br>
+END<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="10627f7f64507b717c793d637562667562">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dns2tcpd -f .dns2tcpdrc<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="c3b1acacb783a8a2afaaeeb0a6b1b5a6b1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~#</code>
+<h3>dns2tcpc Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="8dffe2e2f9cde6ece1e4a0eee1e4e8e3f9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# cat &gt;&gt;.dns2tcprc &lt;&lt;END<br>
+domain = dns2tcp.kali.org<br>
+resource = ssh<br>
+local_port = 2139<br>
+key = secretkey<br>
+END<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e1938e8e95a18a808d88cc828d88848f95">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dns2tcpc -f .dns2tcprc<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f684999982b69d979a9fdb959a9f939882">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ssh <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2b5944445f6b4744484a474344585f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> -p 2139 -D 8090<br>
+The authenticity of host '[localhost]:2139 ([127.0.0.1]:2139)' can't be established.<br>
+ECDSA key fingerprint is aa:bb:1f:cc:f1:ab:7c:71:9b:62:37:8c:f1:60:2e:98.<br>
+Are you sure you want to continue connecting (yes/no)? yes<br>
+Warning: Permanently added '[localhost]:2139' (ECDSA) to the list of known hosts.<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="20524f4f54604c4f43414c484f5354">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>'s password:<br>
+Linux flw 3.12-kali1-amd64 #1 SMP Debian 3.12.6-2kali1 (2014-01-06) x86_64<br>
+<br>
+The programs included with the Kali GNU/Linux system are free software;<br>
+the exact distribution terms for each program are described in the<br>
+individual files in /usr/share/doc/*/copyright.<br>
+<br>
+Kali GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>
+permitted by applicable law.<br>
+Last login: Tue May  6 22:54:15 2014 from beast.fritz.box<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3b4954544f7b505a575216485e494d5e49">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~#</code>
+<h3>dns2tcpc Example Details</h3>
+<p>In this case we are going to tunnel some traffic from a client behind a perimeter firewall to our own server. Since dns2tcp is using dns (asking for TXT records within a (sub)domain) to archive the goal we need to create a NS record for a new subdomain pointing to the address of our server.</p>
+<code>dns2tcp.kali.org. IN NS lab.kali.org.</code>
+<p>There is no need for a DNS server installation. But please keep in mind that you probably added a new NS to a real DNS zone. And it might take a while until the new subdomain is “active”.</p>
+<p>In the next step (dns2tcpd Usage Example) we create a configuration file on our server (lab.kali.org) and start the daemon. To make sure everything is working well you should consider using the options “-F” (Run in foreground) and “-d 1” (debugging) at the first start.</p>
+<p>Now you can configure the host (dns2tcpc Usage Example) and run the client part of the tool. The tunnel is established now and you can connect to your remote box with ssh (ssh <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="35475a5a4175595a5654595d5a4641">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> -p 2139 -D 8090). Please keep in mind to use the username of the remote box (lab.kali.org) because the connection goes to port 2139 (-p 2139). The traffic to this port gets tunneled via DNS (because the dns2tcp client is listening on this port) to your remote server (where your dns2tcp server is waiting on port 53 for incoming connections). While connecting to the remote box via ssh you have also created an additional listener with your ssh command (-D 8090). This port can be used as SOCKS proxy and the traffic will also be tunneld to your remote box.</p>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

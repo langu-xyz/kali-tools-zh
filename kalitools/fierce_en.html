@@ -1,0 +1,126 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>Fierce Package Description</h2>
+<p style="text-align: justify;">First what Fierce is not. Fierce is not an IP scanner, it is not a DDoS tool, it is not designed to scan the whole Internet or perform any un-targeted attacks. It is meant specifically to locate likely targets both inside and outside a corporate network. Only those targets are listed (unless the -nopattern switch is used). No exploitation is performed (unless you do something intentionally malicious with the -connect switch). Fierce is a reconnaissance tool. Fierce is a PERL script that quickly scans domains (usually in just a few minutes, assuming no network lag) using several tactics.</p>
+<p>Source: http://ha.ckers.org/fierce/<br>
+<a href="http://ha.ckers.org/fierce/" variation="deepblue" target="blank">Fierce Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/fierce.git;a=summary" variation="deepblue" target="blank">Kali Fierce Repo</a></p>
+<ul>
+<li>Author: RSnake</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the fierce package</h3>
+<h5>fierce – Domain DNS scanner</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1e6c71716a5e757f7277">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fierce -h<br>
+fierce.pl (C) Copywrite 2006,2007 - By RSnake at http://ha.ckers.org/fierce/<br>
+<br>
+    Usage: perl fierce.pl [-dns example.com] [OPTIONS]<br>
+<br>
+Overview:<br>
+    Fierce is a semi-lightweight scanner that helps locate non-contiguous<br>
+    IP space and hostnames against specified domains.  It's really meant<br>
+    as a pre-cursor to nmap, unicornscan, nessus, nikto, etc, since all<br>
+    of those require that you already know what IP space you are looking<br>
+    for.  This does not perform exploitation and does not scan the whole<br>
+    internet indiscriminately.  It is meant specifically to locate likely<br>
+    targets both inside and outside a corporate network.  Because it uses<br>
+    DNS primarily you will often find mis-configured networks that leak<br>
+    internal address space. That's especially useful in targeted malware.<br>
+<br>
+Options:<br>
+    -connect    Attempt to make http connections to any non RFC1918<br>
+        (public) addresses.  This will output the return headers but<br>
+        be warned, this could take a long time against a company with<br>
+        many targets, depending on network/machine lag.  I wouldn't<br>
+        recommend doing this unless it's a small company or you have a<br>
+        lot of free time on your hands (could take hours-days).<br>
+        Inside the file specified the text "Host:\n" will be replaced<br>
+        by the host specified. Usage:<br>
+<br>
+    perl fierce.pl -dns example.com -connect headers.txt<br>
+<br>
+    -delay      The number of seconds to wait between lookups.<br>
+    -dns        The domain you would like scanned.<br>
+    -dnsfile    Use DNS servers provided by a file (one per line) for<br>
+                reverse lookups (brute force).<br>
+    -dnsserver  Use a particular DNS server for reverse lookups<br>
+        (probably should be the DNS server of the target).  Fierce<br>
+        uses your DNS server for the initial SOA query and then uses<br>
+        the target's DNS server for all additional queries by default.<br>
+    -file       A file you would like to output to be logged to.<br>
+    -fulloutput When combined with -connect this will output everything<br>
+        the webserver sends back, not just the HTTP headers.<br>
+    -help       This screen.<br>
+    -nopattern  Don't use a search pattern when looking for nearby<br>
+        hosts.  Instead dump everything.  This is really noisy but<br>
+        is useful for finding other domains that spammers might be<br>
+        using.  It will also give you lots of false positives,<br>
+        especially on large domains.<br>
+    -range      Scan an internal IP range (must be combined with<br>
+        -dnsserver).  Note, that this does not support a pattern<br>
+        and will simply output anything it finds.  Usage:<br>
+<br>
+    perl fierce.pl -range 111.222.333.0-255 -dnsserver ns1.example.co<br>
+<br>
+    -search     Search list.  When fierce attempts to traverse up and<br>
+        down ipspace it may encounter other servers within other<br>
+        domains that may belong to the same company.  If you supply a<br>
+        comma delimited list to fierce it will report anything found.<br>
+        This is especially useful if the corporate servers are named<br>
+        different from the public facing website.  Usage:<br>
+<br>
+    perl fierce.pl -dns examplecompany.com -search corpcompany,blahcompany<br>
+<br>
+        Note that using search could also greatly expand the number of<br>
+        hosts found, as it will continue to traverse once it locates<br>
+        servers that you specified in your search list.  The more the<br>
+        better.<br>
+    -suppress   Suppress all TTY output (when combined with -file).<br>
+    -tcptimeout Specify a different timeout (default 10 seconds).  You<br>
+        may want to increase this if the DNS server you are querying<br>
+        is slow or has a lot of network lag.<br>
+    -threads  Specify how many threads to use while scanning (default<br>
+      is single threaded).<br>
+    -traverse   Specify a number of IPs above and below whatever IP you<br>
+        have found to look for nearby IPs.  Default is 5 above and<br>
+        below.  Traverse will not move into other C blocks.<br>
+    -version    Output the version number.<br>
+    -wide       Scan the entire class C after finding any matching<br>
+        hostnames in that class C.  This generates a lot more traffic<br>
+        but can uncover a lot more information.<br>
+    -wordlist   Use a seperate wordlist (one word per line).  Usage:<br>
+<br>
+    perl fierce.pl -dns examplecompany.com -wordlist dictionary.txt</code>
+<h3>fierce Usage Example</h3>
+<p>Run a default scan against the target domain <b><i>(-dns example.com)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b2c0ddddc6f2d9d3dedb">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# fierce -dns example.com<br>
+DNS Servers for example.com:<br>
+    b.iana-servers.net<br>
+    a.iana-servers.net<br>
+<br>
+Trying zone transfer first...<br>
+    Testing b.iana-servers.net<br>
+        Request timed out or transfer not allowed.<br>
+    Testing a.iana-servers.net<br>
+        Request timed out or transfer not allowed.<br>
+<br>
+Unsuccessful in zone transfer (it was worth a shot)<br>
+Okay, trying the good old fashioned way... brute force<br>
+<br>
+Checking for wildcard DNS...<br>
+Nope. Good.<br>
+Now performing 2280 test(s)...</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

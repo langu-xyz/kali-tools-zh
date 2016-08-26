@@ -1,0 +1,67 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>dnsmap Package Description</h2>
+<p style="text-align: justify;">dnsmap was originally released back in 2006 and was inspired by the fictional story “The Thief No One Saw” by Paul Craig, which can be found in the book “Stealing the Network – How to 0wn the Box”.</p>
+<p>dnsmap is mainly meant to be used by pentesters during the information gathering/enumeration phase of infrastructure security assessments. During the enumeration stage, the security consultant would typically discover the target company’s IP netblocks, domain names, phone numbers, etc …</p>
+<p>Subdomain brute-forcing is another technique that should be used in the enumeration stage, as it’s especially useful when other domain enumeration techniques such as zone transfers don’t work (I rarely see zone transfers being publicly allowed these days by the way).
+</p><p>Source: http://code.google.com/p/dnsmap/<br>
+<a href="http://code.google.com/p/dnsmap/" variation="deepblue" target="blank">dnsmap Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/dnsmap.git;a=summary" variation="deepblue" target="blank">Kali dnsmap Repo</a></p>
+<ul>
+<li>Author: pagvac</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the dnsmap package</h3>
+<h5>dnsmap – DNS domain name brute forcing tool</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2d5f4242596d464c4144">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnsmap<br>
+dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)<br>
+<br>
+usage: dnsmap &lt;target-domain&gt; [options]<br>
+options:<br>
+-w &lt;wordlist-file&gt;<br>
+-r &lt;regular-results-file&gt;<br>
+-c &lt;csv-results-file&gt;<br>
+-d &lt;delay-millisecs&gt;<br>
+-i &lt;ips-to-ignore&gt; (useful if you're obtaining false positives)<br>
+<br>
+e.g.:<br>
+dnsmap target-domain.foo<br>
+dnsmap target-domain.foo -w yourwordlist.txt -r /tmp/domainbf_results.txt<br>
+dnsmap target-fomain.foo -r /tmp/ -d 3000<br>
+dnsmap target-fomain.foo -r ./domainbf_results.txt</code>
+<h3>dnsmap-bulk.sh – DNS domain name brute forcing tool</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="384a57574c7853595451">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnsmap-bulk.sh<br>
+usage: dnsmap-bulk.sh &lt;domains-file&gt; [results-path]<br>
+e.g.:<br>
+dnsmap-bulk.sh domains.txt<br>
+dnsmap-bulk.sh domains.txt /tmp/</code>
+<h3>dnsmap Usage Example</h3>
+<p>Scan <b><i>example.com</i></b> using a wordlist <b><i>(-w /usr/share/wordlists/dnsmap.txt)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="e2908d8d96a289838e8b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnsmap example.com -w /usr/share/wordlists/dnsmap.txt<br>
+dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)<br>
+<br>
+[+] searching (sub)domains for example.com using /usr/share/wordlists/dnsmap.txt<br>
+[+] using maximum random delay of 10 millisecond(s) between requests</code>
+<h3>dnsmap-bulk Usage Example</h3>
+<p>Create a file containing domain names to scan <b><i>(domains.txt)</i></b> and pass it to dnsmap-bulk.sh:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="87f5e8e8f3c7ece6ebee">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# echo "example.com" &gt;&gt; domains.txt<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="72001d1d063219131e1b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# echo "example.org" &gt;&gt; domains.txt<br>
+<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="80f2efeff4c0ebe1ece9">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# dnsmap-bulk.sh domains.txt<br>
+dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)<br>
+<br>
+[+] searching (sub)domains for example.com using built-in wordlist<br>
+[+] using maximum random delay of 10 millisecond(s) between requests</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

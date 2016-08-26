@@ -1,0 +1,72 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>crackle Package Description</h2>
+<p style="text-align: justify;">crackle exploits a flaw in the BLE pairing process that allows an attacker to guess or very quickly brute force the TK (Temporary Key). With the TK and other data collected from the pairing process, the STK (Short Term Key) and later the LTK (Long Term Key) can be collected.</p>
+<p>With the STK and LTK, all communications between the master and the slave can be decrypted.</p>
+<p>Source: https://github.com/mikeryan/crackle<br>
+<a href="https://github.com/mikeryan/crackle" variation="deepblue" target="blank">crackle Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/crackle.git;a=summary" variation="deepblue" target="blank">Kali crackle Repo</a></p>
+<ul>
+<li>Author: Mike Ryan</li>
+<li>License: BSD</li>
+</ul>
+<h3>Tools included in the crackle package</h3>
+<h5>crackle – Crack and decrypt BLE encryption</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="22504d4d566249434e4b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# crackle<br>
+Usage: crackle -i &lt;input.pcap&gt; [-o &lt;output.pcap&gt;] [-l &lt;ltk&gt;]<br>
+Cracks Bluetooth Low Energy encryption (AKA Bluetooth Smart)<br>
+<br>
+Major modes:  Crack TK // Decrypt with LTK<br>
+<br>
+Crack TK:<br>
+<br>
+    Input PCAP file must contain a complete pairing conversation. If any<br>
+    packet is missing, cracking will not proceed. The PCAP file will be<br>
+    decrypted if -o &lt;output.pcap&gt; is specified. If LTK exchange is in<br>
+    the PCAP file, the LTK will be dumped to stdout.<br>
+<br>
+Decrypt with LTK:<br>
+<br>
+    Input PCAP file must contain at least LL_ENC_REQ and LL_ENC_RSP<br>
+    (which contain the SKD and IV). The PCAP file will be decrypted if<br>
+    the LTK is correct.<br>
+<br>
+    LTK format: string of hex bytes, no separator, most-significant<br>
+    octet to least-significant octet.<br>
+<br>
+    Example: -l 81b06facd90fe7a6e9bbd9cee59736a7<br>
+<br>
+Optional arguments:<br>
+    -v   Be verbose<br>
+    -t   Run tests against crypto engine<br>
+<br>
+Written by Mike Ryan &lt;<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="680501030d1a1109062804090b03041d1b1c1a0d46060d1c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&gt;<br>
+See web site for more info:<br>
+    http://lacklustre.net/projects/crackle/</code>
+<h3>crackle Usage Example</h3>
+<p>Read the input file <b><i>(-i ltk_exchange.pcap)</i></b> and write the decrypted output to disk <b><i>(-o ltk-decrypted.pcap)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="22504d4d566249434e4b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# crackle -i ltk_exchange.pcap -o ltk-decrypted.pcap<br>
+<br>
+<br>
+!!!<br>
+TK found: 000000<br>
+ding ding ding, using a TK of 0! Just Cracks(tm)<br>
+!!!<br>
+<br>
+Warning: packet is too short to be encrypted (1), skipping<br>
+LTK found: 7f62c053f104a5bbe68b1d896a2ed49c<br>
+Done, processed 712 total packets, decrypted 3</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>

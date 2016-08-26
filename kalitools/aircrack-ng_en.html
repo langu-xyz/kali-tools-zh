@@ -1,0 +1,655 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>kali工具箱</title>
+<script src="./static/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./static/main.css">
+<link rel="stylesheet" href="./static/bootstrap.min.css">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+<main class="main-container ng-scope" ng-view="">
+<div class="main receptacle post-view ng-scope">
+<article class="entry ng-scope" ng-controller="EntryCtrl" ui-lightbox="">
+<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
+<section class="l-section"><div class="l-section-h i-cf"><h2>Aircrack-ng Package Description</h2>
+<p style="text-align: justify;">Aircrack-ng is an 802.11 WEP and WPA-PSK keys cracking program that can recover keys once enough data packets have been captured. It implements the standard FMS attack along with some optimizations like KoreK attacks, as well as the all-new PTW attack, thus making the attack much faster compared to other WEP cracking tools.</p>
+<p>Source: http://aircrack-ng.org/<br>
+<a href="http://aircrack-ng.org/" variation="deepblue" target="blank">Aircrack-ng Homepage</a> | <a href="http://git.kali.org/gitweb/?p=packages/aircrack-ng.git;a=summary" variation="deepblue" target="blank">Kali Aircrack-ng Repo</a></p>
+<ul>
+<li>Author: Thomas d’Otreppe, Original work: Christophe Devine</li>
+<li>License: GPLv2</li>
+</ul>
+<h3>Tools included in the aircrack-ng package</h3>
+<h5>airbase-ng – Configure fake access points</h5>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="43312c2c370328222f2a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airbase-ng --help<br>
+<br>
+  Airbase-ng 1.2 beta3 - (C) 2008-2013 Thomas d'Otreppe<br>
+  Original work: Martin Beck<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  usage: airbase-ng &lt;options&gt; &lt;replay interface&gt;<br>
+<br>
+  Options:<br>
+<br>
+      -a bssid         : set Access Point MAC address<br>
+      -i iface         : capture packets from this interface<br>
+      -w WEP key       : use this WEP key to en-/decrypt packets<br>
+      -h MAC           : source mac for MITM mode<br>
+      -f disallow      : disallow specified client MACs (default: allow)<br>
+      -W 0|1           : [don't] set WEP flag in beacons 0|1 (default: auto)<br>
+      -q               : quiet (do not print statistics)<br>
+      -v               : verbose (print more messages)<br>
+      -A               : Ad-Hoc Mode (allows other clients to peer)<br>
+      -Y in|out|both   : external packet processing<br>
+      -c channel       : sets the channel the AP is running on<br>
+      -X               : hidden ESSID<br>
+      -s               : force shared key authentication (default: auto)<br>
+      -S               : set shared key challenge length (default: 128)<br>
+      -L               : Caffe-Latte WEP attack (use if driver can't send frags)<br>
+      -N               : cfrag WEP attack (recommended)<br>
+      -x nbpps         : number of packets per second (default: 100)<br>
+      -y               : disables responses to broadcast probes<br>
+      -0               : set all WPA,WEP,open tags. can't be used with -z &amp; -Z<br>
+      -z type          : sets WPA1 tags. 1=WEP40 2=TKIP 3=WRAP 4=CCMP 5=WEP104<br>
+      -Z type          : same as -z, but for WPA2<br>
+      -V type          : fake EAPOL 1=MD5 2=SHA1 3=auto<br>
+      -F prefix        : write all sent and received frames into pcap file<br>
+      -P               : respond to all probes, even when specifying ESSIDs<br>
+      -I interval      : sets the beacon interval value in ms<br>
+      -C seconds       : enables beaconing of probed ESSID values (requires -P)<br>
+<br>
+  Filter options:<br>
+      --bssid MAC      : BSSID to filter/use<br>
+      --bssids file    : read a list of BSSIDs out of that file<br>
+      --client MAC     : MAC of client to filter<br>
+      --clients file   : read a list of MACs out of that file<br>
+      --essid ESSID    : specify a single ESSID (default: default)<br>
+      --essids file    : read a list of ESSIDs out of that file<br>
+<br>
+      --help           : Displays this usage screen</code>
+<h3>aircrack-ng – Wireless password cracker</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6f1d00001b2f040e0306">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# aircrack-ng --help<br>
+<br>
+  Aircrack-ng 1.2 beta3 - (C) 2006-2013 Thomas d'Otreppe<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  usage: aircrack-ng [options] &lt;.cap / .ivs file(s)&gt;<br>
+<br>
+  Common options:<br>
+<br>
+      -a &lt;amode&gt; : force attack mode (1/WEP, 2/WPA-PSK)<br>
+      -e &lt;essid&gt; : target selection: network identifier<br>
+      -b &lt;bssid&gt; : target selection: access point's MAC<br>
+      -p &lt;nbcpu&gt; : # of CPU to use  (default: all CPUs)<br>
+      -q         : enable quiet mode (no status output)<br>
+      -C &lt;macs&gt;  : merge the given APs to a virtual one<br>
+      -l &lt;file&gt;  : write key to file<br>
+<br>
+  Static WEP cracking options:<br>
+<br>
+      -c         : search alpha-numeric characters only<br>
+      -t         : search binary coded decimal chr only<br>
+      -h         : search the numeric key for Fritz!BOX<br>
+      -d &lt;mask&gt;  : use masking of the key (A1:XX:CF:YY)<br>
+      -m &lt;maddr&gt; : MAC address to filter usable packets<br>
+      -n &lt;nbits&gt; : WEP key length :  64/128/152/256/512<br>
+      -i &lt;index&gt; : WEP key index (1 to 4), default: any<br>
+      -f &lt;fudge&gt; : bruteforce fudge factor,  default: 2<br>
+      -k &lt;korek&gt; : disable one attack method  (1 to 17)<br>
+      -x or -x0  : disable bruteforce for last keybytes<br>
+      -x1        : last keybyte bruteforcing  (default)<br>
+      -x2        : enable last  2 keybytes bruteforcing<br>
+      -X         : disable  bruteforce   multithreading<br>
+      -y         : experimental  single bruteforce mode<br>
+      -K         : use only old KoreK attacks (pre-PTW)<br>
+      -s         : show the key in ASCII while cracking<br>
+      -M &lt;num&gt;   : specify maximum number of IVs to use<br>
+      -D         : WEP decloak, skips broken keystreams<br>
+      -P &lt;num&gt;   : PTW debug:  1: disable Klein, 2: PTW<br>
+      -1         : run only 1 try to crack key with PTW<br>
+<br>
+  WEP and WPA-PSK cracking options:<br>
+<br>
+      -w &lt;words&gt; : path to wordlist(s) filename(s)<br>
+<br>
+  WPA-PSK options:<br>
+<br>
+      -E &lt;file&gt;  : create EWSA Project file v3<br>
+      -J &lt;file&gt;  : create Hashcat Capture file<br>
+      -S         : WPA cracking speed test<br>
+<br>
+  Other options:<br>
+<br>
+      -u         : Displays # of CPUs &amp; MMX/SSE support<br>
+      --help     : Displays this usage screen</code>
+<h3>airdecap-ng – Decrypt WEP/WPA/WPA2 capture files</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4d3f2222390d262c2124">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airdecap-ng --help<br>
+<br>
+  Airdecap-ng 1.2 beta3 - (C) 2006-2013 Thomas d'Otreppe<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  usage: airdecap-ng [options] &lt;pcap file&gt;<br>
+<br>
+  Common options:<br>
+      -l         : don't remove the 802.11 header<br>
+      -b &lt;bssid&gt; : access point MAC address filter<br>
+      -e &lt;essid&gt; : target network SSID<br>
+<br>
+  WEP specific option:<br>
+      -w &lt;key&gt;   : target network WEP key in hex<br>
+<br>
+  WPA specific options:<br>
+      -p &lt;pass&gt;  : target network WPA passphrase<br>
+      -k &lt;pmk&gt;   : WPA Pairwise Master Key in hex<br>
+<br>
+      --help     : Displays this usage screen</code>
+<h3>airdecloak-ng – Removes wep cloaking from a pcap file</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="aad8c5c5deeac1cbc6c3">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airdecloak-ng --help<br>
+<br>
+  Airdecloak-ng 1.2 beta3 - (C) 2008-2013 Thomas d'Otreppe<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  usage: airdecloak-ng [options]<br>
+<br>
+  options:<br>
+<br>
+   Mandatory:<br>
+     -i &lt;file&gt;             : Input capture file<br>
+     --ssid &lt;ESSID&gt;        : ESSID of the network to filter<br>
+        or<br>
+     --bssid &lt;BSSID&gt;       : BSSID of the network to filter<br>
+<br>
+   Optional:<br>
+     --filters &lt;filters&gt;   : Apply filters (separated by a comma). Filters:<br>
+           signal:               Try to filter based on signal.<br>
+           duplicate_sn:         Remove all duplicate sequence numbers<br>
+                                 for both the AP and the client.<br>
+           duplicate_sn_ap:      Remove duplicate sequence number for<br>
+                                 the AP only.<br>
+           duplicate_sn_client:  Remove duplicate sequence number for the<br>
+                                 client only.<br>
+           consecutive_sn:       Filter based on the fact that IV should<br>
+                                 be consecutive (only for AP).<br>
+           duplicate_iv:         Remove all duplicate IV.<br>
+           signal_dup_consec_sn: Use signal (if available), duplicate and<br>
+                                 consecutive sequence number (filtering is<br>
+                                  much more precise than using all these<br>
+                                  filters one by one).<br>
+     --null-packets        : Assume that null packets can be cloaked.<br>
+     --disable-base_filter : Do not apply base filter.<br>
+     --drop-frag           : Drop fragmented packets<br>
+<br>
+     --help                : Displays this usage screen</code>
+<h3>airdriver-ng – Provides status information about the wireless drivers on your system</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="4e3c21213a0e252f2227">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airdriver-ng --help<br>
+Found kernel: 3.3.12-kali1-686-pae.3.12-kali1-686-pae<br>
+usage: airdriver-ng &lt;command&gt; [drivernumber]<br>
+    valid commands:<br>
+        supported       - lists all supported drivers<br>
+        kernel          - lists all in-kernel drivers<br>
+        installed       - lists all installed drivers<br>
+        loaded          - lists all loaded drivers<br>
+        -----------------------------------------------------<br>
+        insert &lt;drivernum&gt;  - inserts a driver<br>
+        load &lt;drivernum&gt;    - loads a driver<br>
+        unload &lt;drivernum&gt;  - unloads a driver<br>
+        reload &lt;drivernum&gt;  - reloads a driver<br>
+        -----------------------------------------------------<br>
+        compile &lt;drivernum&gt; - compiles a driver<br>
+        install &lt;drivernum&gt; - installs a driver<br>
+        remove &lt;drivernum&gt;  - removes a driver<br>
+        -----------------------------------------------------<br>
+        compile_stack &lt;stacknum&gt;    - compiles a stack<br>
+        install_stack &lt;stacknum&gt;    - installs a stack<br>
+        remove_stack &lt;stacknum&gt; - removes a stack<br>
+        -----------------------------------------------------<br>
+        install_firmware &lt;drivernum&gt;    - installs the firmware<br>
+        remove_firmware &lt;drivernum&gt; - removes the firmware<br>
+        -----------------------------------------------------<br>
+        details &lt;drivernum&gt; - prints driver details<br>
+        detect          - detects wireless cards</code>
+<h3>aireplay-ng – Primary function is to generate traffic for the later use in aircrack-ng</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="81f3eeeef5c1eae0ede8">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# aireplay-ng --help<br>
+<br>
+  Aireplay-ng 1.2 beta3 - (C) 2006-2013 Thomas d'Otreppe<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  usage: aireplay-ng &lt;options&gt; &lt;replay interface&gt;<br>
+<br>
+  Filter options:<br>
+<br>
+      -b bssid  : MAC address, Access Point<br>
+      -d dmac   : MAC address, Destination<br>
+      -s smac   : MAC address, Source<br>
+      -m len    : minimum packet length<br>
+      -n len    : maximum packet length<br>
+      -u type   : frame control, type    field<br>
+      -v subt   : frame control, subtype field<br>
+      -t tods   : frame control, To      DS bit<br>
+      -f fromds : frame control, From    DS bit<br>
+      -w iswep  : frame control, WEP     bit<br>
+      -D        : disable AP detection<br>
+<br>
+  Replay options:<br>
+<br>
+      -x nbpps  : number of packets per second<br>
+      -p fctrl  : set frame control word (hex)<br>
+      -a bssid  : set Access Point MAC address<br>
+      -c dmac   : set Destination  MAC address<br>
+      -h smac   : set Source       MAC address<br>
+      -g value  : change ring buffer size (default: 8)<br>
+      -F        : choose first matching packet<br>
+<br>
+      Fakeauth attack options:<br>
+<br>
+      -e essid  : set target AP SSID<br>
+      -o npckts : number of packets per burst (0=auto, default: 1)<br>
+      -q sec    : seconds between keep-alives<br>
+      -Q        : send reassociation requests<br>
+      -y prga   : keystream for shared key auth<br>
+      -T n      : exit after retry fake auth request n time<br>
+<br>
+      Arp Replay attack options:<br>
+<br>
+      -j        : inject FromDS packets<br>
+<br>
+      Fragmentation attack options:<br>
+<br>
+      -k IP     : set destination IP in fragments<br>
+      -l IP     : set source IP in fragments<br>
+<br>
+      Test attack options:<br>
+<br>
+      -B        : activates the bitrate test<br>
+<br>
+  Source options:<br>
+<br>
+      -i iface  : capture packets from this interface<br>
+      -r file   : extract packets from this pcap file<br>
+<br>
+  Miscellaneous options:<br>
+<br>
+      -R                    : disable /dev/rtc usage<br>
+      --ignore-negative-one : if the interface's channel can't be determined,<br>
+                              ignore the mismatch, needed for unpatched cfg80211<br>
+<br>
+  Attack modes (numbers can still be used):<br>
+<br>
+      --deauth      count : deauthenticate 1 or all stations (-0)<br>
+      --fakeauth    delay : fake authentication with AP (-1)<br>
+      --interactive       : interactive frame selection (-2)<br>
+      --arpreplay         : standard ARP-request replay (-3)<br>
+      --chopchop          : decrypt/chopchop WEP packet (-4)<br>
+      --fragment          : generates valid keystream   (-5)<br>
+      --caffe-latte       : query a client for new IVs  (-6)<br>
+      --cfrag             : fragments against a client  (-7)<br>
+      --migmode           : attacks WPA migration mode  (-8)<br>
+      --test              : tests injection and quality (-9)<br>
+<br>
+      --help              : Displays this usage screen</code>
+<h3>airmon-ng – This script can be used to enable monitor mode on wireless interfaces</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="52203d3d261239333e3b">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airmon-ng --help<br>
+<br>
+<br>
+usage: airmon-ng &lt;start|stop|check&gt; &lt;interface&gt; [channel or frequency]</code>
+<h3>airmon-zc – This script can be used to enable monitor mode on wireless interfaces</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="89fbe6e6fdc9e2e8e5e0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airmon-zc --help<br>
+<br>
+usage: airmon-zc &lt;start|stop|check&gt; &lt;interface&gt; [channel or frequency]</code>
+<h3>airodump-ng – Used for packet capturing of raw 802.11 frames</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b5c7dadac1f5ded4d9dc">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airodump-ng --help<br>
+<br>
+  Airodump-ng 1.2 beta3 - (C) 2006-2013 Thomas d'Otreppe<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  usage: airodump-ng &lt;options&gt; &lt;interface&gt;[,&lt;interface&gt;,...]<br>
+<br>
+  Options:<br>
+      --ivs                 : Save only captured IVs<br>
+      --gpsd                : Use GPSd<br>
+      --write      &lt;prefix&gt; : Dump file prefix<br>
+      -w                    : same as --write<br>
+      --beacons             : Record all beacons in dump file<br>
+      --update       &lt;secs&gt; : Display update delay in seconds<br>
+      --showack             : Prints ack/cts/rts statistics<br>
+      -h                    : Hides known stations for --showack<br>
+      -f            &lt;msecs&gt; : Time in ms between hopping channels<br>
+      --berlin       &lt;secs&gt; : Time before removing the AP/client<br>
+                              from the screen when no more packets<br>
+                              are received (Default: 120 seconds)<br>
+      -r             &lt;file&gt; : Read packets from that file<br>
+      -x            &lt;msecs&gt; : Active Scanning Simulation<br>
+      --manufacturer        : Display manufacturer from IEEE OUI list<br>
+      --uptime              : Display AP Uptime from Beacon Timestamp<br>
+      --output-format<br>
+                  &lt;formats&gt; : Output format. Possible values:<br>
+                              pcap, ivs, csv, gps, kismet, netxml<br>
+      --ignore-negative-one : Removes the message that says<br>
+                              fixed channel &lt;interface&gt;: -1<br>
+<br>
+  Filter options:<br>
+      --encrypt   &lt;suite&gt;   : Filter APs by cipher suite<br>
+      --netmask &lt;netmask&gt;   : Filter APs by mask<br>
+      --bssid     &lt;bssid&gt;   : Filter APs by BSSID<br>
+      --essid     &lt;essid&gt;   : Filter APs by ESSID<br>
+      -a                    : Filter unassociated clients<br>
+<br>
+  By default, airodump-ng hop on 2.4GHz channels.<br>
+  You can make it capture on other/specific channel(s) by using:<br>
+      --channel &lt;channels&gt;  : Capture on specific channels<br>
+      --band &lt;abg&gt;          : Band on which airodump-ng should hop<br>
+      -C    &lt;frequencies&gt;   : Uses these frequencies in MHz to hop<br>
+      --cswitch  &lt;method&gt;   : Set channel switching method<br>
+                    0       : FIFO (default)<br>
+                    1       : Round Robin<br>
+                    2       : Hop on last<br>
+      -s                    : same as --cswitch<br>
+<br>
+      --help                : Displays this usage screen</code>
+<h3>airodump-ng-oui-update – Downloads and parses IEEE OUI list</h3>
+<p>airodump-ng-oui-updater downloads and parses IEEE OUI list.</p>
+<h3>airolib-ng – Designed to store and manage essid and password lists</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="40322f2f34002b212c29">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airolib-ng --help<br>
+<br>
+  Airolib-ng 1.2 beta3 - (C) 2007, 2008, 2009 ebfe<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  Usage: airolib-ng &lt;database&gt; &lt;operation&gt; [options]<br>
+<br>
+  Operations:<br>
+<br>
+       --stats        : Output information about the database.<br>
+       --sql &lt;sql&gt;    : Execute specified SQL statement.<br>
+       --clean [all]  : Clean the database from old junk. 'all' will also<br>
+                        reduce filesize if possible and run an integrity check.<br>
+       --batch        : Start batch-processing all combinations of ESSIDs<br>
+                        and passwords.<br>
+       --verify [all] : Verify a set of randomly chosen PMKs.<br>
+                        If 'all' is given, all invalid PMK will be deleted.<br>
+<br>
+       --import [essid|passwd] &lt;file&gt;   :<br>
+                        Import a text file as a list of ESSIDs or passwords.<br>
+       --import cowpatty &lt;file&gt;         :<br>
+                        Import a cowpatty file.<br>
+<br>
+       --export cowpatty &lt;essid&gt; &lt;file&gt; :<br>
+                        Export to a cowpatty file.</code>
+<h3>airserv-ng – A wireless card server</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b4c6dbdbc0f4dfd5d8dd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airserv-ng --help<br>
+airserv-ng: invalid option -- '-'<br>
+<br>
+  Airserv-ng 1.2 beta3 - (C) 2007, 2008, 2009 Andrea Bittau<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  Usage: airserv-ng &lt;options&gt;<br>
+<br>
+  Options:<br>
+<br>
+       -h         : This help screen<br>
+       -p  &lt;port&gt; : TCP port to listen on (default:666)<br>
+       -d &lt;iface&gt; : Wifi interface to use<br>
+       -c  &lt;chan&gt; : Channel to use<br>
+       -v &lt;level&gt; : Debug level (1 to 3; default: 1)</code>
+<h3>airtun-ng – Virtual tunnel interface creator</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="d8aab7b7ac98b3b9b4b1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airtun-ng --help<br>
+<br>
+  Airtun-ng 1.2 beta3 - (C) 2006-2013 Thomas d'Otreppe<br>
+  Original work: Martin Beck<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  usage: airtun-ng &lt;options&gt; &lt;replay interface&gt;<br>
+<br>
+      -x nbpps         : number of packets per second (default: 100)<br>
+      -a bssid         : set Access Point MAC address<br>
+                       : In WDS Mode this sets the Receiver<br>
+      -i iface         : capture packets from this interface<br>
+      -y file          : read PRGA from this file<br>
+      -w wepkey        : use this WEP-KEY to encrypt packets<br>
+      -t tods          : send frames to AP (1) or to client (0)<br>
+                       : or tunnel them into a WDS/Bridge (2)<br>
+      -r file          : read frames out of pcap file<br>
+<br>
+  WDS/Bridge Mode options:<br>
+      -s transmitter   : set Transmitter MAC address for WDS Mode<br>
+      -b               : bidirectional mode. This enables communication<br>
+                       : in Transmitter's AND Receiver's networks.<br>
+                       : Works only if you can see both stations.<br>
+<br>
+  Repeater options:<br>
+      --repeat         : activates repeat mode<br>
+      --bssid &lt;mac&gt;    : BSSID to repeat<br>
+      --netmask &lt;mask&gt; : netmask for BSSID filter<br>
+<br>
+      --help           : Displays this usage screen</code>
+<h3>besside-ng – Automatically crack WEP &amp; WPA network</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="94e6fbfbe0d4fff5f8fd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# besside-ng --help<br>
+besside-ng: invalid option -- '-'<br>
+<br>
+  Besside-ng 1.2 beta3 - (C) 2010 Andrea Bittau<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  Usage: besside-ng [options] &lt;interface&gt;<br>
+<br>
+  Options:<br>
+<br>
+       -b &lt;victim mac&gt; : Victim BSSID<br>
+       -s &lt;WPA server&gt; : Upload wpa.cap for cracking<br>
+       -c       &lt;chan&gt; : chanlock<br>
+       -p       &lt;pps&gt;  : flood rate<br>
+       -W              : WPA only<br>
+       -v              : verbose, -vv for more, etc.<br>
+       -h              : This help screen</code>
+<h3>buddy-ng</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="13617c7c675378727f7a">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# buddy-ng -h<br>
+<br>
+  Buddy-ng 1.2 beta3 - (C) 2007,2008 Andrea Bittau<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  Usage: buddy-ng &lt;options&gt;<br>
+<br>
+  Options:<br>
+<br>
+       -h        : This help screen<br>
+       -p        : Don't drop privileges</code>
+<h3>easside-ng – An auto-magic tool which allows you to communicate via an WEP-encrypted access point</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="dfadb0b0ab9fb4beb3b6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# easside-ng -h<br>
+<br>
+  Easside-ng 1.2 beta3 - (C) 2007, 2008, 2009 Andrea Bittau<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  Usage: easside-ng &lt;options&gt;<br>
+<br>
+  Options:<br>
+<br>
+       -h                : This help screen<br>
+       -v   &lt;victim mac&gt; : Victim BSSID<br>
+       -m      &lt;src mac&gt; : Source MAC address<br>
+       -i           &lt;ip&gt; : Source IP address<br>
+       -r    &lt;router ip&gt; : Router IP address<br>
+       -s     &lt;buddy ip&gt; : Buddy-ng IP address (mandatory)<br>
+       -f        &lt;iface&gt; : Interface to use (mandatory)<br>
+       -c      &lt;channel&gt; : Lock card to this channel<br>
+       -n                : Determine Internet IP only</code>
+<h3>ivstools – This tool handle .ivs files. You can either merge or convert them.</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2c5e4343586c474d4045">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# ivstools<br>
+<br>
+  ivsTools 1.2 beta3 - (C) 2006-2013 Thomas d'Otreppe<br>
+  http://www.aircrack-ng.org<br>
+<br>
+   usage: ivstools --convert &lt;pcap file&gt; &lt;ivs output file&gt;<br>
+        Extract ivs from a pcap file<br>
+       ivstools --merge &lt;ivs file 1&gt; &lt;ivs file 2&gt; .. &lt;output file&gt;<br>
+        Merge ivs files</code>
+<h3>kstats</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="97e5f8f8e3d7fcf6fbfe">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# kstats<br>
+usage: kstats &lt;ivs file&gt; &lt;104-bit key&gt;</code>
+<h3>makeivs-ng – Generates initialization vectors</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="0e7c61617a4e656f6267">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# makeivs-ng --help<br>
+<br>
+  makeivs-ng 1.2 beta3 - (C) 2006-2013 Thomas d'Otreppe<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  usage: makeivs-ng [options]<br>
+<br>
+  Common options:<br>
+      -b &lt;bssid&gt; : Set access point MAC address<br>
+      -f &lt;num&gt;   : Number of first IV<br>
+      -k &lt;key&gt;   : Target network WEP key in hex<br>
+      -s &lt;num&gt;   : Seed used to setup random generator<br>
+      -w &lt;file&gt;  : Filename to write IVs into<br>
+      -c &lt;num&gt;   : Number of IVs to generate<br>
+      -d &lt;num&gt;   : Percentage of dupe IVs<br>
+      -e &lt;num&gt;   : Percentage of erroneous keystreams<br>
+      -l &lt;num&gt;   : Length of keystreams<br>
+      -n         : Ignores ignores weak IVs<br>
+      -p         : Uses prng algorithm to generate IVs<br>
+<br>
+      --help     : Displays this usage screen</code>
+<h3>packetforge-ng – Create encrypted packets that can subsequently be used for injection</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="55273a3a21153e34393c">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# packetforge-ng --help<br>
+<br>
+  Packetforge-ng 1.2 beta3 - (C) 2006-2013 Thomas d'Otreppe<br>
+  Original work: Martin Beck<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  Usage: packetforge-ng &lt;mode&gt; &lt;options&gt;<br>
+<br>
+  Forge options:<br>
+<br>
+      -p &lt;fctrl&gt;     : set frame control word (hex)<br>
+      -a &lt;bssid&gt;     : set Access Point MAC address<br>
+      -c &lt;dmac&gt;      : set Destination  MAC address<br>
+      -h &lt;smac&gt;      : set Source       MAC address<br>
+      -j             : set FromDS bit<br>
+      -o             : clear ToDS bit<br>
+      -e             : disables WEP encryption<br>
+      -k &lt;ip[:port]&gt; : set Destination IP [Port]<br>
+      -l &lt;ip[:port]&gt; : set Source      IP [Port]<br>
+      -t ttl         : set Time To Live<br>
+      -w &lt;file&gt;      : write packet to this pcap file<br>
+      -s &lt;size&gt;      : specify size of null packet<br>
+      -n &lt;packets&gt;   : set number of packets to generate<br>
+<br>
+  Source options:<br>
+<br>
+      -r &lt;file&gt;      : read packet from this raw file<br>
+      -y &lt;file&gt;      : read PRGA from this file<br>
+<br>
+  Modes:<br>
+<br>
+      --arp          : forge an ARP packet    (-0)<br>
+      --udp          : forge an UDP packet    (-1)<br>
+      --icmp         : forge an ICMP packet   (-2)<br>
+      --null         : build a null packet    (-3)<br>
+      --custom       : build a custom packet  (-9)<br>
+<br>
+      --help         : Displays this usage screen</code>
+<h3>tkiptun-ng – This tool is able to inject a few frames into a WPA TKIP network with QoS</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="91e3fefee5d1faf0fdf8">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# tkiptun-ng --help<br>
+<br>
+  Tkiptun-ng 1.2 beta3 - (C) 2008-2013 Thomas d'Otreppe<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  usage: tkiptun-ng &lt;options&gt; &lt;replay interface&gt;<br>
+<br>
+  Filter options:<br>
+<br>
+      -d dmac   : MAC address, Destination<br>
+      -s smac   : MAC address, Source<br>
+      -m len    : minimum packet length (default: 80)<br>
+      -n len    : maximum packet length (default: 80)<br>
+      -t tods   : frame control, To      DS bit<br>
+      -f fromds : frame control, From    DS bit<br>
+      -D        : disable AP detection<br>
+      -Z        : select packets manually<br>
+<br>
+  Replay options:<br>
+<br>
+      -x nbpps  : number of packets per second<br>
+      -a bssid  : set Access Point MAC address<br>
+      -c dmac   : set Destination  MAC address<br>
+      -h smac   : set Source       MAC address<br>
+      -e essid  : set target AP SSID<br>
+      -M sec    : MIC error timout in seconds [60]<br>
+<br>
+  Debug options:<br>
+<br>
+      -K prga   : keystream for continuation<br>
+      -y file   : keystream-file for continuation<br>
+      -j        : inject FromDS packets<br>
+      -P pmk    : pmk for verification/vuln testing<br>
+      -p psk    : psk to calculate pmk with essid<br>
+<br>
+  source options:<br>
+<br>
+      -i iface  : capture packets from this interface<br>
+      -r file   : extract packets from this pcap file<br>
+<br>
+      --help              : Displays this usage screen</code>
+<h3>wesside-ng – Auto-magic tool which incorporates a number of techniques to seamlessly obtain a WEP key</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="97e5f8f8e3d7fcf6fbfe">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wesside-ng -h<br>
+<br>
+  Wesside-ng 1.2 beta3 - (C) 2007, 2008, 2009 Andrea Bittau<br>
+  http://www.aircrack-ng.org<br>
+<br>
+  Usage: wesside-ng &lt;options&gt;<br>
+<br>
+  Options:<br>
+<br>
+       -h              : This help screen<br>
+       -i      &lt;iface&gt; : Interface to use (mandatory)<br>
+       -m      &lt;my ip&gt; : My IP address<br>
+       -n     &lt;net ip&gt; : Network IP address<br>
+       -a      &lt;mymac&gt; : Source MAC Address<br>
+       -c              : Do not crack the key<br>
+       -p   &lt;min prga&gt; : Minimum bytes of PRGA to gather<br>
+       -v &lt;victim mac&gt; : Victim BSSID<br>
+       -t  &lt;threshold&gt; : Cracking threshold<br>
+       -f   &lt;max chan&gt; : Highest scanned chan (default: 11)<br>
+       -k      &lt;txnum&gt; : Ignore acks and tx txnum times</code>
+<h3>wpaclean – Remove excess data from a pcap file</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="097b66667d4962686560">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# wpaclean<br>
+Usage: wpaclean &lt;out.cap&gt; &lt;in.cap&gt; [in2.cap] [...]</code>
+<h3>airdriver-ng Usage Example</h3>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="6e1c01011a2e050f0207">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airdriver-ng detect<br>
+<br>
+USB devices (generic detection):<br>
+Bus 002 Device 009: ID 0846:9001 NetGear, Inc. WN111(v2) RangeMax Next Wireless [Atheros AR9170+AR9101]<br>
+Bus 001 Device 012: ID 050d:0017 Belkin Components B8T017 Bluetooth+EDR 2.1<br>
+Bus 001 Device 005: ID 0e0f:0008 VMware, Inc.</code>
+<h3>airmon-ng Usage Example</h3>
+<p>Start <b><i>(start)</i></b> monitor mode on the wireless interface <b><i>(wlan0)</i></b> on the desired channel <b><i>(6)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="186a77776c5873797471">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airmon-ng start wlan0 6<br>
+<br>
+<br>
+Interface   Chipset     Driver<br>
+<br>
+wlan0       2-2: Atheros    carl9170 - [phy4]<br>
+                (monitor mode enabled on mon0)</code>
+<h3>airodump-ng Usage Example</h3>
+<p>Sniff on channel 6 <b><i>(-c 6)</i></b>, filtering on a BSSID <b><i>(–bssid 38:60:77:23:B1:CB)</i></b>, writing the capture to disk <b><i>(-w capture)</i></b>, using the monitor mode interface <b><i>(mon0)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="94e6fbfbe0d4fff5f8fd">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# airodump-ng -c 6 --bssid 38:60:77:23:B1:CB -w capture mon0<br>
+ CH  6 ][ Elapsed: 4 s ][ 2014-05-15 17:21                                         <br>
+                                                                                                                                                           <br>
+ BSSID              PWR RXQ  Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID<br>
+                                                                                                                                                           <br>
+ 38:60:77:23:B1:CB  -79   0        7        0    0   6  54e  WPA2 CCMP   PSK  6EA10E                                                                       <br>
+                                                                                                                                                           <br>
+ BSSID              STATION            PWR   Rate    Lost    Frames  Probe</code>
+<h3>aircrack-ng Usage Example</h3>
+<p>Using the provided wordlist <b><i>(-w /usr/share/wordlists/nmap.lst)</i></b>, attempt to crack passwords in the capture file <b><i>(capture-01.cap)</i></b>:</p>
+<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5b2934342f1b303a3732">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>:~# aircrack-ng -w /usr/share/wordlists/nmap.lst capture-01.cap <br>
+Opening capture-01.cap<br>
+Read 2 packets.<br>
+<br>
+   #  BSSID              ESSID                     Encryption<br>
+<br>
+   1  38:60:77:23:B1:CB  6EA10E                    No data - WEP or WPA<br>
+<br>
+Choosing first network as target.<br>
+<br>
+Opening capture-01.cap</code>
+</div></section><div style="display:none">
+<script src="//s11.cnzz.com/z_stat.php?id=1260038378&web_id=1260038378" language="JavaScript"></script>
+</div>
+</main></body></html>
